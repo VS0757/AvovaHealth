@@ -5,12 +5,13 @@ export default function Home() {
   const [message, setMessage] = useState(''); // State to store the fetched message
 
   useEffect(() => {
-    // Fetch data from your Node.js backend
-    fetch('http://localhost:3001/api/hello') // Adjust the URL/path as necessary
+    // Fetch data from your Node.js backend at the new endpoint
+    fetch('http://localhost:3000/api/message') // Adjust the URL/path as necessary
       .then(response => response.json())
       .then(data => setMessage(data.message))
       .catch(error => console.error('There was an error!', error));
-  }, []); // Empty dependency array means this runs once on component mount
+  }, []);
+  
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">

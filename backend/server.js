@@ -15,6 +15,13 @@ app.listen(port, () => {
     console.log(`App is running on port ${port}`);
 });
 
+// Add this route to your server.js
+
+app.get('/api/message', (req, res) => {
+    res.json({ message: 'Hello from the backend!' });
+});
+
+
 // Example using the http module
 // const http = require('http');
 

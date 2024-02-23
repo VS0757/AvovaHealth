@@ -1,5 +1,6 @@
-import Image from "next/image";
+"use client"; //this is a client component
 import React, { useEffect, useState } from 'react'; // Import useEffect and useState
+import Image from "next/image";
 
 export default function Home() {
   const [message, setMessage] = useState(''); // State to store the fetched message

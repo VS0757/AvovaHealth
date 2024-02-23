@@ -12,7 +12,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [18.x] # Adjusted for broader compatibility
+        node-version: [20.x] # Adjusted for broader compatibility
 
     steps:
     - uses: actions/checkout@v3
@@ -34,7 +34,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [18.x] # Ensuring compatibility
+        node-version: [20.x] # Ensuring compatibility
 
     steps:
     - uses: actions/checkout@v3

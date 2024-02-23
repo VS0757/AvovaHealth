@@ -12,7 +12,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [16.x] # Adjusted for broader compatibility
+        node-version: [18.x] # Adjusted for broader compatibility
 
     steps:
     - uses: actions/checkout@v3
@@ -29,15 +29,12 @@ jobs:
     - run: npm test
       working-directory: ./app/backend
 
-    - run: ls -la app/frontend/
-    - run: ls -la app/backend/
-
   build-frontend:
     runs-on: ubuntu-latest
 
     strategy:
       matrix:
-        node-version: [16.x] # Ensuring compatibility
+        node-version: [18.x] # Ensuring compatibility
 
     steps:
     - uses: actions/checkout@v3

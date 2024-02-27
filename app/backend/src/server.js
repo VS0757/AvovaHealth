@@ -1,6 +1,5 @@
-const express = require('express');
 const cors = require('cors');
-const app = express();
+const app = require('./app');
 
 // Enable CORS for all routes and origins
 app.use(cors());

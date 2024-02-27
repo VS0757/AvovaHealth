@@ -21,15 +21,11 @@ const FileUpload = () => {
     formData.append('pdf', file);
 
     try {
-      const response = await axios.post('http://localhost:3000/upload-pdf', formData, {
-        headers: {
-          'Content-Type': 'multipart/form-data',
-        },
-      });
+      const response = await axios.post('http://localhost:3000/upload-pdf', formData);
       alert('File uploaded successfully');
     } catch (error) {
       console.error('Error uploading file:', error);
-      alert('Error uploading file');
+      alert('Error uploading file:' + error);
     }
   };
 

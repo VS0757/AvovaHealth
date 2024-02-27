@@ -1,35 +1,56 @@
-require('dotenv').config(); // Load environment variables
+require('dotenv').config();
 const express = require('express');
-const AWS = require('./config/awsConfig'); // Make sure this path is correct relative to app.js
-const app = express();
-const upload = require('./upload/upload');
+const { PutObjectCommand } = require("@aws-sdk/client-s3");
+const multer = require("multer");
+const cors = require('cors');
+const { s3Client } = require('./config/awsConfig');
 
-// Initialize S3 client here to use it in the test-s3 route
-const s3 = new AWS.S3();
+const app = express();
+app.use(cors());
+
+const upload = multer();
 
 app.get('/', (req, res) => {
-    res.send('Hello World');
+  res.send('Hello World');
 });
 
-// Test S3 connectivity route
-app.get('/test-s3', (req, res) => {
-    s3.listObjectsV2({ Bucket: process.env.AWS_BUCKET_NAME }, (err, data) => {
-      if (err) {
-        console.log(err, err.stack); // an error occurred
-        return res.status(500).send('Failed to connect to S3');
-      }
-      console.log(data); // successful response
-      res.send('Successfully connected to S3');
+app.get('/test-s3', async (req, res) => {
+  try {
+    const data = await s3Client.listObjectsV2({
+      Bucket: process.env.AWS_BUCKET_NAME
     });
+    console.log(data);
+    res.send('Successfully connected to S3');
+  } catch (err) {
+    console.error(err);
+    res.status(500).send('Failed to connect to S3');
+  }
 });
 
-app.post('/upload-pdf', upload.single('pdf'), (req, res) => {
-  res.send({
-    message: 'Successfully uploaded PDF to S3!',
-    fileInfo: req.file
-  });
-});
+app.post('/upload-pdf', upload.single('pdf'), async (req, res) => {
+  if (!req.file) {
+    return res.status(400).send("No file uploaded.");
+  }
 
-// Additional routes can go here
+  const file = req.file;
+  const key = `${Date.now().toString()}-${file.originalname}`;
+
+  try {
+    const command = new PutObjectCommand({
+      Bucket: process.env.AWS_BUCKET_NAME,
+      Key: key,
+      Body: file.buffer,
+    });
+
+    await s3Client.send(command);
+    res.send({
+      message: 'Successfully uploaded PDF to S3!',
+      fileInfo: key,
+    });
+  } catch (err) {
+    console.error("Error uploading to S3:", err);
+    res.status(500).send("Error uploading file.");
+  }
+});
 
 module.exports = app;

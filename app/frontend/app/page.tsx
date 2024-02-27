@@ -1,27 +1,12 @@
-"use client"; //this is a client component
-import React, { useEffect, useState } from 'react'; // Import useEffect and useState
-import Image from "next/image";
+import React from 'react';
+import FileUpload from './upload/FileUpload'; // Adjust the import path as necessary
 
-export default function Home() {
-  const [message, setMessage] = useState(''); // State to store the fetched message
-
-  useEffect(() => {
-    // Fetch data from your Node.js backend at the new endpoint
-    fetch('http://localhost:3000/api/message') // Adjust the URL/path as necessary
-      .then(response => response.json())
-      .then(data => setMessage(data.message))
-      .catch(error => console.error('There was an error!', error));
-  }, []);
-  
-
+const Page: React.FC = () => {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      {/* Add a new section to display the fetched data */}
-      <div>
-        <h1>Message from Backend:</h1>
-        <p>{message || 'Loading...'}</p>
-      </div>
-      {/* Existing content below... */}
-    </main>
+    <div>
+      <FileUpload />
+    </div>
   );
-}
+};
+
+export default Page;

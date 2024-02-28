@@ -3,6 +3,7 @@ const express = require('express');
 const { PutObjectCommand } = require("@aws-sdk/client-s3");
 const multer = require("multer");
 const cors = require('cors');
+const { uploadPdfToS3 } = require('./upload/s3Service');
 const { s3Client } = require('./config/awsConfig');
 
 const app = express();
@@ -32,17 +33,8 @@ app.post('/upload-pdf', upload.single('pdf'), async (req, res) => {
     return res.status(400).send("No file uploaded.");
   }
 
-  const file = req.file;
-  const key = `${Date.now().toString()}-${file.originalname}`;
-
   try {
-    const command = new PutObjectCommand({
-      Bucket: process.env.AWS_BUCKET_NAME,
-      Key: key,
-      Body: file.buffer,
-    });
-
-    await s3Client.send(command);
+    const key = await uploadPdfToS3(req.file); // Use the service to upload the file
     res.send({
       message: 'Successfully uploaded PDF to S3!',
       fileInfo: key,

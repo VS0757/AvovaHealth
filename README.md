@@ -35,7 +35,7 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
 
-## Ved
+## To Run Locally
 
 In the backend folder, run 'node src/server.js' and then in a separate terminal in the frontend folder, run 'PORT=3001 npm run dev' and then go to the local host website, http://localhost:3001
 

@@ -2,8 +2,9 @@ require('dotenv').config();
 const express = require('express');
 const multer = require("multer");
 const cors = require('cors');
-const { uploadPdfToS3 } = require('./upload/s3Service');
+const { uploadPdfToS3, uploadDataToS3 } = require('./upload/s3Service');
 const { analyzeDocument } = require('./upload/textractService');
+const { callChatGPTAPI } = require('./upload/chatGPTService');
 
 const app = express();
 app.use(cors());
@@ -19,16 +20,17 @@ app.post('/upload-pdf', upload.single('pdf'), async (req, res) => {
   }
 
   try {
-    const key = await uploadPdfToS3(req.file);
-    const analysisResult = await analyzeDocument(process.env.AWS_BUCKET_NAME, key);
-    console.log(analysisResult)
-    // Simplified response, consider parsing the analysisResult for detailed output
+    const extractedText = await analyzeDocument(req.file.buffer);
+    console.log("Extracted Text:", extractedText);
+    const chatGPTResponse = await callChatGPTAPI(extractedText);
+    console.log("ChatGPT Response:", chatGPTResponse);
+    const key = await uploadDataToS3(chatGPTResponse, req.file);
     res.send({
-      message: 'Successfully uploaded and analyzed PDF!',
-      analysisResult,
+      message: 'Successfully uploaded and analyzed PDF, and got response from ChatGPT!',
+      chatGPTResponse,
     });
   } catch (err) {
-    console.error("Error during upload or analysis:", err);
+    console.error("Error during upload, analysis, or ChatGPT query:", err);
     res.status(500).send("Error processing file.");
   }
 });

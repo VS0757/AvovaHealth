@@ -14,7 +14,6 @@ const analyzeDocument = async (fileBuffer) => {
             });
         });
 
-        console.log("Extracted Text:", extractedText.trim());
         return extractedText.trim(); // Return the concatenated text string, trimmed to remove any trailing space
     } catch (error) {
         console.error("Error analyzing document with pdf.js-extract:", error);

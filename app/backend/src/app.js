@@ -2,7 +2,7 @@ require('dotenv').config();
 const express = require('express');
 const multer = require("multer");
 const cors = require('cors');
-const { uploadPdfToS3, uploadDataToS3 } = require('./upload/s3Service');
+const { uploadDataToS3 } = require('./upload/s3Service');
 const { analyzeDocument } = require('./upload/textractService');
 const { callChatGPTAPI } = require('./upload/chatGPTService');
 

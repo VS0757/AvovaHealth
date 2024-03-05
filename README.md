@@ -37,6 +37,6 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 ## To Run Locally
 
-In the backend folder, run 'node src/server.js' and then in a separate terminal in the frontend folder, run 'PORT=3001 npm run dev' and then go to the local host website, http://localhost:3001
+In the backend folder, run 'node src/server.js' and then in a separate terminal in the frontend folder, run 'npm run dev' and then go to the local host website, http://localhost:3000
 
-To test the backend, go to http://localhost:3000
+To test the backend, go to http://localhost:3001

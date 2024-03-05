@@ -35,6 +35,10 @@ app.post('/upload-pdf', upload.single('pdf'), async (req, res) => {
   }
 });
 
+app.post('/integrate-epic', async (req, res) => {
+  console.log("RECEIVED EPIC BUTTON CLICK")
+});
+
 app.get('/test-s3', async (req, res) => {
   try {
     const data = await s3Client.listObjectsV2({

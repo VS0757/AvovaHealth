@@ -1,22 +1,24 @@
 "use client";
 import React from 'react';
-import axios from 'axios';
+import FHIR from 'fhirclient';
 
 const IntegrateEpic = () => {
+  const authorizeEpicAccess = () => {
+    const iss = 'https://fhir.epic.com/interconnect-fhir-oauth/api/FHIR/R4';
 
-  const accessEpic = async () => {
-    try {
-      const response = await axios.post('http://localhost:3001/integrate-epic');
-      alert('Successful Integration with Epic');
-    } catch (error) {
-      console.error('Failed epic integration:', error);
-      alert('Failed epic integration:' + error);
-    }
+    // Initialize the authorization process with dynamic ISS and AUD parameters
+    FHIR.oauth2.authorize({
+      // Add the 'iss' to the authorization parameters
+      iss, // This assumes that the FHIR client library supports initializing with an 'iss'
+      client_id: 'd69365ee-57c7-477f-966c-059146e3df7a',
+      scope: 'patient/*.read', // Updated scope format for consistency
+      redirect_uri: 'http://localhost:3000/'
+    });
   };
 
   return (
     <div>
-      <button onClick={accessEpic}>Authorize Epic Access</button>
+      <button onClick={authorizeEpicAccess}>Authorize Epic Access</button>
     </div>
   );
 };

@@ -1,3 +1,11 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": "next/core-web-vitals",
+  "overrides": [
+    {
+      "files": ["app/fhir-client-v2.js"],
+      "rules": {
+        "@next/next/no-assign-module-variable": "off"
+      }
+    }
+  ]
 }

@@ -37,7 +37,6 @@ const RetrieveEpic = () => {
     const retrieveEpicData = async () => {
       const client = await FHIR.oauth2.ready();
       const query = `${client.state.serverUrl}/Observation?patient=${client.patient.id}&category=laboratory`;
-  
       try {
         const response = await fetch(query, {
           headers: {

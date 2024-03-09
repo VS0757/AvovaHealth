@@ -1,23 +1,44 @@
 "use client";
-import React from 'react';
+import React, { useState } from 'react';
 import FHIR from 'fhirclient';
+import providersData from './R4URLs.json';
 
-const IntegrateEpic = () => {
+const healthcareProviders = providersData.entry.map(entry => ({
+  name: entry.resource.name,
+  iss: entry.resource.address
+})).sort((a, b) => a.name.localeCompare(b.name));
+
+const IntegrateEpic: React.FC = () => {
+  const [selectedIss, setSelectedIss] = useState<string>('');
+
+  // Specify the type for the event parameter
+  const handleProviderChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    setSelectedIss(event.target.value);
+  };
+
   const authorizeEpicAccess = () => {
-    const iss = 'https://mcproxyprd.med.umich.edu/FHIR-PRD/api/FHIR/R4/';
+    if (!selectedIss) {
+      alert('Please select a healthcare provider.');
+      return;
+    }
 
-    // Initialize the authorization process with dynamic ISS and AUD parameters
     FHIR.oauth2.authorize({
-      // Add the 'iss' to the authorization parameters
-      iss, // This assumes that the FHIR client library supports initializing with an 'iss'
-      client_id: '106b92f5-78ed-44d8-ae21-7de81394f752',
-      scope: 'patient/*.read', // Updated scope format for consistency
-      redirect_uri: 'http://localhost:3000/'
+      iss: selectedIss,
+      client_id: '106b92f5-78ed-44d8-ae21-7de81394f752', // Use your actual client_id
+      scope: 'patient/*.read',
+      redirect_uri: 'http://localhost:3000/' // Use your actual redirect_uri
     });
   };
 
   return (
     <div>
+      <h2>Select Your Healthcare Provider</h2>
+      <select onChange={handleProviderChange} value={selectedIss}>
+        <option value="">--Please choose your provider--</option>
+        {healthcareProviders.map((provider, index) => (
+          <option key={index} value={provider.iss}>{provider.name}</option>
+        ))}
+      </select>
       <button onClick={authorizeEpicAccess}>Authorize Epic Access</button>
     </div>
   );

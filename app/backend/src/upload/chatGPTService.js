@@ -16,7 +16,6 @@ const callChatGPTAPI = async (extractedText) => {
 
         let chatResponse = response.choices[0].message.content;
         chatResponse = chatResponse.replace(/```json|```/g, '').trim()
-        console.log("ChatGPT Response: ", chatResponse)
         const chatGPTResponseJson = JSON.parse(chatResponse);
         return chatGPTResponseJson;
     } catch (error) {

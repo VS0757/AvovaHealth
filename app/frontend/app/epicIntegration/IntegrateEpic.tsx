@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from 'react';
 import FHIR from 'fhirclient';
-import providersData from '../epicIntegration/R4URLs.json';
+import providersData from './R4URLs.json';
 
 const healthcareProviders = providersData.entry.map(entry => ({
   name: entry.resource.name,

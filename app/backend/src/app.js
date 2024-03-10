@@ -5,6 +5,7 @@ const cors = require('cors');
 const { uploadDataToS3 } = require('./upload/s3Service');
 const { analyzeDocument } = require('./upload/textractService');
 const { callChatGPTAPI } = require('./upload/chatGPTService');
+const { uploadDataToHealthLake, retrieveDataFromHealthLake } = require('./epicIntegration/HealthLakeService');
 
 const app = express();
 app.use(cors());
@@ -15,41 +16,36 @@ app.get('/', (req, res) => {
 });
 
 app.post('/upload-pdf', upload.single('pdf'), async (req, res) => {
-  if (!req.file) {
-    return res.status(400).send("No file uploaded.");
-  }
-
   try {
     const extractedText = await analyzeDocument(req.file.buffer);
-    console.log("Extracted Text:", extractedText);
     const chatGPTResponse = await callChatGPTAPI(extractedText);
-    console.log("ChatGPT Response:", chatGPTResponse);
-    const key = await uploadDataToS3(chatGPTResponse, req.file);
-    res.send({
-      message: 'Successfully uploaded and analyzed PDF, and got response from ChatGPT!',
-      chatGPTResponse,
-    });
+    await uploadDataToS3(chatGPTResponse, req.file);
+    res.send({message: 'Successfully uploaded and analyzed PDF -> JSON'});
   } catch (err) {
     console.error("Error during upload, analysis, or ChatGPT query:", err);
     res.status(500).send("Error processing file.");
   }
 });
 
-app.post('/integrate-epic', async (req, res) => {
-  console.log("RECEIVED EPIC BUTTON CLICK")
-});
-
-app.get('/test-s3', async (req, res) => {
+app.post('/upload-epic-fhir', async (req, res) => {
   try {
-    const data = await s3Client.listObjectsV2({
-      Bucket: process.env.AWS_BUCKET_NAME
-    });
-    console.log(data);
-    res.send('Successfully connected to S3');
-  } catch (err) {
-    console.error(err);
-    res.status(500).send('Failed to connect to S3');
+    const key = await uploadDataToS3(req.body, { originalname: 'anthony-fhir-data.json' });
+    // await uploadDataToHealthLake(key);
+    res.send({ message: 'Data uploaded successfully to HealthLake' });
+  } catch (error) {
+    console.error('Failed to upload data to HealthLake:', error);
+    res.status(500).send({ message: 'Failed to upload data to HealthLake', error: error.toString() });
   }
 });
+
+// app.post('/display-epic-fhir', async (req, res) => {
+//   try {
+//     const data = await retrieveDataFromHealthLake()
+//     res.json(data)
+//   } catch (error) {
+//     console.error('Failed to retrieve data from HealthLake:', error);
+//     res.status(500).send({ message: 'Failed to retrieve data from HealthLake', error: error.toString() });
+//   }
+// });
 
 module.exports = app;

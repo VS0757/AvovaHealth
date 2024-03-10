@@ -22,7 +22,7 @@ const FileUpload = () => {
 
     try {
       const response = await axios.post('http://localhost:3001/upload-pdf', formData);
-      alert('File uploaded successfully');
+      alert(response.data.message);
     } catch (error) {
       console.error('Error uploading file:', error);
       alert('Error uploading file:' + error);

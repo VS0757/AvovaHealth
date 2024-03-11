@@ -45,6 +45,7 @@ const RetrieveEpic = () => {
                 },
             });
             const jsonResponse: FhirResponse = await response.json();
+            console.log("FHIR DATA: ", jsonResponse)
             if (!jsonResponse.entry || jsonResponse.entry.length === 0) {
                 setData("No laboratory test results found for this provider.");
                 return;

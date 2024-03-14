@@ -26,7 +26,7 @@ export default function Dashboard() {
 
   return (
     <main className="flex min-h-screen flex-col align-middle">
-      <header className="flex w-full flex-row justify-between border-b-2 p-4 align-middle">
+      <header className="flex w-full flex-row justify-between border-b-2 p-4 align-middle tracking-tighter">
         <Image
           src="/avova_red.png"
           alt="Avova Health"

@@ -8,7 +8,7 @@ const DisplayEpic = () => {
   const pullEpicData = async () => {
     try {
       const response = await axios.post(
-        "http://localhost:3001/display-epic-fhir",
+        "http://avova.life:3001/display-epic-fhir",
       );
       setEpicData(JSON.stringify(response.data, null, 2)); // Displaying raw JSON for simplicity
       alert("Data pulled successfully");

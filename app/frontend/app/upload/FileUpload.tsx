@@ -1,5 +1,6 @@
 "use client";
 import React, { ChangeEvent, useState } from "react";
+import { poppins } from "../fonts";
 import axios from "axios";
 
 const FileUpload = () => {
@@ -45,7 +46,7 @@ const FileUpload = () => {
         />
         <button
           onClick={handleUpload}
-          className="mx-2 rounded-lg bg-[#E05767] px-4 py-2 text-sm font-medium tracking-tighter text-white"
+          className={`mx-2 rounded-lg bg-[#E05767] px-4 py-2 text-sm font-medium tracking-wide text-white ${poppins.className}`}
         >
           Upload
         </button>

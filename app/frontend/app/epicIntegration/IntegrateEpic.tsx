@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from "react";
+import { poppins } from "../fonts";
 import FHIR from "fhirclient";
 import providersData from "./R4URLs.json";
 
@@ -54,7 +55,7 @@ const IntegrateEpic: React.FC = () => {
         </select>
         <button
           onClick={authorizeEpicAccess}
-          className="mx-2 min-w-fit rounded-lg bg-[#E05767] px-4 py-2 text-sm font-medium tracking-tighter text-white"
+          className={`mx-2 min-w-fit rounded-lg bg-[#E05767] px-4 py-2 text-sm font-medium tracking-wide text-white ${poppins.className}`}
         >
           Authorize Epic Access
         </button>

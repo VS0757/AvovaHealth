@@ -10,6 +10,7 @@
     "export": "next output"
   },
   "dependencies": {
+    "@kinde-oss/kinde-auth-nextjs": "^2.1.15",
     "axios": "^1.6.7",
     "fhirclient": "^2.5.3",
     "next": "^14.1.0",

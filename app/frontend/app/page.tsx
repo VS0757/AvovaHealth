@@ -1,18 +1,11 @@
 import React from 'react';
-import FileUpload from './upload/FileUpload';
-import IntegrateEpic from './epicIntegration/IntegrateEpic';
-import Link from 'next/link';
-import RetrieveEpic from './epicIntegration/RetrieveEpic';
-import DisplayEpic from './epicIntegration/DisplayEpic';
+import {RegisterLink, LoginLink} from "@kinde-oss/kinde-auth-nextjs/components";
 
 const Page: React.FC = () => {
   return (
     <div>
-      <FileUpload />
-      <IntegrateEpic />
-      <RetrieveEpic />
-      <DisplayEpic />
-      <Link href="/terms">Terms and Conditions</Link>
+      <LoginLink>Sign in</LoginLink>
+      <RegisterLink>Sign up</RegisterLink>
     </div>
   );
 };

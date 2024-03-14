@@ -29,7 +29,7 @@ app.post('/upload-pdf', upload.single('pdf'), async (req, res) => {
 
 app.post('/upload-epic-fhir', async (req, res) => {
   try {
-    const key = await uploadDataToS3(req.body, { originalname: 'anthony-fhir-data.json' });
+    // const key = await uploadDataToS3(req.body, { originalname: 'anthony-fhir-data.json' });
     // key = "1710101834177-anthony-fhir-data.json"
     // await uploadDataToHealthLake(key);
     res.send({ message: 'Data uploaded successfully to HealthLake' });

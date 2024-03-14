@@ -1,13 +1,24 @@
-import React from 'react';
-import {RegisterLink, LoginLink} from "@kinde-oss/kinde-auth-nextjs/components";
+import Image from "next/image";
+import {
+  RegisterLink,
+  LoginLink,
+} from "@kinde-oss/kinde-auth-nextjs/components";
 
-const Page: React.FC = () => {
+export default function Home() {
   return (
-    <div>
-      <LoginLink>Sign in</LoginLink>
-      <RegisterLink>Sign up</RegisterLink>
-    </div>
+    <main className="flex min-h-screen flex-col items-center justify-between bg-[#E05767] p-24">
+      <div className="m-auto text-center text-white">
+        <Image src="/avova.png" alt="Avova Health" width={300} height={300} />
+        <h1 className="m-4 text-2xl">Your Health, Explained.</h1>
+        <div className="m-auto mt-8 w-32">
+          <button className="h-10 w-32 rounded bg-white text-[#E05767]">
+            <LoginLink>Sign in</LoginLink>
+          </button>
+          <button className="mt-2 h-10 w-32 rounded border-2 bg-none text-white">
+            <RegisterLink>Sign up</RegisterLink>
+          </button>
+        </div>
+      </div>
+    </main>
   );
-};
-
-export default Page;
+}

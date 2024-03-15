@@ -35,9 +35,9 @@ const RetrieveEpic = () => {
   const [data, setData] = useState<string>("");
 
   const retrieveEpicData = async () => {
-    const client = await FHIR.oauth2.ready();
-    const query = `${client.state.serverUrl}/Observation?patient=${client.patient.id}&category=laboratory`;
     try {
+      const client = await FHIR.oauth2.ready();
+      const query = `${client.state.serverUrl}/Observation?patient=${client.patient.id}&category=laboratory`;
       const response = await fetch(query, {
         headers: {
           Accept: "application/json+fhir",
@@ -73,8 +73,8 @@ const RetrieveEpic = () => {
       // Attempt to upload the FHIR response to the backend
       await axios.post("http://localhost:3001/upload-epic-fhir", jsonResponse);
     } catch (error) {
-      console.error("Failed epic retrieval or HealthLake data upload:", error);
-      setData(`Failed epic retrieval or HealthLake data upload: ${error}`);
+      console.error("Failed epic retrieval:", error);
+      alert("Please select a healthcare provider.");
     }
   };
 

@@ -5,7 +5,6 @@ const cors = require('cors');
 const { uploadDataToS3 } = require('./upload/s3Service');
 const { analyzeDocument } = require('./upload/textractService');
 const { callChatGPTAPI } = require('./upload/chatGPTService');
-const { uploadDataToHealthLake, retrieveDataFromHealthLake } = require('./epicIntegration/HealthLakeService');
 
 const app = express();
 app.use(cors());
@@ -29,7 +28,7 @@ app.post('/upload-pdf', upload.single('pdf'), async (req, res) => {
 
 app.post('/upload-epic-fhir', async (req, res) => {
   try {
-    // const key = await uploadDataToS3(req.body, { originalname: 'anthony-fhir-data.json' });
+    const key = await uploadDataToS3(req.body, { originalname: 'anthony-fhir-data.json' });
     // key = "1710101834177-anthony-fhir-data.json"
     // await uploadDataToHealthLake(key);
     res.send({ message: 'Data uploaded successfully to HealthLake' });

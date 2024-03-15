@@ -20,15 +20,17 @@ const DisplayEpic = () => {
 
   return (
     <div className="flex pt-8">
-      <button
+      {/* <button
         onClick={pullEpicData}
         className="rounded-lg border-2 border-[#E05767] px-4 py-2 font-medium tracking-tighter text-[#E05767]"
       >
         Pull Epic Data
       </button>
-      <pre>{epicData}</pre> {/* Display the data here */}
+      <pre>{epicData}</pre> */}
     </div>
   );
 };
 
 export default DisplayEpic;
+
+/*Delete if no HealthLake*/

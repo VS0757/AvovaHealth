@@ -37,5 +37,4 @@ const uploadDataToHealthLake = async (s3Key) => {
 const retrieveDataFromHealthLake = async () => {
     //have to make lambda
 };
-
-module.exports = { uploadDataToHealthLake };
+/*Delete if no healthlake*/

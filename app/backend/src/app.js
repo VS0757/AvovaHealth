@@ -21,7 +21,7 @@ app.post('/upload-pdf', upload.single('pdf'), async (req, res) => {
     const extractedText = await analyzeDocument(req.file.buffer);
     const chatGPTResponse = await callChatGPTAPI(extractedText);
     await uploadDataToS3(chatGPTResponse, 'MANUAL', req.body.uniqueUserId, req.file.originalname);
-    // await storeManualDataInDynamo(req.body.uniqueUserId, chatGPTResponse, req.file.originalname);
+    await storeManualDataInDynamo(req.body.uniqueUserId, chatGPTResponse, req.file.originalname);
     res.send({message: 'Successfully uploaded and analyzed PDF -> JSON'});
   } catch (err) {
     console.error("Error during upload, analysis, or ChatGPT query:", err);
@@ -33,7 +33,7 @@ app.post('/upload-epic-fhir', async (req, res) => {
   try {
     const {fhirData, uniqueUserId} = req.body;
     await uploadDataToS3(fhirData, 'FHIR', uniqueUserId, "EpicSystems");
-    // await storeFhirDataInDynamo(uniqueUserId, fhirData);
+    await storeFhirDataInDynamo(uniqueUserId, fhirData);
     res.send({ message: 'Epic data uploaded successfully to Dynamo' });
   } catch (error) {
     console.error('Failed to upload epic data to Dynamo:', error);

@@ -7,7 +7,7 @@ const openai = new OpenAI({
 
 const callChatGPTAPI = async (extractedText) => {
     try {
-        const prompt = "Listed below is a patient's blood work. Please parse the output, making sure to keep relevant information such as values for tests and dates. If a number has a H or L associated with it, that means that the status is high or low respectively. Make sure to keep track of this status in new nested variable in the JSON output and not with the original value. Your output should a JSON string only and nothing else";
+        const prompt = "Listed below is a patient's blood work. Please parse the output, making sure to keep relevant information in a FHIR format such as values for tests and dates (no need for extra information not found in the text). The FHIR format can include multiple entries if need be, but each entry must include only one 'resource', which contains an 'effectiveDateTime' key associated with a value of the date that the blood test was conducted. The resource for each entry should also contain the rest of the information for the blood test that occurred on the effectiveDateTime, all in FHIR format. Your output should be a JSON string in FHIR format only and nothing else";
         const response = await openai.chat.completions.create({
             model: "gpt-4-0125-preview",
             messages: [{ role: "user", content: prompt + extractedText }],

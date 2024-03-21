@@ -31,10 +31,12 @@ interface FhirResponse {
   entry?: FhirEntry[];
 }
 
-const RetrieveEpic = () => {
+const RetrieveEpic = ({ uniqueUserId }: { uniqueUserId: string }) => {
   const [data, setData] = useState<string>("");
+  const [isLoading, setIsLoading] = useState<boolean>(false);
 
   const retrieveEpicData = async () => {
+    setIsLoading(true);
     try {
       const client = await FHIR.oauth2.ready();
       const query = `${client.state.serverUrl}/Observation?patient=${client.patient.id}&category=laboratory`;
@@ -70,23 +72,37 @@ const RetrieveEpic = () => {
 
       setData(formattedData);
 
-      // Attempt to upload the FHIR response to the backend
-      await axios.post("http://localhost:3001/upload-epic-fhir", jsonResponse);
+      const postData = {
+        uniqueUserId: uniqueUserId,
+        fhirData: jsonResponse
+      };
+      
+      const backResponse = await axios.post("http://localhost:3001/upload-epic-fhir", postData, {
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      });
+      alert(backResponse.data.message);
     } catch (error) {
       console.error("Failed epic retrieval:", error);
-      alert("Please select a healthcare provider.");
+      alert("Failed epic retrieval.");
+    } finally {
+      setIsLoading(false);
     }
   };
 
   return (
-    <div className="flex pt-8">
-      <button
-        onClick={retrieveEpicData}
-        className="rounded-lg border-2 border-[#E05767] px-4 py-2 font-medium tracking-tighter text-[#E05767]"
-      >
-        Retrieve Your Laboratory Test Results
-      </button>
-      <div dangerouslySetInnerHTML={{ __html: data }} />
+    <div>
+      <div className="pt-8">
+        <button
+          onClick={retrieveEpicData}
+          disabled={isLoading}
+          className="rounded-lg border-2 border-[#E05767] px-4 py-2 font-medium tracking-tighter text-[#E05767]"
+        >
+          {isLoading ? "Loading..." : "Retrieve Your Laboratory Test Results"} {/* Change button text based on loading status */}
+        </button>
+      </div>
+      <div className="pt-4" dangerouslySetInnerHTML={{ __html: data }} />
     </div>
   );
 };

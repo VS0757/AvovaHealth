@@ -5,9 +5,11 @@ const cors = require('cors');
 const { uploadDataToS3 } = require('./upload/s3Service');
 const { analyzeDocument } = require('./upload/textractService');
 const { callChatGPTAPI } = require('./upload/chatGPTService');
+const { storeFhirDataInDynamo, storeManualDataInDynamo, retrieveFhirDataFromDynamo } = require('./upload/dynamoService');
 
 const app = express();
 app.use(cors());
+app.use(express.json({ limit: '50mb' }));
 const upload = multer();
 
 app.get('/', (req, res) => {
@@ -18,7 +20,8 @@ app.post('/upload-pdf', upload.single('pdf'), async (req, res) => {
   try {
     const extractedText = await analyzeDocument(req.file.buffer);
     const chatGPTResponse = await callChatGPTAPI(extractedText);
-    await uploadDataToS3(chatGPTResponse, req.file);
+    await uploadDataToS3(chatGPTResponse, 'MANUAL', req.body.uniqueUserId, req.file.originalname);
+    // await storeManualDataInDynamo(req.body.uniqueUserId, chatGPTResponse, req.file.originalname);
     res.send({message: 'Successfully uploaded and analyzed PDF -> JSON'});
   } catch (err) {
     console.error("Error during upload, analysis, or ChatGPT query:", err);
@@ -28,24 +31,14 @@ app.post('/upload-pdf', upload.single('pdf'), async (req, res) => {
 
 app.post('/upload-epic-fhir', async (req, res) => {
   try {
-    const key = await uploadDataToS3(req.body, { originalname: 'anthony-fhir-data.json' });
-    // key = "1710101834177-anthony-fhir-data.json"
-    // await uploadDataToHealthLake(key);
-    res.send({ message: 'Data uploaded successfully to HealthLake' });
+    const {fhirData, uniqueUserId} = req.body;
+    await uploadDataToS3(fhirData, 'FHIR', uniqueUserId, "EpicSystems");
+    // await storeFhirDataInDynamo(uniqueUserId, fhirData);
+    res.send({ message: 'Epic data uploaded successfully to Dynamo' });
   } catch (error) {
-    console.error('Failed to upload data to HealthLake:', error);
-    res.status(500).send({ message: 'Failed to upload data to HealthLake', error: error.toString() });
+    console.error('Failed to upload epic data to Dynamo:', error);
+    res.status(500).send({ message: 'Failed to upload epic data to Dynamo', error: error.toString() });
   }
 });
-
-// app.post('/display-epic-fhir', async (req, res) => {
-//   try {
-//     const data = await retrieveDataFromHealthLake()
-//     res.json(data)
-//   } catch (error) {
-//     console.error('Failed to retrieve data from HealthLake:', error);
-//     res.status(500).send({ message: 'Failed to retrieve data from HealthLake', error: error.toString() });
-//   }
-// });
 
 module.exports = app;

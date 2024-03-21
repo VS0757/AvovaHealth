@@ -1,6 +1,5 @@
 const { AWS } = require("@aws-sdk/client-s3");
 
-// Initialize and export the S3 client
 const awsConfig = {
   region: process.env.AWS_REGION,
   credentials: {

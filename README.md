@@ -51,3 +51,5 @@ AWS_SECRET_ACCESS_KEY= Text me (Ved) and I'll give it to you, it's not visible i
 AWS_ACCESS_KEY_ID=In AWS console, go to IAM->Users->avovahealth->Access key 1 in Summary
 
 ## Frontend .env file - should be in Vercel, but otherwise under frontend folder
+
+Go to https://avovahealth.kinde.com/admin->Your applications (Avova Health->view details)->Quick Start->copy and paste the .env.local vars

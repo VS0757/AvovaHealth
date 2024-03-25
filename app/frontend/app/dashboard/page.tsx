@@ -9,7 +9,7 @@ import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
 
 export default async function Dashboard() {
   const { getIdToken } = getKindeServerSession();
-  const uniqueUserId = (await getIdToken()).jti;
+  const uniqueUserId = (await getIdToken()).sub;
   return (
     <main className="flex min-h-screen flex-col align-middle">
       <header className="flex w-full flex-row justify-between border-b p-4 align-middle tracking-tighter">

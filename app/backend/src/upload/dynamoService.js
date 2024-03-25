@@ -29,6 +29,8 @@ const storeFhirDataInDynamo = async (uniqueUserId, fhirData) => {
         } catch (error) {
             console.error("Error storing FHIR data:", error);
         }
+
+        return;
     }
 };
 

@@ -19,9 +19,10 @@ const storeFhirDataInDynamo = async (uniqueUserId, fhirData) => {
 
   for (const entry of fhirData.entry) {
     const effectiveDateTime = entry.resource.effectiveDateTime;
+    const entryResourceId = entry.resource.id.replace(/\s+/g, '_');
     const Item = {
       uniqueUserId,
-      dateTimeType: `${effectiveDateTime}#FHIR#${entry.resource.id}`,
+      dateTimeType: `${effectiveDateTime}#FHIR#${entryResourceId}`,
       data: entry.resource,
     };
 
@@ -35,6 +36,8 @@ const storeFhirDataInDynamo = async (uniqueUserId, fhirData) => {
     } catch (error) {
       console.error("Error storing FHIR data:", error);
     }
+
+    return; //so anthony's data doesn't crash the server
   }
 };
 
@@ -43,9 +46,11 @@ const storeManualDataInDynamo = async (uniqueUserId, manualData, fileName) => {
 
   for (const entry of manualData) {
     const effectiveDateTime = entry.resource.effectiveDateTime;
+    const fileNameSanitized = fileName.replace(/\s+/g, '');
+    console.log("FILE NAME SANIZITED: ", fileNameSanitized)
     const Item = {
       uniqueUserId,
-      dateTimeType: `${effectiveDateTime}#MANUAL#${fileName}`,
+      dateTimeType: `${effectiveDateTime}#MANUAL#${fileNameSanitized}`,
       data: entry.resource,
     };
 
@@ -60,6 +65,25 @@ const storeManualDataInDynamo = async (uniqueUserId, manualData, fileName) => {
       console.error("Error storing MANUAL data:", error);
     }
   }
+};
+
+const storeUserDataInDynamo = async (uniqueUserId, preconditions, medications) => {
+  const TableName = "avovahealthuserdata";
+
+    const Item = {
+      uniqueUserId,
+      preconditions: preconditions,
+      medications: medications,
+    };
+
+    console.log(JSON.stringify(Item, null, 2));
+
+    try {
+      docClient.send(new PutCommand({ TableName, Item })),
+      console.log(`Stored user data entry for ${uniqueUserId}`);
+    } catch (error) {
+      console.error("Error storing user data:", error);
+    }
 };
 
 const retrieveFhirDataFromDynamo = async (
@@ -101,5 +125,6 @@ const retrieveFhirDataFromDynamo = async (
 module.exports = {
   storeFhirDataInDynamo,
   storeManualDataInDynamo,
+  storeUserDataInDynamo,
   retrieveFhirDataFromDynamo,
 };

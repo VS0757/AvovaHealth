@@ -3,7 +3,7 @@ import FileUpload from "./FileUpload";
 
 export default async function UploadComponent() {
   const { getIdToken } = getKindeServerSession();
-  const uniqueUserId = (await getIdToken()).jti;
+  const uniqueUserId = (await getIdToken()).sub;
 
   return <FileUpload uniqueUserId={uniqueUserId} />;
 }

@@ -7,6 +7,7 @@ const { analyzeDocument } = require("./upload/textractService");
 const { callChatGPTAPI } = require("./upload/chatGPTService");
 const {
   storeFhirDataInDynamo,
+  storeUserDataInDynamo,
   storeManualDataInDynamo,
   retrieveFhirDataFromDynamo,
 } = require("./upload/dynamoService");
@@ -48,6 +49,20 @@ app.post("/upload-epic-fhir", async (req, res) => {
     console.error("Failed to upload epic data to Dynamo:", error);
     res.status(500).send({
       message: "Failed to upload epic data to Dynamo",
+      error: error.toString(),
+    });
+  }
+});
+
+app.post("/upload-user-data", async (req, res) => {
+  try {
+    const { uniqueUserId, preconditions, medications } = req.body;
+    await storeUserDataInDynamo(uniqueUserId, preconditions, medications);
+    res.send({ message: "User data uploaded successfully to Dynamo" });
+  } catch (error) {
+    console.error("Failed to upload user data to Dynamo:", error);
+    res.status(500).send({
+      message: "Failed to upload user data to Dynamo",
       error: error.toString(),
     });
   }

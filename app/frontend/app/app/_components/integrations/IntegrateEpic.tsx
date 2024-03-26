@@ -30,7 +30,7 @@ const IntegrateEpic: React.FC = () => {
       iss: selectedIss,
       client_id: "106b92f5-78ed-44d8-ae21-7de81394f752", // Use your actual client_id
       scope: "patient/*.read",
-      redirect_uri: "http://localhost:3000/dashboard", // Use your actual redirect_uri
+      redirect_uri: "http://localhost:3000/app/settings", // Use your actual redirect_uri
     });
   };
 

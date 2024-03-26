@@ -12,7 +12,7 @@ export default function Report({ report }: any) {
 
   return (
     <div
-      className={`my-4 min-w-48 rounded-md border bg-stone-50 px-4 py-2 dark:border-stone-800 dark:bg-stone-900`}
+      className={`my-4 min-w-48 rounded-md border bg-stone-50 p-4 dark:border-stone-800 dark:bg-stone-900`}
     >
       <div
         className={`absolute h-2 w-2 -translate-x-9 translate-y-1.5 transform rounded-lg border bg-stone-50 dark:border-stone-900 dark:bg-stone-950`}
@@ -24,13 +24,11 @@ export default function Report({ report }: any) {
         <p>{year}</p>
       </div>
       <div className={`mb-2 mt-4 flex flex-col flex-nowrap`}>
-        <p className={`opacity-50 ${GeistMono.className} uppercase`}>
-          Filename
-        </p>
+        <p className={`opacity-50`}>Filename</p>
         <p>{name}</p>
       </div>
       <Link
-        href={`/report/${report.dateTimeType}`}
+        href={`/app/report/${report.dateTimeType}`}
         className={`underline opacity-50`}
       >
         View More

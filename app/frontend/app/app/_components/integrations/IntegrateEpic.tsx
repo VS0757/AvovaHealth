@@ -1,6 +1,5 @@
 "use client";
 import React, { useState } from "react";
-import { poppins } from "../fonts";
 import FHIR from "fhirclient";
 import providersData from "./R4URLs.json";
 
@@ -36,15 +35,13 @@ const IntegrateEpic: React.FC = () => {
   };
 
   return (
-    <div className="pt-8">
-      <label className="text-sm font-medium">
-        Select Your Healthcare Provider
-      </label>
+    <div className="mt-2 max-w-fit">
+      <label className="opacity-50">Select Your Healthcare Provider</label>
       <div className="flex flex-row">
         <select
           onChange={handleProviderChange}
           value={selectedIss}
-          className="max-w-xs flex-grow-0 rounded-lg border py-2"
+          className="max-w-sm rounded-md border bg-inherit p-2 dark:border-stone-900"
         >
           <option value="">--Please choose your provider--</option>
           {healthcareProviders.map((provider, index) => (
@@ -55,9 +52,9 @@ const IntegrateEpic: React.FC = () => {
         </select>
         <button
           onClick={authorizeEpicAccess}
-          className={`mx-2 min-w-fit rounded-lg bg-[#E05767] px-4 py-2 text-sm font-medium tracking-wide text-white ${poppins.className}`}
+          className={`mx-2 rounded-md border border-stone-900 bg-stone-950 px-4 py-2 text-stone-50 dark:border-stone-200 dark:bg-stone-100 dark:text-stone-900`}
         >
-          Authorize Epic Access
+          Authorize
         </button>
       </div>
     </div>

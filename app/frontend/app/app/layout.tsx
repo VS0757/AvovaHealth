@@ -13,22 +13,38 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
         className={`fixed top-1/2 mx-2 max-w-12 -translate-y-1/2 transform overflow-clip rounded-3xl bg-stone-200 px-4 py-2 dark:bg-stone-900`}
       >
         <Link href="/app" className={`flex flex-row py-2`}>
-          <FeatherIcon icon="home" className={`my-auto h-4 min-w-4`} />
+          <FeatherIcon
+            icon="home"
+            className={`my-auto h-4 min-w-4 opacity-30 hover:opacity-100`}
+          />
         </Link>
-        <Link href="/app" className={`flex flex-row py-2`}>
-          <FeatherIcon icon="list" className={`my-auto h-4 min-w-4`} />
+        <Link href="/app/timeline" className={`flex flex-row py-2`}>
+          <FeatherIcon
+            icon="list"
+            className={`my-auto h-4 min-w-4 opacity-30 hover:opacity-100`}
+          />
         </Link>
-        <Link href="/app" className={`flex flex-row py-2`}>
-          <FeatherIcon icon="trending-up" className={`my-auto h-4 min-w-4`} />
+        <Link href="/app/trends" className={`flex flex-row py-2`}>
+          <FeatherIcon
+            icon="trending-up"
+            className={`my-auto h-4 min-w-4 opacity-30 hover:opacity-100`}
+          />
         </Link>
-        <Link href="/app" className={`flex flex-row py-2`}>
-          <FeatherIcon icon="inbox" className={`my-auto h-4 min-w-4`} />
+        <Link href="/app/inbox" className={`flex flex-row py-2`}>
+          <FeatherIcon
+            icon="inbox"
+            className={`my-auto h-4 min-w-4 opacity-30 hover:opacity-100`}
+          />
         </Link>
-        <Link href="/app" className={`flex flex-row py-2`}>
-          <FeatherIcon icon="settings" className={`my-auto h-4 min-w-4`} />
+        <Link href="/app/settings" className={`flex flex-row py-2`}>
+          <FeatherIcon
+            icon="settings"
+            className={`my-auto h-4 min-w-4 opacity-30 hover:opacity-100`}
+          />
         </Link>
       </nav>
-      <section className={`mx-auto my-12 min-w-80 max-w-lg flex-1`}>
+      <section className={`mx-auto my-12 mb-16 min-w-[32rem] max-w-lg flex-1`}>
+        <Name />
         {children}
       </section>
       <footer
@@ -41,10 +57,12 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
           width={100}
           className={`object-contain`}
         />
-        <div className={`flex h-full flex-col items-end justify-center`}>
-          <div className={`h-6 w-6 rounded-full bg-stone-500`}> </div>
-          <Name />
-        </div>
+        <Link href="/app/settings">
+          <div className={`flex h-full flex-row items-center gap-2`}>
+            <Name />
+            <div className={`h-6 w-6 rounded-full bg-stone-500`}> </div>
+          </div>
+        </Link>
       </footer>
     </main>
   );

@@ -31,7 +31,11 @@ app.post("/upload-pdf", upload.single("pdf"), async (req, res) => {
       req.body.uniqueUserId,
       req.file.originalname,
     );
-    await storeManualDataInDynamo(req.body.uniqueUserId, chatGPTResponse, req.file.originalname);
+    await storeManualDataInDynamo(
+      req.body.uniqueUserId,
+      chatGPTResponse,
+      req.file.originalname,
+    );
     res.send({ message: "Successfully uploaded and analyzed PDF -> JSON" });
   } catch (err) {
     console.error("Error during upload, analysis, or ChatGPT query:", err);
@@ -57,7 +61,13 @@ app.post("/upload-epic-fhir", async (req, res) => {
 app.post("/upload-user-data", async (req, res) => {
   try {
     const { uniqueUserId, age, sex, preconditions, medications } = req.body;
-    await storeUserDataInDynamo(uniqueUserId, age, sex, preconditions, medications);
+    await storeUserDataInDynamo(
+      uniqueUserId,
+      age,
+      sex,
+      preconditions,
+      medications,
+    );
     res.send({ message: "User data uploaded successfully to Dynamo" });
   } catch (error) {
     console.error("Failed to upload user data to Dynamo:", error);

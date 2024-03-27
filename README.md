@@ -40,3 +40,16 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 In the backend folder, run 'node src/server.js' and then in a separate terminal in the frontend folder, run 'npm run dev' and then go to the local host website, http://localhost:3000
 
 To test the backend, go to http://localhost:3001
+
+## Backend .env file - create this under the backend folder
+
+PORT=3001
+OPEN_AI_SECRET_KEY= Text me (Ved) and I'll give it to you since it's attached with a personal account that Anthony's card is on
+AWS_BUCKET_NAME=bloodworkdatastorage
+AWS_REGION=us-east-1
+AWS_SECRET_ACCESS_KEY= Text me (Ved) and I'll give it to you, it's not visible in AWS
+AWS_ACCESS_KEY_ID=In AWS console, go to IAM->Users->avovahealth->Access key 1 in Summary
+
+## Frontend .env file - should be in Vercel, but otherwise under frontend folder
+
+Go to https://avovahealth.kinde.com/admin->Your applications (Avova Health->view details)->Quick Start->copy and paste the .env.local vars

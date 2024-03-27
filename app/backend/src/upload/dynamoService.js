@@ -15,6 +15,7 @@ const dynamoDBClient = new DynamoDBClient(awsConfig);
 const docClient = DynamoDBDocumentClient.from(dynamoDBClient);
 
 const storeFhirDataInDynamo = async (uniqueUserId, fhirData) => {
+<<<<<<< HEAD
   const TableNameSingleEntry = "avovahealthdatabase";
   const TableNameBloodEntry = "avovahealthbloodtests";
   var counter = 0;
@@ -29,8 +30,8 @@ const storeFhirDataInDynamo = async (uniqueUserId, fhirData) => {
     if (counter == 5) {
       break;
     }
-    counter ++;
-    
+    counter++;
+
     await storeBasedOnEntry(TableNameSingleEntry, uniqueUserId, entry);
     await storeBasedOnTest(TableNameBloodEntry, uniqueUserId, entry);
   }
@@ -111,24 +112,24 @@ const storeManualDataInDynamo = async (uniqueUserId, manualData, fileName) => {
 };
 
 const storeUserDataInDynamo = async (uniqueUserId, age, sex, preconditions, medications) => {
-    const TableName = "avovahealthuserdata";
+  const TableName = "avovahealthuserdata";
 
-    const Item = {
-      uniqueUserId,
-      age: age,
-      sex: sex,
-      preconditions: preconditions,
-      medications: medications,
-    };
+  const Item = {
+    uniqueUserId,
+    age: age,
+    sex: sex,
+    preconditions: preconditions,
+    medications: medications,
+  };
 
-    console.log(JSON.stringify(Item, null, 2));
+  console.log(JSON.stringify(Item, null, 2));
 
-    try {
-      docClient.send(new PutCommand({ TableName, Item })),
+  try {
+    docClient.send(new PutCommand({ TableName, Item })),
       console.log(`Stored user data entry for ${uniqueUserId}`);
-    } catch (error) {
-      console.error("Error storing user data:", error);
-    }
+  } catch (error) {
+    console.error("Error storing user data:", error);
+  }
 };
 
 const retrieveFhirDataFromDynamo = async (

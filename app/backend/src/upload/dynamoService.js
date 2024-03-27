@@ -19,10 +19,18 @@ const storeFhirDataInDynamo = async (uniqueUserId, fhirData) => {
   const TableNameBloodEntry = "avovahealthbloodtests";
   var counter = 0;
   for (const entry of fhirData.entry) {
+    const resource = entry.resource;
+    const bloodTestName = resource.code?.coding[0]?.display || code?.text || "Unknown Test";
+    const testValue = resource.valueQuantity?.value || "Unknown Value";
+    if (bloodTestName === "Unknown Test" || testValue === "Unknown Value") {
+      break;
+    }
+
     if (counter == 5) {
       break;
     }
     counter ++;
+    
     await storeBasedOnEntry(TableNameSingleEntry, uniqueUserId, entry);
     await storeBasedOnTest(TableNameBloodEntry, uniqueUserId, entry);
   }
@@ -52,18 +60,16 @@ const storeBasedOnEntry = async (TableName, uniqueUserId, entry) => {
 const storeBasedOnTest = async (TableName, uniqueUserId, entry) => {
   const resource = entry.resource;
   const effectiveDateTime = resource.effectiveDateTime.split('T')[0];
-  const bloodTestName = resource.code?.coding[0]?.display || code?.text || "Unknown Test";
-  const testValue = resource.valueQuantity?.value || "Unknown Value";
-  if (bloodTestName === "Unknown Test" || testValue === "Unknown Value") {
-    return;
-  }
+  const bloodTestName = resource.code?.coding[0]?.display || code?.text;
+  const testValue = resource.valueQuantity?.value;
+
   const Item = {
     uniqueUserId,
     bloodTest: `${bloodTestName}$${effectiveDateTime}`,
     uploadType: "FHIR",
     testValue: testValue,
     testUnit: resource.valueQuantity?.unit,
-    testRange: resource.referenceRange[0]?.low?.value + " - " + resource.referenceRange[0]?.high?.value,
+    testRange: [resource.referenceRange[0]?.low?.value, resource.referenceRange[0]?.high?.value],
     data: entry.resource,
   };
 
@@ -104,11 +110,13 @@ const storeManualDataInDynamo = async (uniqueUserId, manualData, fileName) => {
   }
 };
 
-const storeUserDataInDynamo = async (uniqueUserId, preconditions, medications) => {
-  const TableName = "avovahealthuserdata";
+const storeUserDataInDynamo = async (uniqueUserId, age, sex, preconditions, medications) => {
+    const TableName = "avovahealthuserdata";
 
     const Item = {
       uniqueUserId,
+      age: age,
+      sex: sex,
       preconditions: preconditions,
       medications: medications,
     };

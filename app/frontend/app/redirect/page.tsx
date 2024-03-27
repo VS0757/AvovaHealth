@@ -17,8 +17,6 @@ export default async function Redirect() {
     isAuthenticated,
   } = getKindeServerSession();
 
-  console.log(await getAccessToken());
-
   redirect("/app");
 
   return <main>hi</main>;

@@ -56,8 +56,8 @@ app.post("/upload-epic-fhir", async (req, res) => {
 
 app.post("/upload-user-data", async (req, res) => {
   try {
-    const { uniqueUserId, preconditions, medications } = req.body;
-    await storeUserDataInDynamo(uniqueUserId, preconditions, medications);
+    const { uniqueUserId, age, sex, preconditions, medications } = req.body;
+    await storeUserDataInDynamo(uniqueUserId, age, sex, preconditions, medications);
     res.send({ message: "User data uploaded successfully to Dynamo" });
   } catch (error) {
     console.error("Failed to upload user data to Dynamo:", error);

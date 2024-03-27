@@ -15,7 +15,6 @@ const dynamoDBClient = new DynamoDBClient(awsConfig);
 const docClient = DynamoDBDocumentClient.from(dynamoDBClient);
 
 const storeFhirDataInDynamo = async (uniqueUserId, fhirData) => {
-<<<<<<< HEAD
   const TableNameSingleEntry = "avovahealthdatabase";
   const TableNameBloodEntry = "avovahealthbloodtests";
   var counter = 0;
@@ -32,40 +31,37 @@ const storeFhirDataInDynamo = async (uniqueUserId, fhirData) => {
     }
     counter++;
 
-    await storeBasedOnEntry(TableNameSingleEntry, uniqueUserId, entry);
-    await storeBasedOnTest(TableNameBloodEntry, uniqueUserId, entry);
+    await storeFHIRBasedOnEntry(TableNameSingleEntry, uniqueUserId, entry);
+    await storeFHIRBasedOnTest(TableNameBloodEntry, uniqueUserId, entry);
   }
 };
 
-const storeBasedOnEntry = async (TableName, uniqueUserId, entry) => {
+const storeFHIRBasedOnEntry = async (TableName, uniqueUserId, entry) => {
   const effectiveDateTime = entry.resource.effectiveDateTime.split('T')[0];
   const entryResourceId = entry.resource.id.replace(/\s+/g, '_');
   const Item = {
-    uniqueUserId,
+    uniqueUserId: uniqueUserId,
     dateTimeType: `${effectiveDateTime}$FHIR$${entryResourceId}`,
     data: entry.resource,
   };
 
-  console.log(JSON.stringify(Item, null, 2));
-
   try {
     await executeWithExponentialBackoff(() =>
-      docClient.send(new PutCommand({ TableName, Item })),
+      docClient.send(new PutCommand({ TableName, Item }))
     );
-    console.log(`Stored FHIR entry (per entry) for ${uniqueUserId}`);
   } catch (error) {
     console.error("Error storing FHIR data:", error);
   }
 }
 
-const storeBasedOnTest = async (TableName, uniqueUserId, entry) => {
+const storeFHIRBasedOnTest = async (TableName, uniqueUserId, entry) => {
   const resource = entry.resource;
   const effectiveDateTime = resource.effectiveDateTime.split('T')[0];
   const bloodTestName = resource.code?.coding[0]?.display || code?.text;
   const testValue = resource.valueQuantity?.value;
 
   const Item = {
-    uniqueUserId,
+    uniqueUserId: uniqueUserId,
     bloodTest: `${bloodTestName}$${effectiveDateTime}`,
     uploadType: "FHIR",
     testValue: testValue,
@@ -74,42 +70,68 @@ const storeBasedOnTest = async (TableName, uniqueUserId, entry) => {
     data: entry.resource,
   };
 
-  console.log(JSON.stringify(Item, null, 2));
 
   try {
     await executeWithExponentialBackoff(() =>
       docClient.send(new PutCommand({ TableName, Item })),
     );
-    console.log(`Stored FHIR entry (per blood test) for ${uniqueUserId}`);
   } catch (error) {
     console.error("Error storing FHIR data:", error);
   }
 }
 
 const storeManualDataInDynamo = async (uniqueUserId, manualData, fileName) => {
-  const TableName = "avovahealthdatabase";
-
-  for (const entry of manualData) {
-    const effectiveDateTime = entry.resource.effectiveDateTime;
-    const fileNameSanitized = fileName.replace(/\s+/g, '');
-    const Item = {
-      uniqueUserId,
-      dateTimeType: `${effectiveDateTime}$MANUAL$${fileNameSanitized}`,
-      data: entry.resource,
-    };
-
-    console.log(JSON.stringify(Item, null, 2));
-
-    try {
-      await executeWithExponentialBackoff(() =>
-        docClient.send(new PutCommand({ TableName, Item })),
-      );
-      console.log(`Stored MANUAL entry for ${uniqueUserId}`);
-    } catch (error) {
-      console.error("Error storing MANUAL data:", error);
+  const TableNameSingleEntry = "avovahealthdatabase";
+  const TableNameBloodEntry = "avovahealthbloodtests";
+  const fileNameSanitized = fileName.replace(/\s+/g, '');
+  for (const entry of manualData.testsbydate) {
+    const effectiveDateTime = entry.effectiveDateTime;
+    await storeManualBasedOnEntry(TableNameSingleEntry, uniqueUserId, entry, fileNameSanitized, effectiveDateTime);
+    for (const testEntry of entry.test) {
+      if (isNaN(testEntry.value)) {
+        break;
+      }
+      await storeManualBasedOnTest(TableNameBloodEntry, uniqueUserId, testEntry, effectiveDateTime);
     }
   }
+
 };
+
+const storeManualBasedOnEntry = async (TableName, uniqueUserId, entry, fileName, effectiveDateTime) => {
+  const Item = {
+    uniqueUserId,
+    dateTimeType: `${effectiveDateTime}$MANUAL$${fileName}`,
+    data: entry,
+  };
+
+  try {
+    await executeWithExponentialBackoff(() =>
+      docClient.send(new PutCommand({ TableName, Item })),
+    );
+  } catch (error) {
+    console.error("Error storing MANUAL (per entry) data:", error);
+  }
+}
+
+const storeManualBasedOnTest = async (TableName, uniqueUserId, entry, effectiveDateTime) => {
+  const Item = {
+    uniqueUserId: uniqueUserId,
+    bloodTest: `${entry.bloodtestname}$${effectiveDateTime}`,
+    data: entry,
+    testRange: entry.range,
+    testUnit: entry.unit,
+    testValue: entry.value,
+    uploadType: "MANUAL"
+  };
+
+  try {
+    await executeWithExponentialBackoff(() =>
+      docClient.send(new PutCommand({ TableName, Item })),
+    );
+  } catch (error) {
+    console.error("Error storing MANUAL (per entry) data:", error);
+  }
+}
 
 const storeUserDataInDynamo = async (uniqueUserId, age, sex, preconditions, medications) => {
   const TableName = "avovahealthuserdata";
@@ -122,11 +144,8 @@ const storeUserDataInDynamo = async (uniqueUserId, age, sex, preconditions, medi
     medications: medications,
   };
 
-  console.log(JSON.stringify(Item, null, 2));
-
   try {
-    docClient.send(new PutCommand({ TableName, Item })),
-      console.log(`Stored user data entry for ${uniqueUserId}`);
+    docClient.send(new PutCommand({ TableName, Item }));
   } catch (error) {
     console.error("Error storing user data:", error);
   }

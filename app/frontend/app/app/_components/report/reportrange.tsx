@@ -9,7 +9,6 @@ interface RangeItem {
   Unit: string;
   Male: any;
   Female: any;
-  "Male and Female"?: any;
 }
 
 export default function ReportRange({ item, value }: RangeParams) {
@@ -30,9 +29,6 @@ export default function ReportRange({ item, value }: RangeParams) {
   }
 
   let genderKey = male ? rangeKey.Male : rangeKey.Female;
-  if (rangeKey["Male and Female"]) {
-    genderKey = rangeKey["Male and Female"];
-  }
 
   const entry = genderKey?.find(({ ageRange }: any) => age >= ageRange[0]);
   const lowRange = entry?.range[0];

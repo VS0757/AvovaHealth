@@ -1,1295 +1,1319 @@
 {
-    "Albumin": {
-      "Unit": "gm/dL",
-      "Male": [
-        { "ageRange": [0, 0.04], "range": [3.30, 4.50] },
-        { "ageRange": [0.04, 1], "range": [2.80, 4.70] },
-        { "ageRange": [1, 7], "range": [3.80, 4.70] },
-        { "ageRange": [8, 14], "range": [4.10, 4.80] },
-        { "ageRange": [15, 18], "range": [4.10, 5.10] },
-        { "ageRange": [19, 20], "range": [4.20, 5.30] },
-        { "ageRange": [21, 30], "range": [4.30, 5.20] },
-        { "ageRange": [31, 35], "range": [4.20, 5.20] },
-        { "ageRange": [36, 45], "range": [4.20, 5.10] },
-        { "ageRange": [46, 55], "range": [4.10, 5.00] },
-        { "ageRange": [56, 60], "range": [4.00, 5.00] },
-        { "ageRange": [61, 65], "range": [4.00, 4.90] },
-        { "ageRange": [66, 75], "range": [3.90, 4.90] },
-        { "ageRange": [76, 80], "range": [3.80, 4.80] },
-        { "ageRange": [81, 150], "range": [3.70, 4.80] }
-      ],
-      "Female": [
-        { "ageRange": [0, 0.04], "range": [3.30, 4.50] },
-        { "ageRange": [0.04, 1], "range": [2.80, 4.70] },
-        { "ageRange": [1, 7], "range": [3.80, 4.70] },
-        { "ageRange": [8, 14], "range": [4.10, 4.80] },
-        { "ageRange": [15, 18], "range": [4.00, 4.90] },
-        { "ageRange": [19, 30], "range": [4.00, 5.10] },
-        { "ageRange": [31, 40], "range": [3.90, 5.00] },
-        { "ageRange": [41, 60], "range": [3.90, 4.90] },
-        { "ageRange": [61, 80], "range": [3.80, 4.80] },
-        { "ageRange": [81, 150], "range": [3.70, 4.70] }
-      ]
-    },
-    "Alkaline Phosphatase": {
-      "Unit": "U/L",
-      "Male": [
-        { "ageRange": [0, 0.04], "range": [90, 273] },
-        { "ageRange": [0.04, 1], "range": [134, 518] },
-        { "ageRange": [1, 9], "range": [156, 369] },
-        { "ageRange": [10, 12], "range": [141, 460] },
-        { "ageRange": [13, 14], "range": [127, 517] },
-        { "ageRange": [15, 16], "range": [89, 365] },
-        { "ageRange": [17, 18], "range": [59, 164] },
-        { "ageRange": [19, 150], "range": [40, 150] }
-      ],
-      "Female": [
-        { "ageRange": [0, 0.04], "range": [90, 273] },
-        { "ageRange": [0.04, 1], "range": [134, 518] },
-        { "ageRange": [1, 9], "range": [156, 369] },
-        { "ageRange": [10, 12], "range": [141, 460] },
-        { "ageRange": [13, 14], "range": [62, 280] },
-        { "ageRange": [15, 16], "range": [54, 128] },
-        { "ageRange": [17, 18], "range": [48, 95] },
-        { "ageRange": [19, 150], "range": [40, 150] }
-      ]
-    },
-    "ALT (SGPT)": {
-      "Unit": "U/L",
-      "Male": [
-        { "ageRange": [0, 1], "range": [0, 33] },
-        { "ageRange": [1, 12], "range": [0, 25] },
-        { "ageRange": [13, 18], "range": [0, 24] },
-        { "ageRange": [19, 150], "range": [0, 55] }
-      ],
-      "Female": [
-        { "ageRange": [0, 1], "range": [0, 33] },
-        { "ageRange": [1, 12], "range": [0, 25] },
-        { "ageRange": [13, 18], "range": [0, 24] },
-        { "ageRange": [19, 150], "range": [0, 55] }
-      ]
-    },
-    "Ammonia": {
+  "Albumin": {
+    "Unit": "gm/dL",
+    "Male": [
+      { "ageRange": [0, 0.04], "range": [3.30, 4.50] },
+      { "ageRange": [0.04, 1], "range": [2.80, 4.70] },
+      { "ageRange": [1, 7], "range": [3.80, 4.70] },
+      { "ageRange": [8, 14], "range": [4.10, 4.80] },
+      { "ageRange": [15, 18], "range": [4.10, 5.10] },
+      { "ageRange": [19, 20], "range": [4.20, 5.30] },
+      { "ageRange": [21, 30], "range": [4.30, 5.20] },
+      { "ageRange": [31, 35], "range": [4.20, 5.20] },
+      { "ageRange": [36, 45], "range": [4.20, 5.10] },
+      { "ageRange": [46, 55], "range": [4.10, 5.00] },
+      { "ageRange": [56, 60], "range": [4.00, 5.00] },
+      { "ageRange": [61, 65], "range": [4.00, 4.90] },
+      { "ageRange": [66, 75], "range": [3.90, 4.90] },
+      { "ageRange": [76, 80], "range": [3.80, 4.80] },
+      { "ageRange": [81, 150], "range": [3.70, 4.80] }
+    ],
+    "Female": [
+      { "ageRange": [0, 0.04], "range": [3.30, 4.50] },
+      { "ageRange": [0.04, 1], "range": [2.80, 4.70] },
+      { "ageRange": [1, 7], "range": [3.80, 4.70] },
+      { "ageRange": [8, 14], "range": [4.10, 4.80] },
+      { "ageRange": [15, 18], "range": [4.00, 4.90] },
+      { "ageRange": [19, 30], "range": [4.00, 5.10] },
+      { "ageRange": [31, 40], "range": [3.90, 5.00] },
+      { "ageRange": [41, 60], "range": [3.90, 4.90] },
+      { "ageRange": [61, 80], "range": [3.80, 4.80] },
+      { "ageRange": [81, 150], "range": [3.70, 4.70] }
+    ]
+  },
+  "Alkaline Phosphatase": {
+    "Unit": "U/L",
+    "Male": [
+      { "ageRange": [0, 0.04], "range": [90, 273] },
+      { "ageRange": [0.04, 1], "range": [134, 518] },
+      { "ageRange": [1, 9], "range": [156, 369] },
+      { "ageRange": [10, 12], "range": [141, 460] },
+      { "ageRange": [13, 14], "range": [127, 517] },
+      { "ageRange": [15, 16], "range": [89, 365] },
+      { "ageRange": [17, 18], "range": [59, 164] },
+      { "ageRange": [19, 150], "range": [40, 150] }
+    ],
+    "Female": [
+      { "ageRange": [0, 0.04], "range": [90, 273] },
+      { "ageRange": [0.04, 1], "range": [134, 518] },
+      { "ageRange": [1, 9], "range": [156, 369] },
+      { "ageRange": [10, 12], "range": [141, 460] },
+      { "ageRange": [13, 14], "range": [62, 280] },
+      { "ageRange": [15, 16], "range": [54, 128] },
+      { "ageRange": [17, 18], "range": [48, 95] },
+      { "ageRange": [19, 150], "range": [40, 150] }
+    ]
+  },
+  "ALT (SGPT)": {
+    "Unit": "U/L",
+    "Male": [
+      { "ageRange": [0, 1], "range": [0, 33] },
+      { "ageRange": [1, 12], "range": [0, 25] },
+      { "ageRange": [13, 18], "range": [0, 24] },
+      { "ageRange": [19, 150], "range": [0, 55] }
+    ],
+    "Female": [
+      { "ageRange": [0, 1], "range": [0, 33] },
+      { "ageRange": [1, 12], "range": [0, 25] },
+      { "ageRange": [13, 18], "range": [0, 24] },
+      { "ageRange": [19, 150], "range": [0, 55] }
+    ]
+  },
+  "Ammonia": {
+    "Unit": "mmol/L",
+    "Male": [
+      { "ageRange": [0, 0.038], "range": [54, 161] },
+      { "ageRange": [0.038, 0.08], "range": [21, 107] },
+      { "ageRange": [0.08, 150], "range": [0, 72] }
+    ],
+    "Female": [
+      { "ageRange": [0, 0.038], "range": [54, 161] },
+      { "ageRange": [0.038, 0.08], "range": [21, 107] },
+      { "ageRange": [0.08, 150], "range": [0, 72] }
+    ]
+  },
+  "Amylase": {
+    "Unit": "U/L",
+    "Male": [
+      { "ageRange": [0, 0.04], "range": [0, 10] },
+      { "ageRange": [0.04, 0.23], "range": [0, 22] },
+      { "ageRange": [0.25, 1], "range": [0, 50] },
+      { "ageRange": [1, 18], "range": [0, 101] },
+      { "ageRange": [19, 70], "range": [0, 125] },
+      { "ageRange": [71, 150], "range": [0, 160] }
+    ],
+    "Female": [
+      { "ageRange": [0, 0.04], "range": [0, 10] },
+      { "ageRange": [0.04, 0.23], "range": [0, 22] },
+      { "ageRange": [0.25, 1], "range": [0, 50] },
+      { "ageRange": [1, 18], "range": [0, 101] },
+      { "ageRange": [19, 70], "range": [0, 125] },
+      { "ageRange": [71, 150], "range": [0, 160] }
+    ]
+  },
+  "Apolipoprotein A1": {
+    "Unit": "mg/dL",
+    "Male": [
+      { "ageRange": [0, 0.04], "range": [62, 91] },
+      { "ageRange": [0.04, 1], "range": [53, 175] },
+      { "ageRange": [1, 13], "range": [80, 164] },
+      { "ageRange": [14, 18], "range": [72, 154] },
+      { "ageRange": [19, 150], "range": [94, 178] }
+    ],
+    "Female": [
+      { "ageRange": [0, 0.04], "range": [71, 97] },
+      { "ageRange": [0.04, 1], "range": [53, 175] },
+      { "ageRange": [1, 13], "range": [80, 164] },
+      { "ageRange": [14, 18], "range": [72, 154] },
+      { "ageRange": [19, 150], "range": [101, 199] }
+    ]
+  },
+  "Apolipoprotein B": {
+    "Unit": "mg/dL",
+    "Male": [
+      { "ageRange": [0, 0.04], "range": [9, 67] },
+      { "ageRange": [0.04, 1], "range": [19, 123] },
+      { "ageRange": [1, 5], "range": [41, 93] },
+      { "ageRange": [6, 18], "range": [31, 84] },
+      { "ageRange": [19, 150], "range": [55, 140] }
+    ],
+    "Female": [
+      { "ageRange": [0, 0.04], "range": [9, 67] },
+      { "ageRange": [0.04, 1], "range": [19, 123] },
+      { "ageRange": [1, 5], "range": [41, 93] },
+      { "ageRange": [6, 18], "range": [31, 84] },
+      { "ageRange": [19, 150], "range": [55, 125] }
+    ]
+  },
+  "ASO": {
+    "Unit": "IU/mL",
+    "Male": [
+      { "ageRange": [0, 11], "range": [0, 200] },
+      { "ageRange": [12, 17], "range": [0, 160] },
+      { "ageRange": [18, 150], "range": [0, 120] }
+    ],
+    "Female": [
+      { "ageRange": [0, 11], "range": [0, 200] },
+      { "ageRange": [12, 17], "range": [0, 160] },
+      { "ageRange": [18, 150], "range": [0, 120] }
+    ]
+  },
+  "AST": {
+    "Unit": "U/L",
+    "Male": [
+      { "ageRange": [0, 0.04], "range": [0, 162] },
+      { "ageRange": [0.04, 1], "range": [0, 67] },
+      { "ageRange": [1, 6], "range": [0, 44] },
+      { "ageRange": [7, 11], "range": [0, 36] },
+      { "ageRange": [12, 18], "range": [0, 35] },
+      { "ageRange": [19, 150], "range": [0, 34] }
+    ],
+    "Female": [
+      { "ageRange": [0, 0.04], "range": [0, 162] },
+      { "ageRange": [0.04, 1], "range": [0, 67] },
+      { "ageRange": [1, 6], "range": [0, 44] },
+      { "ageRange": [7, 11], "range": [0, 36] },
+      { "ageRange": [12, 18], "range": [0, 26] },
+      { "ageRange": [19, 150], "range": [0, 34] }
+    ]
+  },
+  "Bicarbonate": {
       "Unit": "mmol/L",
       "Male": [
-        { "ageRange": [0, 0.038], "range": [54, 161] },
-        { "ageRange": [0.038, 0.08], "range": [21, 107] },
-        { "ageRange": [0.08, 150], "range": [0, 72] }
+      { "ageRange": [0, 0.04], "range": [5, 20] },
+      { "ageRange": [0.04, 1], "range": [10, 24] },
+      { "ageRange": [1, 4], "range": [14, 24] },
+      { "ageRange": [5, 14], "range": [17, 26] },
+      { "ageRange": [15, 18], "range": [18, 28] },
+      { "ageRange": [19, 60], "range": [22, 29] },
+      { "ageRange": [61, 150], "range": [23, 31] }
       ],
       "Female": [
-        { "ageRange": [0, 0.038], "range": [54, 161] },
-        { "ageRange": [0.038, 0.08], "range": [21, 107] },
-        { "ageRange": [0.08, 150], "range": [0, 72] }
+      { "ageRange": [0, 0.04], "range": [5, 20] },
+      { "ageRange": [0.04, 1], "range": [10, 24] },
+      { "ageRange": [1, 4], "range": [14, 24] },
+      { "ageRange": [5, 14], "range": [17, 26] },
+      { "ageRange": [15, 18], "range": [17, 26] },
+      { "ageRange": [19, 60], "range": [22, 29] },
+      { "ageRange": [61, 150], "range": [23, 31] }
       ]
-    },
-    "Amylase": {
-      "Unit": "U/L",
-      "Male": [
-        { "ageRange": [0, 0.04], "range": [0, 10] },
-        { "ageRange": [0.04, 0.23], "range": [0, 22] },
-        { "ageRange": [0.25, 1], "range": [0, 50] },
-        { "ageRange": [1, 18], "range": [0, 101] },
-        { "ageRange": [19, 70], "range": [0, 125] },
-        { "ageRange": [71, 150], "range": [0, 160] }
-      ],
-      "Female": [
-        { "ageRange": [0, 0.04], "range": [0, 10] },
-        { "ageRange": [0.04, 0.23], "range": [0, 22] },
-        { "ageRange": [0.25, 1], "range": [0, 50] },
-        { "ageRange": [1, 18], "range": [0, 101] },
-        { "ageRange": [19, 70], "range": [0, 125] },
-        { "ageRange": [71, 150], "range": [0, 160] }
-      ]
-    },
-    "Apolipoprotein A1": {
+  },
+  "Bilirubin, Direct": {
       "Unit": "mg/dL",
       "Male": [
-        { "ageRange": [0, 0.04], "range": [62, 91] },
-        { "ageRange": [0.04, 1], "range": [53, 175] },
-        { "ageRange": [1, 13], "range": [80, 164] },
-        { "ageRange": [14, 18], "range": [72, 154] },
-        { "ageRange": [19, 150], "range": [94, 178] }
+      { "ageRange": [0, 0.04], "range": [0.00, 0.70] },
+      { "ageRange": [0.04, 1], "range": [0.00, 0.30] },
+      { "ageRange": [1, 8], "range": [0.00, 0.20] },
+      { "ageRange": [9, 12], "range": [0.00, 0.30] },
+      { "ageRange": [13, 18], "range": [0.00, 0.40] },
+      { "ageRange": [19, 150], "range": [0.00, 0.50] }
       ],
       "Female": [
-        { "ageRange": [0, 0.04], "range": [71, 97] },
-        { "ageRange": [0.04, 1], "range": [53, 175] },
-        { "ageRange": [1, 13], "range": [80, 164] },
-        { "ageRange": [14, 18], "range": [72, 154] },
-        { "ageRange": [19, 150], "range": [101, 199] }
+      { "ageRange": [0, 0.04], "range": [0.00, 0.70] },
+      { "ageRange": [0.04, 1], "range": [0.00, 0.30] },
+      { "ageRange": [1, 8], "range": [0.00, 0.20] },
+      { "ageRange": [9, 12], "range": [0.00, 0.30] },
+      { "ageRange": [13, 18], "range": [0.00, 0.40] },
+      { "ageRange": [19, 150], "range": [0.00, 0.50] }
       ]
-    },
-    "Apolipoprotein B": {
+  },
+  "Bilirubin, Total": {
       "Unit": "mg/dL",
       "Male": [
-        { "ageRange": [0, 0.04], "range": [9, 67] },
-        { "ageRange": [0.04, 1], "range": [19, 123] },
-        { "ageRange": [1, 5], "range": [41, 93] },
-        { "ageRange": [6, 18], "range": [31, 84] },
-        { "ageRange": [19, 150], "range": [55, 140] }
+      { "ageRange": [0, 0.04], "range": [0.0, 17.0] },
+      { "ageRange": [0.04, 1], "range": [0.0, 0.7] },
+      { "ageRange": [1, 8], "range": [0.0, 0.4] },
+      { "ageRange": [9, 11], "range": [0.0, 0.6] },
+      { "ageRange": [12, 14], "range": [0.0, 0.7] },
+      { "ageRange": [15, 18], "range": [0.0, 0.8] },
+      { "ageRange": [19, 150], "range": [0.0, 1.2] }
       ],
       "Female": [
-        { "ageRange": [0, 0.04], "range": [9, 67] },
-        { "ageRange": [0.04, 1], "range": [19, 123] },
-        { "ageRange": [1, 5], "range": [41, 93] },
-        { "ageRange": [6, 18], "range": [31, 84] },
-        { "ageRange": [19, 150], "range": [55, 125] }
+      { "ageRange": [0, 0.04], "range": [0.0, 16.6] },
+      { "ageRange": [0.04, 1], "range": [0.0, 0.7] },
+      { "ageRange": [1, 8], "range": [0.0, 0.4] },
+      { "ageRange": [9, 11], "range": [0.0, 0.6] },
+      { "ageRange": [12, 14], "range": [0.0, 0.7] },
+      { "ageRange": [15, 18], "range": [0.0, 0.8] },
+      { "ageRange": [19, 150], "range": [0.0, 1.2] }
       ]
-    },
-    "ASO": {
-      "Unit": "IU/mL",
-      "Male": [
-        { "ageRange": [0, 11], "range": [0, 200] },
-        { "ageRange": [12, 17], "range": [0, 160] },
-        { "ageRange": [18, 150], "range": [0, 120] }
-      ],
-      "Female": [
-        { "ageRange": [0, 11], "range": [0, 200] },
-        { "ageRange": [12, 17], "range": [0, 160] },
-        { "ageRange": [18, 150], "range": [0, 120] }
-      ]
-    },
-    "AST": {
-      "Unit": "U/L",
-      "Male": [
-        { "ageRange": [0, 0.04], "range": [0, 162] },
-        { "ageRange": [0.04, 1], "range": [0, 67] },
-        { "ageRange": [1, 6], "range": [0, 44] },
-        { "ageRange": [7, 11], "range": [0, 36] },
-        { "ageRange": [12, 18], "range": [0, 35] },
-        { "ageRange": [19, 150], "range": [0, 34] }
-      ],
-      "Female": [
-        { "ageRange": [0, 0.04], "range": [0, 162] },
-        { "ageRange": [0.04, 1], "range": [0, 67] },
-        { "ageRange": [1, 6], "range": [0, 44] },
-        { "ageRange": [7, 11], "range": [0, 36] },
-        { "ageRange": [12, 18], "range": [0, 26] },
-        { "ageRange": [19, 150], "range": [0, 34] }
-      ]
-    },
-    "Bicarbonate": {
-        "Unit": "mmol/L",
-        "Male": [
-        { "ageRange": [0, 0.04], "range": [5, 20] },
-        { "ageRange": [0.04, 1], "range": [10, 24] },
-        { "ageRange": [1, 4], "range": [14, 24] },
-        { "ageRange": [5, 14], "range": [17, 26] },
-        { "ageRange": [15, 18], "range": [18, 28] },
-        { "ageRange": [19, 60], "range": [22, 29] },
-        { "ageRange": [61, 150], "range": [23, 31] }
-        ],
-        "Female": [
-        { "ageRange": [0, 0.04], "range": [5, 20] },
-        { "ageRange": [0.04, 1], "range": [10, 24] },
-        { "ageRange": [1, 4], "range": [14, 24] },
-        { "ageRange": [5, 14], "range": [17, 26] },
-        { "ageRange": [15, 18], "range": [17, 26] },
-        { "ageRange": [19, 60], "range": [22, 29] },
-        { "ageRange": [61, 150], "range": [23, 31] }
-        ]
-    },
-    "Bilirubin, Direct": {
-        "Unit": "mg/dL",
-        "Male": [
-        { "ageRange": [0, 0.04], "range": [0.00, 0.70] },
-        { "ageRange": [0.04, 1], "range": [0.00, 0.30] },
-        { "ageRange": [1, 8], "range": [0.00, 0.20] },
-        { "ageRange": [9, 12], "range": [0.00, 0.30] },
-        { "ageRange": [13, 18], "range": [0.00, 0.40] },
-        { "ageRange": [19, 150], "range": [0.00, 0.50] }
-        ],
-        "Female": [
-        { "ageRange": [0, 0.04], "range": [0.00, 0.70] },
-        { "ageRange": [0.04, 1], "range": [0.00, 0.30] },
-        { "ageRange": [1, 8], "range": [0.00, 0.20] },
-        { "ageRange": [9, 12], "range": [0.00, 0.30] },
-        { "ageRange": [13, 18], "range": [0.00, 0.40] },
-        { "ageRange": [19, 150], "range": [0.00, 0.50] }
-        ]
-    },
-    "Bilirubin, Total": {
-        "Unit": "mg/dL",
-        "Male": [
-        { "ageRange": [0, 0.04], "range": [0.0, 17.0] },
-        { "ageRange": [0.04, 1], "range": [0.0, 0.7] },
-        { "ageRange": [1, 8], "range": [0.0, 0.4] },
-        { "ageRange": [9, 11], "range": [0.0, 0.6] },
-        { "ageRange": [12, 14], "range": [0.0, 0.7] },
-        { "ageRange": [15, 18], "range": [0.0, 0.8] },
-        { "ageRange": [19, 150], "range": [0.0, 1.2] }
-        ],
-        "Female": [
-        { "ageRange": [0, 0.04], "range": [0.0, 16.6] },
-        { "ageRange": [0.04, 1], "range": [0.0, 0.7] },
-        { "ageRange": [1, 8], "range": [0.0, 0.4] },
-        { "ageRange": [9, 11], "range": [0.0, 0.6] },
-        { "ageRange": [12, 14], "range": [0.0, 0.7] },
-        { "ageRange": [15, 18], "range": [0.0, 0.8] },
-        { "ageRange": [19, 150], "range": [0.0, 1.2] }
-        ]
-    },
-    "BUN (Blood Urea Nitrogen)": {
-        "Unit": "mg/dL",
-        "Male": [
-        { "ageRange": [0, 0.04], "range": [3.00, 23.00] },
-        { "ageRange": [0.04, 1], "range": [3.00, 17.00] },
-        { "ageRange": [1, 9], "range": [9.00, 22.00] },
-        { "ageRange": [10, 18], "range": [7.00, 21.00] },
-        { "ageRange": [19, 20], "range": [5.00, 20.00] },
-        { "ageRange": [21, 35], "range": [5.00, 21.00] },
-        { "ageRange": [36, 40], "range": [5.00, 22.00] },
-        { "ageRange": [41, 55], "range": [5.00, 23.00] },
-        { "ageRange": [56, 70], "range": [5.00, 25.00] },
-        { "ageRange": [71, 75], "range": [5.00, 26.00] },
-        { "ageRange": [76, 80], "range": [5.00, 28.00] },
-        { "ageRange": [81, 150], "range": [5.00, 30.00] }
-        ],
-        "Female": [
-        { "ageRange": [0, 0.04], "range": [3.00, 23.00] },
-        { "ageRange": [0.04, 1], "range": [3.00, 17.00] },
-        { "ageRange": [1, 9], "range": [9.00, 22.00] },
-        { "ageRange": [10, 18], "range": [7.00, 19.00] },
-        { "ageRange": [19, 25], "range": [5.00, 17.00] },
-        { "ageRange": [26, 35], "range": [5.00, 18.00] },
-        { "ageRange": [36, 45], "range": [5.00, 19.00] },
-        { "ageRange": [46, 50], "range": [5.00, 20.00] },
-        { "ageRange": [51, 60], "range": [5.00, 22.00] },
-        { "ageRange": [61, 75], "range": [5.00, 24.00] },
-        { "ageRange": [76, 80], "range": [5.00, 26.00] },
-        { "ageRange": [81, 150], "range": [5.00, 28.00] }
-        ]
-    },
-    "Calcium": {
+  },
+  "BUN (Blood Urea Nitrogen)": {
       "Unit": "mg/dL",
       "Male": [
-        { "ageRange": [0, 1], "range": [8.50, 11.00] },
-        { "ageRange": [1, 18], "range": [9.20, 10.50] },
-        { "ageRange": [19, 150], "range": [8.50, 10.50] }
+      { "ageRange": [0, 0.04], "range": [3.00, 23.00] },
+      { "ageRange": [0.04, 1], "range": [3.00, 17.00] },
+      { "ageRange": [1, 9], "range": [9.00, 22.00] },
+      { "ageRange": [10, 18], "range": [7.00, 21.00] },
+      { "ageRange": [19, 20], "range": [5.00, 20.00] },
+      { "ageRange": [21, 35], "range": [5.00, 21.00] },
+      { "ageRange": [36, 40], "range": [5.00, 22.00] },
+      { "ageRange": [41, 55], "range": [5.00, 23.00] },
+      { "ageRange": [56, 70], "range": [5.00, 25.00] },
+      { "ageRange": [71, 75], "range": [5.00, 26.00] },
+      { "ageRange": [76, 80], "range": [5.00, 28.00] },
+      { "ageRange": [81, 150], "range": [5.00, 30.00] }
       ],
       "Female": [
-        { "ageRange": [0, 1], "range": [8.50, 11.00] },
-        { "ageRange": [1, 18], "range": [9.20, 10.50] },
-        { "ageRange": [19, 150], "range": [8.50, 10.50] }
+      { "ageRange": [0, 0.04], "range": [3.00, 23.00] },
+      { "ageRange": [0.04, 1], "range": [3.00, 17.00] },
+      { "ageRange": [1, 9], "range": [9.00, 22.00] },
+      { "ageRange": [10, 18], "range": [7.00, 19.00] },
+      { "ageRange": [19, 25], "range": [5.00, 17.00] },
+      { "ageRange": [26, 35], "range": [5.00, 18.00] },
+      { "ageRange": [36, 45], "range": [5.00, 19.00] },
+      { "ageRange": [46, 50], "range": [5.00, 20.00] },
+      { "ageRange": [51, 60], "range": [5.00, 22.00] },
+      { "ageRange": [61, 75], "range": [5.00, 24.00] },
+      { "ageRange": [76, 80], "range": [5.00, 26.00] },
+      { "ageRange": [81, 150], "range": [5.00, 28.00] }
       ]
-    },
-    "Carotene": {
+  },
+  "Calcium": {
+    "Unit": "mg/dL",
+    "Male": [
+      { "ageRange": [0, 1], "range": [8.50, 11.00] },
+      { "ageRange": [1, 18], "range": [9.20, 10.50] },
+      { "ageRange": [19, 150], "range": [8.50, 10.50] }
+    ],
+    "Female": [
+      { "ageRange": [0, 1], "range": [8.50, 11.00] },
+      { "ageRange": [1, 18], "range": [9.20, 10.50] },
+      { "ageRange": [19, 150], "range": [8.50, 10.50] }
+    ]
+  },
+  "Carotene": {
+    "Unit": "ug/dL",
+    "Male": [
+      { "ageRange": [0, 0.75], "range": [0, 0] },
+      { "ageRange": [0.75, 5], "range": [5.00, 80.00] },
+      { "ageRange": [6, 16], "range": [9.00, 190.00] },
+      { "ageRange": [17, 150], "range": [6.00, 77.00] }
+    ],
+    "Female": [
+      { "ageRange": [0, 0.75], "range": [0, 0] },
+      { "ageRange": [0.75, 5], "range": [5.00, 80.00] },
+      { "ageRange": [6, 16], "range": [9.00, 190.00] },
+      { "ageRange": [17, 150], "range": [6.00, 77.00] }
+    ]
+  },
+  "Ceruloplasmin": {
+    "Unit": "mg/dL",
+    "Male": [
+      { "ageRange": [0, 0.08], "range": [7, 24] },
+      { "ageRange": [0.08, 1], "range": [14, 33] },
+      { "ageRange": [1, 4], "range": [14, 39] },
+      { "ageRange": [4, 7], "range": [22, 43] },
+      { "ageRange": [7, 10], "range": [21, 40] },
+      { "ageRange": [10, 13], "range": [17, 35] },
+      { "ageRange": [13, 16], "range": [20, 60] },
+      { "ageRange": [16, 19], "range": [7, 24] },
+      { "ageRange": [19, 150], "range": [14, 33] }
+    ],
+    "Female": [
+      { "ageRange": [0, 0.08], "range": [7, 24] },
+      { "ageRange": [0.08, 1], "range": [14, 33] },
+      { "ageRange": [1, 4], "range": [14, 39] },
+      { "ageRange": [4, 7], "range": [22, 43] },
+      { "ageRange": [7, 10], "range": [21, 40] },
+      { "ageRange": [10, 13], "range": [21, 43] },
+      { "ageRange": [13, 16], "range": [20, 60] },
+      { "ageRange": [16, 19], "range": [7, 24] },
+      { "ageRange": [19, 150], "range": [14, 33] }
+    ]
+  },
+  "Chloride, Sweat": {
+    "Unit": "mmol/L",
+    "Male": [
+      { "ageRange": [0, 0.5], "range": {"Normal": [0, 29], "Intermediate": [30, 59], "Positive": [60, 999] } },
+      { "ageRange": [0.5, 150], "range": {"Normal": [0, 39], "Intermediate": [40, 60], "Positive": [61, 999] } }
+    ],
+    "Female": [
+      { "ageRange": [0, 0.5], "Normal": "<29", "Intermediate": "30-59", "Positive": ">60" },
+      { "ageRange": [0.5, 150], "Normal": "<39", "Intermediate": "40-60", "Positive": ">60" }
+    ]
+  },
+  "Cholesterol": {
+    "Unit": "mg/dL",
+    "Male": [
+      { "ageRange": [0, 0.04], "range": [42, 109] },
+      { "ageRange": [0.04, 1], "range": [64, 237] },
+      { "ageRange": [1, 18], "range": [112, 208] },
+      { "ageRange": [19, 150], "range": [100, 200] }
+    ],
+    "Female": [
+      { "ageRange": [0, 0.04], "range": [46, 125] },
+      { "ageRange": [0.04, 1], "range": [64, 237] },
+      { "ageRange": [1, 18], "range": [112, 208] },
+      { "ageRange": [19, 150], "range": [100, 200] }
+    ]
+  },
+  "Complement C3": {
+      "Unit": "mg/dL",
+      "Male": [
+      { "ageRange": [0, 0.0027], "range": [59, 121] },
+      { "ageRange": [0.0027, 0.08], "range": [54, 129] },
+      { "ageRange": [0.08, 0.16], "range": [61, 154] },
+      { "ageRange": [0.16, 0.25], "range": [66, 136] },
+      { "ageRange": [0.25, 0.33], "range": [64, 182] },
+      { "ageRange": [0.33, 0.41], "range": [66, 174] },
+      { "ageRange": [0.41, 0.5], "range": [77, 178] },
+      { "ageRange": [0.5, 0.75], "range": [78, 173] },
+      { "ageRange": [0.75, 1], "range": [76, 187] },
+      { "ageRange": [1, 1], "range": [87, 181] },
+      { "ageRange": [2, 2], "range": [84, 177] },
+      { "ageRange": [3, 3], "range": [80, 178] },
+      { "ageRange": [4, 5], "range": [89, 173] },
+      { "ageRange": [6, 7], "range": [91, 161] },
+      { "ageRange": [8, 9], "range": [92, 203] },
+      { "ageRange": [10, 150], "range": [73, 183] }
+      ],
+      "Female": [
+      { "ageRange": [0, 0.0027], "range": [59, 121] },
+      { "ageRange": [0.0027, 0.08], "range": [54, 129] },
+      { "ageRange": [0.08, 0.16], "range": [61, 154] },
+      { "ageRange": [0.16, 0.25], "range": [66, 136] },
+      { "ageRange": [0.25, 0.33], "range": [64, 182] },
+      { "ageRange": [0.33, 0.41], "range": [66, 174] },
+      { "ageRange": [0.41, 0.5], "range": [77, 178] },
+      { "ageRange": [0.5, 0.75], "range": [78, 173] },
+      { "ageRange": [0.75, 1], "range": [76, 187] },
+      { "ageRange": [1, 1], "range": [87, 181] },
+      { "ageRange": [2, 2], "range": [84, 177] },
+      { "ageRange": [3, 3], "range": [80, 178] },
+      { "ageRange": [4, 5], "range": [89, 173] },
+      { "ageRange": [6, 7], "range": [91, 161] },
+      { "ageRange": [8, 9], "range": [92, 203] },
+      { "ageRange": [10, 150], "range": [73, 183] }
+      ]
+  },
+  "Coproporphyrin Random Urine": {
+      "Unit": "ug/G",
+      "Male": [
+      { "ageRange": [0, 1], "range": [0, 0] },
+      { "ageRange": [1, 10], "range": [10.10, 254.70] },
+      { "ageRange": [11, 17], "range": [11.80, 107.20] },
+      { "ageRange": [18, 150], "range": [23.00, 130.00] }
+      ],
+      "Female": [
+      { "ageRange": [0, 1], "range": [0, 0] },
+      { "ageRange": [1, 10], "range": [10.10, 254.70] },
+      { "ageRange": [11, 17], "range": [11.80, 107.20] },
+      { "ageRange": [18, 150], "range": [23.00, 130.00] }
+      ]
+  },
+  "Cortisol AM": {
       "Unit": "ug/dL",
       "Male": [
-        { "ageRange": [0, 0.75], "range": [0, 0] },
-        { "ageRange": [0.75, 5], "range": [5.00, 80.00] },
-        { "ageRange": [6, 16], "range": [9.00, 190.00] },
-        { "ageRange": [17, 150], "range": [6.00, 77.00] }
+      { "ageRange": [0.0055, 0.041], "range": [0.5, 12.3] },
+      { "ageRange": [0.041, 1], "range": [0.5, 16.6] },
+      { "ageRange": [1, 9], "range": [1.7, 10.8] },
+      { "ageRange": [9, 14], "range": [2.2, 12.7] },
+      { "ageRange": [14, 17], "range": [2.8, 16.4] },
+      { "ageRange": [17, 19], "range": [3.5, 18.3] },
+      { "ageRange": [19, 150], "range": [3.7, 19.4] }
       ],
       "Female": [
-        { "ageRange": [0, 0.75], "range": [0, 0] },
-        { "ageRange": [0.75, 5], "range": [5.00, 80.00] },
-        { "ageRange": [6, 16], "range": [9.00, 190.00] },
-        { "ageRange": [17, 150], "range": [6.00, 77.00] }
+      { "ageRange": [0.0055, 0.041], "range": [0.5, 12.3] },
+      { "ageRange": [0.041, 1], "range": [0.5, 16.6] },
+      { "ageRange": [1, 9], "range": [1.7, 10.8] },
+      { "ageRange": [9, 14], "range": [2.2, 12.7] },
+      { "ageRange": [14, 17], "range": [2.8, 16.4] },
+      { "ageRange": [17, 19], "range": [3.5, 18.3] },
+      { "ageRange": [19, 150], "range": [3.7, 19.4] }
       ]
-    },
-    "Ceruloplasmin": {
-      "Unit": "mg/dL",
+  },
+  "Cortisol PM": {
+      "Unit": "ug/dL",
       "Male": [
-        { "ageRange": [0, 0.08], "range": [7, 24] },
-        { "ageRange": [0.08, 1], "range": [14, 33] },
-        { "ageRange": [1, 4], "range": [14, 39] },
-        { "ageRange": [4, 7], "range": [22, 43] },
-        { "ageRange": [7, 10], "range": [21, 40] },
-        { "ageRange": [10, 13], "range": [17, 35] },
-        { "ageRange": [13, 16], "range": [20, 60] },
-        { "ageRange": [16, 19], "range": [7, 24] },
-        { "ageRange": [19, 150], "range": [14, 33] }
+      { "ageRange": [0.0055, 0.041], "range": [0.5, 12.3] },
+      { "ageRange": [0.041, 1], "range": [0.5, 16.6] },
+      { "ageRange": [1, 9], "range": [1.7, 10.8] },
+      { "ageRange": [9, 14], "range": [2.2, 12.7] },
+      { "ageRange": [14, 17], "range": [2.8, 16.4] },
+      { "ageRange": [17, 19], "range": [3.5, 18.3] },
+      { "ageRange": [19, 150], "range": [2.9, 17.3] }
       ],
       "Female": [
-        { "ageRange": [0, 0.08], "range": [7, 24] },
-        { "ageRange": [0.08, 1], "range": [14, 33] },
-        { "ageRange": [1, 4], "range": [14, 39] },
-        { "ageRange": [4, 7], "range": [22, 43] },
-        { "ageRange": [7, 10], "range": [21, 40] },
-        { "ageRange": [10, 13], "range": [21, 43] },
-        { "ageRange": [13, 16], "range": [20, 60] },
-        { "ageRange": [16, 19], "range": [7, 24] },
-        { "ageRange": [19, 150], "range": [14, 33] }
+      { "ageRange": [0.0055, 0.041], "range": [0.5, 12.3] },
+      { "ageRange": [0.041, 1], "range": [0.5, 16.6] },
+      { "ageRange": [1, 9], "range": [1.7, 10.8] },
+      { "ageRange": [9, 14], "range": [2.2, 12.7] },
+      { "ageRange": [14, 17], "range": [2.8, 16.4] },
+      { "ageRange": [17, 19], "range": [3.5, 18.3] },
+      { "ageRange": [19, 150], "range": [2.9, 17.3] }
       ]
-    },
-    "Chloride, Sweat": {
-      "Unit": "mmol/L",
-      "Male": [
-        { "ageRange": [0, 0.5], "range": {"Normal": [0, 29], "Intermediate": [30, 59], "Positive": [60, 999] } },
-        { "ageRange": [0.5, 150], "range": {"Normal": [0, 39], "Intermediate": [40, 60], "Positive": [61, 999] } }
-      ],
-      "Female": [
-        { "ageRange": [0, 0.5], "Normal": "<29", "Intermediate": "30-59", "Positive": ">60" },
-        { "ageRange": [0.5, 150], "Normal": "<39", "Intermediate": "40-60", "Positive": ">60" }
-      ]
-    },
-    "Cholesterol": {
-      "Unit": "mg/dL",
-      "Male": [
-        { "ageRange": [0, 0.04], "range": [42, 109] },
-        { "ageRange": [0.04, 1], "range": [64, 237] },
-        { "ageRange": [1, 18], "range": [112, 208] },
-        { "ageRange": [19, 150], "range": [100, 200] }
-      ],
-      "Female": [
-        { "ageRange": [0, 0.04], "range": [46, 125] },
-        { "ageRange": [0.04, 1], "range": [64, 237] },
-        { "ageRange": [1, 18], "range": [112, 208] },
-        { "ageRange": [19, 150], "range": [100, 200] }
-      ]
-    },
-    "Complement C3": {
-        "Unit": "mg/dL",
-        "Male": [
-        { "ageRange": [0, 0.0027], "range": [59, 121] },
-        { "ageRange": [0.0027, 0.08], "range": [54, 129] },
-        { "ageRange": [0.08, 0.16], "range": [61, 154] },
-        { "ageRange": [0.16, 0.25], "range": [66, 136] },
-        { "ageRange": [0.25, 0.33], "range": [64, 182] },
-        { "ageRange": [0.33, 0.41], "range": [66, 174] },
-        { "ageRange": [0.41, 0.5], "range": [77, 178] },
-        { "ageRange": [0.5, 0.75], "range": [78, 173] },
-        { "ageRange": [0.75, 1], "range": [76, 187] },
-        { "ageRange": [1, 1], "range": [87, 181] },
-        { "ageRange": [2, 2], "range": [84, 177] },
-        { "ageRange": [3, 3], "range": [80, 178] },
-        { "ageRange": [4, 5], "range": [89, 173] },
-        { "ageRange": [6, 7], "range": [91, 161] },
-        { "ageRange": [8, 9], "range": [92, 203] },
-        { "ageRange": [10, 150], "range": [73, 183] }
-        ],
-        "Female": [
-        { "ageRange": [0, 0.0027], "range": [59, 121] },
-        { "ageRange": [0.0027, 0.08], "range": [54, 129] },
-        { "ageRange": [0.08, 0.16], "range": [61, 154] },
-        { "ageRange": [0.16, 0.25], "range": [66, 136] },
-        { "ageRange": [0.25, 0.33], "range": [64, 182] },
-        { "ageRange": [0.33, 0.41], "range": [66, 174] },
-        { "ageRange": [0.41, 0.5], "range": [77, 178] },
-        { "ageRange": [0.5, 0.75], "range": [78, 173] },
-        { "ageRange": [0.75, 1], "range": [76, 187] },
-        { "ageRange": [1, 1], "range": [87, 181] },
-        { "ageRange": [2, 2], "range": [84, 177] },
-        { "ageRange": [3, 3], "range": [80, 178] },
-        { "ageRange": [4, 5], "range": [89, 173] },
-        { "ageRange": [6, 7], "range": [91, 161] },
-        { "ageRange": [8, 9], "range": [92, 203] },
-        { "ageRange": [10, 150], "range": [73, 183] }
-        ]
-    },
-    "Coproporphyrin Random Urine": {
-        "Unit": "ug/G",
-        "Male": [
-        { "ageRange": [0, 1], "range": [0, 0] },
-        { "ageRange": [1, 10], "range": [10.10, 254.70] },
-        { "ageRange": [11, 17], "range": [11.80, 107.20] },
-        { "ageRange": [18, 150], "range": [23.00, 130.00] }
-        ],
-        "Female": [
-        { "ageRange": [0, 1], "range": [0, 0] },
-        { "ageRange": [1, 10], "range": [10.10, 254.70] },
-        { "ageRange": [11, 17], "range": [11.80, 107.20] },
-        { "ageRange": [18, 150], "range": [23.00, 130.00] }
-        ]
-    },
-    "Cortisol AM": {
-        "Unit": "ug/dL",
-        "Male": [
-        { "ageRange": [0.0055, 0.041], "range": [0.5, 12.3] },
-        { "ageRange": [0.041, 1], "range": [0.5, 16.6] },
-        { "ageRange": [1, 9], "range": [1.7, 10.8] },
-        { "ageRange": [9, 14], "range": [2.2, 12.7] },
-        { "ageRange": [14, 17], "range": [2.8, 16.4] },
-        { "ageRange": [17, 19], "range": [3.5, 18.3] },
-        { "ageRange": [19, 150], "range": [3.7, 19.4] }
-        ],
-        "Female": [
-        { "ageRange": [0.0055, 0.041], "range": [0.5, 12.3] },
-        { "ageRange": [0.041, 1], "range": [0.5, 16.6] },
-        { "ageRange": [1, 9], "range": [1.7, 10.8] },
-        { "ageRange": [9, 14], "range": [2.2, 12.7] },
-        { "ageRange": [14, 17], "range": [2.8, 16.4] },
-        { "ageRange": [17, 19], "range": [3.5, 18.3] },
-        { "ageRange": [19, 150], "range": [3.7, 19.4] }
-        ]
-    },
-    "Cortisol PM": {
-        "Unit": "ug/dL",
-        "Male": [
-        { "ageRange": [0.0055, 0.041], "range": [0.5, 12.3] },
-        { "ageRange": [0.041, 1], "range": [0.5, 16.6] },
-        { "ageRange": [1, 9], "range": [1.7, 10.8] },
-        { "ageRange": [9, 14], "range": [2.2, 12.7] },
-        { "ageRange": [14, 17], "range": [2.8, 16.4] },
-        { "ageRange": [17, 19], "range": [3.5, 18.3] },
-        { "ageRange": [19, 150], "range": [2.9, 17.3] }
-        ],
-        "Female": [
-        { "ageRange": [0.0055, 0.041], "range": [0.5, 12.3] },
-        { "ageRange": [0.041, 1], "range": [0.5, 16.6] },
-        { "ageRange": [1, 9], "range": [1.7, 10.8] },
-        { "ageRange": [9, 14], "range": [2.2, 12.7] },
-        { "ageRange": [14, 17], "range": [2.8, 16.4] },
-        { "ageRange": [17, 19], "range": [3.5, 18.3] },
-        { "ageRange": [19, 150], "range": [2.9, 17.3] }
-        ]
-        },
-    "Cortisol, Free Urine": {
-        "Unit": "ug/day",
-        "Male": [
-        { "ageRange": [0, 1], "range": [0.00, 0.00] },
-        { "ageRange": [1, 4], "range": [0.90, 8.20] },
-        { "ageRange": [5, 9], "range": [1.00, 30.00] },
-        { "ageRange": [10, 13], "range": [1.00, 45.00] },
-        { "ageRange": [14, 17], "range": [3.00, 55.00] },
-        { "ageRange": [18, 150], "range": [4.00, 50.00] }
-        ],
-        "Female": [
-        { "ageRange": [0, 1], "range": [0.00, 0.00] },
-        { "ageRange": [1, 4], "range": [0.90, 8.20] },
-        { "ageRange": [5, 9], "range": [1.00, 30.00] },
-        { "ageRange": [10, 13], "range": [1.00, 45.00] },
-        { "ageRange": [14, 17], "range": [3.00, 55.00] },
-        { "ageRange": [18, 150], "range": [4.00, 50.00] }
-        ]
-    },
-    "Creatine Phosphokinase (CPK, CK)": {
-        "Unit": "U/L",
-        "Male": [
-        { "ageRange": [0, 0.0192], "range": [500, 500] },
-        { "ageRange": [0.0192, 0.0769], "range": [300, 300] },
-        { "ageRange": [0.0769, 150], "range": [200, 200] }
-        ],
-        "Female": [
-        { "ageRange": [0, 0.0192], "range": [500, 500] },
-        { "ageRange": [0.0192, 0.0769], "range": [300, 300] },
-        { "ageRange": [0.0769, 150], "range": [168, 168] }
-        ]
-    },
-    "Creatinine": {
-        "Unit": "mg/dL",
-        "Male": [
-        { "ageRange": [0, 0.038], "range": [0.32, 0.92] },
-        { "ageRange": [0.038, 1], "range": [0.10, 0.36] },
-        { "ageRange": [2, 4], "range": [0.20, 0.43] },
-        { "ageRange": [5, 11], "range": [0.31, 0.61] },
-        { "ageRange": [12, 14], "range": [0.45, 0.81] },
-        { "ageRange": [15, 18], "range": [0.62, 1.08] },
-        { "ageRange": [19, 45], "range": [0.50, 1.20] },
-        { "ageRange": [46, 60], "range": [0.50, 1.30] },
-        { "ageRange": [61, 70], "range": [0.50, 1.40] },
-        { "ageRange": [71, 75], "range": [0.50, 1.50] },
-        { "ageRange": [76, 80], "range": [0.50, 1.70] },
-        { "ageRange": [81, 150], "range": [0.50, 1.80] }
-        ],
-        "Female": [
-        { "ageRange": [0, 0.038], "range": [0.32, 0.92] },
-        { "ageRange": [0.038, 1], "range": [0.10, 0.36] },
-        { "ageRange": [2, 4], "range": [0.20, 0.43] },
-        { "ageRange": [5, 11], "range": [0.31, 0.61] },
-        { "ageRange": [12, 14], "range": [0.45, 0.81] },
-        { "ageRange": [15, 18], "range": [0.49, 0.84] },
-        { "ageRange": [19, 45], "range": [0.50, 1.00] },
-        { "ageRange": [46, 60], "range": [0.50, 1.10] },
-        { "ageRange": [61, 70], "range": [0.50, 1.20] },
-        { "ageRange": [71, 75], "range": [0.50, 1.30] },
-        { "ageRange": [76, 80], "range": [0.50, 1.40] },
-        { "ageRange": [81, 150], "range": [0.50, 1.50] }
-        ]
-    },
-    "CRP-HS": {
-        "Unit": "mg/L",
-        "Male": [
-        { "ageRange": [0, 0.038], "range": [0.0, 6.1] },
-        { "ageRange": [0.038, 14], "range": [0.0, 1.0] },
-        { "ageRange": [15, 18], "range": [0.0, 1.7] },
-        { "ageRange": [19, 150], "range": [0.0, 1.0] }
-        ],
-        "Female": [
-        { "ageRange": [0, 0.038], "range": [0.0, 6.1] },
-        { "ageRange": [0.038, 14], "range": [0.0, 1.0] },
-        { "ageRange": [15, 18], "range": [0.0, 1.7] },
-        { "ageRange": [19, 150], "range": [0.0, 1.0] }
-        ]
-    },
-    "Digoxin": {
-        "Unit": "ng/mL",
-        "Male": [
-        { "ageRange": [0, 1], "range": [0.8, 3.5] },
-        { "ageRange": [1, 12], "range": [0.8, 3.0] },
-        { "ageRange": [13, 150], "range": [0.8, 2.0] }
-        ],
-        "Female": [
-        { "ageRange": [0, 1], "range": [0.8, 3.5] },
-        { "ageRange": [1, 12], "range": [0.8, 3.0] },
-        { "ageRange": [13, 150], "range": [0.8, 2.0] }
-        ]
-    },
-    "Fecal Fat, Quant": {
-        "Unit": "grams",
-        "Male": [
-        { "ageRange": [0, 5], "range": [0, 2.00] },
-        { "ageRange": [6, 150], "range": [0, 7.00] }
-        ],
-        "Female": [
-        { "ageRange": [0, 5], "range": [0, 2.00] },
-        { "ageRange": [6, 150], "range": [0, 7.00] }
-        ]
-    },
-    "Ferritin": {
-        "Unit": "ng/mL",
-        "Male": [
-        { "ageRange": [0.011, 0.5], "range": [100, 717] },
-        { "ageRange": [0.5, 2], "range": [14, 647] },
-        { "ageRange": [2, 12], "range": [32, 277] },
-        { "ageRange": [13, 150], "range": [32, 356] }
-        ],
-        "Female": [
-        { "ageRange": [0.011, 0.5], "range": [100, 717] },
-        { "ageRange": [0.5, 2], "range": [14, 647] },
-        { "ageRange": [2, 12], "range": [32, 277] },
-        { "ageRange": [13, 150], "range": [20, 177] }
-        ]
-    },
-    "FSH": {
-        "Unit": "mIU/mL",
-        "Male": [
-        { "ageRange": [0.082, 1], "range": [0.09, 2.41] },
-        { "ageRange": [1, 5], "range": [0.00, 0.91] },
-        { "ageRange": [5, 10], "range": [0.00, 1.62] },
-        { "ageRange": [10, 13], "range": [0.35, 3.91] },
-        { "ageRange": [19, 150], "range": [1.4, 18.1] }
-        ],
-        "Female": [
-        { "ageRange": [0.082, 1], "range": [0.38, 10.35] },
-        { "ageRange": [1, 9], "range": [0.42, 5.45] },
-        { "ageRange": [9, 11], "range": [0.44, 4.22] },
-        { "ageRange": [11, 19], "range": [0.26, 7.77] },
-        { "ageRange": [19, 150], "range": {"Follicular": [2.5, 10.2], "Midcycle": [3.4, 33.4], "Luteal": [1.5, 9.1], "Postmenopausal": [23.0, 116.0], "Pregnant": [0, 0.3]} }
-        ]
-    },
-    "GGT": {
-        "Unit": "U/L",
-        "Male": [
-        { "ageRange": [0, 0.038], "range": [0.00, 219.00] },
-        { "ageRange": [0.038, 1], "range": [0.00, 127.00] },
-        { "ageRange": [1, 10], "range": [0.00, 16.00] },
-        { "ageRange": [11, 18], "range": [0.00, 21.00] },
-        { "ageRange": [19, 150], "range": [0.00, 64.00] }
-        ],
-        "Female": [
-        { "ageRange": [0, 0.038], "range": [0.00, 219.00] },
-        { "ageRange": [0.038, 1], "range": [0.00, 127.00] },
-        { "ageRange": [1, 10], "range": [0.00, 16.00] },
-        { "ageRange": [11, 18], "range": [0.00, 21.00] },
-        { "ageRange": [19, 150], "range": [0.00, 36.00] }
-        ]
-    },
-    "Glucose Fasting": {
-        "Unit": "mg/dL",
-        "Male": [
-        { "ageRange": [0, 0.016], "range": [40.00, 60.00] },
-        { "ageRange": [0.019, 150], "range": [70.00, 100.00] }
-        ],
-        "Female": [
-        { "ageRange": [0, 0.016], "range": [40.00, 60.00] },
-        { "ageRange": [0.019, 150], "range": [70.00, 100.00] }
-        ]
-    },
-    "Haptoglobin": {
-        "Unit": "mg/dL",
-        "Male": [
-        { "ageRange": [0, 0.038], "range": [0.00, 10.00] },
-        { "ageRange": [0.038, 1], "range": [7.00, 221.00] },
-        { "ageRange": [1, 11], "range": [7.00, 163.00] },
-        { "ageRange": [12, 18], "range": [7.00, 179.00] },
-        { "ageRange": [19, 150], "range": [37.00, 184.00] }
-        ],
-        "Female": [
-        { "ageRange": [0, 0.038], "range": [0.00, 10.00] },
-        { "ageRange": [0.038, 1], "range": [7.00, 221.00] },
-        { "ageRange": [1, 11], "range": [7.00, 163.00] },
-        { "ageRange": [12, 18], "range": [7.00, 179.00] },
-        { "ageRange": [19, 150], "range": [37.00, 184.00] }
-        ]
-    },
-    "Hematocrit": {
-        "Unit": "%",
-        "Male": [
-        { "ageRange": [0, 0.035], "range": [40.00, 72.00] },
-        { "ageRange": [0.035, 1], "range": [32.00, 55.00] },
-        { "ageRange": [1, 3], "range": [30.00, 54.00] },
-        { "ageRange": [3, 6], "range": [28.00, 40.50] },
-        { "ageRange": [6, 12], "range": [30.00, 42.00] },
-        { "ageRange": [1, 3], "range": [30.00, 44.00] },
-        { "ageRange": [4, 7], "range": [30.00, 46.00] },
-        { "ageRange": [8, 11], "range": [32.00, 48.00] },
-        { "ageRange": [12, 13], "range": [34.50, 52.00] },
-        { "ageRange": [14, 15], "range": [37.00, 52.00] },
-        { "ageRange": [16, 20], "range": [40.00, 50.30] },
-        { "ageRange": [21, 30], "range": [40.90, 50.80] },
-        { "ageRange": [31, 40], "range": [40.70, 50.80] },
-        { "ageRange": [41, 50], "range": [40.20, 50.80] },
-        { "ageRange": [51, 60], "range": [39.50, 51.10] },
-        { "ageRange": [61, 150], "range": [38.30, 51.20] }
-        ],
-        "Female": [
-        { "ageRange": [0, 0.035], "range": [40.00, 72.00] },
-        { "ageRange": [0.035, 1], "range": [32.00, 55.00] },
-        { "ageRange": [1, 3], "range": [30.00, 54.00] },
-        { "ageRange": [3, 6], "range": [28.00, 40.50] },
-        { "ageRange": [6, 12], "range": [30.00, 42.00] },
-        { "ageRange": [1, 3], "range": [30.00, 44.00] },
-        { "ageRange": [4, 7], "range": [30.00, 46.00] },
-        { "ageRange": [8, 11], "range": [32.00, 48.00] },
-        { "ageRange": [12, 15], "range": [34.50, 47.00] },
-        { "ageRange": [16, 20], "range": [33.90, 45.10] },
-        { "ageRange": [21, 30], "range": [33.90, 45.50] },
-        { "ageRange": [31, 40], "range": [35.00, 46.10] },
-        { "ageRange": [41, 50], "range": [35.80, 46.90] },
-        { "ageRange": [51, 60], "range": [36.40, 47.70] },
-        { "ageRange": [61, 150], "range": [35.70, 47.80] }
-        ]
-    },
-    "Hemoglobin": {
-        "Unit": "gm/dL",
-        "Male": [
-        { "ageRange": [0, 0.035], "range": [14.00, 23.00] },
-        { "ageRange": [0.035, 1], "range": [11.00, 18.00] },
-        { "ageRange": [1, 3], "range": [9.80, 17.80] },
-        { "ageRange": [3, 6], "range": [9.60, 13.40] },
-        { "ageRange": [6, 12], "range": [10.20, 13.80] },
-        { "ageRange": [1, 3], "range": [10.20, 14.40] },
-        { "ageRange": [4, 7], "range": [10.50, 15.10] },
-        { "ageRange": [8, 11], "range": [10.90, 15.80] },
-        { "ageRange": [12, 13], "range": [11.50, 16.50] },
-        { "ageRange": [14, 15], "range": [12.40, 17.10] },
-        { "ageRange": [16, 20], "range": [13.40, 17.30] },
-        { "ageRange": [21, 30], "range": [13.80, 17.40] },
-        { "ageRange": [31, 40], "range": [13.60, 17.40] },
-        { "ageRange": [51, 60], "range": [13.10, 17.30] },
-        { "ageRange": [61, 150], "range": [12.50, 17.30] }
-        ],
-        "Female": [
-        { "ageRange": [0, 0.035], "range": [14.00, 23.00] },
-        { "ageRange": [0.035, 1], "range": [11.00, 18.00] },
-        { "ageRange": [1, 3], "range": [9.80, 17.80] },
-        { "ageRange": [3, 6], "range": [9.60, 13.40] },
-        { "ageRange": [6, 12], "range": [10.20, 13.80] },
-        { "ageRange": [1, 3], "range": [10.20, 14.40] },
-        { "ageRange": [4, 7], "range": [10.50, 15.10] },
-        { "ageRange": [8, 11], "range": [10.90, 15.80] },
-        { "ageRange": [12, 15], "range": [11.50, 16.00] },
-        { "ageRange": [16, 20], "range": [11.20, 15.20] },
-        { "ageRange": [21, 30], "range": [11.20, 15.30] },
-        { "ageRange": [31, 40], "range": [11.40, 15.50] },
-        { "ageRange": [41, 50], "range": [11.60, 15.70] },
-        { "ageRange": [51, 60], "range": [11.80, 15.90] },
-        { "ageRange": [61, 150], "range": [11.60, 15.90] }
-      ]
-    },
-    "HDL Cholesterol": {
-        "Unit": "mg/dL",
-        "Male": [
-        { "ageRange": [0, 0.038], "range": [15, 42] },
-        { "ageRange": [0.038, 1], "range": [12, 71] },
-        { "ageRange": [1, 3], "range": [31, 63] },
-        { "ageRange": [4, 12], "range": [36, 73] },
-        { "ageRange": [13, 18], "range": [32, 68] },
-        { "ageRange": [19, 150], "range": [40, 125] }
-        ],
-        "Female": [
-        { "ageRange": [0, 0.038], "range": [15, 42] },
-        { "ageRange": [0.038, 1], "range": [12, 71] },
-        { "ageRange": [1, 3], "range": [31, 63] },
-        { "ageRange": [4, 12], "range": [36, 73] },
-        { "ageRange": [13, 18], "range": [32, 72] },
-        { "ageRange": [19, 150], "range": [40, 125] }
-        ]
-    },
-    "Homocysteine": {
-        "Unit": "mmol/L",
-        "Male": [
-        { "ageRange": [0.0137, 1], "range": [2.9, 10.0] },
-        { "ageRange": [1, 7], "range": [2.8, 7.6] },
-        { "ageRange": [7, 12], "range": [3.4, 8.5] },
-        { "ageRange": [12, 15], "range": [4.7, 10.4] },
-        { "ageRange": [15, 19], "range": [5.5, 13.4] },
-        { "ageRange": [19, 150], "range": [0.0, 15.4] }
-        ],
-        "Female": [
-        { "ageRange": [0.0137, 1], "range": [2.9, 10.0] },
-        { "ageRange": [1, 7], "range": [2.8, 7.6] },
-        { "ageRange": [7, 12], "range": [3.4, 8.5] },
-        { "ageRange": [12, 15], "range": [4.7, 10.4] },
-        { "ageRange": [15, 19], "range": [4.9, 11.9] },
-        { "ageRange": [19, 150], "range": [0.0, 15.4] }
-        ]
-    },
-    "Iron": {
-        "Unit": "ug/dL",
-        "Male": [
-        { "ageRange": [0, 13], "range": [16, 128] },
-        { "ageRange": [14, 18], "range": [31, 168] },
-        { "ageRange": [19, 150], "range": [37, 167] }
-        ],
-        "Female": [
-        { "ageRange": [0, 13], "range": [16, 128] },
-        { "ageRange": [14, 18], "range": [20, 162] },
-        { "ageRange": [19, 150], "range": [33, 167] }
-        ]
-    },
-    "LDH": {
-        "Unit": "U/L",
-        "Male": [
-        { "ageRange": [0, 0.038], "range": [309, 1222] },
-        { "ageRange": [0.038, 1], "range": [163, 452] },
-        { "ageRange": [1, 9], "range": [192, 321] },
-        { "ageRange": [10, 14], "range": [170, 283] },
-        { "ageRange": [15, 18], "range": [130, 250] },
-        { "ageRange": [19, 150], "range": [117, 278] }
-        ],
-        "Female": [
-        { "ageRange": [0, 0.038], "range": [309, 1222] },
-        { "ageRange": [0.038, 1], "range": [163, 452] },
-        { "ageRange": [1, 9], "range": [192, 321] },
-        { "ageRange": [10, 14], "range": [157, 272] },
-        { "ageRange": [15, 18], "range": [130, 250] },
-        { "ageRange": [19, 150], "range": [117, 278] }
-        ]
-    },
-    "Lipase": {
-        "Unit": "U/L",
-        "Male": [
-        { "ageRange": [0, 18], "range": [0, 39] },
-        { "ageRange": [19, 150], "range": [0, 60] }
-        ],
-        "Female": [
-        { "ageRange": [0, 18], "range": [0, 39] },
-        { "ageRange": [19, 150], "range": [0, 60] }
-        ]
-    },
-    "Magnesium": {
-        "Unit": "mg/dL",
-        "Male": [
-        { "ageRange": [0, 0.038], "range": [2.0, 3.9] },
-        { "ageRange": [0.038, 1], "range": [2.0, 3.1] },
-        { "ageRange": [1, 18], "range": [2.1, 2.8] },
-        { "ageRange": [19, 150], "range": [1.6, 2.8] }
-        ],
-        "Female": [
-        { "ageRange": [0, 0.038], "range": [2.0, 3.9] },
-        { "ageRange": [0.038, 1], "range": [2.0, 3.1] },
-        { "ageRange": [1, 18], "range": [2.1, 2.8] },
-        { "ageRange": [19, 150], "range": [1.6, 2.8] }
-        ]
-    },
-    "MCH": {
-        "Unit": "pg",
-        "Male": [
-        { "ageRange": [0, 0.035], "range": [30.00, 39.50] },
-        { "ageRange": [0.035, 1], "range": [28.00, 35.00] },
-        { "ageRange": [1, 15], "range": [25.00, 34.00] },
-        { "ageRange": [16, 20], "range": [26.90, 32.50] },
-        { "ageRange": [21, 30], "range": [27.20, 32.70] },
-        { "ageRange": [31, 40], "range": [27.30, 33.10] },
-        { "ageRange": [41, 50], "range": [27.50, 33.50] },
-        { "ageRange": [51, 150], "range": [27.60, 33.80] }
-        ],
-        "Female": [
-        { "ageRange": [0, 0.035], "range": [30.00, 39.50] },
-        { "ageRange": [0.035, 1], "range": [28.00, 35.00] },
-        { "ageRange": [1, 15], "range": [25.00, 34.00] },
-        { "ageRange": [16, 20], "range": [25.80, 32.40] },
-        { "ageRange": [21, 30], "range": [26.00, 32.60] },
-        { "ageRange": [31, 40], "range": [26.00, 33.00] },
-        { "ageRange": [41, 50], "range": [26.10, 33.30] },
-        { "ageRange": [51, 60], "range": [26.70, 33.20] },
-        { "ageRange": [61, 150], "range": [26.80, 33.30] }
-        ]
-    },
-    "MCHC": {
-        "Unit": "gm/dL",
-        "Male": [
-        { "ageRange": [0, 15], "range": [32.30, 36.50] },
-        { "ageRange": [16, 30], "range": [32.10, 35.90] },
-        { "ageRange": [31, 40], "range": [32.00, 35.90] },
-        { "ageRange": [41, 50], "range": [31.90, 35.70] },
-        { "ageRange": [51, 60], "range": [31.80, 35.70] },
-        { "ageRange": [61, 150], "range": [31.60, 35.50] }
-        ],
-        "Female": [
-        { "ageRange": [0, 15], "range": [32.30, 36.50] },
-        { "ageRange": [16, 30], "range": [31.30, 35.30] },
-        { "ageRange": [31, 40], "range": [31.20, 35.00] },
-        { "ageRange": [41, 50], "range": [31.00, 34.90] },
-        { "ageRange": [51, 60], "range": [31.00, 34.80] },
-        { "ageRange": [61, 150], "range": [30.90, 34.70] }
-        ]
-    },
-    "MCV": {
-        "Unit": "fL",
-        "Male": [
-        { "ageRange": [0, 0.035], "range": [91.00, 120.00] },
-        { "ageRange": [0.035, 1], "range": [86.00, 106.00] },
-        { "ageRange": [1, 3], "range": [77.00, 103.00] },
-        { "ageRange": [3, 6], "range": [73.00, 92.00] },
-        { "ageRange": [6, 12], "range": [73.00, 87.00] },
-        { "ageRange": [1, 3], "range": [73.00, 90.00] },
-        { "ageRange": [4, 7], "range": [75.00, 92.00] },
-        { "ageRange": [8, 11], "range": [76.00, 93.00] },
-        { "ageRange": [12, 15], "range": [78.00, 97.00] },
-        { "ageRange": [16, 20], "range": [81.00, 95.30] },
-        { "ageRange": [21, 30], "range": [81.50, 97.10] },
-        { "ageRange": [31, 40], "range": [81.60, 98.10] },
-        { "ageRange": [41, 50], "range": [82.50, 99.40] },
-        { "ageRange": [51, 60], "range": [83.30, 100.90] },
-        { "ageRange": [61, 70], "range": [83.70, 101.20] },
-        { "ageRange": [70, 150], "range": [83.70, 103.10] }
-        ],
-        "Female": [
-        { "ageRange": [0, 0.035], "range": [91.00, 120.00] },
-        { "ageRange": [0.035, 1], "range": [86.00, 106.00] },
-        { "ageRange": [1, 3], "range": [77.00, 103.00] },
-        { "ageRange": [3, 6], "range": [73.00, 92.00] },
-        { "ageRange": [6, 12], "range": [73.00, 87.00] },
-        { "ageRange": [1, 3], "range": [73.00, 90.00] },
-        { "ageRange": [4, 7], "range": [75.00, 92.00] },
-        { "ageRange": [8, 11], "range": [76.00, 93.00] },
-        { "ageRange": [12, 15], "range": [78.00, 97.00] },
-        { "ageRange": [16, 20], "range": [80.10, 97.70] },
-        { "ageRange": [21, 30], "range": [80.30, 98.70] },
-        { "ageRange": [31, 40], "range": [80.90, 100.00] },
-        { "ageRange": [41, 50], "range": [81.70, 101.00] },
-        { "ageRange": [51, 60], "range": [82.80, 101.50] },
-        { "ageRange": [61, 70], "range": [83.20, 102.10] },
-        { "ageRange": [70, 150], "range": [83.20, 103.50] }
-        ]
-    },
-    "MPV": {
-        "Unit": "fL",
-        "Male": [
-        { "ageRange": [0, 15], "range": [9.30, 12.90] },
-        { "ageRange": [16, 20], "range": [9.5, 12.8] },
-        { "ageRange": [21, 30], "range": [9.5, 12.8] },
-        { "ageRange": [31, 40], "range": [9.4, 12.8] },
-        { "ageRange": [41, 50], "range": [9.4, 12.9] },
-        { "ageRange": [51, 60], "range": [9.5, 12.9] },
-        { "ageRange": [60, 150], "range": [9.5, 12.8] }
-        ],
-        "Female": [
-        { "ageRange": [0, 15], "range": [9.3, 12.9] },
-        { "ageRange": [16, 20], "range": [9.4, 12.8] },
-        { "ageRange": [21, 30], "range": [9.4, 12.9] },
-        { "ageRange": [31, 40], "range": [9.4, 12.8] },
-        { "ageRange": [41, 50], "range": [9.4, 12.8] },
-        { "ageRange": [51, 60], "range": [9.4, 12.8] },
-        { "ageRange": [60, 150], "range": [9.5, 12.9] }
-      ]
-    },
-    "Osmolality Serum": {
-      "Unit": "mOsm/kg",
-      "Male": [
-        { "ageRange": [0, 0.016], "range": [265, 295] },
-        { "ageRange": [0.019, 59], "range": [275, 295] },
-        { "ageRange": [60, 150], "range": [280, 300] }
-      ],
-      "Female": [
-        { "ageRange": [0, 0.016], "range": [265, 295] },
-        { "ageRange": [0.019, 59], "range": [275, 295] },
-        { "ageRange": [60, 150], "range": [280, 300] }
-      ]
-    },
-    "Phenobarbital": {
-      "Unit": "mcg/mL",
-      "Male": [
-        { "ageRange": [0, 4], "range": [15, 30] },
-        { "ageRange": [5, 150], "range": [15, 40] }
-      ],
-      "Female": [
-        { "ageRange": [0, 4], "range": [15, 30] },
-        { "ageRange": [5, 150], "range": [15, 40] }
-      ]
-    },
-    "Phosphorus": {
-        "Unit": "mg/dL",
-        "Male": [
-        { "ageRange": [0, 0.038], "range": [5.6, 10.5] },
-        { "ageRange": [0.038, 1], "range": [4.8, 8.4] },
-        { "ageRange": [1, 4], "range": [4.3, 6.8] },
-        { "ageRange": [5, 12], "range": [4.1, 5.9] },
-        { "ageRange": [13, 15], "range": [3.5, 6.2] },
-        { "ageRange": [16, 18], "range": [2.9, 5.0] },
-        { "ageRange": [19, 150], "range": [2.5, 4.5] }
-        ],
-        "Female": [
-        { "ageRange": [0, 0.038], "range": [5.6, 10.5] },
-        { "ageRange": [0.038, 1], "range": [4.8, 8.4] },
-        { "ageRange": [1, 4], "range": [4.3, 6.8] },
-        { "ageRange": [5, 12], "range": [4.1, 5.9] },
-        { "ageRange": [13, 15], "range": [3.2, 5.5] },
-        { "ageRange": [16, 18], "range": [2.9, 5.0] },
-        { "ageRange": [19, 150], "range": [2.5, 4.5] }
-        ]
-    },
-    "Platelet Count": {
-        "Unit": "109/L",
-        "Male": [
-        { "ageRange": [0, 15], "range": [150.00, 480.00] },
-        { "ageRange": [16, 50], "range": [159.00, 400.00] },
-        { "ageRange": [51, 150], "range": [140.00, 400.00] }
-        ],
-        "Female": [
-        { "ageRange": [0, 15], "range": [150.00, 480.00] },
-        { "ageRange": [16, 150], "range": [150.00, 450.00] }
-        ]
-    },
-    "Potassium Serum": {
-        "Unit": "",
-        "Male": [
-        { "ageRange": [0, 1], "range": [3.50, 6.00] },
-        { "ageRange": [1, 150], "range": [3.50, 5.50] }
-        ],
-        "Female": [
-        { "ageRange": [0, 1], "range": [3.50, 6.00] },
-        { "ageRange": [1, 150], "range": [3.50, 5.50] }
-        ]
-    },
-    "Prealbumin": {
-        "Unit": "mg/dL",
-        "Male": [
-        { "ageRange": [0, 0.038], "range": [2, 12] },
-        { "ageRange": [0.038, 1], "range": [5, 24] },
-        { "ageRange": [1, 4], "range": [12, 23] },
-        { "ageRange": [5, 12], "range": [14, 26] },
-        { "ageRange": [13, 15], "range": [18, 31] },
-        { "ageRange": [16, 18], "range": [20, 35] },
-        { "ageRange": [19, 150], "range": [18, 37] }
-        ],
-        "Female": [
-        { "ageRange": [0, 0.038], "range": [2, 12] },
-        { "ageRange": [0.038, 1], "range": [5, 24] },
-        { "ageRange": [1, 4], "range": [12, 23] },
-        { "ageRange": [5, 12], "range": [14, 26] },
-        { "ageRange": [13, 15], "range": [18, 31] },
-        { "ageRange": [16, 18], "range": [17, 33] },
-        { "ageRange": [19, 150], "range": [18, 37] }
-        ]
-    },
-    "Prolactin": {
-        "Unit": "ng/ml",
-        "Male": [
-        { "ageRange": [0, 150], "range": [2.1, 17.7] }
-        ],
-        "Female": [
-            { "ageRange": "Non-pregnant", "range": [2.8, 29.2] },
-            { "ageRange": "Pregnant", "range": [9.7, 208.5] },
-            { "ageRange": "Post-menopausal", "range": [1.8, 20.3] }
-        ]
-    },
-    "Protein CSF": {
-        "Unit": "mg/dL",
-        "Male": [
-          { "ageRange": [0, 0.08], "range": [20, 170] },
-          { "ageRange": [0.08, 0.25], "range": [20, 100] },
-          { "ageRange": [0.25, 0.5], "range": [15, 50] },
-          { "ageRange": [0.5, 150], "range": [15, 45] }
-        ],
-        "Female": [
-          { "ageRange": [0, 0.08], "range": [20, 170] },
-          { "ageRange": [0.08, 0.25], "range": [20, 100] },
-          { "ageRange": [0.25, 0.5], "range": [15, 50] },
-          { "ageRange": [0.5, 150], "range": [15, 45] }
-        ]
       },
-    "Protein Total Serum": {
-        "Unit": "gm/dL",
-        "Male": [
-        { "ageRange": [0, 0.038], "range": [5.30, 8.30] },
-        { "ageRange": [0.038, 1], "range": [4.40, 7.10] },
-        { "ageRange": [1, 5], "range": [6.10, 7.50] },
-        { "ageRange": [6, 8], "range": [6.40, 7.70] },
-        { "ageRange": [9, 18], "range": [6.50, 8.10] },
-        { "ageRange": [19, 20], "range": [6.70, 8.30] },
-        { "ageRange": [21, 30], "range": [6.70, 8.30] },
-        { "ageRange": [31, 40], "range": [6.60, 8.20] },
-        { "ageRange": [41, 50], "range": [6.60, 8.20] },
-        { "ageRange": [51, 60], "range": [6.50, 8.10] },
-        { "ageRange": [61, 70], "range": [6.40, 8.10] },
-        { "ageRange": [71, 150], "range": [6.20, 8.00] }
-        ],
-        "Female": [
-        { "ageRange": [0, 0.038], "range": [5.30, 8.30] },
-        { "ageRange": [0.038, 1], "range": [4.40, 7.10] },
-        { "ageRange": [1, 5], "range": [6.10, 7.50] },
-        { "ageRange": [6, 8], "range": [6.40, 7.70] },
-        { "ageRange": [9, 18], "range": [6.50, 8.10] },
-        { "ageRange": [19, 20], "range": [6.50, 8.30] },
-        { "ageRange": [21, 30], "range": [6.60, 8.30] },
-        { "ageRange": [31, 40], "range": [6.50, 8.20] },
-        { "ageRange": [41, 50], "range": [6.40, 8.10] },
-        { "ageRange": [51, 60], "range": [6.40, 8.10] },
-        { "ageRange": [61, 70], "range": [6.40, 8.10] },
-        { "ageRange": [71, 150], "range": [6.20, 8.10] }
-        ]
-    },
-    "RBC": {
-        "Unit": "X 10^12/L",
-        "Male": [
-        { "ageRange": [0, 0.035], "range": [4.00, 6.00] },
-        { "ageRange": [0.035, 1], "range": [3.85, 5.30] },
-        { "ageRange": [1, 3], "range": [3.80, 5.10] },
-        { "ageRange": [3, 6], "range": [3.75, 4.80] },
-        { "ageRange": [6, 12], "range": [3.75, 4.90] },
-        { "ageRange": [1, 3], "range": [3.85, 5.00] },
-        { "ageRange": [4, 7], "range": [4.05, 5.17] },
-        { "ageRange": [8, 11], "range": [4.20, 5.25] },
-        { "ageRange": [12, 13], "range": [4.25, 5.45] },
-        { "ageRange": [14, 15], "range": [4.30, 5.45] },
-        { "ageRange": [16, 20], "range": [4.56, 5.74] },
-        { "ageRange": [21, 30], "range": [4.57, 5.78] },
-        { "ageRange": [31, 40], "range": [4.53, 5.73] },
-        { "ageRange": [41, 50], "range": [4.44, 5.67] },
-        { "ageRange": [51, 60], "range": [4.39, 5.64] },
-        { "ageRange": [61, 150], "range": [4.34, 5.61] }
-        ],
-        "Female": [
-        { "ageRange": [0, 0.035], "range": [4.00, 6.00] },
-        { "ageRange": [0.035, 1], "range": [3.85, 5.30] },
-        { "ageRange": [1, 3], "range": [3.80, 5.10] },
-        { "ageRange": [3, 6], "range": [3.75, 4.80] },
-        { "ageRange": [6, 12], "range": [3.75, 4.90] },
-        { "ageRange": [1, 3], "range": [3.85, 5.00] },
-        { "ageRange": [4, 7], "range": [4.05, 5.17] },
-        { "ageRange": [8, 11], "range": [4.20, 5.25] },
-        { "ageRange": [12, 15], "range": [3.79, 5.25] },
-        { "ageRange": [16, 20], "range": [3.92, 5.13] },
-        { "ageRange": [21, 30], "range": [3.90, 5.13] },
-        { "ageRange": [31, 40], "range": [3.94, 5.13] },
-        { "ageRange": [41, 50], "range": [3.95, 5.16] },
-        { "ageRange": [51, 60], "range": [3.97, 5.19] },
-        { "ageRange": [61, 150], "range": [3.93, 5.19] }
+  "Cortisol, Free Urine": {
+      "Unit": "ug/day",
+      "Male": [
+      { "ageRange": [0, 1], "range": [0.00, 0.00] },
+      { "ageRange": [1, 4], "range": [0.90, 8.20] },
+      { "ageRange": [5, 9], "range": [1.00, 30.00] },
+      { "ageRange": [10, 13], "range": [1.00, 45.00] },
+      { "ageRange": [14, 17], "range": [3.00, 55.00] },
+      { "ageRange": [18, 150], "range": [4.00, 50.00] }
+      ],
+      "Female": [
+      { "ageRange": [0, 1], "range": [0.00, 0.00] },
+      { "ageRange": [1, 4], "range": [0.90, 8.20] },
+      { "ageRange": [5, 9], "range": [1.00, 30.00] },
+      { "ageRange": [10, 13], "range": [1.00, 45.00] },
+      { "ageRange": [14, 17], "range": [3.00, 55.00] },
+      { "ageRange": [18, 150], "range": [4.00, 50.00] }
       ]
-    },
-    "RDW-CV": {
+  },
+  "Creatine Phosphokinase (CPK, CK)": {
+      "Unit": "U/L",
+      "Male": [
+      { "ageRange": [0, 0.0192], "range": [500, 500] },
+      { "ageRange": [0.0192, 0.0769], "range": [300, 300] },
+      { "ageRange": [0.0769, 150], "range": [200, 200] }
+      ],
+      "Female": [
+      { "ageRange": [0, 0.0192], "range": [500, 500] },
+      { "ageRange": [0.0192, 0.0769], "range": [300, 300] },
+      { "ageRange": [0.0769, 150], "range": [168, 168] }
+      ]
+  },
+  "Creatinine": {
+      "Unit": "mg/dL",
+      "Male": [
+      { "ageRange": [0, 0.038], "range": [0.32, 0.92] },
+      { "ageRange": [0.038, 1], "range": [0.10, 0.36] },
+      { "ageRange": [2, 4], "range": [0.20, 0.43] },
+      { "ageRange": [5, 11], "range": [0.31, 0.61] },
+      { "ageRange": [12, 14], "range": [0.45, 0.81] },
+      { "ageRange": [15, 18], "range": [0.62, 1.08] },
+      { "ageRange": [19, 45], "range": [0.50, 1.20] },
+      { "ageRange": [46, 60], "range": [0.50, 1.30] },
+      { "ageRange": [61, 70], "range": [0.50, 1.40] },
+      { "ageRange": [71, 75], "range": [0.50, 1.50] },
+      { "ageRange": [76, 80], "range": [0.50, 1.70] },
+      { "ageRange": [81, 150], "range": [0.50, 1.80] }
+      ],
+      "Female": [
+      { "ageRange": [0, 0.038], "range": [0.32, 0.92] },
+      { "ageRange": [0.038, 1], "range": [0.10, 0.36] },
+      { "ageRange": [2, 4], "range": [0.20, 0.43] },
+      { "ageRange": [5, 11], "range": [0.31, 0.61] },
+      { "ageRange": [12, 14], "range": [0.45, 0.81] },
+      { "ageRange": [15, 18], "range": [0.49, 0.84] },
+      { "ageRange": [19, 45], "range": [0.50, 1.00] },
+      { "ageRange": [46, 60], "range": [0.50, 1.10] },
+      { "ageRange": [61, 70], "range": [0.50, 1.20] },
+      { "ageRange": [71, 75], "range": [0.50, 1.30] },
+      { "ageRange": [76, 80], "range": [0.50, 1.40] },
+      { "ageRange": [81, 150], "range": [0.50, 1.50] }
+      ]
+  },
+  "CRP-HS": {
+      "Unit": "mg/L",
+      "Male": [
+      { "ageRange": [0, 0.038], "range": [0.0, 6.1] },
+      { "ageRange": [0.038, 14], "range": [0.0, 1.0] },
+      { "ageRange": [15, 18], "range": [0.0, 1.7] },
+      { "ageRange": [19, 150], "range": [0.0, 1.0] }
+      ],
+      "Female": [
+      { "ageRange": [0, 0.038], "range": [0.0, 6.1] },
+      { "ageRange": [0.038, 14], "range": [0.0, 1.0] },
+      { "ageRange": [15, 18], "range": [0.0, 1.7] },
+      { "ageRange": [19, 150], "range": [0.0, 1.0] }
+      ]
+  },
+  "Digoxin": {
+      "Unit": "ng/mL",
+      "Male": [
+      { "ageRange": [0, 1], "range": [0.8, 3.5] },
+      { "ageRange": [1, 12], "range": [0.8, 3.0] },
+      { "ageRange": [13, 150], "range": [0.8, 2.0] }
+      ],
+      "Female": [
+      { "ageRange": [0, 1], "range": [0.8, 3.5] },
+      { "ageRange": [1, 12], "range": [0.8, 3.0] },
+      { "ageRange": [13, 150], "range": [0.8, 2.0] }
+      ]
+  },
+  "Fecal Fat, Quant": {
+      "Unit": "grams",
+      "Male": [
+      { "ageRange": [0, 5], "range": [0, 2.00] },
+      { "ageRange": [6, 150], "range": [0, 7.00] }
+      ],
+      "Female": [
+      { "ageRange": [0, 5], "range": [0, 2.00] },
+      { "ageRange": [6, 150], "range": [0, 7.00] }
+      ]
+  },
+  "Ferritin": {
+      "Unit": "ng/mL",
+      "Male": [
+      { "ageRange": [0.011, 0.5], "range": [100, 717] },
+      { "ageRange": [0.5, 2], "range": [14, 647] },
+      { "ageRange": [2, 12], "range": [32, 277] },
+      { "ageRange": [13, 150], "range": [32, 356] }
+      ],
+      "Female": [
+      { "ageRange": [0.011, 0.5], "range": [100, 717] },
+      { "ageRange": [0.5, 2], "range": [14, 647] },
+      { "ageRange": [2, 12], "range": [32, 277] },
+      { "ageRange": [13, 150], "range": [20, 177] }
+      ]
+  },
+  "FSH": {
+      "Unit": "mIU/mL",
+      "Male": [
+      { "ageRange": [0.082, 1], "range": [0.09, 2.41] },
+      { "ageRange": [1, 5], "range": [0.00, 0.91] },
+      { "ageRange": [5, 10], "range": [0.00, 1.62] },
+      { "ageRange": [10, 13], "range": [0.35, 3.91] },
+      { "ageRange": [19, 150], "range": [1.4, 18.1] }
+      ],
+      "Female": [
+      { "ageRange": [0.082, 1], "range": [0.38, 10.35] },
+      { "ageRange": [1, 9], "range": [0.42, 5.45] },
+      { "ageRange": [9, 11], "range": [0.44, 4.22] },
+      { "ageRange": [11, 19], "range": [0.26, 7.77] },
+      { "ageRange": [19, 150], "range": {"Follicular": [2.5, 10.2], "Midcycle": [3.4, 33.4], "Luteal": [1.5, 9.1], "Postmenopausal": [23.0, 116.0], "Pregnant": [0, 0.3]} }
+      ]
+  },
+  "GGT": {
+      "Unit": "U/L",
+      "Male": [
+      { "ageRange": [0, 0.038], "range": [0.00, 219.00] },
+      { "ageRange": [0.038, 1], "range": [0.00, 127.00] },
+      { "ageRange": [1, 10], "range": [0.00, 16.00] },
+      { "ageRange": [11, 18], "range": [0.00, 21.00] },
+      { "ageRange": [19, 150], "range": [0.00, 64.00] }
+      ],
+      "Female": [
+      { "ageRange": [0, 0.038], "range": [0.00, 219.00] },
+      { "ageRange": [0.038, 1], "range": [0.00, 127.00] },
+      { "ageRange": [1, 10], "range": [0.00, 16.00] },
+      { "ageRange": [11, 18], "range": [0.00, 21.00] },
+      { "ageRange": [19, 150], "range": [0.00, 36.00] }
+      ]
+  },
+  "Glucose Fasting": {
+      "Unit": "mg/dL",
+      "Male": [
+      { "ageRange": [0, 0.016], "range": [40.00, 60.00] },
+      { "ageRange": [0.019, 150], "range": [70.00, 100.00] }
+      ],
+      "Female": [
+      { "ageRange": [0, 0.016], "range": [40.00, 60.00] },
+      { "ageRange": [0.019, 150], "range": [70.00, 100.00] }
+      ]
+  },
+  "Haptoglobin": {
+      "Unit": "mg/dL",
+      "Male": [
+      { "ageRange": [0, 0.038], "range": [0.00, 10.00] },
+      { "ageRange": [0.038, 1], "range": [7.00, 221.00] },
+      { "ageRange": [1, 11], "range": [7.00, 163.00] },
+      { "ageRange": [12, 18], "range": [7.00, 179.00] },
+      { "ageRange": [19, 150], "range": [37.00, 184.00] }
+      ],
+      "Female": [
+      { "ageRange": [0, 0.038], "range": [0.00, 10.00] },
+      { "ageRange": [0.038, 1], "range": [7.00, 221.00] },
+      { "ageRange": [1, 11], "range": [7.00, 163.00] },
+      { "ageRange": [12, 18], "range": [7.00, 179.00] },
+      { "ageRange": [19, 150], "range": [37.00, 184.00] }
+      ]
+  },
+  "Hematocrit": {
       "Unit": "%",
       "Male": [
-        { "ageRange": [0, 0.25], "range": [11.00, 19.00] },
-        { "ageRange": [0.25, 15], "range": [11.00, 16.00] },
-        { "ageRange": [16, 20], "range": [11.90, 13.90] },
-        { "ageRange": [21, 30], "range": [11.90, 14.10] },
-        { "ageRange": [31, 40], "range": [12.00, 14.20] },
-        { "ageRange": [41, 50], "range": [12.10, 14.50] },
-        { "ageRange": [51, 60], "range": [12.10, 14.70] },
-        { "ageRange": [61, 150], "range": [12.20, 15.00] }
+      { "ageRange": [0, 0.035], "range": [40.00, 72.00] },
+      { "ageRange": [0.035, 1], "range": [32.00, 55.00] },
+      { "ageRange": [1, 3], "range": [30.00, 54.00] },
+      { "ageRange": [3, 6], "range": [28.00, 40.50] },
+      { "ageRange": [6, 12], "range": [30.00, 42.00] },
+      { "ageRange": [1, 3], "range": [30.00, 44.00] },
+      { "ageRange": [4, 7], "range": [30.00, 46.00] },
+      { "ageRange": [8, 11], "range": [32.00, 48.00] },
+      { "ageRange": [12, 13], "range": [34.50, 52.00] },
+      { "ageRange": [14, 15], "range": [37.00, 52.00] },
+      { "ageRange": [16, 20], "range": [40.00, 50.30] },
+      { "ageRange": [21, 30], "range": [40.90, 50.80] },
+      { "ageRange": [31, 40], "range": [40.70, 50.80] },
+      { "ageRange": [41, 50], "range": [40.20, 50.80] },
+      { "ageRange": [51, 60], "range": [39.50, 51.10] },
+      { "ageRange": [61, 150], "range": [38.30, 51.20] }
       ],
       "Female": [
-        { "ageRange": [0, 0.25], "range": [11.00, 19.00] },
-        { "ageRange": [0.25, 15], "range": [11.00, 16.00] },
-        { "ageRange": [16, 20], "range": [11.80, 14.80] },
-        { "ageRange": [21, 30], "range": [11.90, 14.80] },
-        { "ageRange": [31, 40], "range": [12.00, 14.90] },
-        { "ageRange": [41, 50], "range": [12.10, 15.20] },
-        { "ageRange": [51, 60], "range": [12.20, 15.10] },
-        { "ageRange": [61, 150], "range": [12.20, 15.30] }
+      { "ageRange": [0, 0.035], "range": [40.00, 72.00] },
+      { "ageRange": [0.035, 1], "range": [32.00, 55.00] },
+      { "ageRange": [1, 3], "range": [30.00, 54.00] },
+      { "ageRange": [3, 6], "range": [28.00, 40.50] },
+      { "ageRange": [6, 12], "range": [30.00, 42.00] },
+      { "ageRange": [1, 3], "range": [30.00, 44.00] },
+      { "ageRange": [4, 7], "range": [30.00, 46.00] },
+      { "ageRange": [8, 11], "range": [32.00, 48.00] },
+      { "ageRange": [12, 15], "range": [34.50, 47.00] },
+      { "ageRange": [16, 20], "range": [33.90, 45.10] },
+      { "ageRange": [21, 30], "range": [33.90, 45.50] },
+      { "ageRange": [31, 40], "range": [35.00, 46.10] },
+      { "ageRange": [41, 50], "range": [35.80, 46.90] },
+      { "ageRange": [51, 60], "range": [36.40, 47.70] },
+      { "ageRange": [61, 150], "range": [35.70, 47.80] }
       ]
-    },
-    "RDW-SD": {
-      "Unit": "fL",
+  },
+  "Hemoglobin": {
+      "Unit": "gm/dL",
       "Male": [
-        { "ageRange": [0, 15], "range": [38.4, 53.1] },
-        { "ageRange": [16, 20], "range": [37.2, 45.9] },
-        { "ageRange": [21, 30], "range": [37.2, 46.6] },
-        { "ageRange": [31, 40], "range": [37.7, 47.6] },
-        { "ageRange": [41, 50], "range": [38.3, 49.1] },
-        { "ageRange": [51, 60], "range": [39.0, 50.3] },
-        { "ageRange": [60, 150], "range": [39.8, 51.6] }
+      { "ageRange": [0, 0.035], "range": [14.00, 23.00] },
+      { "ageRange": [0.035, 1], "range": [11.00, 18.00] },
+      { "ageRange": [1, 3], "range": [9.80, 17.80] },
+      { "ageRange": [3, 6], "range": [9.60, 13.40] },
+      { "ageRange": [6, 12], "range": [10.20, 13.80] },
+      { "ageRange": [1, 3], "range": [10.20, 14.40] },
+      { "ageRange": [4, 7], "range": [10.50, 15.10] },
+      { "ageRange": [8, 11], "range": [10.90, 15.80] },
+      { "ageRange": [12, 13], "range": [11.50, 16.50] },
+      { "ageRange": [14, 15], "range": [12.40, 17.10] },
+      { "ageRange": [16, 20], "range": [13.40, 17.30] },
+      { "ageRange": [21, 30], "range": [13.80, 17.40] },
+      { "ageRange": [31, 40], "range": [13.60, 17.40] },
+      { "ageRange": [51, 60], "range": [13.10, 17.30] },
+      { "ageRange": [61, 150], "range": [12.50, 17.30] }
       ],
       "Female": [
-        { "ageRange": [0, 15], "range": [38.4, 53.1] },
-        { "ageRange": [16, 20], "range": [37.6, 47.9] },
-        { "ageRange": [21, 30], "range": [38.1, 48.6] },
-        { "ageRange": [31, 40], "range": [38.7, 49.6] },
-        { "ageRange": [41, 50], "range": [39.3, 50.8] },
-        { "ageRange": [51, 60], "range": [39.6, 51.2] },
-        { "ageRange": [60, 150], "range": [40.1, 52.1] }
-      ]
-    },
-    "Retic Count": {
-      "Unit": "x10^9/L",
+      { "ageRange": [0, 0.035], "range": [14.00, 23.00] },
+      { "ageRange": [0.035, 1], "range": [11.00, 18.00] },
+      { "ageRange": [1, 3], "range": [9.80, 17.80] },
+      { "ageRange": [3, 6], "range": [9.60, 13.40] },
+      { "ageRange": [6, 12], "range": [10.20, 13.80] },
+      { "ageRange": [1, 3], "range": [10.20, 14.40] },
+      { "ageRange": [4, 7], "range": [10.50, 15.10] },
+      { "ageRange": [8, 11], "range": [10.90, 15.80] },
+      { "ageRange": [12, 15], "range": [11.50, 16.00] },
+      { "ageRange": [16, 20], "range": [11.20, 15.20] },
+      { "ageRange": [21, 30], "range": [11.20, 15.30] },
+      { "ageRange": [31, 40], "range": [11.40, 15.50] },
+      { "ageRange": [41, 50], "range": [11.60, 15.70] },
+      { "ageRange": [51, 60], "range": [11.80, 15.90] },
+      { "ageRange": [61, 150], "range": [11.60, 15.90] }
+    ]
+  },
+  "HDL Cholesterol": {
+      "Unit": "mg/dL",
       "Male": [
-        { "ageRange": [0, 0.038], "range": [100, 390] },
-        { "ageRange": [0.038, 150], "range": [24, 90] }
+      { "ageRange": [0, 0.038], "range": [15, 42] },
+      { "ageRange": [0.038, 1], "range": [12, 71] },
+      { "ageRange": [1, 3], "range": [31, 63] },
+      { "ageRange": [4, 12], "range": [36, 73] },
+      { "ageRange": [13, 18], "range": [32, 68] },
+      { "ageRange": [19, 150], "range": [40, 125] }
       ],
       "Female": [
-        { "ageRange": [0, 0.038], "range": [100, 390] },
-        { "ageRange": [0.038, 150], "range": [24, 90] }
+      { "ageRange": [0, 0.038], "range": [15, 42] },
+      { "ageRange": [0.038, 1], "range": [12, 71] },
+      { "ageRange": [1, 3], "range": [31, 63] },
+      { "ageRange": [4, 12], "range": [36, 73] },
+      { "ageRange": [13, 18], "range": [32, 72] },
+      { "ageRange": [19, 150], "range": [40, 125] }
       ]
-    },
-    "Sodium Serum": {
+  },
+  "Homocysteine": {
       "Unit": "mmol/L",
       "Male": [
-        { "ageRange": [0, 0.25], "range": [135, 145] },
-        { "ageRange": [0.25, 11], "range": [138, 145] },
-        { "ageRange": [12, 150], "range": [135, 145] }
+      { "ageRange": [0.0137, 1], "range": [2.9, 10.0] },
+      { "ageRange": [1, 7], "range": [2.8, 7.6] },
+      { "ageRange": [7, 12], "range": [3.4, 8.5] },
+      { "ageRange": [12, 15], "range": [4.7, 10.4] },
+      { "ageRange": [15, 19], "range": [5.5, 13.4] },
+      { "ageRange": [19, 150], "range": [0.0, 15.4] }
       ],
       "Female": [
-        { "ageRange": [0, 0.25], "range": [135, 145] },
-        { "ageRange": [0.25, 11], "range": [138, 145] },
-        { "ageRange": [12, 150], "range": [135, 145] }
+      { "ageRange": [0.0137, 1], "range": [2.9, 10.0] },
+      { "ageRange": [1, 7], "range": [2.8, 7.6] },
+      { "ageRange": [7, 12], "range": [3.4, 8.5] },
+      { "ageRange": [12, 15], "range": [4.7, 10.4] },
+      { "ageRange": [15, 19], "range": [4.9, 11.9] },
+      { "ageRange": [19, 150], "range": [0.0, 15.4] }
+      ]
+  },
+  "Iron": {
+      "Unit": "ug/dL",
+      "Male": [
+      { "ageRange": [0, 13], "range": [16, 128] },
+      { "ageRange": [14, 18], "range": [31, 168] },
+      { "ageRange": [19, 150], "range": [37, 167] }
+      ],
+      "Female": [
+      { "ageRange": [0, 13], "range": [16, 128] },
+      { "ageRange": [14, 18], "range": [20, 162] },
+      { "ageRange": [19, 150], "range": [33, 167] }
+      ]
+  },
+  "LDH": {
+      "Unit": "U/L",
+      "Male": [
+      { "ageRange": [0, 0.038], "range": [309, 1222] },
+      { "ageRange": [0.038, 1], "range": [163, 452] },
+      { "ageRange": [1, 9], "range": [192, 321] },
+      { "ageRange": [10, 14], "range": [170, 283] },
+      { "ageRange": [15, 18], "range": [130, 250] },
+      { "ageRange": [19, 150], "range": [117, 278] }
+      ],
+      "Female": [
+      { "ageRange": [0, 0.038], "range": [309, 1222] },
+      { "ageRange": [0.038, 1], "range": [163, 452] },
+      { "ageRange": [1, 9], "range": [192, 321] },
+      { "ageRange": [10, 14], "range": [157, 272] },
+      { "ageRange": [15, 18], "range": [130, 250] },
+      { "ageRange": [19, 150], "range": [117, 278] }
+      ]
+  },
+  "Lipase": {
+      "Unit": "U/L",
+      "Male": [
+      { "ageRange": [0, 18], "range": [0, 39] },
+      { "ageRange": [19, 150], "range": [0, 60] }
+      ],
+      "Female": [
+      { "ageRange": [0, 18], "range": [0, 39] },
+      { "ageRange": [19, 150], "range": [0, 60] }
+      ]
+  },
+  "Magnesium": {
+      "Unit": "mg/dL",
+      "Male": [
+      { "ageRange": [0, 0.038], "range": [2.0, 3.9] },
+      { "ageRange": [0.038, 1], "range": [2.0, 3.1] },
+      { "ageRange": [1, 18], "range": [2.1, 2.8] },
+      { "ageRange": [19, 150], "range": [1.6, 2.8] }
+      ],
+      "Female": [
+      { "ageRange": [0, 0.038], "range": [2.0, 3.9] },
+      { "ageRange": [0.038, 1], "range": [2.0, 3.1] },
+      { "ageRange": [1, 18], "range": [2.1, 2.8] },
+      { "ageRange": [19, 150], "range": [1.6, 2.8] }
+      ]
+  },
+  "MCH": {
+      "Unit": "pg",
+      "Male": [
+      { "ageRange": [0, 0.035], "range": [30.00, 39.50] },
+      { "ageRange": [0.035, 1], "range": [28.00, 35.00] },
+      { "ageRange": [1, 15], "range": [25.00, 34.00] },
+      { "ageRange": [16, 20], "range": [26.90, 32.50] },
+      { "ageRange": [21, 30], "range": [27.20, 32.70] },
+      { "ageRange": [31, 40], "range": [27.30, 33.10] },
+      { "ageRange": [41, 50], "range": [27.50, 33.50] },
+      { "ageRange": [51, 150], "range": [27.60, 33.80] }
+      ],
+      "Female": [
+      { "ageRange": [0, 0.035], "range": [30.00, 39.50] },
+      { "ageRange": [0.035, 1], "range": [28.00, 35.00] },
+      { "ageRange": [1, 15], "range": [25.00, 34.00] },
+      { "ageRange": [16, 20], "range": [25.80, 32.40] },
+      { "ageRange": [21, 30], "range": [26.00, 32.60] },
+      { "ageRange": [31, 40], "range": [26.00, 33.00] },
+      { "ageRange": [41, 50], "range": [26.10, 33.30] },
+      { "ageRange": [51, 60], "range": [26.70, 33.20] },
+      { "ageRange": [61, 150], "range": [26.80, 33.30] }
+      ]
+  },
+  "MCHC": {
+      "Unit": "gm/dL",
+      "Male": [
+      { "ageRange": [0, 15], "range": [32.30, 36.50] },
+      { "ageRange": [16, 30], "range": [32.10, 35.90] },
+      { "ageRange": [31, 40], "range": [32.00, 35.90] },
+      { "ageRange": [41, 50], "range": [31.90, 35.70] },
+      { "ageRange": [51, 60], "range": [31.80, 35.70] },
+      { "ageRange": [61, 150], "range": [31.60, 35.50] }
+      ],
+      "Female": [
+      { "ageRange": [0, 15], "range": [32.30, 36.50] },
+      { "ageRange": [16, 30], "range": [31.30, 35.30] },
+      { "ageRange": [31, 40], "range": [31.20, 35.00] },
+      { "ageRange": [41, 50], "range": [31.00, 34.90] },
+      { "ageRange": [51, 60], "range": [31.00, 34.80] },
+      { "ageRange": [61, 150], "range": [30.90, 34.70] }
+      ]
+  },
+  "MCV": {
+      "Unit": "fL",
+      "Male": [
+      { "ageRange": [0, 0.035], "range": [91.00, 120.00] },
+      { "ageRange": [0.035, 1], "range": [86.00, 106.00] },
+      { "ageRange": [1, 3], "range": [77.00, 103.00] },
+      { "ageRange": [3, 6], "range": [73.00, 92.00] },
+      { "ageRange": [6, 12], "range": [73.00, 87.00] },
+      { "ageRange": [1, 3], "range": [73.00, 90.00] },
+      { "ageRange": [4, 7], "range": [75.00, 92.00] },
+      { "ageRange": [8, 11], "range": [76.00, 93.00] },
+      { "ageRange": [12, 15], "range": [78.00, 97.00] },
+      { "ageRange": [16, 20], "range": [81.00, 95.30] },
+      { "ageRange": [21, 30], "range": [81.50, 97.10] },
+      { "ageRange": [31, 40], "range": [81.60, 98.10] },
+      { "ageRange": [41, 50], "range": [82.50, 99.40] },
+      { "ageRange": [51, 60], "range": [83.30, 100.90] },
+      { "ageRange": [61, 70], "range": [83.70, 101.20] },
+      { "ageRange": [70, 150], "range": [83.70, 103.10] }
+      ],
+      "Female": [
+      { "ageRange": [0, 0.035], "range": [91.00, 120.00] },
+      { "ageRange": [0.035, 1], "range": [86.00, 106.00] },
+      { "ageRange": [1, 3], "range": [77.00, 103.00] },
+      { "ageRange": [3, 6], "range": [73.00, 92.00] },
+      { "ageRange": [6, 12], "range": [73.00, 87.00] },
+      { "ageRange": [1, 3], "range": [73.00, 90.00] },
+      { "ageRange": [4, 7], "range": [75.00, 92.00] },
+      { "ageRange": [8, 11], "range": [76.00, 93.00] },
+      { "ageRange": [12, 15], "range": [78.00, 97.00] },
+      { "ageRange": [16, 20], "range": [80.10, 97.70] },
+      { "ageRange": [21, 30], "range": [80.30, 98.70] },
+      { "ageRange": [31, 40], "range": [80.90, 100.00] },
+      { "ageRange": [41, 50], "range": [81.70, 101.00] },
+      { "ageRange": [51, 60], "range": [82.80, 101.50] },
+      { "ageRange": [61, 70], "range": [83.20, 102.10] },
+      { "ageRange": [70, 150], "range": [83.20, 103.50] }
+      ]
+  },
+  "MPV": {
+      "Unit": "fL",
+      "Male": [
+      { "ageRange": [0, 15], "range": [9.30, 12.90] },
+      { "ageRange": [16, 20], "range": [9.5, 12.8] },
+      { "ageRange": [21, 30], "range": [9.5, 12.8] },
+      { "ageRange": [31, 40], "range": [9.4, 12.8] },
+      { "ageRange": [41, 50], "range": [9.4, 12.9] },
+      { "ageRange": [51, 60], "range": [9.5, 12.9] },
+      { "ageRange": [60, 150], "range": [9.5, 12.8] }
+      ],
+      "Female": [
+      { "ageRange": [0, 15], "range": [9.3, 12.9] },
+      { "ageRange": [16, 20], "range": [9.4, 12.8] },
+      { "ageRange": [21, 30], "range": [9.4, 12.9] },
+      { "ageRange": [31, 40], "range": [9.4, 12.8] },
+      { "ageRange": [41, 50], "range": [9.4, 12.8] },
+      { "ageRange": [51, 60], "range": [9.4, 12.8] },
+      { "ageRange": [60, 150], "range": [9.5, 12.9] }
+    ]
+  },
+  "Osmolality Serum": {
+    "Unit": "mOsm/kg",
+    "Male": [
+      { "ageRange": [0, 0.016], "range": [265, 295] },
+      { "ageRange": [0.019, 59], "range": [275, 295] },
+      { "ageRange": [60, 150], "range": [280, 300] }
+    ],
+    "Female": [
+      { "ageRange": [0, 0.016], "range": [265, 295] },
+      { "ageRange": [0.019, 59], "range": [275, 295] },
+      { "ageRange": [60, 150], "range": [280, 300] }
+    ]
+  },
+  "Phenobarbital": {
+    "Unit": "mcg/mL",
+    "Male": [
+      { "ageRange": [0, 4], "range": [15, 30] },
+      { "ageRange": [5, 150], "range": [15, 40] }
+    ],
+    "Female": [
+      { "ageRange": [0, 4], "range": [15, 30] },
+      { "ageRange": [5, 150], "range": [15, 40] }
+    ]
+  },
+  "Phosphorus": {
+      "Unit": "mg/dL",
+      "Male": [
+      { "ageRange": [0, 0.038], "range": [5.6, 10.5] },
+      { "ageRange": [0.038, 1], "range": [4.8, 8.4] },
+      { "ageRange": [1, 4], "range": [4.3, 6.8] },
+      { "ageRange": [5, 12], "range": [4.1, 5.9] },
+      { "ageRange": [13, 15], "range": [3.5, 6.2] },
+      { "ageRange": [16, 18], "range": [2.9, 5.0] },
+      { "ageRange": [19, 150], "range": [2.5, 4.5] }
+      ],
+      "Female": [
+      { "ageRange": [0, 0.038], "range": [5.6, 10.5] },
+      { "ageRange": [0.038, 1], "range": [4.8, 8.4] },
+      { "ageRange": [1, 4], "range": [4.3, 6.8] },
+      { "ageRange": [5, 12], "range": [4.1, 5.9] },
+      { "ageRange": [13, 15], "range": [3.2, 5.5] },
+      { "ageRange": [16, 18], "range": [2.9, 5.0] },
+      { "ageRange": [19, 150], "range": [2.5, 4.5] }
+      ]
+  },
+  "Platelet Count": {
+      "Unit": "109/L",
+      "Male": [
+      { "ageRange": [0, 15], "range": [150.00, 480.00] },
+      { "ageRange": [16, 50], "range": [159.00, 400.00] },
+      { "ageRange": [51, 150], "range": [140.00, 400.00] }
+      ],
+      "Female": [
+      { "ageRange": [0, 15], "range": [150.00, 480.00] },
+      { "ageRange": [16, 150], "range": [150.00, 450.00] }
+      ]
+  },
+  "Potassium Serum": {
+      "Unit": "",
+      "Male": [
+      { "ageRange": [0, 1], "range": [3.50, 6.00] },
+      { "ageRange": [1, 150], "range": [3.50, 5.50] }
+      ],
+      "Female": [
+      { "ageRange": [0, 1], "range": [3.50, 6.00] },
+      { "ageRange": [1, 150], "range": [3.50, 5.50] }
+      ]
+  },
+  "Prealbumin": {
+      "Unit": "mg/dL",
+      "Male": [
+      { "ageRange": [0, 0.038], "range": [2, 12] },
+      { "ageRange": [0.038, 1], "range": [5, 24] },
+      { "ageRange": [1, 4], "range": [12, 23] },
+      { "ageRange": [5, 12], "range": [14, 26] },
+      { "ageRange": [13, 15], "range": [18, 31] },
+      { "ageRange": [16, 18], "range": [20, 35] },
+      { "ageRange": [19, 150], "range": [18, 37] }
+      ],
+      "Female": [
+      { "ageRange": [0, 0.038], "range": [2, 12] },
+      { "ageRange": [0.038, 1], "range": [5, 24] },
+      { "ageRange": [1, 4], "range": [12, 23] },
+      { "ageRange": [5, 12], "range": [14, 26] },
+      { "ageRange": [13, 15], "range": [18, 31] },
+      { "ageRange": [16, 18], "range": [17, 33] },
+      { "ageRange": [19, 150], "range": [18, 37] }
+      ]
+  },
+  "Prolactin": {
+      "Unit": "ng/ml",
+      "Male": [
+      { "ageRange": [0, 150], "range": [2.1, 17.7] }
+      ],
+      "Female": [
+          { "ageRange": "Non-pregnant", "range": [2.8, 29.2] },
+          { "ageRange": "Pregnant", "range": [9.7, 208.5] },
+          { "ageRange": "Post-menopausal", "range": [1.8, 20.3] }
+      ]
+  },
+  "Protein CSF": {
+      "Unit": "mg/dL",
+      "Male": [
+        { "ageRange": [0, 0.08], "range": [20, 170] },
+        { "ageRange": [0.08, 0.25], "range": [20, 100] },
+        { "ageRange": [0.25, 0.5], "range": [15, 50] },
+        { "ageRange": [0.5, 150], "range": [15, 45] }
+      ],
+      "Female": [
+        { "ageRange": [0, 0.08], "range": [20, 170] },
+        { "ageRange": [0.08, 0.25], "range": [20, 100] },
+        { "ageRange": [0.25, 0.5], "range": [15, 50] },
+        { "ageRange": [0.5, 150], "range": [15, 45] }
       ]
     },
-    "T3 Free": {
-        "Unit": "pg/mL",
-        "Male": [
-        { "ageRange": [0.011, 1], "range": [2.32, 4.87] },
-        { "ageRange": [1, 12], "range": [2.79, 4.42] },
-        { "ageRange": [12, 15], "range": [2.89, 4.33] },
-        { "ageRange": [15, 19], "range": [2.25, 3.85] },
-        { "ageRange": [19, 150], "range": [1.71, 3.71] }
-        ],
-        "Female": [
-        { "ageRange": [0.011, 1], "range": [2.32, 4.87] },
-        { "ageRange": [1, 12], "range": [2.79, 4.42] },
-        { "ageRange": [12, 15], "range": [2.50, 3.95] },
-        { "ageRange": [15, 19], "range": [2.31, 3.71] },
-        { "ageRange": [19, 150], "range": [1.71, 3.71] }
-        ]
-    },
-    "T3 Total": {
-        "Unit": "ng/mL",
-        "Male": [
-        { "ageRange": [0.011, 1], "range": [0.85, 2.34] },
-        { "ageRange": [1, 12], "range": [1.13, 1.89] },
-        { "ageRange": [12, 15], "range": [0.98, 1.76] },
-        { "ageRange": [15, 17], "range": [0.94, 1.56] },
-        { "ageRange": [17, 19], "range": [0.90, 1.68] },
-        { "ageRange": [19, 150], "range": [0.60, 1.80] }
-        ],
-        "Female": [
-        { "ageRange": [0.011, 1], "range": [0.85, 2.34] },
-        { "ageRange": [1, 12], "range": [1.13, 1.89] },
-        { "ageRange": [12, 15], "range": [0.98, 1.76] },
-        { "ageRange": [15, 17], "range": [0.94, 1.42] },
-        { "ageRange": [17, 19], "range": [0.90, 1.68] },
-        { "ageRange": [19, 150], "range": [0.60, 1.80] }
-        ]
-    },
-    "T4 Free": {
-        "Unit": "ng/dL",
-        "Male": [
-        { "ageRange": [0.014, 0.041], "range": [1.05, 3.21] },
-        { "ageRange": [0.041, 1], "range": [0.68, 2.53] },
-        { "ageRange": [1, 19], "range": [0.72, 1.23] },
-        { "ageRange": [19, 150], "range": [0.70, 1.48] }
-        ],
-        "Female": [
-        { "ageRange": [0.014, 0.041], "range": [1.05, 3.21] },
-        { "ageRange": [0.041, 1], "range": [0.68, 2.53] },
-        { "ageRange": [1, 19], "range": [0.73, 1.17] },
-        { "ageRange": [19, 150], "range": [0.70, 1.48] }
-        ]
-    },
-    "T4 Total": {
-        "Unit": "mcg/dL",
-        "Male": [
-        { "ageRange": [0.019, 1], "range": [5.9, 13.7] },
-        { "ageRange": [1, 9], "range": [6.2, 10.3] },
-        { "ageRange": [9, 12], "range": [5.5, 9.3] },
-        { "ageRange": [12, 14], "range": [5.0, 8.3] },
-        { "ageRange": [14, 19], "range": [4.7, 8.6] },
-        { "ageRange": [19, 150], "range": [5.5, 12.0] }
-        ],
-        "Female": [
-        { "ageRange": [0.019, 1], "range": [5.9, 13.7] },
-        { "ageRange": [1, 9], "range": [6.2, 10.3] },
-        { "ageRange": [9, 12], "range": [5.5, 9.3] },
-        { "ageRange": [12, 14], "range": [5.0, 8.3] },
-        { "ageRange": [14, 19], "range": [5.5, 13.0] },
-        { "ageRange": [19, 150], "range": [5.5, 12.0] }
-        ]
-    },
-    "T4": {
-        "Unit": "ug/dL",
-        "Male": [
-        { "ageRange": [0, 0.019], "range": [9.00, 26.00] },
-        { "ageRange": [0.019, 1], "range": [8.00, 20.00] },
-        { "ageRange": [1, 1], "range": [7.00, 17.00] },
-        { "ageRange": [1, 4], "range": [5.00, 13.00] },
-        { "ageRange": [5, 150], "range": [5.50, 12.00] }
-        ],
-        "Female": [
-        { "ageRange": [0, 0.019], "range": [9.00, 26.00] },
-        { "ageRange": [0.019, 1], "range": [8.00, 20.00] },
-        { "ageRange": [1, 1], "range": [7.00, 17.00] },
-        { "ageRange": [1, 4], "range": [5.00, 13.00] },
-        { "ageRange": [5, 150], "range": [5.50, 12.00] }
-        ]
-    },
-    "Transferrin": {
-        "Unit": "mg/dL",
-        "Male and Female": [
-        { "ageRange": [0, 0.15], "range": [104, 224] },
-        { "ageRange": [0.17, 1], "range": [107, 324] },
-        { "ageRange": [1, 18], "range": [220, 337] },
-        { "ageRange": [19, 150], "range": [197, 359] }
-        ]
-    },
-    "Triglycerides": {
-        "Unit": "mg/dL",
-        "Male and Female": [
-        { "ageRange": [0, 0.038], "range": [82, 259] },
-        { "ageRange": [0.038, 1], "range": [53, 258] },
-        { "ageRange": [1, 18], "range": [44, 197] },
-        { "ageRange": [19, 150], "range": [30, 150] }
-        ]
-    },
-    "Troponin": {
-        "Unit": "ng/mL",
-        "Male and Female": [
-        { "ageRange": [0.013, 0.29], "range": [0.003, 0.936] },
-        { "ageRange": [0.25, 19], "range": [0.000, 0.009] },
-        { "ageRange": [19, 150], "range": [0.000, 0.028] }
-        ]
-    },
-    "TSH": {
-        "Unit": "uIU/mL",
-        "Male and Female": [
-        { "ageRange": [0.011, 0.5], "range": [0.730, 4.770] },
-        { "ageRange": [0.5, 14], "range": [0.700, 4.170] },
-        { "ageRange": [14, 19], "range": [0.470, 3.410] },
-        { "ageRange": [19, 150], "range": [0.350, 4.940] }
-        ]
-    },
-    "Uric Acid": {
-        "Unit": "mg/dL",
-        "Male": [
-        { "ageRange": [0, 0.038], "range": [2.8, 12.7] },
-        { "ageRange": [0.038, 1], "range": [1.6, 6.3] },
-        { "ageRange": [1, 11], "range": [1.8, 4.9] },
-        { "ageRange": [12, 18], "range": [2.6, 7.6] },
-        { "ageRange": [19, 150], "range": [2.5, 8.0] }
-        ],
-        "Female": [
-        { "ageRange": [0, 0.038], "range": [2.8, 12.7] },
-        { "ageRange": [0.038, 1], "range": [1.6, 6.3] },
-        { "ageRange": [1, 11], "range": [1.8, 4.9] },
-        { "ageRange": [12, 18], "range": [2.6, 5.9] },
-        { "ageRange": [19, 150], "range": [2.5, 8.0] }
-        ]
-    },
-    "WBC": {
-        "Unit": "10^9/L",
-        "Male": [
-        { "ageRange": [0, 2], "range": [6.00, 17.50] },
-        { "ageRange": [2, 15], "range": [6.00, 14.50] },
-        { "ageRange": [16, 150], "range": [4.00, 11.00] }
-        ],
-        "Female": [
-        { "ageRange": [0, 2], "range": [6.00, 17.50] },
-        { "ageRange": [2, 15], "range": [6.00, 14.50] },
-        { "ageRange": [16, 150], "range": [4.00, 11.00] }
-        ]
-    }
-    }
-    
+  "Protein Total Serum": {
+      "Unit": "gm/dL",
+      "Male": [
+      { "ageRange": [0, 0.038], "range": [5.30, 8.30] },
+      { "ageRange": [0.038, 1], "range": [4.40, 7.10] },
+      { "ageRange": [1, 5], "range": [6.10, 7.50] },
+      { "ageRange": [6, 8], "range": [6.40, 7.70] },
+      { "ageRange": [9, 18], "range": [6.50, 8.10] },
+      { "ageRange": [19, 20], "range": [6.70, 8.30] },
+      { "ageRange": [21, 30], "range": [6.70, 8.30] },
+      { "ageRange": [31, 40], "range": [6.60, 8.20] },
+      { "ageRange": [41, 50], "range": [6.60, 8.20] },
+      { "ageRange": [51, 60], "range": [6.50, 8.10] },
+      { "ageRange": [61, 70], "range": [6.40, 8.10] },
+      { "ageRange": [71, 150], "range": [6.20, 8.00] }
+      ],
+      "Female": [
+      { "ageRange": [0, 0.038], "range": [5.30, 8.30] },
+      { "ageRange": [0.038, 1], "range": [4.40, 7.10] },
+      { "ageRange": [1, 5], "range": [6.10, 7.50] },
+      { "ageRange": [6, 8], "range": [6.40, 7.70] },
+      { "ageRange": [9, 18], "range": [6.50, 8.10] },
+      { "ageRange": [19, 20], "range": [6.50, 8.30] },
+      { "ageRange": [21, 30], "range": [6.60, 8.30] },
+      { "ageRange": [31, 40], "range": [6.50, 8.20] },
+      { "ageRange": [41, 50], "range": [6.40, 8.10] },
+      { "ageRange": [51, 60], "range": [6.40, 8.10] },
+      { "ageRange": [61, 70], "range": [6.40, 8.10] },
+      { "ageRange": [71, 150], "range": [6.20, 8.10] }
+      ]
+  },
+  "RBC": {
+      "Unit": "X 10^12/L",
+      "Male": [
+      { "ageRange": [0, 0.035], "range": [4.00, 6.00] },
+      { "ageRange": [0.035, 1], "range": [3.85, 5.30] },
+      { "ageRange": [1, 3], "range": [3.80, 5.10] },
+      { "ageRange": [3, 6], "range": [3.75, 4.80] },
+      { "ageRange": [6, 12], "range": [3.75, 4.90] },
+      { "ageRange": [1, 3], "range": [3.85, 5.00] },
+      { "ageRange": [4, 7], "range": [4.05, 5.17] },
+      { "ageRange": [8, 11], "range": [4.20, 5.25] },
+      { "ageRange": [12, 13], "range": [4.25, 5.45] },
+      { "ageRange": [14, 15], "range": [4.30, 5.45] },
+      { "ageRange": [16, 20], "range": [4.56, 5.74] },
+      { "ageRange": [21, 30], "range": [4.57, 5.78] },
+      { "ageRange": [31, 40], "range": [4.53, 5.73] },
+      { "ageRange": [41, 50], "range": [4.44, 5.67] },
+      { "ageRange": [51, 60], "range": [4.39, 5.64] },
+      { "ageRange": [61, 150], "range": [4.34, 5.61] }
+      ],
+      "Female": [
+      { "ageRange": [0, 0.035], "range": [4.00, 6.00] },
+      { "ageRange": [0.035, 1], "range": [3.85, 5.30] },
+      { "ageRange": [1, 3], "range": [3.80, 5.10] },
+      { "ageRange": [3, 6], "range": [3.75, 4.80] },
+      { "ageRange": [6, 12], "range": [3.75, 4.90] },
+      { "ageRange": [1, 3], "range": [3.85, 5.00] },
+      { "ageRange": [4, 7], "range": [4.05, 5.17] },
+      { "ageRange": [8, 11], "range": [4.20, 5.25] },
+      { "ageRange": [12, 15], "range": [3.79, 5.25] },
+      { "ageRange": [16, 20], "range": [3.92, 5.13] },
+      { "ageRange": [21, 30], "range": [3.90, 5.13] },
+      { "ageRange": [31, 40], "range": [3.94, 5.13] },
+      { "ageRange": [41, 50], "range": [3.95, 5.16] },
+      { "ageRange": [51, 60], "range": [3.97, 5.19] },
+      { "ageRange": [61, 150], "range": [3.93, 5.19] }
+    ]
+  },
+  "RDW-CV": {
+    "Unit": "%",
+    "Male": [
+      { "ageRange": [0, 0.25], "range": [11.00, 19.00] },
+      { "ageRange": [0.25, 15], "range": [11.00, 16.00] },
+      { "ageRange": [16, 20], "range": [11.90, 13.90] },
+      { "ageRange": [21, 30], "range": [11.90, 14.10] },
+      { "ageRange": [31, 40], "range": [12.00, 14.20] },
+      { "ageRange": [41, 50], "range": [12.10, 14.50] },
+      { "ageRange": [51, 60], "range": [12.10, 14.70] },
+      { "ageRange": [61, 150], "range": [12.20, 15.00] }
+    ],
+    "Female": [
+      { "ageRange": [0, 0.25], "range": [11.00, 19.00] },
+      { "ageRange": [0.25, 15], "range": [11.00, 16.00] },
+      { "ageRange": [16, 20], "range": [11.80, 14.80] },
+      { "ageRange": [21, 30], "range": [11.90, 14.80] },
+      { "ageRange": [31, 40], "range": [12.00, 14.90] },
+      { "ageRange": [41, 50], "range": [12.10, 15.20] },
+      { "ageRange": [51, 60], "range": [12.20, 15.10] },
+      { "ageRange": [61, 150], "range": [12.20, 15.30] }
+    ]
+  },
+  "RDW-SD": {
+    "Unit": "fL",
+    "Male": [
+      { "ageRange": [0, 15], "range": [38.4, 53.1] },
+      { "ageRange": [16, 20], "range": [37.2, 45.9] },
+      { "ageRange": [21, 30], "range": [37.2, 46.6] },
+      { "ageRange": [31, 40], "range": [37.7, 47.6] },
+      { "ageRange": [41, 50], "range": [38.3, 49.1] },
+      { "ageRange": [51, 60], "range": [39.0, 50.3] },
+      { "ageRange": [60, 150], "range": [39.8, 51.6] }
+    ],
+    "Female": [
+      { "ageRange": [0, 15], "range": [38.4, 53.1] },
+      { "ageRange": [16, 20], "range": [37.6, 47.9] },
+      { "ageRange": [21, 30], "range": [38.1, 48.6] },
+      { "ageRange": [31, 40], "range": [38.7, 49.6] },
+      { "ageRange": [41, 50], "range": [39.3, 50.8] },
+      { "ageRange": [51, 60], "range": [39.6, 51.2] },
+      { "ageRange": [60, 150], "range": [40.1, 52.1] }
+    ]
+  },
+  "Retic Count": {
+    "Unit": "x10^9/L",
+    "Male": [
+      { "ageRange": [0, 0.038], "range": [100, 390] },
+      { "ageRange": [0.038, 150], "range": [24, 90] }
+    ],
+    "Female": [
+      { "ageRange": [0, 0.038], "range": [100, 390] },
+      { "ageRange": [0.038, 150], "range": [24, 90] }
+    ]
+  },
+  "Sodium Serum": {
+    "Unit": "mmol/L",
+    "Male": [
+      { "ageRange": [0, 0.25], "range": [135, 145] },
+      { "ageRange": [0.25, 11], "range": [138, 145] },
+      { "ageRange": [12, 150], "range": [135, 145] }
+    ],
+    "Female": [
+      { "ageRange": [0, 0.25], "range": [135, 145] },
+      { "ageRange": [0.25, 11], "range": [138, 145] },
+      { "ageRange": [12, 150], "range": [135, 145] }
+    ]
+  },
+  "T3 Free": {
+      "Unit": "pg/mL",
+      "Male": [
+      { "ageRange": [0.011, 1], "range": [2.32, 4.87] },
+      { "ageRange": [1, 12], "range": [2.79, 4.42] },
+      { "ageRange": [12, 15], "range": [2.89, 4.33] },
+      { "ageRange": [15, 19], "range": [2.25, 3.85] },
+      { "ageRange": [19, 150], "range": [1.71, 3.71] }
+      ],
+      "Female": [
+      { "ageRange": [0.011, 1], "range": [2.32, 4.87] },
+      { "ageRange": [1, 12], "range": [2.79, 4.42] },
+      { "ageRange": [12, 15], "range": [2.50, 3.95] },
+      { "ageRange": [15, 19], "range": [2.31, 3.71] },
+      { "ageRange": [19, 150], "range": [1.71, 3.71] }
+      ]
+  },
+  "T3 Total": {
+      "Unit": "ng/mL",
+      "Male": [
+      { "ageRange": [0.011, 1], "range": [0.85, 2.34] },
+      { "ageRange": [1, 12], "range": [1.13, 1.89] },
+      { "ageRange": [12, 15], "range": [0.98, 1.76] },
+      { "ageRange": [15, 17], "range": [0.94, 1.56] },
+      { "ageRange": [17, 19], "range": [0.90, 1.68] },
+      { "ageRange": [19, 150], "range": [0.60, 1.80] }
+      ],
+      "Female": [
+      { "ageRange": [0.011, 1], "range": [0.85, 2.34] },
+      { "ageRange": [1, 12], "range": [1.13, 1.89] },
+      { "ageRange": [12, 15], "range": [0.98, 1.76] },
+      { "ageRange": [15, 17], "range": [0.94, 1.42] },
+      { "ageRange": [17, 19], "range": [0.90, 1.68] },
+      { "ageRange": [19, 150], "range": [0.60, 1.80] }
+      ]
+  },
+  "T4 Free": {
+      "Unit": "ng/dL",
+      "Male": [
+      { "ageRange": [0.014, 0.041], "range": [1.05, 3.21] },
+      { "ageRange": [0.041, 1], "range": [0.68, 2.53] },
+      { "ageRange": [1, 19], "range": [0.72, 1.23] },
+      { "ageRange": [19, 150], "range": [0.70, 1.48] }
+      ],
+      "Female": [
+      { "ageRange": [0.014, 0.041], "range": [1.05, 3.21] },
+      { "ageRange": [0.041, 1], "range": [0.68, 2.53] },
+      { "ageRange": [1, 19], "range": [0.73, 1.17] },
+      { "ageRange": [19, 150], "range": [0.70, 1.48] }
+      ]
+  },
+  "T4 Total": {
+      "Unit": "mcg/dL",
+      "Male": [
+      { "ageRange": [0.019, 1], "range": [5.9, 13.7] },
+      { "ageRange": [1, 9], "range": [6.2, 10.3] },
+      { "ageRange": [9, 12], "range": [5.5, 9.3] },
+      { "ageRange": [12, 14], "range": [5.0, 8.3] },
+      { "ageRange": [14, 19], "range": [4.7, 8.6] },
+      { "ageRange": [19, 150], "range": [5.5, 12.0] }
+      ],
+      "Female": [
+      { "ageRange": [0.019, 1], "range": [5.9, 13.7] },
+      { "ageRange": [1, 9], "range": [6.2, 10.3] },
+      { "ageRange": [9, 12], "range": [5.5, 9.3] },
+      { "ageRange": [12, 14], "range": [5.0, 8.3] },
+      { "ageRange": [14, 19], "range": [5.5, 13.0] },
+      { "ageRange": [19, 150], "range": [5.5, 12.0] }
+      ]
+  },
+  "T4": {
+      "Unit": "ug/dL",
+      "Male": [
+      { "ageRange": [0, 0.019], "range": [9.00, 26.00] },
+      { "ageRange": [0.019, 1], "range": [8.00, 20.00] },
+      { "ageRange": [1, 1], "range": [7.00, 17.00] },
+      { "ageRange": [1, 4], "range": [5.00, 13.00] },
+      { "ageRange": [5, 150], "range": [5.50, 12.00] }
+      ],
+      "Female": [
+      { "ageRange": [0, 0.019], "range": [9.00, 26.00] },
+      { "ageRange": [0.019, 1], "range": [8.00, 20.00] },
+      { "ageRange": [1, 1], "range": [7.00, 17.00] },
+      { "ageRange": [1, 4], "range": [5.00, 13.00] },
+      { "ageRange": [5, 150], "range": [5.50, 12.00] }
+      ]
+  },
+  "Transferrin": {
+      "Unit": "mg/dL",
+      "Male": [
+      { "ageRange": [0, 0.15], "range": [104, 224] },
+      { "ageRange": [0.17, 1], "range": [107, 324] },
+      { "ageRange": [1, 18], "range": [220, 337] },
+      { "ageRange": [19, 150], "range": [197, 359] }
+      ],
+      "Female": [
+      { "ageRange": [0, 0.15], "range": [104, 224] },
+      { "ageRange": [0.17, 1], "range": [107, 324] },
+      { "ageRange": [1, 18], "range": [220, 337] },
+      { "ageRange": [19, 150], "range": [197, 359] }
+      ]
+  },
+  "Triglycerides": {
+      "Unit": "mg/dL",
+      "Male": [
+      { "ageRange": [0, 0.038], "range": [82, 259] },
+      { "ageRange": [0.038, 1], "range": [53, 258] },
+      { "ageRange": [1, 18], "range": [44, 197] },
+      { "ageRange": [19, 150], "range": [30, 150] }
+      ],
+      "Female": [
+      { "ageRange": [0, 0.15], "range": [104, 224] },
+      { "ageRange": [0.17, 1], "range": [107, 324] },
+      { "ageRange": [1, 18], "range": [220, 337] },
+      { "ageRange": [19, 150], "range": [197, 359] }
+      ]
+  },
+  "Troponin": {
+      "Unit": "ng/mL",
+      "Male": [
+      { "ageRange": [0.013, 0.29], "range": [0.003, 0.936] },
+      { "ageRange": [0.25, 19], "range": [0.000, 0.009] },
+      { "ageRange": [19, 150], "range": [0.000, 0.028] }
+      ],
+      "Female": [
+      { "ageRange": [0, 0.15], "range": [104, 224] },
+      { "ageRange": [0.17, 1], "range": [107, 324] },
+      { "ageRange": [1, 18], "range": [220, 337] },
+      { "ageRange": [19, 150], "range": [197, 359] }
+      ]
+  },
+  "TSH": {
+      "Unit": "uIU/mL",
+      "Male": [
+      { "ageRange": [0.011, 0.5], "range": [0.730, 4.770] },
+      { "ageRange": [0.5, 14], "range": [0.700, 4.170] },
+      { "ageRange": [14, 19], "range": [0.470, 3.410] },
+      { "ageRange": [19, 150], "range": [0.350, 4.940] }
+      ],
+      "Female": [
+      { "ageRange": [0, 0.15], "range": [104, 224] },
+      { "ageRange": [0.17, 1], "range": [107, 324] },
+      { "ageRange": [1, 18], "range": [220, 337] },
+      { "ageRange": [19, 150], "range": [197, 359] }
+      ]
+  },
+  "Uric Acid": {
+      "Unit": "mg/dL",
+      "Male": [
+      { "ageRange": [0, 0.038], "range": [2.8, 12.7] },
+      { "ageRange": [0.038, 1], "range": [1.6, 6.3] },
+      { "ageRange": [1, 11], "range": [1.8, 4.9] },
+      { "ageRange": [12, 18], "range": [2.6, 7.6] },
+      { "ageRange": [19, 150], "range": [2.5, 8.0] }
+      ],
+      "Female": [
+      { "ageRange": [0, 0.038], "range": [2.8, 12.7] },
+      { "ageRange": [0.038, 1], "range": [1.6, 6.3] },
+      { "ageRange": [1, 11], "range": [1.8, 4.9] },
+      { "ageRange": [12, 18], "range": [2.6, 5.9] },
+      { "ageRange": [19, 150], "range": [2.5, 8.0] }
+      ]
+  },
+  "WBC": {
+      "Unit": "10^9/L",
+      "Male": [
+      { "ageRange": [0, 2], "range": [6.00, 17.50] },
+      { "ageRange": [2, 15], "range": [6.00, 14.50] },
+      { "ageRange": [16, 150], "range": [4.00, 11.00] }
+      ],
+      "Female": [
+      { "ageRange": [0, 2], "range": [6.00, 17.50] },
+      { "ageRange": [2, 15], "range": [6.00, 14.50] },
+      { "ageRange": [16, 150], "range": [4.00, 11.00] }
+      ]
+  }
+}
+  

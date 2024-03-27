@@ -14,7 +14,7 @@ export default function ManualReportTable({ reportData }: any) {
         </tr>
       </thead>
       <tbody>
-        {Object.entries(reportData).map(([key, value], index) => (
+        {Object.entries(reportData).map(([key, value]: any, index) => (
           <tr key={index} className="rounded-md border dark:border-stone-900">
             <td className="rounded-md border p-1 dark:border-stone-900">
               {key.replace(/_/g, " ")}

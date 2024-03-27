@@ -27,3 +27,9 @@ body {
     text-wrap: balance;
   }
 }
+
+input::-webkit-slider-thumb {
+  appearance: none;
+  max-width: 0.3rem;
+  max-height: 0.75rem;
+}

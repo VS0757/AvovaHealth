@@ -15,10 +15,12 @@ export default function Home() {
         </h1>
         <div className="m-auto mt-8 w-32">
           <button className="h-10 w-32 rounded bg-white text-[#E05767]">
-            <LoginLink>Sign in</LoginLink>
+            <LoginLink postLoginRedirectURL="/redirect">Sign in</LoginLink>
           </button>
           <button className="mt-2 h-10 w-32 rounded border-2 bg-none text-white">
-            <RegisterLink>Sign up</RegisterLink>
+            <RegisterLink postLoginRedirectURL="/redirect">
+              Sign up
+            </RegisterLink>
           </button>
         </div>
       </div>

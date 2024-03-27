@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { poppins, lato } from "./fonts";
+import { GeistSans } from "geist/font/sans";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -14,7 +14,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`min-h-screen ${lato.className}`}>{children}</body>
+      <body className={`min-h-screen ${GeistSans.className}`}>{children}</body>
     </html>
   );
 }

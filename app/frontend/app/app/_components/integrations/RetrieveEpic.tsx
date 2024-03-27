@@ -74,14 +74,18 @@ const RetrieveEpic = ({ uniqueUserId }: { uniqueUserId: string }) => {
 
       const postData = {
         uniqueUserId: uniqueUserId,
-        fhirData: jsonResponse
+        fhirData: jsonResponse,
       };
-      
-      const backResponse = await axios.post("http://localhost:3001/upload-epic-fhir", postData, {
-        headers: {
-          'Content-Type': 'application/json'
-        }
-      });
+
+      const backResponse = await axios.post(
+        "http://localhost:3001/upload-epic-fhir",
+        postData,
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        },
+      );
       alert(backResponse.data.message);
     } catch (error) {
       console.error("Failed epic retrieval:", error);
@@ -97,9 +101,10 @@ const RetrieveEpic = ({ uniqueUserId }: { uniqueUserId: string }) => {
         <button
           onClick={retrieveEpicData}
           disabled={isLoading}
-          className="rounded-lg border-2 border-[#E05767] px-4 py-2 font-medium tracking-tighter text-[#E05767]"
+          className="rounded-md border px-4 py-2"
         >
-          {isLoading ? "Loading..." : "Retrieve Your Laboratory Test Results"} {/* Change button text based on loading status */}
+          {isLoading ? "Loading..." : "Retrieve Your Laboratory Test Results"}{" "}
+          {/* Change button text based on loading status */}
         </button>
       </div>
       <div className="pt-4" dangerouslySetInnerHTML={{ __html: data }} />

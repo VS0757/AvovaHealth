@@ -25,7 +25,7 @@ export default function Report({ report }: any) {
       </div>
       <div className={`mb-2 mt-4 flex flex-col flex-nowrap`}>
         <p className={`opacity-50`}>Filename</p>
-        <p>{name}</p>
+        <p className="max-w-fill">{name}</p>
       </div>
       <Link
         href={`/app/report/${report.dateTimeType}`}

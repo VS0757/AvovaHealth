@@ -1,5 +1,6 @@
 import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
 import { GeistMono } from "geist/font/mono";
+import ReportTable from "../../_components/report/reporttable";
 
 async function getReport(uniqueUserId: any, date: any) {
   const res = await fetch(
@@ -57,30 +58,12 @@ export default async function ReportPage({ params }: any) {
 
         <div className="">
           <p className="opacity-50">Upload Type</p>
-          <p className="capitalize">{type}</p>
+          <p className="uppercase">{type}</p>
         </div>
 
         <div className="mt-8">
           <p className="opacity-50">Data</p>
-          <table
-            className={`mt-2 min-w-full border-collapse rounded-md border p-2 dark:border-stone-900 ${GeistMono.className}`}
-          >
-            <tbody>
-              {Object.entries(reportData).map(([key, value], index) => (
-                <tr
-                  key={index}
-                  className="rounded-md border dark:border-stone-900"
-                >
-                  <td className="rounded-md border p-1 dark:border-stone-900">
-                    {key.replace(/_/g, " ")}
-                  </td>
-                  <td className="rounded-md border p-1 opacity-50 dark:border-stone-900">
-                    {value}
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+          <ReportTable isFhir={type === "fhir"} reportData={reportData} />
         </div>
       </div>
     </main>

@@ -101,7 +101,7 @@ const RetrieveEpic = ({ uniqueUserId }: { uniqueUserId: string }) => {
         <button
           onClick={retrieveEpicData}
           disabled={isLoading}
-          className="rounded-lg border-2 border-[#E05767] px-4 py-2 font-medium tracking-tighter text-[#E05767]"
+          className="rounded-md border px-4 py-2"
         >
           {isLoading ? "Loading..." : "Retrieve Your Laboratory Test Results"}{" "}
           {/* Change button text based on loading status */}

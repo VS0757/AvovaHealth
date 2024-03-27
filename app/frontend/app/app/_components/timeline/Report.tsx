@@ -2,9 +2,9 @@ import { GeistMono } from "geist/font/mono";
 import Link from "next/link";
 
 export default function Report({ report }: any) {
-  const date = report.dateTimeType.split("#")[0];
-  const type = report.dateTimeType.split("#")[1];
-  const name = report.dateTimeType.split("#")[2];
+  const date = report.dateTimeType.split("$")[0];
+  const type = report.dateTimeType.split("$")[1];
+  const name = report.dateTimeType.split("$")[2];
 
   const year = date.split("-")[0];
   const month = date.split("-")[1];

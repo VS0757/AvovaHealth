@@ -43,7 +43,7 @@ app.post("/upload-epic-fhir", async (req, res) => {
   try {
     const { fhirData, uniqueUserId } = req.body;
     await uploadDataToS3(fhirData, "FHIR", uniqueUserId, "EpicSystems");
-    // await storeFhirDataInDynamo(uniqueUserId, fhirData);
+    await storeFhirDataInDynamo(uniqueUserId, fhirData);
     res.send({ message: "Epic data uploaded successfully to Dynamo" });
   } catch (error) {
     console.error("Failed to upload epic data to Dynamo:", error);

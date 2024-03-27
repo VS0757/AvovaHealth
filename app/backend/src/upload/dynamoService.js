@@ -15,31 +15,69 @@ const dynamoDBClient = new DynamoDBClient(awsConfig);
 const docClient = DynamoDBDocumentClient.from(dynamoDBClient);
 
 const storeFhirDataInDynamo = async (uniqueUserId, fhirData) => {
-  const TableName = "avovahealthdatabase";
-
+  const TableNameSingleEntry = "avovahealthdatabase";
+  const TableNameBloodEntry = "avovahealthbloodtests";
+  var counter = 0;
   for (const entry of fhirData.entry) {
-    const effectiveDateTime = entry.resource.effectiveDateTime;
-    const entryResourceId = entry.resource.id.replace(/\s+/g, '_');
-    const Item = {
-      uniqueUserId,
-      dateTimeType: `${effectiveDateTime}#FHIR#${entryResourceId}`,
-      data: entry.resource,
-    };
-
-    console.log(JSON.stringify(Item, null, 2));
-
-    try {
-      await executeWithExponentialBackoff(() =>
-        docClient.send(new PutCommand({ TableName, Item })),
-      );
-      console.log(`Stored FHIR entry for ${uniqueUserId}`);
-    } catch (error) {
-      console.error("Error storing FHIR data:", error);
+    if (counter == 5) {
+      break;
     }
-
-    return; //so anthony's data doesn't crash the server
+    counter ++;
+    await storeBasedOnEntry(TableNameSingleEntry, uniqueUserId, entry);
+    await storeBasedOnTest(TableNameBloodEntry, uniqueUserId, entry);
   }
 };
+
+const storeBasedOnEntry = async (TableName, uniqueUserId, entry) => {
+  const effectiveDateTime = entry.resource.effectiveDateTime.split('T')[0];
+  const entryResourceId = entry.resource.id.replace(/\s+/g, '_');
+  const Item = {
+    uniqueUserId,
+    dateTimeType: `${effectiveDateTime}$FHIR$${entryResourceId}`,
+    data: entry.resource,
+  };
+
+  console.log(JSON.stringify(Item, null, 2));
+
+  try {
+    await executeWithExponentialBackoff(() =>
+      docClient.send(new PutCommand({ TableName, Item })),
+    );
+    console.log(`Stored FHIR entry (per entry) for ${uniqueUserId}`);
+  } catch (error) {
+    console.error("Error storing FHIR data:", error);
+  }
+}
+
+const storeBasedOnTest = async (TableName, uniqueUserId, entry) => {
+  const resource = entry.resource;
+  const effectiveDateTime = resource.effectiveDateTime.split('T')[0];
+  const bloodTestName = resource.code?.coding[0]?.display || code?.text || "Unknown Test";
+  const testValue = resource.valueQuantity?.value || "Unknown Value";
+  if (bloodTestName === "Unknown Test" || testValue === "Unknown Value") {
+    return;
+  }
+  const Item = {
+    uniqueUserId,
+    bloodTest: `${bloodTestName}$${effectiveDateTime}`,
+    uploadType: "FHIR",
+    testValue: testValue,
+    testUnit: resource.valueQuantity?.unit,
+    testRange: resource.referenceRange[0]?.low?.value + " - " + resource.referenceRange[0]?.high?.value,
+    data: entry.resource,
+  };
+
+  console.log(JSON.stringify(Item, null, 2));
+
+  try {
+    await executeWithExponentialBackoff(() =>
+      docClient.send(new PutCommand({ TableName, Item })),
+    );
+    console.log(`Stored FHIR entry (per blood test) for ${uniqueUserId}`);
+  } catch (error) {
+    console.error("Error storing FHIR data:", error);
+  }
+}
 
 const storeManualDataInDynamo = async (uniqueUserId, manualData, fileName) => {
   const TableName = "avovahealthdatabase";
@@ -47,10 +85,9 @@ const storeManualDataInDynamo = async (uniqueUserId, manualData, fileName) => {
   for (const entry of manualData) {
     const effectiveDateTime = entry.resource.effectiveDateTime;
     const fileNameSanitized = fileName.replace(/\s+/g, '');
-    console.log("FILE NAME SANIZITED: ", fileNameSanitized)
     const Item = {
       uniqueUserId,
-      dateTimeType: `${effectiveDateTime}#MANUAL#${fileNameSanitized}`,
+      dateTimeType: `${effectiveDateTime}$MANUAL$${fileNameSanitized}`,
       data: entry.resource,
     };
 

@@ -28,9 +28,9 @@ export default async function ReportPage({ params }: any) {
   );
   const report = (data[0] as Data)!;
 
-  const date = report.dateTimeType.split("#")[0];
-  const type = report.dateTimeType.split("#")[1].toLowerCase();
-  const name = report.dateTimeType.split("#")[2];
+  const date = report.dateTimeType.split("$")[0];
+  const type = report.dateTimeType.split("$")[1].toLowerCase();
+  const name = report.dateTimeType.split("$")[2];
 
   const year = date.split("-")[0];
   const month = date.split("-")[1];

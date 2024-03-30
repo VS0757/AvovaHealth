@@ -1,5 +1,5 @@
 import { GeistMono } from "geist/font/mono";
-import ReportRange from "./reportrange";
+import { ReportRange, findRangeAndUnit } from "./reportrange";
 
 export default function ManualReportTable({ reportData }: any) {
   return (
@@ -14,19 +14,26 @@ export default function ManualReportTable({ reportData }: any) {
         </tr>
       </thead>
       <tbody>
-        {Object.entries(reportData).map(([key, value]: any, index) => (
+        {reportData.test.map(({ unit, value, bloodtestname}: any, index: any) => {
+          if (typeof value !== 'number') {
+            return null;
+          }
+          const rangeKey = findRangeAndUnit({ item: bloodtestname, value: value});
+
+          return (
           <tr key={index} className="rounded-md border dark:border-stone-900">
             <td className="rounded-md border p-1 dark:border-stone-900">
-              {key.replace(/_/g, " ")}
+              {bloodtestname}
             </td>
             <td className="rounded-md border p-1 opacity-50 dark:border-stone-900">
-              {value}
+              {value} {rangeKey && rangeKey.Unit ? rangeKey.Unit : ''}
             </td>
             <td className="h-[48px] rounded-md border p-1 opacity-50 dark:border-stone-900">
-              <ReportRange item={key} value={value} />
+              <ReportRange item={bloodtestname} value={value} rangeKey={rangeKey} />
             </td>
           </tr>
-        ))}
+          );
+          })}
       </tbody>
     </table>
   );

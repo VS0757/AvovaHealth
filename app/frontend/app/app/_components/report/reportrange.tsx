@@ -1,8 +1,14 @@
 import ranges from "./bloodtestresults.json";
 
+interface RangeAndUnitParams {
+  item: string;
+  value: any;
+}
+
 interface RangeParams {
   item: string;
   value: any;
+  rangeKey: RangeItem;
 }
 
 interface RangeItem {
@@ -11,7 +17,7 @@ interface RangeItem {
   Female: any;
 }
 
-export default function ReportRange({ item, value }: RangeParams) {
+const findRangeAndUnit = ({ item, value }: RangeAndUnitParams) => {
   const findMatchingItem = (substring: string) => {
     const keys = Object.keys(ranges);
     const foundKey = keys.find((key) =>
@@ -19,15 +25,17 @@ export default function ReportRange({ item, value }: RangeParams) {
     );
     return foundKey ? ranges[foundKey as keyof typeof ranges] : null;
   };
+  return findMatchingItem(item) as RangeItem;
+}
 
+function ReportRange( { item, value, rangeKey }: RangeParams) {
   const male = true;
   const age = 15.0;
 
-  const rangeKey = findMatchingItem(item) as RangeItem;
   if (!rangeKey) {
     return <p>No ranges</p>;
   }
-
+  
   let genderKey = male ? rangeKey.Male : rangeKey.Female;
 
   const entry = genderKey?.find(({ ageRange }: any) => age >= ageRange[0]);
@@ -52,4 +60,6 @@ export default function ReportRange({ item, value }: RangeParams) {
       </div>
     </div>
   );
-}
+};
+
+export {findRangeAndUnit, ReportRange};

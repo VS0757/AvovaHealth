@@ -176,6 +176,46 @@
       { "ageRange": [19, 150], "range": [0, 34] }
     ]
   },
+  "Bilirubin, Direct": {
+      "Unit": "mg/dL",
+      "Male": [
+      { "ageRange": [0, 0.04], "range": [0.00, 0.70] },
+      { "ageRange": [0.04, 1], "range": [0.00, 0.30] },
+      { "ageRange": [1, 8], "range": [0.00, 0.20] },
+      { "ageRange": [9, 12], "range": [0.00, 0.30] },
+      { "ageRange": [13, 18], "range": [0.00, 0.40] },
+      { "ageRange": [19, 150], "range": [0.00, 0.50] }
+      ],
+      "Female": [
+      { "ageRange": [0, 0.04], "range": [0.00, 0.70] },
+      { "ageRange": [0.04, 1], "range": [0.00, 0.30] },
+      { "ageRange": [1, 8], "range": [0.00, 0.20] },
+      { "ageRange": [9, 12], "range": [0.00, 0.30] },
+      { "ageRange": [13, 18], "range": [0.00, 0.40] },
+      { "ageRange": [19, 150], "range": [0.00, 0.50] }
+      ]
+  },
+  "Bilirubin, Total": {
+      "Unit": "mg/dL",
+      "Male": [
+      { "ageRange": [0, 0.04], "range": [0.0, 17.0] },
+      { "ageRange": [0.04, 1], "range": [0.0, 0.7] },
+      { "ageRange": [1, 8], "range": [0.0, 0.4] },
+      { "ageRange": [9, 11], "range": [0.0, 0.6] },
+      { "ageRange": [12, 14], "range": [0.0, 0.7] },
+      { "ageRange": [15, 18], "range": [0.0, 0.8] },
+      { "ageRange": [19, 150], "range": [0.0, 1.2] }
+      ],
+      "Female": [
+      { "ageRange": [0, 0.04], "range": [0.0, 16.6] },
+      { "ageRange": [0.04, 1], "range": [0.0, 0.7] },
+      { "ageRange": [1, 8], "range": [0.0, 0.4] },
+      { "ageRange": [9, 11], "range": [0.0, 0.6] },
+      { "ageRange": [12, 14], "range": [0.0, 0.7] },
+      { "ageRange": [15, 18], "range": [0.0, 0.8] },
+      { "ageRange": [19, 150], "range": [0.0, 1.2] }
+      ]
+  },
   "Bicarbonate, Bicarbonate ion, Hydrogen carbonate ion, HCO3-, Total CO2": {
       "Definition": "Bicarbonate, also known as hydrogen carbonate, is an ion (charged particle) present in the blood that helps maintain the pH balance of the body. It acts as a buffer, neutralizing excess acids to keep the blood neither too acidic nor too basic.",
       "Unit": "mmol/L",
@@ -198,7 +238,7 @@
       { "ageRange": [61, 150], "range": [23, 31] }
       ]
   },
-  "BUN (Blood Urea Nitrogen), Urea Nitrogen, Serum Urea Nitrogen, Serum Urea, Serum BUN, Blood Urea, Urea Nitrogen in Blood, BUN, UN, SBU, SUN": {
+  "UREA NITROGEN (BUN), BUN (Blood Urea Nitrogen), Urea Nitrogen, Serum Urea Nitrogen, Serum Urea, Serum BUN, Blood Urea, Urea Nitrogen in Blood, BUN, UN, SBU, SUN": {
       "Definition": "Blood Urea Nitrogen (BUN) measures the amount of urea nitrogen in the blood. Urea nitrogen is a waste product formed in the liver when the body breaks down proteins. High BUN levels may indicate kidney dysfunction or dehydration.",
       "Unit": "mg/dL",
       "Male": [

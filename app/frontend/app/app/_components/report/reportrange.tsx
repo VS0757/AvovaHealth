@@ -1,4 +1,13 @@
 import ranges from "./bloodtestresults.json";
+import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
+
+interface UserData {
+  preconditions: any;
+  medications: any;
+  uniqueUserId: string;
+  age: number;
+  sex: string;
+}
 
 interface RangeAndUnitParams {
   item: string;
@@ -28,9 +37,21 @@ const findRangeAndUnit = ({ item, value }: RangeAndUnitParams) => {
   return findMatchingItem(item) as RangeItem;
 }
 
-function ReportRange( { item, value, rangeKey }: RangeParams) {
-  const male = true;
-  const age = 15.0;
+async function getItem(uniqueUserId: String) {
+  const res = await fetch(
+    `http://localhost:3001/retrieve-user-data?id=${uniqueUserId}`,
+  );
+  const data = await res.json();
+  return data?.data as any[];
+}
+
+async function ReportRange( { item, value, rangeKey }: RangeParams) {
+  const { getIdToken } = getKindeServerSession();
+  const uniqueUserId = (await getIdToken()).sub;
+  const data = await getItem("kp_f85ba560eb6346ccb744778f7c8d769e") as unknown as UserData;
+
+  const male = data.sex;
+  const age = data.age;
 
   if (!rangeKey) {
     return <p>No ranges</p>;

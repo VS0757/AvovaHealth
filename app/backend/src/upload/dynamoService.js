@@ -151,6 +151,32 @@ const storeUserDataInDynamo = async (uniqueUserId, age, sex, preconditions, medi
   }
 };
 
+const retrieveUserDataFromDynamo = async (
+  uniqueUserId,
+) => {
+  const TableName = "avovahealthuserdata";
+
+  let KeyConditionExpression = "uniqueUserId = :uniqueUserId";
+  let ExpressionAttributeValues = {
+    ":uniqueUserId": uniqueUserId,
+  };
+
+  const commandParams = {
+    TableName,
+    KeyConditionExpression,
+    ExpressionAttributeValues,
+  };
+
+  const command = new QueryCommand(commandParams);
+  try {
+    const { Items } = await docClient.send(command);
+    return Items[0];
+  } catch (error) {
+    console.error("Error retrieving FHIR Data from DynamoDB:", error);
+    throw error;
+  }
+};
+
 const retrieveFhirDataFromDynamo = async (
   uniqueUserId,
   specificDate = null,
@@ -192,4 +218,5 @@ module.exports = {
   storeManualDataInDynamo,
   storeUserDataInDynamo,
   retrieveFhirDataFromDynamo,
+  retrieveUserDataFromDynamo,
 };

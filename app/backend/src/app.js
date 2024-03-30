@@ -10,6 +10,7 @@ const {
   storeUserDataInDynamo,
   storeManualDataInDynamo,
   retrieveFhirDataFromDynamo,
+  retrieveUserDataFromDynamo,
 } = require("./upload/dynamoService");
 
 const app = express();
@@ -60,11 +61,31 @@ app.post("/upload-epic-fhir", async (req, res) => {
 
 app.post("/upload-user-data", async (req, res) => {
   try {
-    console.log("BACKEEEEND");
+    const { uniqueUserId, age, sex, preconditions, medications } = req.body;
+    await storeUserDataInDynamo(uniqueUserId, age, sex, preconditions, medications);
   } catch (error) {
     console.error("Failed to upload user data to Dynamo:", error);
     res.status(500).send({
       message: "Failed to upload user data to Dynamo",
+      error: error.toString(),
+    });
+  }
+});
+
+app.get("/retrieve-user-data", async (req, res) => {
+  try {
+    const { id } = req.query;
+    const data = await retrieveUserDataFromDynamo(id);
+    if (!data) {
+      return res
+        .status(404)
+        .send({ message: "No data found for the provided userID." });
+    }
+    res.send({ message: "Data retrieved successfully.", data: data });
+  } catch (error) {
+    console.error("Failed to retrieve user data to Dynamo:", error);
+    res.status(500).send({
+      message: "Failed to retrieve user data to Dynamo",
       error: error.toString(),
     });
   }

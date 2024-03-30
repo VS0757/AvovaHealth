@@ -15,7 +15,7 @@ export default function ManualReportTable({ reportData }: any) {
       </thead>
       <tbody>
         {reportData.test.map(({ unit, value, bloodtestname}: any, index: any) => {
-          if (typeof value !== 'number') {
+          if (isNaN(value)) {
             return null;
           }
           const rangeKey = findRangeAndUnit({ item: bloodtestname, value: value});

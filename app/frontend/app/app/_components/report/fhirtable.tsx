@@ -1,5 +1,5 @@
 import { GeistMono } from "geist/font/mono";
-import { findRangeAndUnit, ReportRange } from "./reportrange";
+import { findRangeAndUnit, ReportRange, BloodTestToolTip, MedPreNotes } from "./reportrange";
 
 export default function FhirReportTable({ reportData }: any) {
   const value = reportData.valueQuantity.value;
@@ -7,7 +7,7 @@ export default function FhirReportTable({ reportData }: any) {
   const label = reportData.code.text;
 
   const interpretation = reportData.interpretation?.[0]?.text;
-  const rangeKey = findRangeAndUnit({ item: label.split(",")[0]});
+  const rangeKey = findRangeAndUnit({ item: label});
 
   return (
     <table
@@ -16,13 +16,16 @@ export default function FhirReportTable({ reportData }: any) {
       <tbody>
         <tr className="rounded-md border dark:border-stone-900">
           <td className="rounded-md border p-1 dark:border-stone-900">
-            {label}
+          <BloodTestToolTip rangeKey={rangeKey} testName={label} />
           </td>
           <td className="rounded-md border p-1 opacity-50 dark:border-stone-900">
             {value} {unit}
           </td>
           <td className="rounded-md border p-1 opacity-50 dark:border-stone-900">
             <ReportRange value={value} rangeKey={rangeKey} date={reportData.effectiveDateTime.split("T")[0]} />
+          </td>
+          <td className="h-[48px] rounded-md border p-1 opacity-50 dark:border-stone-900">
+              <MedPreNotes rangeKey={rangeKey} />
           </td>
         </tr>
         {interpretation && (

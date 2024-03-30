@@ -90,12 +90,18 @@ app.post("/upload-user-data", async (req, res) => {
 app.get("/retrieve-user-data", async (req, res) => {
   try {
     const { id } = req.query;
-    const data = await retrieveUserDataFromDynamo(id);
+    let data = await retrieveUserDataFromDynamo(id);
     if (!data) {
       return res
         .status(404)
         .send({ message: "No data found for the provided userID." });
     }
+    data = {
+      ...data,
+      preconditions: [...data.preconditions],
+      medications: [...data.medications],
+    };
+    console.log("data: ", data)
     res.send({ message: "Data retrieved successfully.", data: data });
   } catch (error) {
     console.error("Failed to retrieve user data to Dynamo:", error);

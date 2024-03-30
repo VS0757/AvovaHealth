@@ -1,6 +1,7 @@
 {
   "Albumin;ALB;Serum Albumin;Plasma Albumin": {
     "Definition": "Albumin is a type of protein made by your liver. It's found in your blood and helps carry hormones, vitamins, and enzymes throughout your body. It also plays a key role in keeping the liquid part of your blood, the plasma, from leaking out of your blood vessels. Additionally, albumin helps maintain proper pressure in your blood vessels and is important for transporting various substances in your blood.",
+    "MedPre": {"Penicillin": "Note, since you are taking Penicillin, your test results may be lower than normal. Please consult with your healthcare provider for more information."},    
     "Unit": "gm/dL",
     "Male": [
       { "ageRange": [0, 0.04], "range": [3.30, 4.50] },
@@ -648,6 +649,7 @@
   },
   "Potassium;Potassium Serum;Serum Potassium;K Serum;K+ Serum": {
       "Definition": "Potassium Serum, also known as Serum Potassium or K Serum, refers to the concentration of potassium ions present in the liquid portion of the blood. Potassium is an essential electrolyte that plays a crucial role in various bodily functions, including muscle contraction, nerve transmission, and maintaining proper fluid balance. Abnormal levels of serum potassium can indicate various medical conditions and may require further evaluation and treatment.",
+      "MedPre": {"Insulin": "Note, since you are taking Insulin, your test results may be lower than normal. Please consult with your healthcare provider for more information."},
       "Unit": "",
       "Male": [
       { "ageRange": [0, 1], "range": [3.50, 6.00] },

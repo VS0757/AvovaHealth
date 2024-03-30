@@ -1,4 +1,5 @@
 require("dotenv").config();
+const { OpenAI } = require("openai");
 const express = require("express");
 const multer = require("multer");
 const cors = require("cors");
@@ -25,7 +26,13 @@ app.get("/", (req, res) => {
 app.post("/upload-pdf", upload.single("pdf"), async (req, res) => {
   try {
     const extractedText = await analyzeDocument(req.file.buffer);
-    const chatGPTResponse = await callChatGPTAPI(extractedText);
+    const prompt = "Listed below is a patient's blood work. The JSON format will include an array of entries, called 'testsbydate' (could have only one), where entries each include and are split up by a unique 'effectiveDateTime' key associated with a value of the date that the blood test was conducted of the form YYYY-MM-DD. Each entry should contain an array of sub-entries, called 'test' (may only have one) for each and that contains 'bloodtestname' and 'value' (required), that also contains 'range' and 'unit' if it's there, otherwise just set the value to string, 'None'. Your output should be a JSON string only and nothing else" + extractedText;
+    let response = await callChatGPTAPI(prompt);
+
+    response = response.choices[0].message.content;
+    response = response.replace(/```json|```/g, '').trim()
+    const chatGPTResponse = JSON.parse(response);
+
     await uploadDataToS3(
       chatGPTResponse,
       "MANUAL",
@@ -42,6 +49,19 @@ app.post("/upload-pdf", upload.single("pdf"), async (req, res) => {
     console.error("Error during upload, analysis, or ChatGPT query:", err);
     res.status(500).send("Error processing file.");
   }
+});
+
+app.get("/summarize", async (req, res) => {
+    console.log('posting')
+
+    const { prompt } = req.query;
+
+    const response = await callChatGPTAPI(prompt)
+
+    console.log('got a response')
+    console.log(response)
+
+    res.send({ choices: response.choices});
 });
 
 app.post("/upload-epic-fhir", async (req, res) => {

@@ -18,7 +18,7 @@ export default function ManualReportTable({ reportData }: any) {
           if (isNaN(value)) {
             return null;
           }
-          const rangeKey = findRangeAndUnit({ item: bloodtestname, value: value});
+          const rangeKey = findRangeAndUnit({ item: bloodtestname });
 
           return (
           <tr key={index} className="rounded-md border dark:border-stone-900">
@@ -29,7 +29,7 @@ export default function ManualReportTable({ reportData }: any) {
               {value} {rangeKey && rangeKey.Unit ? rangeKey.Unit : ''}
             </td>
             <td className="h-[48px] rounded-md border p-1 opacity-50 dark:border-stone-900">
-              <ReportRange item={bloodtestname} value={value} rangeKey={rangeKey} />
+              <ReportRange value={value} rangeKey={rangeKey} date={reportData.effectiveDateTime} />
             </td>
           </tr>
           );

@@ -27,7 +27,7 @@ app.post("/upload-pdf", upload.single("pdf"), async (req, res) => {
   try {
     const extractedText = await analyzeDocument(req.file.buffer);
     const prompt = "Listed below is a patient's blood work. The JSON format will include an array of entries, called 'testsbydate' (could have only one), where entries each include and are split up by a unique 'effectiveDateTime' key associated with a value of the date that the blood test was conducted of the form YYYY-MM-DD. Each entry should contain an array of sub-entries, called 'test' (may only have one) for each and that contains 'bloodtestname' and 'value' (required), that also contains 'range' and 'unit' if it's there, otherwise just set the value to string, 'None'. Your output should be a JSON string only and nothing else" + extractedText;
-    let response = await callChatGPTAPI(prompt);
+    let response = await callChatGPTAPI(prompt, "gpt-4-turbo-preview");
 
     response = response.choices[0].message.content;
     response = response.replace(/```json|```/g, '').trim()
@@ -52,14 +52,9 @@ app.post("/upload-pdf", upload.single("pdf"), async (req, res) => {
 });
 
 app.get("/summarize", async (req, res) => {
-    console.log('posting')
-
     const { prompt } = req.query;
 
-    const response = await callChatGPTAPI(prompt)
-
-    console.log('got a response')
-    console.log(response)
+    const response = await callChatGPTAPI(prompt, 'gpt-3.5-turbo-0125')
 
     res.send({ choices: response.choices});
 });

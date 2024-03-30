@@ -1,4 +1,4 @@
-export default async function DemographicsSettings() {
+export default function DemographicsSettings() {
   return (
     <div>
       <div className="mt-4 flex flex-row items-center gap-4">
@@ -10,11 +10,11 @@ export default async function DemographicsSettings() {
         </select>
       </div>
       <div className="mt-4 flex flex-row items-center gap-4">
-        <p>Age</p>
+        <p>Birthday</p>
         <input
-          type="number"
+          type="date"
           className="w-32 rounded-md border bg-inherit px-4 py-2 dark:border-stone-900"
-          placeholder="21"
+          placeholder="YYYY-MM-DD"
         />
       </div>
     </div>

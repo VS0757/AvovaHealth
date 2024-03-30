@@ -5,19 +5,14 @@ interface UserData {
   preconditions: any;
   medications: any;
   uniqueUserId: string;
-  age: number;
+  birthday: string;
   sex: string;
 }
 
-interface RangeAndUnitParams {
-  item: string;
-  value: any;
-}
-
 interface RangeParams {
-  item: string;
   value: any;
   rangeKey: RangeItem;
+  date: string;
 }
 
 interface RangeItem {
@@ -26,14 +21,29 @@ interface RangeItem {
   Female: any;
 }
 
-const findRangeAndUnit = ({ item, value }: RangeAndUnitParams) => {
+function calculateAgeInYears(birthDateString: string, onDateString: string) {
+  const birthDate = new Date(birthDateString).getTime();
+  const onDate = new Date(onDateString).getTime();
+
+  const differenceInMilliseconds = onDate - birthDate;
+  const years = differenceInMilliseconds / (1000 * 60 * 60 * 24 * 365.25);
+
+  return years;
+}
+
+const findRangeAndUnit = ({ item }: { item: string }) => {
   const findMatchingItem = (substring: string) => {
     const keys = Object.keys(ranges);
-    const foundKey = keys.find((key) =>
-      key.toLowerCase().includes(substring.toLowerCase()),
-    );
+    const lowercaseItem = substring.toLowerCase();
+
+    const foundKey = keys.find((key) => {
+      const options = key.split(";").map(option => option.toLowerCase());
+      return options.includes(lowercaseItem);
+    });
+
     return foundKey ? ranges[foundKey as keyof typeof ranges] : null;
   };
+
   return findMatchingItem(item) as RangeItem;
 }
 
@@ -45,21 +55,25 @@ async function getItem(uniqueUserId: String) {
   return data?.data as any[];
 }
 
-async function ReportRange( { item, value, rangeKey }: RangeParams) {
+async function ReportRange( { value, rangeKey, date }: RangeParams) {
   const { getIdToken } = getKindeServerSession();
   const uniqueUserId = (await getIdToken()).sub;
   const data = await getItem("kp_f85ba560eb6346ccb744778f7c8d769e") as unknown as UserData;
 
-  const male = data.sex;
-  const age = data.age;
-
   if (!rangeKey) {
     return <p>No ranges</p>;
   }
+
+  const male = data.sex;
+  const age = calculateAgeInYears(data.birthday, date);
+
+  console.log("YOUER EXACT AGE IS: " + age);
+
   
   let genderKey = male ? rangeKey.Male : rangeKey.Female;
 
-  const entry = genderKey?.find(({ ageRange }: any) => age >= ageRange[0]);
+  const entry = genderKey?.find(({ ageRange }: any) => age < ageRange[1]);
+  console.log(entry)
   const lowRange = entry?.range[0];
   const highRange = entry?.range[1];
 

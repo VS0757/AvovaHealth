@@ -33,19 +33,10 @@ const generatePrompt = (contextText: string) => {
 };
 
 const generateAnswer = async (prompt: string) => {
-	console.log('generating answer')
-
 	const res = await fetch(`http://localhost:3001/summarize?prompt=${prompt}`);
 
-	if (res.status !== 200) {
-		console.log('error')
-	} else {
-		console.log('inb here')
-		const data = await res.json();
-		console.log(data)
-
-		return data.choices[0].message.content
-	}
+  const data = await res.json();
+  return data.choices[0].message.content
 };
 
 interface Data {
@@ -73,13 +64,10 @@ export default async function ReportPage({ params }: any) {
   const day = date.split("-")[2];
 
   const reportData = report.data;
-  console.log(JSON.stringify(reportData))
 
 	const prompt = generatePrompt(String(JSON.stringify(reportData)));
-	console.log(prompt)
 
-	const gpt_out = await generateAnswer(prompt);
-  console.log(gpt_out)
+	// const gpt_out = await generateAnswer(prompt);
 
   return (
     <main>
@@ -110,7 +98,7 @@ export default async function ReportPage({ params }: any) {
 
         <div className="mt-8">
           <p className="opacity-50">Blood Report Summary</p>
-          <p>{gpt_out}</p>
+          <p>{"HEY DAD"}</p>
         </div>
       </div>
     </main>

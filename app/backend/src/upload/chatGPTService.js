@@ -5,15 +5,14 @@ const openai = new OpenAI({
   apiKey: process.env.OPEN_AI_SECRET_KEY,
 });
 
-const callChatGPTAPI = async (prompt) => {
+const callChatGPTAPI = async (prompt, model) => {
     try {
         const response = await openai.chat.completions.create({
-            model: "gpt-4-turbo-preview",
+            model: model,
             messages: [{ role: "user", content: prompt }],
             temperature: 0,
         });
 
-        console.log(response)
         return response
     } catch (error) {
         throw error;

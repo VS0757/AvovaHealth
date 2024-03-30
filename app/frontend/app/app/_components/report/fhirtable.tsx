@@ -6,8 +6,8 @@ export default function FhirReportTable({ reportData }: any) {
   const unit = reportData.valueQuantity.unit;
   const label = reportData.code.text;
 
-  const interpretation = reportData.interpretation[0].text;
-  const rangeKey = findRangeAndUnit({ item: label.split(",")[0], value: value});
+  const interpretation = reportData.interpretation?.[0]?.text;
+  const rangeKey = findRangeAndUnit({ item: label.split(",")[0]});
 
   return (
     <table
@@ -22,17 +22,19 @@ export default function FhirReportTable({ reportData }: any) {
             {value} {unit}
           </td>
           <td className="rounded-md border p-1 opacity-50 dark:border-stone-900">
-            <ReportRange item={label.split(",")[0]} value={value} rangeKey={rangeKey} />
+            <ReportRange value={value} rangeKey={rangeKey} date={reportData.effectiveDateTime.split("T")[0]} />
           </td>
         </tr>
-        <tr className="rounded-md border dark:border-stone-900">
-          <td className="rounded-md border p-1 dark:border-stone-900">
-            Interpretation
-          </td>
-          <td className="rounded-md border p-1 opacity-50 dark:border-stone-900">
-            {interpretation}
-          </td>
-        </tr>
+        {interpretation && (
+          <tr className="rounded-md border dark:border-stone-900">
+            <td className="rounded-md border p-1 dark:border-stone-900">
+              Interpretation
+            </td>
+            <td className="rounded-md border p-1 opacity-50 dark:border-stone-900" colSpan={2}>
+              {interpretation}
+            </td>
+          </tr>
+        )}
       </tbody>
     </table>
   );

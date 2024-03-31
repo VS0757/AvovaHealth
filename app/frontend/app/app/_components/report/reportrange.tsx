@@ -14,7 +14,8 @@ interface RangeItem {
   Male: any;
   Female: any;
   Definition: string;
-  MedPre?: any;
+  MedPreGeneral?: any;
+  MedPreSpecific?: any;
 }
 
 function calculateAgeInYears(birthDateString: string, onDateString: string) {
@@ -67,66 +68,64 @@ function BloodTestToolTip({ rangeKey, testName }: { rangeKey: RangeItem; testNam
   );
 }
 
-
 async function MedPreNotes({ rangeKey }: { rangeKey: RangeItem }) {
-  const data = await getItem();
+  const userData = await getItem() as UserData;
+  const increases: string[] = [];
+  const decreases: string[] = [];
 
-  const matchingPreconditions: string[] = [];
-  const matchingMedications: string[] = [];
-  Object.keys(rangeKey?.MedPre ?? {}).forEach(key => {
-    if (data.preconditions.includes(key)) {
-      matchingPreconditions.push(rangeKey.MedPre[key]);
-    }
-    if (data.medications.includes(key)) {
-      matchingMedications.push(rangeKey.MedPre[key]);
+  Object.keys(rangeKey?.MedPreGeneral ?? {}).forEach(key => {
+    if (userData.medications.includes(key) || userData.preconditions.includes(key)) {
+      if (rangeKey.MedPreGeneral[key] === 'Increase') {
+        increases.push(key);
+      } else if (rangeKey.MedPreGeneral[key] === 'Decrease') {
+        decreases.push(key);
+      }
     }
   });
 
+  const formatMedicationList = ({conditions}: {conditions: string[]}) => {
+    if (conditions.length > 1) {
+      return `${conditions.slice(0, -1).join(', ')} and ${conditions[conditions.length - 1]}`;
+    }
+    return conditions[0];
+  };
+
+
   return (
     <div className="p-2">
-      {matchingPreconditions.length > 0 && (
-        <div>
-          <h2 className="text-lg font-semibold">Preconditions</h2>
-          <ul>
-            {matchingPreconditions.map((precondition, index) => (
-              <li key={index}>{precondition}</li>
-            ))}
-          </ul>
-        </div>
+      {increases.length > 0 && (
+        <p>Since you are taking {formatMedicationList({ conditions: increases })}, your test results may be higher than normal. Please consult with your healthcare provider for more information.</p>
       )}
-      {matchingMedications.length > 0 && (
-        <div>
-          <h2 className="text-lg font-semibold">Medications</h2>
-          <ul>
-            {matchingMedications.map((medication, index) => (
-              <li key={index}>{medication}</li>
-            ))}
-          </ul>
-        </div>
+      {decreases.length > 0 && (
+        <p>Since you are taking {formatMedicationList({ conditions: decreases })}, your test results may be lower than normal. Please consult with your healthcare provider for more information.</p>
       )}
     </div>
   );
 }
 
 async function ReportRange( { value, rangeKey, date }: { value: number, rangeKey: RangeItem, date: string }) {
-  const data = await getItem();
+  const userData = await getItem();
 
   if (!rangeKey) {
     return <p>No ranges</p>;
   }
 
-  const male = data.sex;
-  const age = calculateAgeInYears(data.birthday, date);
+  const male = userData.sex === 'Male';
+  const age = calculateAgeInYears(userData.birthday, date);
 
-  console.log("YOUR EXACT AGE IS: " + age);
+  let specificRanges;
+  if (userData.preconditions.length > 0 && rangeKey.MedPreSpecific) {
+    const preconditionMatch = userData.preconditions.find(precondition => rangeKey.MedPreSpecific[precondition]);
+    if (preconditionMatch) {
+      specificRanges = rangeKey.MedPreSpecific[preconditionMatch];
+    }
+  }
 
-  let genderKey = male ? rangeKey.Male : rangeKey.Female;
+  let genderKey = specificRanges ? (male ? specificRanges.Male : specificRanges.Female) : (male ? rangeKey.Male : rangeKey.Female);
 
   const entry = genderKey?.find(({ ageRange }: any) => age < ageRange[1]);
   const lowRange = entry?.range[0];
   const highRange = entry?.range[1];
-
-  console.log(lowRange + " " + highRange);
 
   return (
     <div className={`px-2`}>

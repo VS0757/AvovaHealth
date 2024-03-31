@@ -70,38 +70,54 @@ function BloodTestToolTip({ rangeKey, testName }: { rangeKey: RangeItem; testNam
 
 async function MedPreNotes({ rangeKey }: { rangeKey: RangeItem }) {
   const userData = await getItem() as UserData;
-  const increases: string[] = [];
-  const decreases: string[] = [];
+  const increasesMedications: string[] = [];
+  const decreasesMedications: string[] = [];
+  const increasesPreconditions: string[] = [];
+  const decreasesPreconditions: string[] = [];
 
   Object.keys(rangeKey?.MedPreGeneral ?? {}).forEach(key => {
-    if (userData.medications.includes(key) || userData.preconditions.includes(key)) {
-      if (rangeKey.MedPreGeneral[key] === 'Increase') {
-        increases.push(key);
-      } else if (rangeKey.MedPreGeneral[key] === 'Decrease') {
-        decreases.push(key);
+    const effect = rangeKey.MedPreGeneral[key];
+    if (userData.medications.includes(key)) {
+      if (effect === 'Increase') {
+        increasesMedications.push(key);
+      } else if (effect === 'Decrease') {
+        decreasesMedications.push(key);
+      }
+    }
+    if (userData.preconditions.includes(key)) {
+      if (effect === 'Increase') {
+        increasesPreconditions.push(key);
+      } else if (effect === 'Decrease') {
+        decreasesPreconditions.push(key);
       }
     }
   });
 
-  const formatMedicationList = ({conditions}: {conditions: string[]}) => {
+  const formatList = ({conditions}: {conditions: string[]}) => {
     if (conditions.length > 1) {
       return `${conditions.slice(0, -1).join(', ')} and ${conditions[conditions.length - 1]}`;
     }
     return conditions[0];
   };
 
-
   return (
     <div className="p-2">
-      {increases.length > 0 && (
-        <p>Since you are taking {formatMedicationList({ conditions: increases })}, your test results may be higher than normal. Please consult with your healthcare provider for more information.</p>
+      {increasesMedications.length > 0 && (
+        <p>Since you are taking {formatList({ conditions: increasesMedications })}, your test results may be higher than normal. Please consult with your healthcare provider for more information.</p>
       )}
-      {decreases.length > 0 && (
-        <p>Since you are taking {formatMedicationList({ conditions: decreases })}, your test results may be lower than normal. Please consult with your healthcare provider for more information.</p>
+      {decreasesMedications.length > 0 && (
+        <p>Since you are taking {formatList({ conditions: decreasesMedications })}, your test results may be lower than normal. Please consult with your healthcare provider for more information.</p>
+      )}
+      {increasesPreconditions.length > 0 && (
+        <p>Since you have {formatList({ conditions: increasesPreconditions })}, your test results may be higher than normal. Please consult with your healthcare provider for more information.</p>
+      )}
+      {decreasesPreconditions.length > 0 && (
+        <p>Since you have {formatList({ conditions: decreasesPreconditions })}, your test results may be lower than normal. Please consult with your healthcare provider for more information.</p>
       )}
     </div>
   );
 }
+
 
 async function ReportRange( { value, rangeKey, date }: { value: number, rangeKey: RangeItem, date: string }) {
   const userData = await getItem();

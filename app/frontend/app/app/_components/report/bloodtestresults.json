@@ -245,6 +245,7 @@
   },
   "UREA NITROGEN (BUN);BUN (Blood Urea Nitrogen);Urea Nitrogen;Serum Urea Nitrogen;Serum Urea;Serum BUN;Blood Urea;Urea Nitrogen in Blood;BUN;UN;SBU;SUN": {
       "Definition": "Blood Urea Nitrogen (BUN) measures the amount of urea nitrogen in the blood. Urea nitrogen is a waste product formed in the liver when the body breaks down proteins. High BUN levels may indicate kidney dysfunction or dehydration.",
+      "MedPreGeneral": {"Hypertension": "Increase"},
       "Unit": "mg/dL",
       "Male": [
       { "ageRange": [0, 0.04], "range": [3.00, 23.00] },
@@ -307,6 +308,14 @@
   },
   "Ceruloplasmin;Ferroxidase;Siderase;Copper-oxidase;CP": {
     "Definition": "Ceruloplasmin, also known as ferroxidase or siderase, is a protein found in blood that helps carry copper throughout the body. It plays a role in iron metabolism and antioxidant function, and abnormal levels may indicate certain health conditions.",
+    "MedPreSpecific": {"Wilson's Disease":
+        {"Male": [
+        { "ageRange": [0, 150], "range": [0, 14] }
+        ],
+        "Female": [
+        { "ageRange": [0, 150], "range": [0, 14] }
+        ]}
+      },
     "Unit": "mg/dL",
     "Male": [
       { "ageRange": [0, 0.08], "range": [7, 24] },
@@ -363,6 +372,7 @@
   },
   "Creatinine;Blood Creatinine;Serum Creatinine;Cr": {
       "Definition": "Creatinine is a waste product formed by the muscles during the breakdown of a compound called creatine phosphate. It is filtered out of the blood by the kidneys and excreted in urine. Blood tests measure the level of creatinine to assess kidney function and overall health.",
+      "MedPreGeneral": {"Hypertension": "Increase"},
       "Unit": "mg/dL",
       "Male": [
       { "ageRange": [0, 0.038], "range": [0.32, 0.92] },
@@ -507,7 +517,7 @@
       { "ageRange": [61, 150], "range": [11.60, 15.90] }
     ]
   },
-  "HDL Cholesterol;High-density lipoprotein cholesterol;Good cholesterol;HDL-C": {
+  "HDL;HDL Cholesterol;High-density lipoprotein cholesterol;Good cholesterol;HDL-C": {
       "Definition": "HDL Cholesterol, also known as 'Good cholesterol' or 'High-density lipoprotein cholesterol', refers to a type of cholesterol that helps remove other forms of cholesterol from your bloodstream, which can lower the risk of heart disease. Higher levels of HDL cholesterol are generally considered beneficial for heart health.",
       "Unit": "mg/dL",
       "Male": [
@@ -807,7 +817,7 @@
   },
   "Sodium;Sodium Serum;Serum sodium;Na+;Sodium level;Blood Na+;Na;Na+": {
     "Definition": "Sodium serum, also known as serum sodium or Na+, is a measurement of the concentration of sodium ions in the liquid part of the blood. It helps doctors assess the body's water balance and nerve function. Abnormal levels of serum sodium can indicate various health conditions.",
-    "MedPreGeneral": {"Corticosteroids": "Increase", "Dexamethasone": "Increase", "Hydrocortisone": "Increase", "Betamethasone": "Increase", "Methylprednisolone": "Increase", "Prednisone": "Increase", "Prednisolone": "Increase"},
+    "MedPreGeneral": {"Hypertension": "Increase", "Corticosteroids": "Increase", "Dexamethasone": "Increase", "Hydrocortisone": "Increase", "Betamethasone": "Increase", "Methylprednisolone": "Increase", "Prednisone": "Increase", "Prednisolone": "Increase"},
     "Unit": "mmol/L",
     "Male": [
       { "ageRange": [0, 0.25], "range": [135, 145] },

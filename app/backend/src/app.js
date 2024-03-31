@@ -78,10 +78,10 @@ app.post("/upload-epic-fhir", async (req, res) => {
 
 app.post("/upload-user-data", async (req, res) => {
   try {
-    const { uniqueUserId, age, sex, preconditions, medications } = req.body;
+    const { uniqueUserId, birthday, sex, preconditions, medications } = req.body;
     await storeUserDataInDynamo(
       uniqueUserId,
-      age,
+      birthday,
       sex,
       preconditions,
       medications,

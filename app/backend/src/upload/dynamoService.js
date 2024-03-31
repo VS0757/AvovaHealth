@@ -136,12 +136,12 @@ const storeManualBasedOnTest = async (TableName, uniqueUserId, entry, effectiveD
   }
 }
 
-const storeUserDataInDynamo = async (uniqueUserId, age, sex, preconditions, medications) => {
+const storeUserDataInDynamo = async (uniqueUserId, birthday, sex, preconditions, medications) => {
   const TableName = "avovahealthuserdata";
 
   const Item = {
     uniqueUserId,
-    age: age,
+    birthday: birthday,
     sex: sex,
     preconditions: preconditions,
     medications: medications,

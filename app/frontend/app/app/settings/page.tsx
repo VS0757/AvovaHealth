@@ -22,7 +22,10 @@ export default async function Settings() {
         </section>
         <section className="mt-8">
           <p>Demographics</p>
-          <DemographicsSettings />
+          <DemographicsSettings
+            initialSex={userData.sex}
+            initialBirthday={userData.birthday}
+          />
         </section>
         <section className="mt-8">
           <p>Medications</p>

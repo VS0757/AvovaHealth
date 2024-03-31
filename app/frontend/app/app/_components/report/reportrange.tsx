@@ -111,7 +111,7 @@ async function ReportRange( { value, rangeKey, date }: { value: number, rangeKey
   }
 
   const male = userData.sex === 'Male';
-  const age = calculateAgeInYears(userData.birthday, date);
+  const birthday = calculateAgeInYears(userData.birthday, date);
 
   let specificRanges;
   if (userData.preconditions.length > 0 && rangeKey.MedPreSpecific) {
@@ -123,7 +123,7 @@ async function ReportRange( { value, rangeKey, date }: { value: number, rangeKey
 
   let genderKey = specificRanges ? (male ? specificRanges.Male : specificRanges.Female) : (male ? rangeKey.Male : rangeKey.Female);
 
-  const entry = genderKey?.find(({ ageRange }: any) => age < ageRange[1]);
+  const entry = genderKey?.find(({ ageRange }: any) => birthday < ageRange[1]);
   const lowRange = entry?.range[0];
   const highRange = entry?.range[1];
 

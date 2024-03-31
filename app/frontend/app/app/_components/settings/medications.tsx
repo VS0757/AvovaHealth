@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 
 export default function MedicationsSettings() {
   const [selectedMedications, setSelectedMedications] = useState<string[]>([]);
-  const medications = ['Insulin', 'Penicillin'];
+  const medications = ['Insulin', 'Penicillin', 'Amitriptyline', 'Baclofen', 'Corticosteroids', 'Dexamethasone', 'Hydrocortisone', 'Betamethasone', 'Methylprednisolone', 'Prednisone', 'Prednisolone'];
 
   const handleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     const value = event.target.value;

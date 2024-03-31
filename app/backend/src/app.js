@@ -101,7 +101,6 @@ app.get("/retrieve-user-data", async (req, res) => {
       preconditions: [...data.preconditions],
       medications: [...data.medications],
     };
-    console.log("data: ", data)
     res.send({ message: "Data retrieved successfully.", data: data });
   } catch (error) {
     console.error("Failed to retrieve user data to Dynamo:", error);

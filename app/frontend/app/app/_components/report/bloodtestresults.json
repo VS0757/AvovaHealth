@@ -1,7 +1,7 @@
 {
   "Albumin;ALB;Serum Albumin;Plasma Albumin": {
     "Definition": "Albumin is a type of protein made by your liver. It's found in your blood and helps carry hormones, vitamins, and enzymes throughout your body. It also plays a key role in keeping the liquid part of your blood, the plasma, from leaking out of your blood vessels. Additionally, albumin helps maintain proper pressure in your blood vessels and is important for transporting various substances in your blood.",
-    "MedPre": {"Penicillin": "Note, since you are taking Penicillin, your test results may be lower than normal. Please consult with your healthcare provider for more information."},    
+    "MedPreGeneral": {"Penicillin": "Decrease", "Insulin": "Decrease"},    
     "Unit": "gm/dL",
     "Male": [
       { "ageRange": [0, 0.04], "range": [3.30, 4.50] },
@@ -35,6 +35,7 @@
   },
   "Alkaline Phosphatase;ALP;Alk Phos": {
     "Definition": "Alkaline Phosphatase (ALP) is an enzyme found in your body, particularly in your liver, bones, kidneys, and digestive system. Think of it as a worker that helps break down proteins in the body, making it easier for the body to use them. High or low levels of ALP in your blood can indicate various health conditions, which is why doctors sometimes check its levels through a blood test.",
+    "MedPreGeneral": {"Amitriptyline": "Increase"},
     "Unit": "U/L",
     "Male": [
       { "ageRange": [0, 0.04], "range": [90, 273] },
@@ -75,6 +76,7 @@
   },
   "Ammonia;NH3;Plasma Ammonia;Blood Ammonia": {
     "Definition": "Ammonia in blood tests refers to the measurement of the ammonia level in your blood. Ammonia is a waste product formed when your body breaks down proteins. Normally, the liver converts ammonia into urea, which is then eliminated from the body through urine. High levels of ammonia in the blood can indicate a problem with the liver or kidneys, as these organs are responsible for filtering and eliminating waste products.",
+    "MedPreGeneral": {"Baclofen": "Increase"},
     "Unit": "mmol/L",
     "Male": [
       { "ageRange": [0, 0.038], "range": [54, 161] },
@@ -89,6 +91,7 @@
   },
   "Amylase;Amy;Alpha-amylase;Diastase;AMS;AMY": {
     "Definition": "Amylase is a type of enzyme found in your body, primarily made by your pancreas and salivary glands. Its main job is to help your body break down starches into sugars, making it easier for your body to digest carbohydrates. In a blood test, high levels of amylase can indicate a problem with your pancreas or salivary glands, such as inflammation or blockage.",
+    "MedPreGeneral": {"Corticosteroids": "Increase", "Dexamethasone": "Increase", "Hydrocortisone": "Increase", "Betamethasone": "Increase", "Methylprednisolone": "Increase", "Prednisone": "Increase", "Prednisolone": "Increase"},
     "Unit": "U/L",
     "Male": [
       { "ageRange": [0, 0.04], "range": [0, 10] },
@@ -179,6 +182,7 @@
   },
   "Bilirubin, Direct": {
       "Unit": "mg/dL",
+      "MedPreGeneral": {"Baclofen": "Decrease"},
       "Male": [
       { "ageRange": [0, 0.04], "range": [0.00, 0.70] },
       { "ageRange": [0.04, 1], "range": [0.00, 0.30] },
@@ -327,8 +331,9 @@
       { "ageRange": [19, 150], "range": [14, 33] }
     ]
   },
-  "Chloride;Cl;Cl-": {
+  "Chlorine;Chloride;Cl;Cl-": {
     "Definition": "Chloride is a type of negatively charged particle found in your blood. It plays a crucial role in maintaining the balance of fluids in your body and helps regulate the acidity level of your blood. Elevated levels of chloride may indicate dehydration or kidney problems, while low levels could suggest conditions such as vomiting or metabolic alkalosis.",
+    "MedPreGeneral": {"Corticosteroids": "Increase", "Dexamethasone": "Increase", "Hydrocortisone": "Increase", "Betamethasone": "Increase", "Methylprednisolone": "Increase", "Prednisone": "Increase", "Prednisolone": "Increase"},
     "Unit": "mmol/L",
     "Male": [
       { "ageRange": [0, 0.5], "range": {"Normal": [0, 29], "Intermediate": [30, 59], "Positive": [60, 999] } },
@@ -341,6 +346,7 @@
   },
   "Cholesterol, Total;Cholesterol;Lipid panel;lipid profile;lipid blood test;cholesterol panel": {
     "Definition": "Cholesterol is a waxy, fat-like substance found in your blood. It's essential for building cells and certain hormones. However, having too much cholesterol can lead to blockages in blood vessels, increasing the risk of heart disease and stroke.",
+    "MedPreGeneral": {"Corticosteroids": "Increase", "Dexamethasone": "Increase", "Hydrocortisone": "Increase", "Betamethasone": "Increase", "Methylprednisolone": "Increase", "Prednisone": "Increase", "Prednisolone": "Increase"},
     "Unit": "mg/dL",
     "Male": [
       { "ageRange": [0, 0.04], "range": [42, 109] },
@@ -435,8 +441,24 @@
       { "ageRange": [19, 150], "range": [0.00, 36.00] }
       ]
   },
-  "Glucose;Blood sugar;Blood glucose;Serum glucose;Blood sugar level;Blood glucose level;BS;BG;SG;BSL;BGL": {
+  "Fasting Glucose;Glucose Fasting;Glucose;Blood sugar;Blood glucose;Serum glucose;Blood sugar level;Blood glucose level;BS;BG;SG;BSL;BGL": {
       "Definition": "Glucose, also known as blood sugar, is a type of sugar that circulates in your blood and provides energy to your body's cells. It's the primary source of energy for most cells in the body, particularly those in the brain. Blood glucose levels are often measured to assess a person's overall health, especially in relation to diabetes.",
+      "MedPreGeneral": {"Baclofen": "Increase", "Corticosteroids": "Increase", "Dexamethasone": "Increase", "Hydrocortisone": "Increase", "Betamethasone": "Increase", "Methylprednisolone": "Increase", "Prednisone": "Increase", "Prednisolone": "Increase"},
+      "MedPreSpecific": {"Diabetes":
+        {"Male": [
+        { "ageRange": [0, 150], "range": [126, 200] }
+        ],
+        "Female": [
+        { "ageRange": [0, 150], "range": [126, 200] }
+        ]},
+        "Prediabetes":
+        {"Male": [
+        { "ageRange": [0, 150], "range": [140, 199] }
+        ],
+        "Female": [
+        { "ageRange": [0, 150], "range": [140, 199] }
+        ]}
+      },
       "Unit": "mg/dL",
       "Male": [
       { "ageRange": [0, 0.016], "range": [40.00, 60.00] },
@@ -612,8 +634,9 @@
       { "ageRange": [61, 150], "range": [30.90, 34.70] }
       ]
   },
-  "Phosphorus;Blood phosphorus;Serum phosphorus;Inorganic phosphorus;Phosphate;BPhos;SPhos;Pi;P": {
+  "Phosphor;Phosphorus;Blood phosphorus;Serum phosphorus;Inorganic phosphorus;Phosphate;BPhos;SPhos;Pi;P": {
       "Definition": "Phosphorus, also known as blood phosphorus or serum phosphorus, is a mineral found in the body that plays a crucial role in bone health, energy production, and cell function. It is measured in blood tests to assess levels of this essential nutrient. Elevated levels of phosphorus in the blood may indicate kidney dysfunction or other health issues.",
+      "MedPreGeneral": {"Corticosteroids": "Decrease", "Dexamethasone": "Decrease", "Hydrocortisone": "Decrease", "Betamethasone": "Decrease", "Methylprednisolone": "Decrease", "Prednisone": "Decrease", "Prednisolone": "Decrease"},
       "Unit": "mg/dL",
       "Male": [
       { "ageRange": [0, 0.038], "range": [5.6, 10.5] },
@@ -649,7 +672,7 @@
   },
   "Potassium;Potassium Serum;Serum Potassium;K Serum;K+ Serum": {
       "Definition": "Potassium Serum, also known as Serum Potassium or K Serum, refers to the concentration of potassium ions present in the liquid portion of the blood. Potassium is an essential electrolyte that plays a crucial role in various bodily functions, including muscle contraction, nerve transmission, and maintaining proper fluid balance. Abnormal levels of serum potassium can indicate various medical conditions and may require further evaluation and treatment.",
-      "MedPre": {"Insulin": "Note, since you are taking Insulin, your test results may be lower than normal. Please consult with your healthcare provider for more information."},
+      "MedPreGeneral": {"Insulin": "Decrease", "Corticosteroids": "Decrease", "Dexamethasone": "Decrease", "Hydrocortisone": "Decrease", "Betamethasone": "Decrease", "Methylprednisolone": "Decrease", "Prednisone": "Decrease", "Prednisolone": "Decrease"},
       "Unit": "",
       "Male": [
       { "ageRange": [0, 1], "range": [3.50, 6.00] },
@@ -660,7 +683,7 @@
       { "ageRange": [1, 150], "range": [3.50, 5.50] }
       ]
   },
-  "Prealbumin;Prealbumin;Transthyretin;TTR": {
+  "Prealbumin;Pre-albumin;Transthyretin;TTR": {
       "Definition": "Prealbumin, also known as transthyretin (TTR) or simply pre-albumin, is a protein synthesized primarily by the liver and is involved in transporting hormones and thyroid hormones in the bloodstream. It serves as an indicator of nutritional status, particularly in assessing protein malnutrition.",
       "Unit": "mg/dL",
       "Male": [
@@ -710,8 +733,9 @@
         { "ageRange": [0.5, 150], "range": [15, 45] }
       ]
     },
-  "Protein Total Serum;Total Serum Protein;TSP;Serum Protein;Blood Protein;Total Protein": {
+  "Protein, Total;Protein Total Serum;Total Serum Protein;TSP;Serum Protein;Blood Protein;Total Protein": {
       "Definition": "Total Serum Protein, often abbreviated as TSP or Serum Protein, refers to the total amount of proteins present in the liquid part of the blood. These proteins play crucial roles in various bodily functions such as maintaining fluid balance, transporting nutrients, and supporting immune system function.",
+      "MedPreGeneral": {"Corticosteroids": "Increase", "Dexamethasone": "Increase", "Hydrocortisone": "Increase", "Betamethasone": "Increase", "Methylprednisolone": "Increase", "Prednisone": "Increase", "Prednisolone": "Increase"},
       "Unit": "gm/dL",
       "Male": [
       { "ageRange": [0, 0.038], "range": [5.30, 8.30] },
@@ -783,6 +807,7 @@
   },
   "Sodium;Sodium Serum;Serum sodium;Na+;Sodium level;Blood Na+;Na;Na+": {
     "Definition": "Sodium serum, also known as serum sodium or Na+, is a measurement of the concentration of sodium ions in the liquid part of the blood. It helps doctors assess the body's water balance and nerve function. Abnormal levels of serum sodium can indicate various health conditions.",
+    "MedPreGeneral": {"Corticosteroids": "Increase", "Dexamethasone": "Increase", "Hydrocortisone": "Increase", "Betamethasone": "Increase", "Methylprednisolone": "Increase", "Prednisone": "Increase", "Prednisolone": "Increase"},
     "Unit": "mmol/L",
     "Male": [
       { "ageRange": [0, 0.25], "range": [135, 145] },

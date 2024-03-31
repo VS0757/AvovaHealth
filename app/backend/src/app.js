@@ -26,11 +26,13 @@ app.get("/", (req, res) => {
 app.post("/upload-pdf", upload.single("pdf"), async (req, res) => {
   try {
     const extractedText = await analyzeDocument(req.file.buffer);
-    const prompt = "Listed below is a patient's blood work. The JSON format will include an array of entries, called 'testsbydate' (could have only one), where entries each include and are split up by a unique 'effectiveDateTime' key associated with a value of the date that the blood test was conducted of the form YYYY-MM-DD. Each entry should contain an array of sub-entries, called 'test' (may only have one) for each and that contains 'bloodtestname' and 'value' (required), that also contains 'range' and 'unit' if it's there, otherwise just set the value to string, 'None'. Your output should be a JSON string only and nothing else" + extractedText;
+    const prompt =
+      "Listed below is a patient's blood work. The JSON format will include an array of entries, called 'testsbydate' (could have only one), where entries each include and are split up by a unique 'effectiveDateTime' key associated with a value of the date that the blood test was conducted of the form YYYY-MM-DD. Each entry should contain an array of sub-entries, called 'test' (may only have one) for each and that contains 'bloodtestname' and 'value' (required), that also contains 'range' and 'unit' if it's there, otherwise just set the value to string, 'None'. Your output should be a JSON string only and nothing else" +
+      extractedText;
     let response = await callChatGPTAPI(prompt, "gpt-4-turbo-preview");
 
     response = response.choices[0].message.content;
-    response = response.replace(/```json|```/g, '').trim()
+    response = response.replace(/```json|```/g, "").trim();
     const chatGPTResponse = JSON.parse(response);
 
     await uploadDataToS3(
@@ -52,11 +54,11 @@ app.post("/upload-pdf", upload.single("pdf"), async (req, res) => {
 });
 
 app.get("/summarize", async (req, res) => {
-    const { prompt } = req.query;
+  const { prompt } = req.query;
 
-    const response = await callChatGPTAPI(prompt, 'gpt-3.5-turbo-0125')
+  const response = await callChatGPTAPI(prompt, "gpt-3.5-turbo-0125");
 
-    res.send({ choices: response.choices});
+  res.send({ choices: response.choices });
 });
 
 app.post("/upload-epic-fhir", async (req, res) => {
@@ -77,7 +79,14 @@ app.post("/upload-epic-fhir", async (req, res) => {
 app.post("/upload-user-data", async (req, res) => {
   try {
     const { uniqueUserId, age, sex, preconditions, medications } = req.body;
-    await storeUserDataInDynamo(uniqueUserId, age, sex, preconditions, medications);
+    await storeUserDataInDynamo(
+      uniqueUserId,
+      age,
+      sex,
+      preconditions,
+      medications,
+    );
+    res.status(200).send({ message: "Data uploaded successfully." });
   } catch (error) {
     console.error("Failed to upload user data to Dynamo:", error);
     res.status(500).send({
@@ -101,12 +110,12 @@ app.get("/retrieve-user-data", async (req, res) => {
       preconditions: [...data.preconditions],
       medications: [...data.medications],
     };
-    console.log("data: ", data)
+    console.log("data: ", data);
     res.send({ message: "Data retrieved successfully.", data: data });
   } catch (error) {
-    console.error("Failed to retrieve user data to Dynamo:", error);
+    console.error("Failed to retrieve user data from Dynamo:", error);
     res.status(500).send({
-      message: "Failed to retrieve user data to Dynamo",
+      message: "Failed to retrieve user data from Dynamo",
       error: error.toString(),
     });
   }

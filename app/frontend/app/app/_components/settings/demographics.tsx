@@ -13,7 +13,7 @@ export default function DemographicsSettings() {
         <p>Birthday</p>
         <input
           type="date"
-          className="w-32 rounded-md border bg-inherit px-4 py-2 dark:border-stone-900"
+          className="rounded-md border bg-inherit px-4 py-2 dark:border-stone-900"
           placeholder="YYYY-MM-DD"
         />
       </div>

@@ -3,33 +3,32 @@
 @tailwind utilities;
 
 root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+    --foreground-rgb: 0, 0, 0;
+    --background-start-rgb: 214, 219, 220;
+    --background-end-rgb: 255, 255, 255;
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+    :root {
+        --foreground-rgb: 255, 255, 255;
+        --background-start-rgb: 0, 0, 0;
+        --background-end-rgb: 0, 0, 0;
+    }
 }
 
 body {
-  font-family: "Poppins", sans-serif;
-  color: rgb(var(--foreground-rgb));
-  background: var(--background-start-rgb);
+    color: rgb(var(--foreground-rgb));
+    background: var(--background-start-rgb);
 }
 
 @layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+    .text-balance {
+        text-wrap: balance;
+    }
 }
 
 input::-webkit-slider-thumb {
-  appearance: none;
-  max-width: 0.3rem;
-  max-height: 0.75rem;
+    appearance: none;
+    max-width: 0.3rem;
+    max-height: 0.75rem;
 }

@@ -1,5 +1,3 @@
-import IntegrateEpic from "../_components/integrations/IntegrateEpic";
-import RetrieveEpic from "../_components/integrations/RetrieveEpic";
 import DemographicsSettings from "../_components/settings/demographics";
 import MedicationsSettings from "../_components/settings/medications";
 import PatientHistorySettings from "../_components/settings/patienthistory";
@@ -15,11 +13,6 @@ export default async function Settings() {
     <main>
       <h1>Settings</h1>
       <div className="mt-16">
-        <section>
-          <p>Manage Epic Integration</p>
-          <IntegrateEpic />
-          <RetrieveEpic uniqueUserId={userData.uniqueUserId} />
-        </section>
         <section className="mt-8">
           <p>Demographics</p>
           <DemographicsSettings

@@ -1,6 +1,7 @@
 "use client";
 import React, { ChangeEvent, useState } from "react";
 import axios from "axios";
+import { toast } from "sonner";
 
 const FileUpload = ({ uniqueUserId }: { uniqueUserId: string }) => {
   const [file, setFile] = useState<File | null>(null);
@@ -10,6 +11,14 @@ const FileUpload = ({ uniqueUserId }: { uniqueUserId: string }) => {
     if (e.target.files) {
       setFile(e.target.files[0]);
     }
+  };
+
+  const submit = (e: React.MouseEvent<HTMLButtonElement>) => {
+    toast.promise(handleUpload(), {
+      loading: "Uploading...",
+      success: "Uploaded blood test data.",
+      error: "Failed to upload blood test data",
+    });
   };
 
   const handleUpload = async () => {
@@ -22,24 +31,17 @@ const FileUpload = ({ uniqueUserId }: { uniqueUserId: string }) => {
     formData.append("pdf", file);
     formData.append("uniqueUserId", uniqueUserId);
     setIsUploading(true);
-    try {
-      const response = await axios.post(
-        "http://localhost:3001/upload-pdf",
-        formData,
-        {
-          headers: {
-            // Inform the server about the multipart/form-data content type
-            "Content-Type": "multipart/form-data",
-          },
+    const response = await axios.post(
+      "http://localhost:3001/upload-pdf",
+      formData,
+      {
+        headers: {
+          // Inform the server about the multipart/form-data content type
+          "Content-Type": "multipart/form-data",
         },
-      );
-      alert(response.data.message);
-    } catch (error) {
-      console.error("Error uploading file:", error);
-      alert("Error uploading file:" + error);
-    } finally {
-      setIsUploading(false);
-    }
+      },
+    );
+    setIsUploading(false);
   };
 
   return (
@@ -53,7 +55,7 @@ const FileUpload = ({ uniqueUserId }: { uniqueUserId: string }) => {
         disabled={isUploading}
       />
       <button
-        onClick={handleUpload}
+        onClick={submit}
         disabled={isUploading}
         className={`mx-2 rounded-md border border-stone-900 bg-stone-950 px-2 py-1 text-stone-50 dark:border-stone-200 dark:bg-stone-100 dark:text-stone-900`}
       >

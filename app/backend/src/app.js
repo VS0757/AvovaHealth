@@ -47,7 +47,6 @@ app.post("/upload-pdf", upload.single("pdf"), async (req, res) => {
       chatGPTResponse,
       req.file.originalname,
     );
-    res.send({ message: "Successfully uploaded and analyzed PDF -> JSON" });
   } catch (err) {
     console.error("Error during upload, analysis, or ChatGPT query:", err);
     res.status(500).send("Error processing file.");
@@ -67,7 +66,6 @@ app.post("/upload-epic-fhir", async (req, res) => {
     const { fhirData, uniqueUserId } = req.body;
     await uploadDataToS3(fhirData, "FHIR", uniqueUserId, "EpicSystems");
     await storeFhirDataInDynamo(uniqueUserId, fhirData);
-    res.send({ message: "Epic data uploaded successfully to Dynamo" });
   } catch (error) {
     console.error("Failed to upload epic data to Dynamo:", error);
     res.status(500).send({

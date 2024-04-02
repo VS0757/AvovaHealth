@@ -1,5 +1,5 @@
 import ranges from "./bloodtestresults.json";
-import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
+import { getUserId, getUserData } from "../settings/userDataActions";
 
 interface UserData {
   preconditions: Array<string>;
@@ -44,17 +44,6 @@ const findRangeAndUnit = ({ item }: { item: string }) => {
   return findMatchingItem(item) as RangeItem;
 }
 
-async function getItem() {
-  const { getIdToken } = getKindeServerSession();
-  let uniqueUserId = (await getIdToken()).sub;
-  uniqueUserId = "kp_f85ba560eb6346ccb744778f7c8d769e";
-  const res = await fetch(
-    `http://localhost:3001/retrieve-user-data?id=${uniqueUserId}`,
-  );
-  const data = await res.json();
-  return data?.data as UserData;
-}
-
 function BloodTestToolTip({ rangeKey, testName }: { rangeKey: RangeItem; testName: string }) {
   const definition = rangeKey?.Definition || "No definition available";
   return (
@@ -69,7 +58,7 @@ function BloodTestToolTip({ rangeKey, testName }: { rangeKey: RangeItem; testNam
 }
 
 async function MedPreNotes({ rangeKey }: { rangeKey: RangeItem }) {
-  const userData = await getItem() as UserData;
+  const userData = await getUserData(await getUserId());
   const increasesMedications: string[] = [];
   const decreasesMedications: string[] = [];
   const increasesPreconditions: string[] = [];
@@ -120,7 +109,7 @@ async function MedPreNotes({ rangeKey }: { rangeKey: RangeItem }) {
 
 
 async function ReportRange( { value, rangeKey, date }: { value: number, rangeKey: RangeItem, date: string }) {
-  const userData = await getItem();
+  const userData = await getUserData(await getUserId());
 
   if (!rangeKey) {
     return <p>No ranges</p>;

@@ -556,6 +556,26 @@
       { "ageRange": [19, 150], "range": [33, 167] }
     ]
   },
+  "INR": {
+    "Definition": "Screening test for abnormalities of coagulation factors that are involved in the extrinsic pathway. Also used to monitor effects of Warfarin therapy and to study patients with hereditary and acquired clotting disorders.",
+    "Unit": "",
+    "Male": [
+      {"ageRange": [0, 150], "range": [0.9, 1.1]}
+    ],
+    "Female": [
+      {"ageRange": [0, 150], "range": [0.9, 1.1]}
+    ]
+  },
+  "PT": {
+    "Definition": "Screening test for abnormalities of coagulation factors that are involved in the extrinsic pathway. Also used to monitor effects of Warfarin therapy and to study patients with hereditary and acquired clotting disorders.",
+    "Unit": "sec",
+    "Male": [
+      {"ageRange": [0, 150], "range": [9.0, 11.5]}
+    ],
+    "Female": [
+      {"ageRange": [0, 150], "range": [9.0, 11.5]}
+    ]
+  },
   "LDH;Lactate dehydrogenase;Lactic acid dehydrogenase;Lactic acid oxidoreductase;LDH;LAO;LD": {
     "Definition": "LDH (Lactate dehydrogenase) is an enzyme found in many body tissues and organs, including the blood. It plays a crucial role in converting lactate to pyruvate, a key step in energy production. High levels of LDH in the blood may indicate tissue damage, inflammation, or certain diseases.",
     "Unit": "U/L",
@@ -946,6 +966,186 @@
       { "ageRange": [1, 11], "range": [1.8, 4.9] },
       { "ageRange": [12, 18], "range": [2.6, 5.9] },
       { "ageRange": [19, 150], "range": [2.5, 8.0] }
+    ]
+  },
+  "Globulin": {
+    "Definition": "",
+    "Unit": "g/DL",
+    "Male": [
+      {"ageRange": [0, 150], "range": [1.9, 3.7]}
+    ],
+    "Female": [
+      {"ageRange": [0, 150], "range": [1.9, 3.7]}
+    ]
+  },
+  "Albumin/Globulin Ratio": {
+    "Definition": "",
+    "Unit": "",
+    "Male": [
+      {"ageRange": [0, 150], "range": [1.0, 2.5]}
+    ],
+    "Female": [
+      {"ageRange": [0, 150], "range": [1.0, 2.5]}
+    ]
+  },
+  "Bilirubin Indirect;BILIRUBIN, INDIRECT": {
+    "Definition": "",
+    "Unit": "mg/dL",
+    "Male": [
+      {"ageRange": [0, 150], "range": [0, 0.2]}
+    ],
+    "Female": [
+      {"ageRange": [0, 150], "range": [0, 0.2]}
+    ]
+  },
+  "EGFR": {
+    "Definition": "",
+    "Unit": "mL/min/1.73m^2",
+    "Male": [
+      {"ageRange": [0, 150], "range": [60, 180]}
+    ],
+    "Female": [
+      {"ageRange": [0, 150], "range": [60, 180]}
+    ]
+  },
+  "Carbon Dioxide": {
+    "Definition": "",
+    "Unit": "mmol/L",
+    "Male": [
+      {"ageRange": [0, 150], "range": [20, 32]}
+    ],
+    "Female": [
+      {"ageRange": [0, 150], "range": [20, 32]}
+    ]
+  },
+  "Iron Binding Capacity": {
+    "Definition": "",
+    "Unit": "mcg/dL",
+    "Male": [
+      {"ageRange": [0, 150], "range": [250, 425]}
+    ],
+    "Female": [
+      {"ageRange": [0, 150], "range": [250, 425]}
+    ]
+  },
+  "% Saturation": {
+    "Definition": "",
+    "Unit": "%",
+    "Male": [
+      {"ageRange": [0, 150], "range": [20, 48]}
+    ],
+    "Female": [
+      {"ageRange": [0, 150], "range": [20, 48]}
+    ]
+  },
+  "LDL-Cholesterol": {
+    "Definition": "",
+    "Unit": "mg/dL",
+    "Male": [
+      {"ageRange": [0, 150], "range": [0, 100]}
+    ],
+    "Female": [
+      {"ageRange": [0, 150], "range": [0, 100]}
+    ]
+  },
+  "CHOL/HDLC Ratio;Chol/HDL Ratio": {
+    "Definition": "",
+    "Unit": "",
+    "Male": [
+      {"ageRange": [0, 150], "range": [0, 5.0]}
+    ],
+    "Female": [
+      {"ageRange": [0, 150], "range": [0, 5.0]}
+    ]
+  },
+  "Non HDL Cholesterol": {
+    "Definition": "",
+    "Unit": "mg/dL",
+    "Male": [
+      {"ageRange": [0, 150], "range": [0, 130]}
+    ],
+    "Female": [
+      {"ageRange": [0, 150], "range": [0, 130]}
+    ]
+  },
+  "MCV": {
+    "Definition": "",
+    "Unit": "fL",
+    "Male": [
+      {"ageRange": [0, 150], "range": [80, 100]}
+    ],
+    "Female": [
+      {"ageRange": [0, 150], "range": [80, 100]}
+    ]
+  },
+  "RDW": {
+    "Definition": "",
+    "Unit": "%",
+    "Male": [
+      {"ageRange": [0, 150], "range": [11, 15]}
+    ],
+    "Female": [
+      {"ageRange": [0, 150], "range": [11, 15]}
+    ]
+  }, 
+  "MPV": {
+    "Definition": "Mean Platelet Volume measures the average size of platelets in the blood, important for diagnosing bleeding disorders and thrombocytopenia.",
+    "Unit": "fL",
+    "Male": [
+      {"ageRange": [0, 150], "range": [7.5, 12.5]}
+    ],
+    "Female": [
+      {"ageRange": [0, 150], "range": [7.5, 12.5]}
+    ]
+  },
+  "Absolute Neutrophils": {
+    "Definition": "A count of the neutrophil white blood cells per unit of blood, indicating the body's ability to fight infections.",
+    "Unit": "cells/uL",
+    "Male": [
+      {"ageRange": [0, 150], "range": [1500, 7800]}
+    ],
+    "Female": [
+      {"ageRange": [0, 150], "range": [1500, 7800]}
+    ]
+  },
+  "Absolute Lymphocytes": {
+    "Definition": "A measure of the lymphocyte white blood cells in the blood, essential for the immune response to infections.",
+    "Unit": "cells/uL",
+    "Male": [
+      {"ageRange": [0, 150], "range": [850, 3900]}
+    ],
+    "Female": [
+      {"ageRange": [0, 150], "range": [850, 3900]}
+    ]
+  },
+  "Absolute Monocytes": {
+    "Definition": "A count of monocyte white blood cells, which play a role in immune defense and tissue repair.",
+    "Unit": "cells/uL",
+    "Male": [
+      {"ageRange": [0, 150], "range": [200, 950]}
+    ],
+    "Female": [
+      {"ageRange": [0, 150], "range": [200, 950]}
+    ]
+  },
+  "Absolute Eosinophils": {
+    "Definition": "A count of eosinophil white blood cells, important for combating parasites and allergic reactions.",
+    "Unit": "cells/uL",
+    "Male": [
+      {"ageRange": [0, 150], "range": [15, 500]}
+    ],
+    "Female": [
+      {"ageRange": [0, 150], "range": [15, 500]}
+    ]
+  },
+  "Absolute Basophils": {
+    "Definition": "A measure of basophil white blood cells, involved in inflammatory reactions and allergies.",
+    "Unit": "cells/uL",
+    "Male": [
+      {"ageRange": [0, 150], "range": [0, 200]}
+    ],
+    "Female": [
+      {"ageRange": [0, 150], "range": [0, 200]}
     ]
   },
   "WBC;White Blood Cell Count;Leukocyte Count;WBC Count;LBC": {

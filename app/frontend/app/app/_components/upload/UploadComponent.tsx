@@ -1,9 +1,8 @@
-import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
 import FileUpload from "./FileUpload";
+import { getUserId } from "../settings/userDataActions";
 
 export default async function UploadComponent() {
-  const { getIdToken } = getKindeServerSession();
-  const uniqueUserId = (await getIdToken()).sub;
+  const uniqueUserId = await getUserId();
 
   return <FileUpload uniqueUserId={uniqueUserId} />;
 }

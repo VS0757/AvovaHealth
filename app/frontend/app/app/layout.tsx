@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Name from "./_components/kinde/Name";
 import { Toaster } from "sonner";
+import { Tooltip } from "@nextui-org/react";
 
 export default function AppLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -14,36 +15,46 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
       <nav
         className={`fixed top-1/2 mx-2 max-w-12 -translate-y-1/2 transform overflow-clip rounded-3xl bg-stone-200 px-4 py-2 dark:bg-stone-900`}
       >
-        <Link href="/app" className={`flex flex-row py-2`}>
-          <FeatherIcon
-            icon="home"
-            className={`my-auto h-4 min-w-4 opacity-30 hover:opacity-100`}
-          />
-        </Link>
-        <Link href="/app/timeline" className={`flex flex-row py-2`}>
-          <FeatherIcon
-            icon="list"
-            className={`my-auto h-4 min-w-4 opacity-30 hover:opacity-100`}
-          />
-        </Link>
-        <Link href="/app/trends" className={`flex flex-row py-2`}>
-          <FeatherIcon
-            icon="trending-up"
-            className={`my-auto h-4 min-w-4 opacity-30 hover:opacity-100`}
-          />
-        </Link>
-        <Link href="/app/inbox" className={`flex flex-row py-2`}>
-          <FeatherIcon
-            icon="inbox"
-            className={`my-auto h-4 min-w-4 opacity-30 hover:opacity-100`}
-          />
-        </Link>
-        <Link href="/app/settings" className={`flex flex-row py-2`}>
-          <FeatherIcon
-            icon="settings"
-            className={`my-auto h-4 min-w-4 opacity-30 hover:opacity-100`}
-          />
-        </Link>
+        <Tooltip content="Dashboard" placement={"right"}>
+          <Link href="/app" className={`flex flex-row items-center py-2`}>
+            <FeatherIcon
+              icon="home"
+              className={`my-auto h-4 min-w-4 opacity-30 hover:opacity-100`}
+            />
+          </Link>
+        </Tooltip>
+        <Tooltip content="Timeline" placement={"right"}>
+          <Link href="/app/timeline" className={`flex flex-row py-2`}>
+            <FeatherIcon
+              icon="list"
+              className={`my-auto h-4 min-w-4 opacity-30 hover:opacity-100`}
+            />
+          </Link>
+        </Tooltip>
+        <Tooltip content="Trends" placement={"right"}>
+          <Link href="/app/trends" className={`flex flex-row py-2`}>
+            <FeatherIcon
+              icon="trending-up"
+              className={`my-auto h-4 min-w-4 opacity-30 hover:opacity-100`}
+            />
+          </Link>
+        </Tooltip>
+        <Tooltip content="Inbox" placement={"right"}>
+          <Link href="/app/inbox" className={`flex flex-row py-2`}>
+            <FeatherIcon
+              icon="inbox"
+              className={`my-auto h-4 min-w-4 opacity-30 hover:opacity-100`}
+            />
+          </Link>
+        </Tooltip>
+        <Tooltip content="Profile" placement={"right"}>
+          <Link href="/app/settings" className={`flex flex-row py-2`}>
+            <FeatherIcon
+              icon="user"
+              className={`my-auto h-4 min-w-4 opacity-30 hover:opacity-100`}
+            />
+          </Link>
+        </Tooltip>
       </nav>
       <section className={`mx-auto my-12 mb-32 min-w-[32rem] max-w-lg flex-1`}>
         <Name />

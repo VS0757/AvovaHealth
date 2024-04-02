@@ -1,6 +1,5 @@
-import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
-import { GeistMono } from "geist/font/mono";
 import ReportTable from "../../_components/report/reporttable";
+import { getUserId } from "../../_components/settings/userDataActions";
 
 async function getReport(uniqueUserId: any, date: any) {
   const res = await fetch(
@@ -46,11 +45,10 @@ interface Data {
 }
 
 export default async function ReportPage({ params }: any) {
-  const { getIdToken } = getKindeServerSession();
-  const uniqueUserId = (await getIdToken()).sub;
+  const uniqueUserId = await getUserId();
 
   const data = await getReport(
-    "kp_f85ba560eb6346ccb744778f7c8d769e",
+    uniqueUserId,
     params.id,
   );
   const report = (data[0] as Data)!;

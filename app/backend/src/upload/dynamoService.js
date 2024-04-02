@@ -4,6 +4,7 @@ const {
   DynamoDBDocumentClient,
   PutCommand,
   QueryCommand,
+  DeleteCommand,
 } = require("@aws-sdk/lib-dynamodb");
 const { awsConfig } = require("../config/awsConfig");
 const { executeWithExponentialBackoff } = require("./dynamoUtils");
@@ -211,6 +212,24 @@ const retrieveUserDataFromDynamo = async (uniqueUserId) => {
   }
 };
 
+const deleteUserDataFromDynamo = async (uniqueUserId, dateTimeType) => {
+  const command = new DeleteCommand({
+    TableName: "avovahealthdatabase",
+    Key: {
+      uniqueUserId: uniqueUserId,
+      dateTimeType: dateTimeType,
+    },
+  });
+
+  try {
+    const data = await docClient.send(command);
+    return;
+  } catch (error) {
+    console.error("Error deleting data from DynamoDB:", error);
+    throw error;
+  }
+};
+
 const retrieveFhirDataFromDynamo = async (
   uniqueUserId,
   specificDate = null,
@@ -278,4 +297,5 @@ module.exports = {
   retrieveFhirDataFromDynamo,
   retrieveUserDataFromDynamo,
   retrieveTrendDataFromDynamo,
+  deleteUserDataFromDynamo,
 };

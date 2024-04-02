@@ -16,13 +16,12 @@ export interface UserData {
   uniqueUserId: string;
   medications: string[];
   sex: string;
-  name: string;
   birthday: string;
 }
 
 let cachedUserData: UserData;
 
-async function getUserData(uniqueUserId: string) {
+export async function getUserData(uniqueUserId: string) {
   const res = await fetch(
     "http://localhost:3001/retrieve-user-data?id=" + uniqueUserId,
   );

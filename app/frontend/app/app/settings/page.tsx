@@ -11,7 +11,7 @@ export default async function Settings() {
 
   return (
     <main>
-      <h1>Settings</h1>
+      <h1>Profile</h1>
       <div className="mt-16">
         <section className="mt-8">
           <p>Demographics</p>

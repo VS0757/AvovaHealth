@@ -1,5 +1,4 @@
 require("dotenv").config();
-const { OpenAI } = require("openai");
 const express = require("express");
 const multer = require("multer");
 const cors = require("cors");
@@ -13,6 +12,7 @@ const {
   retrieveFhirDataFromDynamo,
   retrieveUserDataFromDynamo,
   retrieveTrendDataFromDynamo,
+  deleteUserDataFromDynamo,
 } = require("./upload/dynamoService");
 
 const app = express();
@@ -117,6 +117,20 @@ app.get("/retrieve-user-data", async (req, res) => {
     console.error("Failed to retrieve user data from Dynamo:", error);
     res.status(500).send({
       message: "Failed to retrieve user data from Dynamo",
+      error: error.toString(),
+    });
+  }
+});
+
+app.get("/delete-user-data", async (req, res) => {
+  try {
+    const { id, dateTimeType } = req.query;
+    await deleteUserDataFromDynamo(id, dateTimeType);
+    res.send({ message: "Data deleted successfully." });
+  } catch (error) {
+    console.error("Failed to delete user data from Dynamo:", error);
+    res.status(500).send({
+      message: "Failed to delete user data from Dynamo",
       error: error.toString(),
     });
   }

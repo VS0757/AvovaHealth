@@ -89,11 +89,11 @@ export async function submitBirthday(sex: string, birthday: string) {
   return res.json();
 }
 
-export function getGender() {
+export async function getGender() {
   return cachedUserData.sex;
 }
 
-export function getAge() {
+export async function getAge() {
   const birthday = new Date(cachedUserData.birthday);
   return 15;
 }

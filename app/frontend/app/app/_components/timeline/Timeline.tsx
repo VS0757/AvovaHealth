@@ -1,5 +1,5 @@
-import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
 import Report from "./Report";
+import { getUserId } from "../settings/userDataActions";
 
 async function getItems(uniqueUserId: String) {
   const res = await fetch(
@@ -10,13 +10,8 @@ async function getItems(uniqueUserId: String) {
 }
 
 export default async function Timeline() {
-  const { getIdToken } = getKindeServerSession();
-  const userName = (await getIdToken()).name;
-  const uniqueUserId = (await getIdToken()).sub;
-
-  // Assuming getItems returns an array of items
-  // const data = await getItems(uniqueUserId);
-  const data = await getItems("kp_f85ba560eb6346ccb744778f7c8d769e");
+  const uniqueUserId = await getUserId();
+  const data = await getItems(uniqueUserId);
 
   // Reverse the order of the data array
   const reversedData = data?.reverse();

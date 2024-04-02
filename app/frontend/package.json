@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@kinde-oss/kinde-auth-nextjs": "^2.1.15",
+    "@nextui-org/react": "^2.2.10",
     "axios": "^1.6.7",
     "feather-icons": "^4.29.1",
     "feather-icons-react": "^0.7.0",

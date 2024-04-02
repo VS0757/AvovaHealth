@@ -2,7 +2,10 @@ import BentoCard from "./_components/bento/BentoCard";
 import UploadComponent from "./_components/upload/UploadComponent";
 import IntegrateEpic from "./_components/integrations/IntegrateEpic";
 import RetrieveEpic from "./_components/integrations/RetrieveEpic";
-import { UserData, externalGetUserData } from "./_components/settings/userDataActions";
+import {
+  UserData,
+  externalGetUserData,
+} from "./_components/settings/userDataActions";
 
 export default async function App() {
   const userData: UserData = await externalGetUserData();
@@ -10,7 +13,7 @@ export default async function App() {
   return (
     <main>
       <h1>Dashboard</h1>
-      <div className="mt-16">
+      <div className="mt-16 flex flex-col gap-2">
         <BentoCard>
           Upload PDF
           <UploadComponent />

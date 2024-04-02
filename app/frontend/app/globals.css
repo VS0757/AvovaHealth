@@ -25,6 +25,10 @@ body {
     .text-balance {
         text-wrap: balance;
     }
+
+    .bgb-normal {
+        @apply border bg-inherit text-inherit dark:border-stone-900 dark:bg-stone-950 dark:text-stone-50;
+    }
 }
 
 input::-webkit-slider-thumb {

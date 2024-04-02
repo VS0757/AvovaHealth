@@ -11,7 +11,17 @@
   },
   "dependencies": {
     "@kinde-oss/kinde-auth-nextjs": "^2.1.15",
+    "@visx/group": "^3.3.0",
+    "@vx/axis": "^0.0.199",
+    "@vx/event": "^0.0.199",
+    "@vx/gradient": "^0.0.199",
+    "@vx/grid": "^0.0.199",
+    "@vx/scale": "^0.0.199",
+    "@vx/shape": "^0.0.199",
+    "@vx/tooltip": "^0.0.199",
     "axios": "^1.6.7",
+    "d3": "^7.9.0",
+    "d3-array": "^3.2.4",
     "feather-icons": "^4.29.1",
     "feather-icons-react": "^0.7.0",
     "fhirclient": "^2.5.3",
@@ -19,9 +29,11 @@
     "next": "^14.1.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "sonner": "^1.4.41"
+    "sonner": "^1.4.41",
+    "vx": "^0.0.1"
   },
   "devDependencies": {
+    "@types/d3-array": "^3.2.1",
     "@types/node": "^20.11.19",
     "@types/react": "^18.2.57",
     "@types/react-dom": "^18",

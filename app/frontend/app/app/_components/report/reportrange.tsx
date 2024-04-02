@@ -1,22 +1,13 @@
-import ranges from "./bloodtestresults.json";
 import { getUserId, getUserData } from "../settings/userDataActions";
 
-interface UserData {
-  preconditions: Array<string>;
-  medications: Array<string>;
-  uniqueUserId: string;
-  birthday: string;
-  sex: string;
-}
-
-interface RangeItem {
-  Unit: string;
-  Male: any;
-  Female: any;
-  Definition: string;
-  MedPreGeneral?: any;
-  MedPreSpecific?: any;
-}
+// interface RangeItem {
+//   Unit: string;
+//   Male: any;
+//   Female: any;
+//   Definition: string;
+//   MedPreGeneral?: any;
+//   MedPreSpecific?: any;
+// }
 
 function calculateAgeInYears(birthDateString: string, onDateString: string) {
   const birthDate = new Date(birthDateString).getTime();
@@ -28,23 +19,7 @@ function calculateAgeInYears(birthDateString: string, onDateString: string) {
   return years;
 }
 
-const findRangeAndUnit = ({ item }: { item: string }) => {
-  const findMatchingItem = (substring: string) => {
-    const keys = Object.keys(ranges);
-    const lowercaseItem = substring.toLowerCase();
-
-    const foundKey = keys.find((key) => {
-      const options = key.split(";").map(option => option.toLowerCase());
-      return options.includes(lowercaseItem);
-    });
-
-    return foundKey ? ranges[foundKey as keyof typeof ranges] : null;
-  };
-
-  return findMatchingItem(item) as RangeItem;
-}
-
-function BloodTestToolTip({ rangeKey, testName }: { rangeKey: RangeItem; testName: string }) {
+function BloodTestToolTip({ rangeKey, testName }: { rangeKey: any; testName: string }) {
   const definition = rangeKey?.Definition || "No definition available";
   return (
     <div className="relative flex flex-col items-center group">
@@ -57,7 +32,7 @@ function BloodTestToolTip({ rangeKey, testName }: { rangeKey: RangeItem; testNam
   );
 }
 
-async function MedPreNotes({ rangeKey }: { rangeKey: RangeItem }) {
+async function MedPreNotes({ rangeKey }: { rangeKey: any }) {
   const userData = await getUserData(await getUserId());
   const increasesMedications: string[] = [];
   const decreasesMedications: string[] = [];
@@ -108,7 +83,7 @@ async function MedPreNotes({ rangeKey }: { rangeKey: RangeItem }) {
 }
 
 
-async function ReportRange( { value, rangeKey, date }: { value: number, rangeKey: RangeItem, date: string }) {
+async function ReportRange( { value, rangeKey, date }: { value: number, rangeKey: any, date: string }) {
   const userData = await getUserData(await getUserId());
 
   if (!rangeKey) {
@@ -150,4 +125,4 @@ async function ReportRange( { value, rangeKey, date }: { value: number, rangeKey
   );
 };
 
-export {findRangeAndUnit, ReportRange, MedPreNotes, BloodTestToolTip};
+export {ReportRange, MedPreNotes, BloodTestToolTip};

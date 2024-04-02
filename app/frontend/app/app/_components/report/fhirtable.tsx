@@ -1,5 +1,6 @@
 import { GeistMono } from "geist/font/mono";
-import { findRangeAndUnit, ReportRange, BloodTestToolTip, MedPreNotes } from "./reportrange";
+import { ReportRange, BloodTestToolTip, MedPreNotes } from "./reportrange";
+import { getFilteredUnit } from "./testHelper";
 
 export default function FhirReportTable({ reportData }: any) {
   const value = reportData.valueQuantity.value;
@@ -7,7 +8,7 @@ export default function FhirReportTable({ reportData }: any) {
   const label = reportData.code.text;
 
   const interpretation = reportData.interpretation?.[0]?.text;
-  const rangeKey = findRangeAndUnit({ item: label});
+  const rangeKey = getFilteredUnit(label);
 
   return (
     <table

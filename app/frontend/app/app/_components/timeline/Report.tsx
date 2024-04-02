@@ -29,7 +29,6 @@ export default function Report({ report, onReportDeleted }: { report: any; onRep
     const uniqueUserId = await getUserId();
     const dateTimeType = report.dateTimeType;
     await fetch(`http://localhost:3001/delete-user-data?id=${uniqueUserId}&dateTimeType=${dateTimeType}`);
-    console.log('Report deleted:', dateTimeType);
   };
 
   return (

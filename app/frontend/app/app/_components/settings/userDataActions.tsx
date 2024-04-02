@@ -6,8 +6,6 @@ export async function getUserId() {
   const { getIdToken } = getKindeServerSession();
   let uniqueUserId = (await getIdToken()).sub;
 
-  uniqueUserId = "kp_f85ba560eb6346ccb744778f7c8d769e";
-
   return uniqueUserId;
 }
 

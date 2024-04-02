@@ -23,7 +23,7 @@ export default function FhirReportTable({ reportData }: any) {
             {value} {unit}
           </td>
           <td className="rounded-md border p-1 opacity-50 dark:border-stone-900">
-            <ReportRange value={value} rangeKey={rangeKey} date={reportData.effectiveDateTime.split("T")[0]} />
+            <ReportRange value={value} bloodtestname={label} date={reportData.effectiveDateTime.split("T")[0]} />
           </td>
           <td className="h-[48px] rounded-md border p-1 opacity-50 dark:border-stone-900">
               <MedPreNotes rangeKey={rangeKey} />

@@ -29,7 +29,7 @@ export default function ManualReportTable({ reportData }: any) {
               {value} {rangeKey && rangeKey.Unit ? rangeKey.Unit : ''}
             </td>
             <td className="h-[48px] rounded-md border p-1 opacity-50 dark:border-stone-900">
-              <ReportRange value={value} rangeKey={rangeKey} date={reportData.effectiveDateTime} />
+              <ReportRange value={value} bloodtestname={bloodtestname} date={reportData.effectiveDateTime} />
             </td>
             <td className="h-[48px] rounded-md border p-1 opacity-50 dark:border-stone-900">
               <MedPreNotes rangeKey={rangeKey} />

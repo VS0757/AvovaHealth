@@ -1,13 +1,5 @@
 import { getUserId, getUserData } from "../settings/userDataActions";
-
-// interface RangeItem {
-//   Unit: string;
-//   Male: any;
-//   Female: any;
-//   Definition: string;
-//   MedPreGeneral?: any;
-//   MedPreSpecific?: any;
-// }
+import { getTestRange } from "./testHelper";
 
 function calculateAgeInYears(birthDateString: string, onDateString: string) {
   const birthDate = new Date(birthDateString).getTime();
@@ -82,30 +74,16 @@ async function MedPreNotes({ rangeKey }: { rangeKey: any }) {
   );
 }
 
-
-async function ReportRange( { value, rangeKey, date }: { value: number, rangeKey: any, date: string }) {
+async function ReportRange( { value, bloodtestname, date }: { value: number, bloodtestname: string, date: string }) {
   const userData = await getUserData(await getUserId());
+  const birthday = calculateAgeInYears(userData.birthday, date);
+  const range = getTestRange(bloodtestname, userData.sex, birthday, userData.preconditions);
 
-  if (!rangeKey) {
+  if (range.high === 0 && range.low === 0) {
     return <p>No ranges</p>;
   }
-
-  const male = userData.sex === 'Male';
-  const birthday = calculateAgeInYears(userData.birthday, date);
-
-  let specificRanges;
-  if (userData.preconditions.length > 0 && rangeKey.MedPreSpecific) {
-    const preconditionMatch = userData.preconditions.find(precondition => rangeKey.MedPreSpecific[precondition]);
-    if (preconditionMatch) {
-      specificRanges = rangeKey.MedPreSpecific[preconditionMatch];
-    }
-  }
-
-  let genderKey = specificRanges ? (male ? specificRanges.Male : specificRanges.Female) : (male ? rangeKey.Male : rangeKey.Female);
-
-  const entry = genderKey?.find(({ ageRange }: any) => birthday < ageRange[1]);
-  const lowRange = entry?.range[0];
-  const highRange = entry?.range[1];
+  const lowRange = range.low;
+  const highRange = range.high;
 
   return (
     <div className={`px-2`}>

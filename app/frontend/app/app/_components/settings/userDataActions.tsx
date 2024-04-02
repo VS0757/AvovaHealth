@@ -19,11 +19,14 @@ export interface UserData {
   birthday: string;
 }
 
+let cachedUserData: UserData;
+
 export async function getUserData(uniqueUserId: string) {
   const res = await fetch(
     "http://localhost:3001/retrieve-user-data?id=" + uniqueUserId,
   );
   const data = await res.json();
+  cachedUserData = data?.data;
   return data?.data as UserData;
 }
 
@@ -83,4 +86,13 @@ export async function submitBirthday(sex: string, birthday: string) {
   });
 
   return res.json();
+}
+
+export async function getGender() {
+  return cachedUserData.sex;
+}
+
+export async function getAge() {
+  const birthday = new Date(cachedUserData.birthday);
+  return 15;
 }

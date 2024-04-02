@@ -1,41 +1,41 @@
 {
   "Albumin;ALB;Serum Albumin;Plasma Albumin": {
     "Definition": "Albumin is a type of protein made by your liver. It's found in your blood and helps carry hormones, vitamins, and enzymes throughout your body. It also plays a key role in keeping the liquid part of your blood, the plasma, from leaking out of your blood vessels. Additionally, albumin helps maintain proper pressure in your blood vessels and is important for transporting various substances in your blood.",
-    "MedPreGeneral": {"Penicillin": "Decrease", "Insulin": "Decrease"},    
+    "MedPreGeneral": { "Penicillin": "Decrease", "Insulin": "Decrease" },
     "Unit": "gm/dL",
     "Male": [
-      { "ageRange": [0, 0.04], "range": [3.30, 4.50] },
-      { "ageRange": [0.04, 1], "range": [2.80, 4.70] },
-      { "ageRange": [1, 7], "range": [3.80, 4.70] },
-      { "ageRange": [8, 14], "range": [4.10, 4.80] },
-      { "ageRange": [15, 18], "range": [4.10, 5.10] },
-      { "ageRange": [19, 20], "range": [4.20, 5.30] },
-      { "ageRange": [21, 30], "range": [4.30, 5.20] },
-      { "ageRange": [31, 35], "range": [4.20, 5.20] },
-      { "ageRange": [36, 45], "range": [4.20, 5.10] },
-      { "ageRange": [46, 55], "range": [4.10, 5.00] },
-      { "ageRange": [56, 60], "range": [4.00, 5.00] },
-      { "ageRange": [61, 65], "range": [4.00, 4.90] },
-      { "ageRange": [66, 75], "range": [3.90, 4.90] },
-      { "ageRange": [76, 80], "range": [3.80, 4.80] },
-      { "ageRange": [81, 150], "range": [3.70, 4.80] }
+      { "ageRange": [0, 0.04], "range": [3.3, 4.5] },
+      { "ageRange": [0.04, 1], "range": [2.8, 4.7] },
+      { "ageRange": [1, 7], "range": [3.8, 4.7] },
+      { "ageRange": [8, 14], "range": [4.1, 4.8] },
+      { "ageRange": [15, 18], "range": [4.1, 5.1] },
+      { "ageRange": [19, 20], "range": [4.2, 5.3] },
+      { "ageRange": [21, 30], "range": [4.3, 5.2] },
+      { "ageRange": [31, 35], "range": [4.2, 5.2] },
+      { "ageRange": [36, 45], "range": [4.2, 5.1] },
+      { "ageRange": [46, 55], "range": [4.1, 5.0] },
+      { "ageRange": [56, 60], "range": [4.0, 5.0] },
+      { "ageRange": [61, 65], "range": [4.0, 4.9] },
+      { "ageRange": [66, 75], "range": [3.9, 4.9] },
+      { "ageRange": [76, 80], "range": [3.8, 4.8] },
+      { "ageRange": [81, 150], "range": [3.7, 4.8] }
     ],
     "Female": [
-      { "ageRange": [0, 0.04], "range": [3.30, 4.50] },
-      { "ageRange": [0.04, 1], "range": [2.80, 4.70] },
-      { "ageRange": [1, 7], "range": [3.80, 4.70] },
-      { "ageRange": [8, 14], "range": [4.10, 4.80] },
-      { "ageRange": [15, 18], "range": [4.00, 4.90] },
-      { "ageRange": [19, 30], "range": [4.00, 5.10] },
-      { "ageRange": [31, 40], "range": [3.90, 5.00] },
-      { "ageRange": [41, 60], "range": [3.90, 4.90] },
-      { "ageRange": [61, 80], "range": [3.80, 4.80] },
-      { "ageRange": [81, 150], "range": [3.70, 4.70] }
+      { "ageRange": [0, 0.04], "range": [3.3, 4.5] },
+      { "ageRange": [0.04, 1], "range": [2.8, 4.7] },
+      { "ageRange": [1, 7], "range": [3.8, 4.7] },
+      { "ageRange": [8, 14], "range": [4.1, 4.8] },
+      { "ageRange": [15, 18], "range": [4.0, 4.9] },
+      { "ageRange": [19, 30], "range": [4.0, 5.1] },
+      { "ageRange": [31, 40], "range": [3.9, 5.0] },
+      { "ageRange": [41, 60], "range": [3.9, 4.9] },
+      { "ageRange": [61, 80], "range": [3.8, 4.8] },
+      { "ageRange": [81, 150], "range": [3.7, 4.7] }
     ]
   },
   "Alkaline Phosphatase;ALP;Alk Phos": {
     "Definition": "Alkaline Phosphatase (ALP) is an enzyme found in your body, particularly in your liver, bones, kidneys, and digestive system. Think of it as a worker that helps break down proteins in the body, making it easier for the body to use them. High or low levels of ALP in your blood can indicate various health conditions, which is why doctors sometimes check its levels through a blood test.",
-    "MedPreGeneral": {"Amitriptyline": "Increase"},
+    "MedPreGeneral": { "Amitriptyline": "Increase" },
     "Unit": "U/L",
     "Male": [
       { "ageRange": [0, 0.04], "range": [90, 273] },
@@ -76,7 +76,7 @@
   },
   "Ammonia;NH3;Plasma Ammonia;Blood Ammonia": {
     "Definition": "Ammonia in blood tests refers to the measurement of the ammonia level in your blood. Ammonia is a waste product formed when your body breaks down proteins. Normally, the liver converts ammonia into urea, which is then eliminated from the body through urine. High levels of ammonia in the blood can indicate a problem with the liver or kidneys, as these organs are responsible for filtering and eliminating waste products.",
-    "MedPreGeneral": {"Baclofen": "Increase"},
+    "MedPreGeneral": { "Baclofen": "Increase" },
     "Unit": "mmol/L",
     "Male": [
       { "ageRange": [0, 0.038], "range": [54, 161] },
@@ -91,7 +91,15 @@
   },
   "Amylase;Amy;Alpha-amylase;Diastase;AMS;AMY": {
     "Definition": "Amylase is a type of enzyme found in your body, primarily made by your pancreas and salivary glands. Its main job is to help your body break down starches into sugars, making it easier for your body to digest carbohydrates. In a blood test, high levels of amylase can indicate a problem with your pancreas or salivary glands, such as inflammation or blockage.",
-    "MedPreGeneral": {"Corticosteroids": "Increase", "Dexamethasone": "Increase", "Hydrocortisone": "Increase", "Betamethasone": "Increase", "Methylprednisolone": "Increase", "Prednisone": "Increase", "Prednisolone": "Increase"},
+    "MedPreGeneral": {
+      "Corticosteroids": "Increase",
+      "Dexamethasone": "Increase",
+      "Hydrocortisone": "Increase",
+      "Betamethasone": "Increase",
+      "Methylprednisolone": "Increase",
+      "Prednisone": "Increase",
+      "Prednisolone": "Increase"
+    },
     "Unit": "U/L",
     "Male": [
       { "ageRange": [0, 0.04], "range": [0, 10] },
@@ -181,28 +189,28 @@
     ]
   },
   "Bilirubin, Direct": {
-      "Unit": "mg/dL",
-      "MedPreGeneral": {"Baclofen": "Decrease"},
-      "Male": [
-      { "ageRange": [0, 0.04], "range": [0.00, 0.70] },
-      { "ageRange": [0.04, 1], "range": [0.00, 0.30] },
-      { "ageRange": [1, 8], "range": [0.00, 0.20] },
-      { "ageRange": [9, 12], "range": [0.00, 0.30] },
-      { "ageRange": [13, 18], "range": [0.00, 0.40] },
-      { "ageRange": [19, 150], "range": [0.00, 0.50] }
-      ],
-      "Female": [
-      { "ageRange": [0, 0.04], "range": [0.00, 0.70] },
-      { "ageRange": [0.04, 1], "range": [0.00, 0.30] },
-      { "ageRange": [1, 8], "range": [0.00, 0.20] },
-      { "ageRange": [9, 12], "range": [0.00, 0.30] },
-      { "ageRange": [13, 18], "range": [0.00, 0.40] },
-      { "ageRange": [19, 150], "range": [0.00, 0.50] }
-      ]
+    "Unit": "mg/dL",
+    "MedPreGeneral": { "Baclofen": "Decrease" },
+    "Male": [
+      { "ageRange": [0, 0.04], "range": [0.0, 0.7] },
+      { "ageRange": [0.04, 1], "range": [0.0, 0.3] },
+      { "ageRange": [1, 8], "range": [0.0, 0.2] },
+      { "ageRange": [9, 12], "range": [0.0, 0.3] },
+      { "ageRange": [13, 18], "range": [0.0, 0.4] },
+      { "ageRange": [19, 150], "range": [0.0, 0.5] }
+    ],
+    "Female": [
+      { "ageRange": [0, 0.04], "range": [0.0, 0.7] },
+      { "ageRange": [0.04, 1], "range": [0.0, 0.3] },
+      { "ageRange": [1, 8], "range": [0.0, 0.2] },
+      { "ageRange": [9, 12], "range": [0.0, 0.3] },
+      { "ageRange": [13, 18], "range": [0.0, 0.4] },
+      { "ageRange": [19, 150], "range": [0.0, 0.5] }
+    ]
   },
   "Bilirubin, Total": {
-      "Unit": "mg/dL",
-      "Male": [
+    "Unit": "mg/dL",
+    "Male": [
       { "ageRange": [0, 0.04], "range": [0.0, 17.0] },
       { "ageRange": [0.04, 1], "range": [0.0, 0.7] },
       { "ageRange": [1, 8], "range": [0.0, 0.4] },
@@ -210,8 +218,8 @@
       { "ageRange": [12, 14], "range": [0.0, 0.7] },
       { "ageRange": [15, 18], "range": [0.0, 0.8] },
       { "ageRange": [19, 150], "range": [0.0, 1.2] }
-      ],
-      "Female": [
+    ],
+    "Female": [
       { "ageRange": [0, 0.04], "range": [0.0, 16.6] },
       { "ageRange": [0.04, 1], "range": [0.0, 0.7] },
       { "ageRange": [1, 8], "range": [0.0, 0.4] },
@@ -219,12 +227,12 @@
       { "ageRange": [12, 14], "range": [0.0, 0.7] },
       { "ageRange": [15, 18], "range": [0.0, 0.8] },
       { "ageRange": [19, 150], "range": [0.0, 1.2] }
-      ]
+    ]
   },
   "Bicarbonate;Bicarbonate ion;Hydrogen carbonate ion;HCO3-;Total CO2": {
-      "Definition": "Bicarbonate, also known as hydrogen carbonate, is an ion (charged particle) present in the blood that helps maintain the pH balance of the body. It acts as a buffer, neutralizing excess acids to keep the blood neither too acidic nor too basic.",
-      "Unit": "mmol/L",
-      "Male": [
+    "Definition": "Bicarbonate, also known as hydrogen carbonate, is an ion (charged particle) present in the blood that helps maintain the pH balance of the body. It acts as a buffer, neutralizing excess acids to keep the blood neither too acidic nor too basic.",
+    "Unit": "mmol/L",
+    "Male": [
       { "ageRange": [0, 0.04], "range": [5, 20] },
       { "ageRange": [0.04, 1], "range": [10, 24] },
       { "ageRange": [1, 4], "range": [14, 24] },
@@ -232,8 +240,8 @@
       { "ageRange": [15, 18], "range": [18, 28] },
       { "ageRange": [19, 60], "range": [22, 29] },
       { "ageRange": [61, 150], "range": [23, 31] }
-      ],
-      "Female": [
+    ],
+    "Female": [
       { "ageRange": [0, 0.04], "range": [5, 20] },
       { "ageRange": [0.04, 1], "range": [10, 24] },
       { "ageRange": [1, 4], "range": [14, 24] },
@@ -241,53 +249,53 @@
       { "ageRange": [15, 18], "range": [17, 26] },
       { "ageRange": [19, 60], "range": [22, 29] },
       { "ageRange": [61, 150], "range": [23, 31] }
-      ]
+    ]
   },
   "UREA NITROGEN (BUN);BUN (Blood Urea Nitrogen);Urea Nitrogen;Serum Urea Nitrogen;Serum Urea;Serum BUN;Blood Urea;Urea Nitrogen in Blood;BUN;UN;SBU;SUN": {
-      "Definition": "Blood Urea Nitrogen (BUN) measures the amount of urea nitrogen in the blood. Urea nitrogen is a waste product formed in the liver when the body breaks down proteins. High BUN levels may indicate kidney dysfunction or dehydration.",
-      "MedPreGeneral": {"Hypertension": "Increase"},
-      "Unit": "mg/dL",
-      "Male": [
-      { "ageRange": [0, 0.04], "range": [3.00, 23.00] },
-      { "ageRange": [0.04, 1], "range": [3.00, 17.00] },
-      { "ageRange": [1, 9], "range": [9.00, 22.00] },
-      { "ageRange": [10, 18], "range": [7.00, 21.00] },
-      { "ageRange": [19, 20], "range": [5.00, 20.00] },
-      { "ageRange": [21, 35], "range": [5.00, 21.00] },
-      { "ageRange": [36, 40], "range": [5.00, 22.00] },
-      { "ageRange": [41, 55], "range": [5.00, 23.00] },
-      { "ageRange": [56, 70], "range": [5.00, 25.00] },
-      { "ageRange": [71, 75], "range": [5.00, 26.00] },
-      { "ageRange": [76, 80], "range": [5.00, 28.00] },
-      { "ageRange": [81, 150], "range": [5.00, 30.00] }
-      ],
-      "Female": [
-      { "ageRange": [0, 0.04], "range": [3.00, 23.00] },
-      { "ageRange": [0.04, 1], "range": [3.00, 17.00] },
-      { "ageRange": [1, 9], "range": [9.00, 22.00] },
-      { "ageRange": [10, 18], "range": [7.00, 19.00] },
-      { "ageRange": [19, 25], "range": [5.00, 17.00] },
-      { "ageRange": [26, 35], "range": [5.00, 18.00] },
-      { "ageRange": [36, 45], "range": [5.00, 19.00] },
-      { "ageRange": [46, 50], "range": [5.00, 20.00] },
-      { "ageRange": [51, 60], "range": [5.00, 22.00] },
-      { "ageRange": [61, 75], "range": [5.00, 24.00] },
-      { "ageRange": [76, 80], "range": [5.00, 26.00] },
-      { "ageRange": [81, 150], "range": [5.00, 28.00] }
-      ]
+    "Definition": "Blood Urea Nitrogen (BUN) measures the amount of urea nitrogen in the blood. Urea nitrogen is a waste product formed in the liver when the body breaks down proteins. High BUN levels may indicate kidney dysfunction or dehydration.",
+    "MedPreGeneral": { "Hypertension": "Increase" },
+    "Unit": "mg/dL",
+    "Male": [
+      { "ageRange": [0, 0.04], "range": [3.0, 23.0] },
+      { "ageRange": [0.04, 1], "range": [3.0, 17.0] },
+      { "ageRange": [1, 9], "range": [9.0, 22.0] },
+      { "ageRange": [10, 18], "range": [7.0, 21.0] },
+      { "ageRange": [19, 20], "range": [5.0, 20.0] },
+      { "ageRange": [21, 35], "range": [5.0, 21.0] },
+      { "ageRange": [36, 40], "range": [5.0, 22.0] },
+      { "ageRange": [41, 55], "range": [5.0, 23.0] },
+      { "ageRange": [56, 70], "range": [5.0, 25.0] },
+      { "ageRange": [71, 75], "range": [5.0, 26.0] },
+      { "ageRange": [76, 80], "range": [5.0, 28.0] },
+      { "ageRange": [81, 150], "range": [5.0, 30.0] }
+    ],
+    "Female": [
+      { "ageRange": [0, 0.04], "range": [3.0, 23.0] },
+      { "ageRange": [0.04, 1], "range": [3.0, 17.0] },
+      { "ageRange": [1, 9], "range": [9.0, 22.0] },
+      { "ageRange": [10, 18], "range": [7.0, 19.0] },
+      { "ageRange": [19, 25], "range": [5.0, 17.0] },
+      { "ageRange": [26, 35], "range": [5.0, 18.0] },
+      { "ageRange": [36, 45], "range": [5.0, 19.0] },
+      { "ageRange": [46, 50], "range": [5.0, 20.0] },
+      { "ageRange": [51, 60], "range": [5.0, 22.0] },
+      { "ageRange": [61, 75], "range": [5.0, 24.0] },
+      { "ageRange": [76, 80], "range": [5.0, 26.0] },
+      { "ageRange": [81, 150], "range": [5.0, 28.0] }
+    ]
   },
   "Calcium;Serum Calcium;Ca;Ca2+": {
     "Definition": "Calcium, often referred to as Ca or Ca2+, is a mineral found in the blood that plays a crucial role in bone strength and muscle function. It is measured in blood tests to assess the level of calcium present in the bloodstream.",
     "Unit": "mg/dL",
     "Male": [
-      { "ageRange": [0, 1], "range": [8.50, 11.00] },
-      { "ageRange": [1, 18], "range": [9.20, 10.50] },
-      { "ageRange": [19, 150], "range": [8.50, 10.50] }
+      { "ageRange": [0, 1], "range": [8.5, 11.0] },
+      { "ageRange": [1, 18], "range": [9.2, 10.5] },
+      { "ageRange": [19, 150], "range": [8.5, 10.5] }
     ],
     "Female": [
-      { "ageRange": [0, 1], "range": [8.50, 11.00] },
-      { "ageRange": [1, 18], "range": [9.20, 10.50] },
-      { "ageRange": [19, 150], "range": [8.50, 10.50] }
+      { "ageRange": [0, 1], "range": [8.5, 11.0] },
+      { "ageRange": [1, 18], "range": [9.2, 10.5] },
+      { "ageRange": [19, 150], "range": [8.5, 10.5] }
     ]
   },
   "Carotene": {
@@ -295,27 +303,25 @@
     "Unit": "ug/dL",
     "Male": [
       { "ageRange": [0, 0.75], "range": [0, 0] },
-      { "ageRange": [0.75, 5], "range": [5.00, 80.00] },
-      { "ageRange": [6, 16], "range": [9.00, 190.00] },
-      { "ageRange": [17, 150], "range": [6.00, 77.00] }
+      { "ageRange": [0.75, 5], "range": [5.0, 80.0] },
+      { "ageRange": [6, 16], "range": [9.0, 190.0] },
+      { "ageRange": [17, 150], "range": [6.0, 77.0] }
     ],
     "Female": [
       { "ageRange": [0, 0.75], "range": [0, 0] },
-      { "ageRange": [0.75, 5], "range": [5.00, 80.00] },
-      { "ageRange": [6, 16], "range": [9.00, 190.00] },
-      { "ageRange": [17, 150], "range": [6.00, 77.00] }
+      { "ageRange": [0.75, 5], "range": [5.0, 80.0] },
+      { "ageRange": [6, 16], "range": [9.0, 190.0] },
+      { "ageRange": [17, 150], "range": [6.0, 77.0] }
     ]
   },
   "Ceruloplasmin;Ferroxidase;Siderase;Copper-oxidase;CP": {
     "Definition": "Ceruloplasmin, also known as ferroxidase or siderase, is a protein found in blood that helps carry copper throughout the body. It plays a role in iron metabolism and antioxidant function, and abnormal levels may indicate certain health conditions.",
-    "MedPreSpecific": {"Wilson's Disease":
-        {"Male": [
-        { "ageRange": [0, 150], "range": [0, 14] }
-        ],
-        "Female": [
-        { "ageRange": [0, 150], "range": [0, 14] }
-        ]}
-      },
+    "MedPreSpecific": {
+      "Wilson's Disease": {
+        "Male": [{ "ageRange": [0, 150], "range": [0, 14] }],
+        "Female": [{ "ageRange": [0, 150], "range": [0, 14] }]
+      }
+    },
     "Unit": "mg/dL",
     "Male": [
       { "ageRange": [0, 0.08], "range": [7, 24] },
@@ -340,22 +346,17 @@
       { "ageRange": [19, 150], "range": [14, 33] }
     ]
   },
-  "Chlorine;Chloride;Cl;Cl-": {
-    "Definition": "Chloride is a type of negatively charged particle found in your blood. It plays a crucial role in maintaining the balance of fluids in your body and helps regulate the acidity level of your blood. Elevated levels of chloride may indicate dehydration or kidney problems, while low levels could suggest conditions such as vomiting or metabolic alkalosis.",
-    "MedPreGeneral": {"Corticosteroids": "Increase", "Dexamethasone": "Increase", "Hydrocortisone": "Increase", "Betamethasone": "Increase", "Methylprednisolone": "Increase", "Prednisone": "Increase", "Prednisolone": "Increase"},
-    "Unit": "mmol/L",
-    "Male": [
-      { "ageRange": [0, 0.5], "range": {"Normal": [0, 29], "Intermediate": [30, 59], "Positive": [60, 999] } },
-      { "ageRange": [0.5, 150], "range": {"Normal": [0, 39], "Intermediate": [40, 60], "Positive": [61, 999] } }
-    ],
-    "Female": [
-      { "ageRange": [0, 0.5], "Normal": "<29", "Intermediate": "30-59", "Positive": ">60" },
-      { "ageRange": [0.5, 150], "Normal": "<39", "Intermediate": "40-60", "Positive": ">60" }
-    ]
-  },
   "Cholesterol, Total;Cholesterol;Lipid panel;lipid profile;lipid blood test;cholesterol panel": {
     "Definition": "Cholesterol is a waxy, fat-like substance found in your blood. It's essential for building cells and certain hormones. However, having too much cholesterol can lead to blockages in blood vessels, increasing the risk of heart disease and stroke.",
-    "MedPreGeneral": {"Corticosteroids": "Increase", "Dexamethasone": "Increase", "Hydrocortisone": "Increase", "Betamethasone": "Increase", "Methylprednisolone": "Increase", "Prednisone": "Increase", "Prednisolone": "Increase"},
+    "MedPreGeneral": {
+      "Corticosteroids": "Increase",
+      "Dexamethasone": "Increase",
+      "Hydrocortisone": "Increase",
+      "Betamethasone": "Increase",
+      "Methylprednisolone": "Increase",
+      "Prednisone": "Increase",
+      "Prednisolone": "Increase"
+    },
     "Unit": "mg/dL",
     "Male": [
       { "ageRange": [0, 0.04], "range": [42, 109] },
@@ -371,185 +372,189 @@
     ]
   },
   "Creatinine;Blood Creatinine;Serum Creatinine;Cr": {
-      "Definition": "Creatinine is a waste product formed by the muscles during the breakdown of a compound called creatine phosphate. It is filtered out of the blood by the kidneys and excreted in urine. Blood tests measure the level of creatinine to assess kidney function and overall health.",
-      "MedPreGeneral": {"Hypertension": "Increase"},
-      "Unit": "mg/dL",
-      "Male": [
+    "Definition": "Creatinine is a waste product formed by the muscles during the breakdown of a compound called creatine phosphate. It is filtered out of the blood by the kidneys and excreted in urine. Blood tests measure the level of creatinine to assess kidney function and overall health.",
+    "MedPreGeneral": { "Hypertension": "Increase" },
+    "Unit": "mg/dL",
+    "Male": [
       { "ageRange": [0, 0.038], "range": [0.32, 0.92] },
-      { "ageRange": [0.038, 1], "range": [0.10, 0.36] },
-      { "ageRange": [2, 4], "range": [0.20, 0.43] },
+      { "ageRange": [0.038, 1], "range": [0.1, 0.36] },
+      { "ageRange": [2, 4], "range": [0.2, 0.43] },
       { "ageRange": [5, 11], "range": [0.31, 0.61] },
       { "ageRange": [12, 14], "range": [0.45, 0.81] },
       { "ageRange": [15, 18], "range": [0.62, 1.08] },
-      { "ageRange": [19, 45], "range": [0.50, 1.20] },
-      { "ageRange": [46, 60], "range": [0.50, 1.30] },
-      { "ageRange": [61, 70], "range": [0.50, 1.40] },
-      { "ageRange": [71, 75], "range": [0.50, 1.50] },
-      { "ageRange": [76, 80], "range": [0.50, 1.70] },
-      { "ageRange": [81, 150], "range": [0.50, 1.80] }
-      ],
-      "Female": [
+      { "ageRange": [19, 45], "range": [0.5, 1.2] },
+      { "ageRange": [46, 60], "range": [0.5, 1.3] },
+      { "ageRange": [61, 70], "range": [0.5, 1.4] },
+      { "ageRange": [71, 75], "range": [0.5, 1.5] },
+      { "ageRange": [76, 80], "range": [0.5, 1.7] },
+      { "ageRange": [81, 150], "range": [0.5, 1.8] }
+    ],
+    "Female": [
       { "ageRange": [0, 0.038], "range": [0.32, 0.92] },
-      { "ageRange": [0.038, 1], "range": [0.10, 0.36] },
-      { "ageRange": [2, 4], "range": [0.20, 0.43] },
+      { "ageRange": [0.038, 1], "range": [0.1, 0.36] },
+      { "ageRange": [2, 4], "range": [0.2, 0.43] },
       { "ageRange": [5, 11], "range": [0.31, 0.61] },
       { "ageRange": [12, 14], "range": [0.45, 0.81] },
       { "ageRange": [15, 18], "range": [0.49, 0.84] },
-      { "ageRange": [19, 45], "range": [0.50, 1.00] },
-      { "ageRange": [46, 60], "range": [0.50, 1.10] },
-      { "ageRange": [61, 70], "range": [0.50, 1.20] },
-      { "ageRange": [71, 75], "range": [0.50, 1.30] },
-      { "ageRange": [76, 80], "range": [0.50, 1.40] },
-      { "ageRange": [81, 150], "range": [0.50, 1.50] }
-      ]
+      { "ageRange": [19, 45], "range": [0.5, 1.0] },
+      { "ageRange": [46, 60], "range": [0.5, 1.1] },
+      { "ageRange": [61, 70], "range": [0.5, 1.2] },
+      { "ageRange": [71, 75], "range": [0.5, 1.3] },
+      { "ageRange": [76, 80], "range": [0.5, 1.4] },
+      { "ageRange": [81, 150], "range": [0.5, 1.5] }
+    ]
   },
   "Digoxin;Digoxin;Digitalis;Lanoxin;DIG;DGOX;DGL": {
-      "Definition": "Digoxin, also known as Digitalis or Lanoxin, is a medication commonly used to treat heart conditions such as heart failure and certain types of irregular heartbeats. It works by affecting certain minerals (sodium and potassium) inside heart cells, which helps the heart to beat stronger and at a more regular rhythm.",
-      "Unit": "ng/mL",
-      "Male": [
+    "Definition": "Digoxin, also known as Digitalis or Lanoxin, is a medication commonly used to treat heart conditions such as heart failure and certain types of irregular heartbeats. It works by affecting certain minerals (sodium and potassium) inside heart cells, which helps the heart to beat stronger and at a more regular rhythm.",
+    "Unit": "ng/mL",
+    "Male": [
       { "ageRange": [0, 1], "range": [0.8, 3.5] },
       { "ageRange": [1, 12], "range": [0.8, 3.0] },
       { "ageRange": [13, 150], "range": [0.8, 2.0] }
-      ],
-      "Female": [
+    ],
+    "Female": [
       { "ageRange": [0, 1], "range": [0.8, 3.5] },
       { "ageRange": [1, 12], "range": [0.8, 3.0] },
       { "ageRange": [13, 150], "range": [0.8, 2.0] }
-      ]
+    ]
   },
   "Ferritin;Serum Ferritin;SF;Iron Storage Protein": {
-      "Definition": "Ferritin is a protein found in cells that stores iron and releases it in a controlled manner. In blood tests, it serves as an indicator of the body's iron levels.",
-      "Unit": "ng/mL",
-      "Male": [
+    "Definition": "Ferritin is a protein found in cells that stores iron and releases it in a controlled manner. In blood tests, it serves as an indicator of the body's iron levels.",
+    "Unit": "ng/mL",
+    "Male": [
       { "ageRange": [0.011, 0.5], "range": [100, 717] },
       { "ageRange": [0.5, 2], "range": [14, 647] },
       { "ageRange": [2, 12], "range": [32, 277] },
       { "ageRange": [13, 150], "range": [32, 356] }
-      ],
-      "Female": [
+    ],
+    "Female": [
       { "ageRange": [0.011, 0.5], "range": [100, 717] },
       { "ageRange": [0.5, 2], "range": [14, 647] },
       { "ageRange": [2, 12], "range": [32, 277] },
       { "ageRange": [13, 150], "range": [20, 177] }
-      ]
+    ]
   },
   "GGT;Gamma-Glutamyl Transferase;Gamma-Glutamyl Transpeptidase;GGTP;Gamma-GT": {
-      "Definition": "Gamma-Glutamyl Transferase (GGT) is an enzyme found in the liver and other tissues. It plays a role in breaking down chemicals in the body, particularly in processing certain drugs and toxins. High levels of GGT in the blood may indicate liver damage or disease.",
-      "Unit": "U/L",
-      "Male": [
-      { "ageRange": [0, 0.038], "range": [0.00, 219.00] },
-      { "ageRange": [0.038, 1], "range": [0.00, 127.00] },
-      { "ageRange": [1, 10], "range": [0.00, 16.00] },
-      { "ageRange": [11, 18], "range": [0.00, 21.00] },
-      { "ageRange": [19, 150], "range": [0.00, 64.00] }
-      ],
-      "Female": [
-      { "ageRange": [0, 0.038], "range": [0.00, 219.00] },
-      { "ageRange": [0.038, 1], "range": [0.00, 127.00] },
-      { "ageRange": [1, 10], "range": [0.00, 16.00] },
-      { "ageRange": [11, 18], "range": [0.00, 21.00] },
-      { "ageRange": [19, 150], "range": [0.00, 36.00] }
-      ]
+    "Definition": "Gamma-Glutamyl Transferase (GGT) is an enzyme found in the liver and other tissues. It plays a role in breaking down chemicals in the body, particularly in processing certain drugs and toxins. High levels of GGT in the blood may indicate liver damage or disease.",
+    "Unit": "U/L",
+    "Male": [
+      { "ageRange": [0, 0.038], "range": [0.0, 219.0] },
+      { "ageRange": [0.038, 1], "range": [0.0, 127.0] },
+      { "ageRange": [1, 10], "range": [0.0, 16.0] },
+      { "ageRange": [11, 18], "range": [0.0, 21.0] },
+      { "ageRange": [19, 150], "range": [0.0, 64.0] }
+    ],
+    "Female": [
+      { "ageRange": [0, 0.038], "range": [0.0, 219.0] },
+      { "ageRange": [0.038, 1], "range": [0.0, 127.0] },
+      { "ageRange": [1, 10], "range": [0.0, 16.0] },
+      { "ageRange": [11, 18], "range": [0.0, 21.0] },
+      { "ageRange": [19, 150], "range": [0.0, 36.0] }
+    ]
   },
   "Fasting Glucose;Glucose Fasting;Glucose;Blood sugar;Blood glucose;Serum glucose;Blood sugar level;Blood glucose level;BS;BG;SG;BSL;BGL": {
-      "Definition": "Glucose, also known as blood sugar, is a type of sugar that circulates in your blood and provides energy to your body's cells. It's the primary source of energy for most cells in the body, particularly those in the brain. Blood glucose levels are often measured to assess a person's overall health, especially in relation to diabetes.",
-      "MedPreGeneral": {"Baclofen": "Increase", "Corticosteroids": "Increase", "Dexamethasone": "Increase", "Hydrocortisone": "Increase", "Betamethasone": "Increase", "Methylprednisolone": "Increase", "Prednisone": "Increase", "Prednisolone": "Increase"},
-      "MedPreSpecific": {"Diabetes":
-        {"Male": [
-        { "ageRange": [0, 150], "range": [126, 200] }
-        ],
-        "Female": [
-        { "ageRange": [0, 150], "range": [126, 200] }
-        ]},
-        "Prediabetes":
-        {"Male": [
-        { "ageRange": [0, 150], "range": [140, 199] }
-        ],
-        "Female": [
-        { "ageRange": [0, 150], "range": [140, 199] }
-        ]}
+    "Definition": "Glucose, also known as blood sugar, is a type of sugar that circulates in your blood and provides energy to your body's cells. It's the primary source of energy for most cells in the body, particularly those in the brain. Blood glucose levels are often measured to assess a person's overall health, especially in relation to diabetes.",
+    "MedPreGeneral": {
+      "Baclofen": "Increase",
+      "Corticosteroids": "Increase",
+      "Dexamethasone": "Increase",
+      "Hydrocortisone": "Increase",
+      "Betamethasone": "Increase",
+      "Methylprednisolone": "Increase",
+      "Prednisone": "Increase",
+      "Prednisolone": "Increase"
+    },
+    "MedPreSpecific": {
+      "Diabetes": {
+        "Male": [{ "ageRange": [0, 150], "range": [126, 200] }],
+        "Female": [{ "ageRange": [0, 150], "range": [126, 200] }]
       },
-      "Unit": "mg/dL",
-      "Male": [
-      { "ageRange": [0, 0.016], "range": [40.00, 60.00] },
-      { "ageRange": [0.019, 150], "range": [70.00, 100.00] }
-      ],
-      "Female": [
-      { "ageRange": [0, 0.016], "range": [40.00, 60.00] },
-      { "ageRange": [0.019, 150], "range": [70.00, 100.00] }
-      ]
+      "Prediabetes": {
+        "Male": [{ "ageRange": [0, 150], "range": [140, 199] }],
+        "Female": [{ "ageRange": [0, 150], "range": [140, 199] }]
+      }
+    },
+    "Unit": "mg/dL",
+    "Male": [
+      { "ageRange": [0, 0.016], "range": [40.0, 60.0] },
+      { "ageRange": [0.019, 150], "range": [70.0, 100.0] }
+    ],
+    "Female": [
+      { "ageRange": [0, 0.016], "range": [40.0, 60.0] },
+      { "ageRange": [0.019, 150], "range": [70.0, 100.0] }
+    ]
   },
   "Hemoglobin;Hb;Hgb;Haemoglobin;Hemoglobin": {
-      "Definition": "Hemoglobin is a protein in red blood cells that carries oxygen from the lungs to the rest of the body. It also helps carry carbon dioxide from the body's tissues back to the lungs to be exhaled.",
-      "Unit": "gm/dL",
-      "Male": [
-      { "ageRange": [0, 0.035], "range": [14.00, 23.00] },
-      { "ageRange": [0.035, 1], "range": [11.00, 18.00] },
-      { "ageRange": [1, 3], "range": [9.80, 17.80] },
-      { "ageRange": [3, 6], "range": [9.60, 13.40] },
-      { "ageRange": [6, 12], "range": [10.20, 13.80] },
-      { "ageRange": [1, 3], "range": [10.20, 14.40] },
-      { "ageRange": [4, 7], "range": [10.50, 15.10] },
-      { "ageRange": [8, 11], "range": [10.90, 15.80] },
-      { "ageRange": [12, 13], "range": [11.50, 16.50] },
-      { "ageRange": [14, 15], "range": [12.40, 17.10] },
-      { "ageRange": [16, 20], "range": [13.40, 17.30] },
-      { "ageRange": [21, 30], "range": [13.80, 17.40] },
-      { "ageRange": [31, 40], "range": [13.60, 17.40] },
-      { "ageRange": [51, 60], "range": [13.10, 17.30] },
-      { "ageRange": [61, 150], "range": [12.50, 17.30] }
-      ],
-      "Female": [
-      { "ageRange": [0, 0.035], "range": [14.00, 23.00] },
-      { "ageRange": [0.035, 1], "range": [11.00, 18.00] },
-      { "ageRange": [1, 3], "range": [9.80, 17.80] },
-      { "ageRange": [3, 6], "range": [9.60, 13.40] },
-      { "ageRange": [6, 12], "range": [10.20, 13.80] },
-      { "ageRange": [1, 3], "range": [10.20, 14.40] },
-      { "ageRange": [4, 7], "range": [10.50, 15.10] },
-      { "ageRange": [8, 11], "range": [10.90, 15.80] },
-      { "ageRange": [12, 15], "range": [11.50, 16.00] },
-      { "ageRange": [16, 20], "range": [11.20, 15.20] },
-      { "ageRange": [21, 30], "range": [11.20, 15.30] },
-      { "ageRange": [31, 40], "range": [11.40, 15.50] },
-      { "ageRange": [41, 50], "range": [11.60, 15.70] },
-      { "ageRange": [51, 60], "range": [11.80, 15.90] },
-      { "ageRange": [61, 150], "range": [11.60, 15.90] }
+    "Definition": "Hemoglobin is a protein in red blood cells that carries oxygen from the lungs to the rest of the body. It also helps carry carbon dioxide from the body's tissues back to the lungs to be exhaled.",
+    "Unit": "gm/dL",
+    "Male": [
+      { "ageRange": [0, 0.035], "range": [14.0, 23.0] },
+      { "ageRange": [0.035, 1], "range": [11.0, 18.0] },
+      { "ageRange": [1, 3], "range": [9.8, 17.8] },
+      { "ageRange": [3, 6], "range": [9.6, 13.4] },
+      { "ageRange": [6, 12], "range": [10.2, 13.8] },
+      { "ageRange": [1, 3], "range": [10.2, 14.4] },
+      { "ageRange": [4, 7], "range": [10.5, 15.1] },
+      { "ageRange": [8, 11], "range": [10.9, 15.8] },
+      { "ageRange": [12, 13], "range": [11.5, 16.5] },
+      { "ageRange": [14, 15], "range": [12.4, 17.1] },
+      { "ageRange": [16, 20], "range": [13.4, 17.3] },
+      { "ageRange": [21, 30], "range": [13.8, 17.4] },
+      { "ageRange": [31, 40], "range": [13.6, 17.4] },
+      { "ageRange": [51, 60], "range": [13.1, 17.3] },
+      { "ageRange": [61, 150], "range": [12.5, 17.3] }
+    ],
+    "Female": [
+      { "ageRange": [0, 0.035], "range": [14.0, 23.0] },
+      { "ageRange": [0.035, 1], "range": [11.0, 18.0] },
+      { "ageRange": [1, 3], "range": [9.8, 17.8] },
+      { "ageRange": [3, 6], "range": [9.6, 13.4] },
+      { "ageRange": [6, 12], "range": [10.2, 13.8] },
+      { "ageRange": [1, 3], "range": [10.2, 14.4] },
+      { "ageRange": [4, 7], "range": [10.5, 15.1] },
+      { "ageRange": [8, 11], "range": [10.9, 15.8] },
+      { "ageRange": [12, 15], "range": [11.5, 16.0] },
+      { "ageRange": [16, 20], "range": [11.2, 15.2] },
+      { "ageRange": [21, 30], "range": [11.2, 15.3] },
+      { "ageRange": [31, 40], "range": [11.4, 15.5] },
+      { "ageRange": [41, 50], "range": [11.6, 15.7] },
+      { "ageRange": [51, 60], "range": [11.8, 15.9] },
+      { "ageRange": [61, 150], "range": [11.6, 15.9] }
     ]
   },
   "HDL;HDL Cholesterol;High-density lipoprotein cholesterol;Good cholesterol;HDL-C": {
-      "Definition": "HDL Cholesterol, also known as 'Good cholesterol' or 'High-density lipoprotein cholesterol', refers to a type of cholesterol that helps remove other forms of cholesterol from your bloodstream, which can lower the risk of heart disease. Higher levels of HDL cholesterol are generally considered beneficial for heart health.",
-      "Unit": "mg/dL",
-      "Male": [
+    "Definition": "HDL Cholesterol, also known as 'Good cholesterol' or 'High-density lipoprotein cholesterol', refers to a type of cholesterol that helps remove other forms of cholesterol from your bloodstream, which can lower the risk of heart disease. Higher levels of HDL cholesterol are generally considered beneficial for heart health.",
+    "Unit": "mg/dL",
+    "Male": [
       { "ageRange": [0, 0.038], "range": [15, 42] },
       { "ageRange": [0.038, 1], "range": [12, 71] },
       { "ageRange": [1, 3], "range": [31, 63] },
       { "ageRange": [4, 12], "range": [36, 73] },
       { "ageRange": [13, 18], "range": [32, 68] },
       { "ageRange": [19, 150], "range": [40, 125] }
-      ],
-      "Female": [
+    ],
+    "Female": [
       { "ageRange": [0, 0.038], "range": [15, 42] },
       { "ageRange": [0.038, 1], "range": [12, 71] },
       { "ageRange": [1, 3], "range": [31, 63] },
       { "ageRange": [4, 12], "range": [36, 73] },
       { "ageRange": [13, 18], "range": [32, 72] },
       { "ageRange": [19, 150], "range": [40, 125] }
-      ]
+    ]
   },
   "Iron, Total;Iron;Fe;Serum Iron;Ferrum": {
-      "Definition": "Iron, often measured in blood tests as Serum Iron or Fe, is a mineral essential for various bodily functions, including carrying oxygen in the blood. It plays a crucial role in energy production and metabolism. Abnormal levels of iron in the blood can indicate various health conditions.",
-      "Unit": "ug/dL",
-      "Male": [
+    "Definition": "Iron, often measured in blood tests as Serum Iron or Fe, is a mineral essential for various bodily functions, including carrying oxygen in the blood. It plays a crucial role in energy production and metabolism. Abnormal levels of iron in the blood can indicate various health conditions.",
+    "Unit": "ug/dL",
+    "Male": [
       { "ageRange": [0, 13], "range": [16, 128] },
       { "ageRange": [14, 18], "range": [31, 168] },
       { "ageRange": [19, 150], "range": [37, 167] }
-      ],
-      "Female": [
+    ],
+    "Female": [
       { "ageRange": [0, 13], "range": [16, 128] },
       { "ageRange": [14, 18], "range": [20, 162] },
       { "ageRange": [19, 150], "range": [33, 167] }
-      ]
+    ]
   },
   "INR": {
     "Definition": "Screening test for abnormalities of coagulation factors that are involved in the extrinsic pathway. Also used to monitor effects of Warfarin therapy and to study patients with hereditary and acquired clotting disorders.",
@@ -572,103 +577,111 @@
     ]
   },
   "LDH;Lactate dehydrogenase;Lactic acid dehydrogenase;Lactic acid oxidoreductase;LDH;LAO;LD": {
-      "Definition": "LDH (Lactate dehydrogenase) is an enzyme found in many body tissues and organs, including the blood. It plays a crucial role in converting lactate to pyruvate, a key step in energy production. High levels of LDH in the blood may indicate tissue damage, inflammation, or certain diseases.",
-      "Unit": "U/L",
-      "Male": [
+    "Definition": "LDH (Lactate dehydrogenase) is an enzyme found in many body tissues and organs, including the blood. It plays a crucial role in converting lactate to pyruvate, a key step in energy production. High levels of LDH in the blood may indicate tissue damage, inflammation, or certain diseases.",
+    "Unit": "U/L",
+    "Male": [
       { "ageRange": [0, 0.038], "range": [309, 1222] },
       { "ageRange": [0.038, 1], "range": [163, 452] },
       { "ageRange": [1, 9], "range": [192, 321] },
       { "ageRange": [10, 14], "range": [170, 283] },
       { "ageRange": [15, 18], "range": [130, 250] },
       { "ageRange": [19, 150], "range": [117, 278] }
-      ],
-      "Female": [
+    ],
+    "Female": [
       { "ageRange": [0, 0.038], "range": [309, 1222] },
       { "ageRange": [0.038, 1], "range": [163, 452] },
       { "ageRange": [1, 9], "range": [192, 321] },
       { "ageRange": [10, 14], "range": [157, 272] },
       { "ageRange": [15, 18], "range": [130, 250] },
       { "ageRange": [19, 150], "range": [117, 278] }
-      ]
+    ]
   },
   "Lipase;Pancreatic lipase;Serum lipase;LPS;LIP": {
-      "Definition": "Lipase, also known as pancreatic lipase or serum lipase, is an enzyme produced by the pancreas that helps digest fats in the food we eat. In blood tests, lipase levels are measured to assess the health of the pancreas and diagnose conditions such as pancreatitis.",
-      "Unit": "U/L",
-      "Male": [
+    "Definition": "Lipase, also known as pancreatic lipase or serum lipase, is an enzyme produced by the pancreas that helps digest fats in the food we eat. In blood tests, lipase levels are measured to assess the health of the pancreas and diagnose conditions such as pancreatitis.",
+    "Unit": "U/L",
+    "Male": [
       { "ageRange": [0, 18], "range": [0, 39] },
       { "ageRange": [19, 150], "range": [0, 60] }
-      ],
-      "Female": [
+    ],
+    "Female": [
       { "ageRange": [0, 18], "range": [0, 39] },
       { "ageRange": [19, 150], "range": [0, 60] }
-      ]
+    ]
   },
   "Magnesium;Serum Magnesium;Mg;Mg2+": {
-      "Definition": "Magnesium, also known as serum magnesium or Mg, is a mineral essential for various bodily functions, including muscle and nerve function, maintaining steady heartbeat, and supporting the immune system. It is measured in blood tests to assess its levels in the body.",
-      "Unit": "mg/dL",
-      "Male": [
+    "Definition": "Magnesium, also known as serum magnesium or Mg, is a mineral essential for various bodily functions, including muscle and nerve function, maintaining steady heartbeat, and supporting the immune system. It is measured in blood tests to assess its levels in the body.",
+    "Unit": "mg/dL",
+    "Male": [
       { "ageRange": [0, 0.038], "range": [2.0, 3.9] },
       { "ageRange": [0.038, 1], "range": [2.0, 3.1] },
       { "ageRange": [1, 18], "range": [2.1, 2.8] },
       { "ageRange": [19, 150], "range": [1.6, 2.8] }
-      ],
-      "Female": [
+    ],
+    "Female": [
       { "ageRange": [0, 0.038], "range": [2.0, 3.9] },
       { "ageRange": [0.038, 1], "range": [2.0, 3.1] },
       { "ageRange": [1, 18], "range": [2.1, 2.8] },
       { "ageRange": [19, 150], "range": [1.6, 2.8] }
-      ]
+    ]
   },
   "MCH;Mean Corpuscular Hemoglobin;Mean Cell Hemoglobin;MCH": {
-      "Definition": "Mean Corpuscular Hemoglobin (MCH) is a measure of the average amount of hemoglobin present in each red blood cell. It indicates how much hemoglobin is available in each red blood cell, which is important for carrying oxygen throughout the body.",
-      "Unit": "pg",
-      "Male": [
-      { "ageRange": [0, 0.035], "range": [30.00, 39.50] },
-      { "ageRange": [0.035, 1], "range": [28.00, 35.00] },
-      { "ageRange": [1, 15], "range": [25.00, 34.00] },
-      { "ageRange": [16, 20], "range": [26.90, 32.50] },
-      { "ageRange": [21, 30], "range": [27.20, 32.70] },
-      { "ageRange": [31, 40], "range": [27.30, 33.10] },
-      { "ageRange": [41, 50], "range": [27.50, 33.50] },
-      { "ageRange": [51, 150], "range": [27.60, 33.80] }
-      ],
-      "Female": [
-      { "ageRange": [0, 0.035], "range": [30.00, 39.50] },
-      { "ageRange": [0.035, 1], "range": [28.00, 35.00] },
-      { "ageRange": [1, 15], "range": [25.00, 34.00] },
-      { "ageRange": [16, 20], "range": [25.80, 32.40] },
-      { "ageRange": [21, 30], "range": [26.00, 32.60] },
-      { "ageRange": [31, 40], "range": [26.00, 33.00] },
-      { "ageRange": [41, 50], "range": [26.10, 33.30] },
-      { "ageRange": [51, 60], "range": [26.70, 33.20] },
-      { "ageRange": [61, 150], "range": [26.80, 33.30] }
-      ]
+    "Definition": "Mean Corpuscular Hemoglobin (MCH) is a measure of the average amount of hemoglobin present in each red blood cell. It indicates how much hemoglobin is available in each red blood cell, which is important for carrying oxygen throughout the body.",
+    "Unit": "pg",
+    "Male": [
+      { "ageRange": [0, 0.035], "range": [30.0, 39.5] },
+      { "ageRange": [0.035, 1], "range": [28.0, 35.0] },
+      { "ageRange": [1, 15], "range": [25.0, 34.0] },
+      { "ageRange": [16, 20], "range": [26.9, 32.5] },
+      { "ageRange": [21, 30], "range": [27.2, 32.7] },
+      { "ageRange": [31, 40], "range": [27.3, 33.1] },
+      { "ageRange": [41, 50], "range": [27.5, 33.5] },
+      { "ageRange": [51, 150], "range": [27.6, 33.8] }
+    ],
+    "Female": [
+      { "ageRange": [0, 0.035], "range": [30.0, 39.5] },
+      { "ageRange": [0.035, 1], "range": [28.0, 35.0] },
+      { "ageRange": [1, 15], "range": [25.0, 34.0] },
+      { "ageRange": [16, 20], "range": [25.8, 32.4] },
+      { "ageRange": [21, 30], "range": [26.0, 32.6] },
+      { "ageRange": [31, 40], "range": [26.0, 33.0] },
+      { "ageRange": [41, 50], "range": [26.1, 33.3] },
+      { "ageRange": [51, 60], "range": [26.7, 33.2] },
+      { "ageRange": [61, 150], "range": [26.8, 33.3] }
+    ]
   },
   "MCHC;Mean Corpuscular Hemoglobin Concentration;Mean Cell Hemoglobin Concentration;Hemoglobin Concentration (Mean Corpuscular);MCHC": {
-      "Definition": "Mean Corpuscular Hemoglobin Concentration (MCHC) measures the average concentration of hemoglobin in a given volume of packed red blood cells. It indicates the amount of hemoglobin relative to the volume of red blood cells, helping to assess the oxygen-carrying capacity of the blood.",
-      "Unit": "gm/dL",
-      "Male": [
-      { "ageRange": [0, 15], "range": [32.30, 36.50] },
-      { "ageRange": [16, 30], "range": [32.10, 35.90] },
-      { "ageRange": [31, 40], "range": [32.00, 35.90] },
-      { "ageRange": [41, 50], "range": [31.90, 35.70] },
-      { "ageRange": [51, 60], "range": [31.80, 35.70] },
-      { "ageRange": [61, 150], "range": [31.60, 35.50] }
-      ],
-      "Female": [
-      { "ageRange": [0, 15], "range": [32.30, 36.50] },
-      { "ageRange": [16, 30], "range": [31.30, 35.30] },
-      { "ageRange": [31, 40], "range": [31.20, 35.00] },
-      { "ageRange": [41, 50], "range": [31.00, 34.90] },
-      { "ageRange": [51, 60], "range": [31.00, 34.80] },
-      { "ageRange": [61, 150], "range": [30.90, 34.70] }
-      ]
+    "Definition": "Mean Corpuscular Hemoglobin Concentration (MCHC) measures the average concentration of hemoglobin in a given volume of packed red blood cells. It indicates the amount of hemoglobin relative to the volume of red blood cells, helping to assess the oxygen-carrying capacity of the blood.",
+    "Unit": "gm/dL",
+    "Male": [
+      { "ageRange": [0, 15], "range": [32.3, 36.5] },
+      { "ageRange": [16, 30], "range": [32.1, 35.9] },
+      { "ageRange": [31, 40], "range": [32.0, 35.9] },
+      { "ageRange": [41, 50], "range": [31.9, 35.7] },
+      { "ageRange": [51, 60], "range": [31.8, 35.7] },
+      { "ageRange": [61, 150], "range": [31.6, 35.5] }
+    ],
+    "Female": [
+      { "ageRange": [0, 15], "range": [32.3, 36.5] },
+      { "ageRange": [16, 30], "range": [31.3, 35.3] },
+      { "ageRange": [31, 40], "range": [31.2, 35.0] },
+      { "ageRange": [41, 50], "range": [31.0, 34.9] },
+      { "ageRange": [51, 60], "range": [31.0, 34.8] },
+      { "ageRange": [61, 150], "range": [30.9, 34.7] }
+    ]
   },
   "Phosphor;Phosphorus;Blood phosphorus;Serum phosphorus;Inorganic phosphorus;Phosphate;BPhos;SPhos;Pi;P": {
-      "Definition": "Phosphorus, also known as blood phosphorus or serum phosphorus, is a mineral found in the body that plays a crucial role in bone health, energy production, and cell function. It is measured in blood tests to assess levels of this essential nutrient. Elevated levels of phosphorus in the blood may indicate kidney dysfunction or other health issues.",
-      "MedPreGeneral": {"Corticosteroids": "Decrease", "Dexamethasone": "Decrease", "Hydrocortisone": "Decrease", "Betamethasone": "Decrease", "Methylprednisolone": "Decrease", "Prednisone": "Decrease", "Prednisolone": "Decrease"},
-      "Unit": "mg/dL",
-      "Male": [
+    "Definition": "Phosphorus, also known as blood phosphorus or serum phosphorus, is a mineral found in the body that plays a crucial role in bone health, energy production, and cell function. It is measured in blood tests to assess levels of this essential nutrient. Elevated levels of phosphorus in the blood may indicate kidney dysfunction or other health issues.",
+    "MedPreGeneral": {
+      "Corticosteroids": "Decrease",
+      "Dexamethasone": "Decrease",
+      "Hydrocortisone": "Decrease",
+      "Betamethasone": "Decrease",
+      "Methylprednisolone": "Decrease",
+      "Prednisone": "Decrease",
+      "Prednisolone": "Decrease"
+    },
+    "Unit": "mg/dL",
+    "Male": [
       { "ageRange": [0, 0.038], "range": [5.6, 10.5] },
       { "ageRange": [0.038, 1], "range": [4.8, 8.4] },
       { "ageRange": [1, 4], "range": [4.3, 6.8] },
@@ -676,8 +689,8 @@
       { "ageRange": [13, 15], "range": [3.5, 6.2] },
       { "ageRange": [16, 18], "range": [2.9, 5.0] },
       { "ageRange": [19, 150], "range": [2.5, 4.5] }
-      ],
-      "Female": [
+    ],
+    "Female": [
       { "ageRange": [0, 0.038], "range": [5.6, 10.5] },
       { "ageRange": [0.038, 1], "range": [4.8, 8.4] },
       { "ageRange": [1, 4], "range": [4.3, 6.8] },
@@ -685,38 +698,47 @@
       { "ageRange": [13, 15], "range": [3.2, 5.5] },
       { "ageRange": [16, 18], "range": [2.9, 5.0] },
       { "ageRange": [19, 150], "range": [2.5, 4.5] }
-      ]
+    ]
   },
   "Platelet Count;Thrombocyte Count;PLT Count;Platelet Blood Test": {
-      "Definition": "Platelet count, also known as thrombocyte count, is a measure of the number of platelets in a person's blood. Platelets are small blood cells that help in blood clotting. This test helps in assessing the body's ability to form blood clots and can indicate various health conditions such as bleeding disorders or bone marrow problems.",
-      "Unit": "109/L",
-      "Male": [
-      { "ageRange": [0, 15], "range": [150.00, 480.00] },
-      { "ageRange": [16, 50], "range": [159.00, 400.00] },
-      { "ageRange": [51, 150], "range": [140.00, 400.00] }
-      ],
-      "Female": [
-      { "ageRange": [0, 15], "range": [150.00, 480.00] },
-      { "ageRange": [16, 150], "range": [150.00, 450.00] }
-      ]
+    "Definition": "Platelet count, also known as thrombocyte count, is a measure of the number of platelets in a person's blood. Platelets are small blood cells that help in blood clotting. This test helps in assessing the body's ability to form blood clots and can indicate various health conditions such as bleeding disorders or bone marrow problems.",
+    "Unit": "109/L",
+    "Male": [
+      { "ageRange": [0, 15], "range": [150.0, 480.0] },
+      { "ageRange": [16, 50], "range": [159.0, 400.0] },
+      { "ageRange": [51, 150], "range": [140.0, 400.0] }
+    ],
+    "Female": [
+      { "ageRange": [0, 15], "range": [150.0, 480.0] },
+      { "ageRange": [16, 150], "range": [150.0, 450.0] }
+    ]
   },
   "Potassium;Potassium Serum;Serum Potassium;K Serum;K+ Serum": {
-      "Definition": "Potassium Serum, also known as Serum Potassium or K Serum, refers to the concentration of potassium ions present in the liquid portion of the blood. Potassium is an essential electrolyte that plays a crucial role in various bodily functions, including muscle contraction, nerve transmission, and maintaining proper fluid balance. Abnormal levels of serum potassium can indicate various medical conditions and may require further evaluation and treatment.",
-      "MedPreGeneral": {"Insulin": "Decrease", "Corticosteroids": "Decrease", "Dexamethasone": "Decrease", "Hydrocortisone": "Decrease", "Betamethasone": "Decrease", "Methylprednisolone": "Decrease", "Prednisone": "Decrease", "Prednisolone": "Decrease"},
-      "Unit": "",
-      "Male": [
-      { "ageRange": [0, 1], "range": [3.50, 6.00] },
-      { "ageRange": [1, 150], "range": [3.50, 5.50] }
-      ],
-      "Female": [
-      { "ageRange": [0, 1], "range": [3.50, 6.00] },
-      { "ageRange": [1, 150], "range": [3.50, 5.50] }
-      ]
+    "Definition": "Potassium Serum, also known as Serum Potassium or K Serum, refers to the concentration of potassium ions present in the liquid portion of the blood. Potassium is an essential electrolyte that plays a crucial role in various bodily functions, including muscle contraction, nerve transmission, and maintaining proper fluid balance. Abnormal levels of serum potassium can indicate various medical conditions and may require further evaluation and treatment.",
+    "MedPreGeneral": {
+      "Insulin": "Decrease",
+      "Corticosteroids": "Decrease",
+      "Dexamethasone": "Decrease",
+      "Hydrocortisone": "Decrease",
+      "Betamethasone": "Decrease",
+      "Methylprednisolone": "Decrease",
+      "Prednisone": "Decrease",
+      "Prednisolone": "Decrease"
+    },
+    "Unit": "",
+    "Male": [
+      { "ageRange": [0, 1], "range": [3.5, 6.0] },
+      { "ageRange": [1, 150], "range": [3.5, 5.5] }
+    ],
+    "Female": [
+      { "ageRange": [0, 1], "range": [3.5, 6.0] },
+      { "ageRange": [1, 150], "range": [3.5, 5.5] }
+    ]
   },
   "Prealbumin;Pre-albumin;Transthyretin;TTR": {
-      "Definition": "Prealbumin, also known as transthyretin (TTR) or simply pre-albumin, is a protein synthesized primarily by the liver and is involved in transporting hormones and thyroid hormones in the bloodstream. It serves as an indicator of nutritional status, particularly in assessing protein malnutrition.",
-      "Unit": "mg/dL",
-      "Male": [
+    "Definition": "Prealbumin, also known as transthyretin (TTR) or simply pre-albumin, is a protein synthesized primarily by the liver and is involved in transporting hormones and thyroid hormones in the bloodstream. It serves as an indicator of nutritional status, particularly in assessing protein malnutrition.",
+    "Unit": "mg/dL",
+    "Male": [
       { "ageRange": [0, 0.038], "range": [2, 12] },
       { "ageRange": [0.038, 1], "range": [5, 24] },
       { "ageRange": [1, 4], "range": [12, 23] },
@@ -724,8 +746,8 @@
       { "ageRange": [13, 15], "range": [18, 31] },
       { "ageRange": [16, 18], "range": [20, 35] },
       { "ageRange": [19, 150], "range": [18, 37] }
-      ],
-      "Female": [
+    ],
+    "Female": [
       { "ageRange": [0, 0.038], "range": [2, 12] },
       { "ageRange": [0.038, 1], "range": [5, 24] },
       { "ageRange": [1, 4], "range": [12, 23] },
@@ -733,102 +755,108 @@
       { "ageRange": [13, 15], "range": [18, 31] },
       { "ageRange": [16, 18], "range": [17, 33] },
       { "ageRange": [19, 150], "range": [18, 37] }
-      ]
+    ]
   },
   "Prolactin;Luteotropic hormone;Lactotropin;Mammatropin;Lactogenic hormone;LTH;PRL": {
-      "Definition": "Prolactin is a hormone produced by the pituitary gland in the brain. It plays a role in various functions such as milk production in females, regulation of the menstrual cycle, and reproductive behaviors. High levels of prolactin in the blood may indicate conditions such as pituitary tumors, hypothyroidism, or certain medications.",
-      "Unit": "ng/ml",
-      "Male": [
-      { "ageRange": [0, 150], "range": [2.1, 17.7] }
-      ],
-      "Female": [
-          { "ageRange": "Non-pregnant", "range": [2.8, 29.2] },
-          { "ageRange": "Pregnant", "range": [9.7, 208.5] },
-          { "ageRange": "Post-menopausal", "range": [1.8, 20.3] }
-      ]
+    "Definition": "Prolactin is a hormone produced by the pituitary gland in the brain. It plays a role in various functions such as milk production in females, regulation of the menstrual cycle, and reproductive behaviors. High levels of prolactin in the blood may indicate conditions such as pituitary tumors, hypothyroidism, or certain medications.",
+    "Unit": "ng/ml",
+    "Male": [{ "ageRange": [0, 150], "range": [2.1, 17.7] }],
+    "Female": [
+      { "ageRange": "Non-pregnant", "range": [2.8, 29.2] },
+      { "ageRange": "Pregnant", "range": [9.7, 208.5] },
+      { "ageRange": "Post-menopausal", "range": [1.8, 20.3] }
+    ]
   },
   "Protein CSF;Cerebrospinal fluid protein;CSF protein;CSFP": {
-      "Definition": "Protein CSF, or cerebrospinal fluid protein, refers to the amount of protein found in the clear, colorless fluid that surrounds the brain and spinal cord. This measurement is often part of a diagnostic blood test to assess the protein levels in the cerebrospinal fluid, which can indicate various neurological conditions or infections.",
-      "Unit": "mg/dL",
-      "Male": [
-        { "ageRange": [0, 0.08], "range": [20, 170] },
-        { "ageRange": [0.08, 0.25], "range": [20, 100] },
-        { "ageRange": [0.25, 0.5], "range": [15, 50] },
-        { "ageRange": [0.5, 150], "range": [15, 45] }
-      ],
-      "Female": [
-        { "ageRange": [0, 0.08], "range": [20, 170] },
-        { "ageRange": [0.08, 0.25], "range": [20, 100] },
-        { "ageRange": [0.25, 0.5], "range": [15, 50] },
-        { "ageRange": [0.5, 150], "range": [15, 45] }
-      ]
-    },
+    "Definition": "Protein CSF, or cerebrospinal fluid protein, refers to the amount of protein found in the clear, colorless fluid that surrounds the brain and spinal cord. This measurement is often part of a diagnostic blood test to assess the protein levels in the cerebrospinal fluid, which can indicate various neurological conditions or infections.",
+    "Unit": "mg/dL",
+    "Male": [
+      { "ageRange": [0, 0.08], "range": [20, 170] },
+      { "ageRange": [0.08, 0.25], "range": [20, 100] },
+      { "ageRange": [0.25, 0.5], "range": [15, 50] },
+      { "ageRange": [0.5, 150], "range": [15, 45] }
+    ],
+    "Female": [
+      { "ageRange": [0, 0.08], "range": [20, 170] },
+      { "ageRange": [0.08, 0.25], "range": [20, 100] },
+      { "ageRange": [0.25, 0.5], "range": [15, 50] },
+      { "ageRange": [0.5, 150], "range": [15, 45] }
+    ]
+  },
   "Protein, Total;Protein Total Serum;Total Serum Protein;TSP;Serum Protein;Blood Protein;Total Protein": {
-      "Definition": "Total Serum Protein, often abbreviated as TSP or Serum Protein, refers to the total amount of proteins present in the liquid part of the blood. These proteins play crucial roles in various bodily functions such as maintaining fluid balance, transporting nutrients, and supporting immune system function.",
-      "MedPreGeneral": {"Corticosteroids": "Increase", "Dexamethasone": "Increase", "Hydrocortisone": "Increase", "Betamethasone": "Increase", "Methylprednisolone": "Increase", "Prednisone": "Increase", "Prednisolone": "Increase"},
-      "Unit": "gm/dL",
-      "Male": [
-      { "ageRange": [0, 0.038], "range": [5.30, 8.30] },
-      { "ageRange": [0.038, 1], "range": [4.40, 7.10] },
-      { "ageRange": [1, 5], "range": [6.10, 7.50] },
-      { "ageRange": [6, 8], "range": [6.40, 7.70] },
-      { "ageRange": [9, 18], "range": [6.50, 8.10] },
-      { "ageRange": [19, 20], "range": [6.70, 8.30] },
-      { "ageRange": [21, 30], "range": [6.70, 8.30] },
-      { "ageRange": [31, 40], "range": [6.60, 8.20] },
-      { "ageRange": [41, 50], "range": [6.60, 8.20] },
-      { "ageRange": [51, 60], "range": [6.50, 8.10] },
-      { "ageRange": [61, 70], "range": [6.40, 8.10] },
-      { "ageRange": [71, 150], "range": [6.20, 8.00] }
-      ],
-      "Female": [
-      { "ageRange": [0, 0.038], "range": [5.30, 8.30] },
-      { "ageRange": [0.038, 1], "range": [4.40, 7.10] },
-      { "ageRange": [1, 5], "range": [6.10, 7.50] },
-      { "ageRange": [6, 8], "range": [6.40, 7.70] },
-      { "ageRange": [9, 18], "range": [6.50, 8.10] },
-      { "ageRange": [19, 20], "range": [6.50, 8.30] },
-      { "ageRange": [21, 30], "range": [6.60, 8.30] },
-      { "ageRange": [31, 40], "range": [6.50, 8.20] },
-      { "ageRange": [41, 50], "range": [6.40, 8.10] },
-      { "ageRange": [51, 60], "range": [6.40, 8.10] },
-      { "ageRange": [61, 70], "range": [6.40, 8.10] },
-      { "ageRange": [71, 150], "range": [6.20, 8.10] }
-      ]
+    "Definition": "Total Serum Protein, often abbreviated as TSP or Serum Protein, refers to the total amount of proteins present in the liquid part of the blood. These proteins play crucial roles in various bodily functions such as maintaining fluid balance, transporting nutrients, and supporting immune system function.",
+    "MedPreGeneral": {
+      "Corticosteroids": "Increase",
+      "Dexamethasone": "Increase",
+      "Hydrocortisone": "Increase",
+      "Betamethasone": "Increase",
+      "Methylprednisolone": "Increase",
+      "Prednisone": "Increase",
+      "Prednisolone": "Increase"
+    },
+    "Unit": "gm/dL",
+    "Male": [
+      { "ageRange": [0, 0.038], "range": [5.3, 8.3] },
+      { "ageRange": [0.038, 1], "range": [4.4, 7.1] },
+      { "ageRange": [1, 5], "range": [6.1, 7.5] },
+      { "ageRange": [6, 8], "range": [6.4, 7.7] },
+      { "ageRange": [9, 18], "range": [6.5, 8.1] },
+      { "ageRange": [19, 20], "range": [6.7, 8.3] },
+      { "ageRange": [21, 30], "range": [6.7, 8.3] },
+      { "ageRange": [31, 40], "range": [6.6, 8.2] },
+      { "ageRange": [41, 50], "range": [6.6, 8.2] },
+      { "ageRange": [51, 60], "range": [6.5, 8.1] },
+      { "ageRange": [61, 70], "range": [6.4, 8.1] },
+      { "ageRange": [71, 150], "range": [6.2, 8.0] }
+    ],
+    "Female": [
+      { "ageRange": [0, 0.038], "range": [5.3, 8.3] },
+      { "ageRange": [0.038, 1], "range": [4.4, 7.1] },
+      { "ageRange": [1, 5], "range": [6.1, 7.5] },
+      { "ageRange": [6, 8], "range": [6.4, 7.7] },
+      { "ageRange": [9, 18], "range": [6.5, 8.1] },
+      { "ageRange": [19, 20], "range": [6.5, 8.3] },
+      { "ageRange": [21, 30], "range": [6.6, 8.3] },
+      { "ageRange": [31, 40], "range": [6.5, 8.2] },
+      { "ageRange": [41, 50], "range": [6.4, 8.1] },
+      { "ageRange": [51, 60], "range": [6.4, 8.1] },
+      { "ageRange": [61, 70], "range": [6.4, 8.1] },
+      { "ageRange": [71, 150], "range": [6.2, 8.1] }
+    ]
   },
   "RBC;Red Blood Cell;Erythrocyte;Hematocrit;Hct;Red Blood Cell Count;RBC;ERY;HCT": {
-      "Definition": "Red Blood Cells (RBCs), also known as erythrocytes, are the most common type of blood cell in the human body. They carry oxygen from the lungs to the rest of the body and transport carbon dioxide back to the lungs for exhalation. RBC count measures the number of these cells in a specific volume of blood, providing insight into oxygen-carrying capacity and overall health.",
-      "Unit": "X 10^12/L",
-      "Male": [
-      { "ageRange": [0, 0.035], "range": [4.00, 6.00] },
-      { "ageRange": [0.035, 1], "range": [3.85, 5.30] },
-      { "ageRange": [1, 3], "range": [3.80, 5.10] },
-      { "ageRange": [3, 6], "range": [3.75, 4.80] },
-      { "ageRange": [6, 12], "range": [3.75, 4.90] },
-      { "ageRange": [1, 3], "range": [3.85, 5.00] },
+    "Definition": "Red Blood Cells (RBCs), also known as erythrocytes, are the most common type of blood cell in the human body. They carry oxygen from the lungs to the rest of the body and transport carbon dioxide back to the lungs for exhalation. RBC count measures the number of these cells in a specific volume of blood, providing insight into oxygen-carrying capacity and overall health.",
+    "Unit": "X 10^12/L",
+    "Male": [
+      { "ageRange": [0, 0.035], "range": [4.0, 6.0] },
+      { "ageRange": [0.035, 1], "range": [3.85, 5.3] },
+      { "ageRange": [1, 3], "range": [3.8, 5.1] },
+      { "ageRange": [3, 6], "range": [3.75, 4.8] },
+      { "ageRange": [6, 12], "range": [3.75, 4.9] },
+      { "ageRange": [1, 3], "range": [3.85, 5.0] },
       { "ageRange": [4, 7], "range": [4.05, 5.17] },
-      { "ageRange": [8, 11], "range": [4.20, 5.25] },
+      { "ageRange": [8, 11], "range": [4.2, 5.25] },
       { "ageRange": [12, 13], "range": [4.25, 5.45] },
-      { "ageRange": [14, 15], "range": [4.30, 5.45] },
+      { "ageRange": [14, 15], "range": [4.3, 5.45] },
       { "ageRange": [16, 20], "range": [4.56, 5.74] },
       { "ageRange": [21, 30], "range": [4.57, 5.78] },
       { "ageRange": [31, 40], "range": [4.53, 5.73] },
       { "ageRange": [41, 50], "range": [4.44, 5.67] },
       { "ageRange": [51, 60], "range": [4.39, 5.64] },
       { "ageRange": [61, 150], "range": [4.34, 5.61] }
-      ],
-      "Female": [
-      { "ageRange": [0, 0.035], "range": [4.00, 6.00] },
-      { "ageRange": [0.035, 1], "range": [3.85, 5.30] },
-      { "ageRange": [1, 3], "range": [3.80, 5.10] },
-      { "ageRange": [3, 6], "range": [3.75, 4.80] },
-      { "ageRange": [6, 12], "range": [3.75, 4.90] },
-      { "ageRange": [1, 3], "range": [3.85, 5.00] },
+    ],
+    "Female": [
+      { "ageRange": [0, 0.035], "range": [4.0, 6.0] },
+      { "ageRange": [0.035, 1], "range": [3.85, 5.3] },
+      { "ageRange": [1, 3], "range": [3.8, 5.1] },
+      { "ageRange": [3, 6], "range": [3.75, 4.8] },
+      { "ageRange": [6, 12], "range": [3.75, 4.9] },
+      { "ageRange": [1, 3], "range": [3.85, 5.0] },
       { "ageRange": [4, 7], "range": [4.05, 5.17] },
-      { "ageRange": [8, 11], "range": [4.20, 5.25] },
+      { "ageRange": [8, 11], "range": [4.2, 5.25] },
       { "ageRange": [12, 15], "range": [3.79, 5.25] },
       { "ageRange": [16, 20], "range": [3.92, 5.13] },
-      { "ageRange": [21, 30], "range": [3.90, 5.13] },
+      { "ageRange": [21, 30], "range": [3.9, 5.13] },
       { "ageRange": [31, 40], "range": [3.94, 5.13] },
       { "ageRange": [41, 50], "range": [3.95, 5.16] },
       { "ageRange": [51, 60], "range": [3.97, 5.19] },
@@ -837,7 +865,16 @@
   },
   "Sodium;Sodium Serum;Serum sodium;Na+;Sodium level;Blood Na+;Na;Na+": {
     "Definition": "Sodium serum, also known as serum sodium or Na+, is a measurement of the concentration of sodium ions in the liquid part of the blood. It helps doctors assess the body's water balance and nerve function. Abnormal levels of serum sodium can indicate various health conditions.",
-    "MedPreGeneral": {"Hypertension": "Increase", "Corticosteroids": "Increase", "Dexamethasone": "Increase", "Hydrocortisone": "Increase", "Betamethasone": "Increase", "Methylprednisolone": "Increase", "Prednisone": "Increase", "Prednisolone": "Increase"},
+    "MedPreGeneral": {
+      "Hypertension": "Increase",
+      "Corticosteroids": "Increase",
+      "Dexamethasone": "Increase",
+      "Hydrocortisone": "Increase",
+      "Betamethasone": "Increase",
+      "Methylprednisolone": "Increase",
+      "Prednisone": "Increase",
+      "Prednisolone": "Increase"
+    },
     "Unit": "mmol/L",
     "Male": [
       { "ageRange": [0, 0.25], "range": [135, 145] },
@@ -851,85 +888,85 @@
     ]
   },
   "Transferrin;Siderophilin;Beta-1 metal-binding globulin;TF": {
-      "Definition": "Transferrin, also known as Siderophilin or Beta-1 metal-binding globulin, is a protein in the blood that binds to iron and transports it throughout the body. It helps regulate the amount of iron available for use by cells.",
-      "Unit": "mg/dL",
-      "Male": [
+    "Definition": "Transferrin, also known as Siderophilin or Beta-1 metal-binding globulin, is a protein in the blood that binds to iron and transports it throughout the body. It helps regulate the amount of iron available for use by cells.",
+    "Unit": "mg/dL",
+    "Male": [
       { "ageRange": [0, 0.15], "range": [104, 224] },
       { "ageRange": [0.17, 1], "range": [107, 324] },
       { "ageRange": [1, 18], "range": [220, 337] },
       { "ageRange": [19, 150], "range": [197, 359] }
-      ],
-      "Female": [
+    ],
+    "Female": [
       { "ageRange": [0, 0.15], "range": [104, 224] },
       { "ageRange": [0.17, 1], "range": [107, 324] },
       { "ageRange": [1, 18], "range": [220, 337] },
       { "ageRange": [19, 150], "range": [197, 359] }
-      ]
+    ]
   },
   "Triglycerides;Blood fats;Lipids;Serum triglycerides;TG;Triacylglycerols": {
-      "Definition": "Triglycerides, also known as blood fats or lipids, are a type of fat found in your blood. They store excess energy from your diet and are used for energy between meals. High levels of triglycerides can increase the risk of heart disease and other health problems.",
-      "Unit": "mg/dL",
-      "Male": [
+    "Definition": "Triglycerides, also known as blood fats or lipids, are a type of fat found in your blood. They store excess energy from your diet and are used for energy between meals. High levels of triglycerides can increase the risk of heart disease and other health problems.",
+    "Unit": "mg/dL",
+    "Male": [
       { "ageRange": [0, 0.038], "range": [82, 259] },
       { "ageRange": [0.038, 1], "range": [53, 258] },
       { "ageRange": [1, 18], "range": [44, 197] },
       { "ageRange": [19, 150], "range": [30, 150] }
-      ],
-      "Female": [
+    ],
+    "Female": [
       { "ageRange": [0, 0.15], "range": [104, 224] },
       { "ageRange": [0.17, 1], "range": [107, 324] },
       { "ageRange": [1, 18], "range": [220, 337] },
       { "ageRange": [19, 150], "range": [197, 359] }
-      ]
+    ]
   },
   "Troponin;TnT;TnI;cTnT;cTnI;cardiac troponin": {
-      "Definition": "Troponin is a protein found in muscle tissue, especially in the heart muscle. In blood tests, elevated levels of troponin indicate damage to the heart, which can occur during a heart attack or other cardiac conditions.",
-      "Unit": "ng/mL",
-      "Male": [
+    "Definition": "Troponin is a protein found in muscle tissue, especially in the heart muscle. In blood tests, elevated levels of troponin indicate damage to the heart, which can occur during a heart attack or other cardiac conditions.",
+    "Unit": "ng/mL",
+    "Male": [
       { "ageRange": [0.013, 0.29], "range": [0.003, 0.936] },
-      { "ageRange": [0.25, 19], "range": [0.000, 0.009] },
-      { "ageRange": [19, 150], "range": [0.000, 0.028] }
-      ],
-      "Female": [
+      { "ageRange": [0.25, 19], "range": [0.0, 0.009] },
+      { "ageRange": [19, 150], "range": [0.0, 0.028] }
+    ],
+    "Female": [
       { "ageRange": [0, 0.15], "range": [104, 224] },
       { "ageRange": [0.17, 1], "range": [107, 324] },
       { "ageRange": [1, 18], "range": [220, 337] },
       { "ageRange": [19, 150], "range": [197, 359] }
-      ]
+    ]
   },
   "TSH;Thyroid-Stimulating Hormone;Thyrotropin;Thyroid Stimulating Hormone;Thyrotropic Hormone;TSH": {
-      "Definition": "Thyroid-Stimulating Hormone (TSH), also known as thyrotropin, is a hormone produced by the pituitary gland in the brain. It regulates the production and release of thyroid hormones from the thyroid gland, which play a crucial role in metabolism, growth, and energy levels.",
-      "Unit": "uIU/mL",
-      "Male": [
-      { "ageRange": [0.011, 0.5], "range": [0.730, 4.770] },
-      { "ageRange": [0.5, 14], "range": [0.700, 4.170] },
-      { "ageRange": [14, 19], "range": [0.470, 3.410] },
-      { "ageRange": [19, 150], "range": [0.350, 4.940] }
-      ],
-      "Female": [
+    "Definition": "Thyroid-Stimulating Hormone (TSH), also known as thyrotropin, is a hormone produced by the pituitary gland in the brain. It regulates the production and release of thyroid hormones from the thyroid gland, which play a crucial role in metabolism, growth, and energy levels.",
+    "Unit": "uIU/mL",
+    "Male": [
+      { "ageRange": [0.011, 0.5], "range": [0.73, 4.77] },
+      { "ageRange": [0.5, 14], "range": [0.7, 4.17] },
+      { "ageRange": [14, 19], "range": [0.47, 3.41] },
+      { "ageRange": [19, 150], "range": [0.35, 4.94] }
+    ],
+    "Female": [
       { "ageRange": [0, 0.15], "range": [104, 224] },
       { "ageRange": [0.17, 1], "range": [107, 324] },
       { "ageRange": [1, 18], "range": [220, 337] },
       { "ageRange": [19, 150], "range": [197, 359] }
-      ]
+    ]
   },
   "Uric Acid;UA;Serum Uric Acid;Blood Urate;Urate": {
-      "Definition": "Uric acid, also known as UA or serum uric acid, is a waste product formed during the breakdown of purines, which are substances found in various foods and body tissues. It is normally excreted through the kidneys and eliminated from the body via urine. Elevated levels of uric acid in the blood may indicate conditions such as gout or kidney disease.",
-      "Unit": "mg/dL",
-      "Male": [
+    "Definition": "Uric acid, also known as UA or serum uric acid, is a waste product formed during the breakdown of purines, which are substances found in various foods and body tissues. It is normally excreted through the kidneys and eliminated from the body via urine. Elevated levels of uric acid in the blood may indicate conditions such as gout or kidney disease.",
+    "Unit": "mg/dL",
+    "Male": [
       { "ageRange": [0, 0.038], "range": [2.8, 12.7] },
       { "ageRange": [0.038, 1], "range": [1.6, 6.3] },
       { "ageRange": [1, 11], "range": [1.8, 4.9] },
       { "ageRange": [12, 18], "range": [2.6, 7.6] },
       { "ageRange": [19, 150], "range": [2.5, 8.0] }
-      ],
-      "Female": [
+    ],
+    "Female": [
       { "ageRange": [0, 0.038], "range": [2.8, 12.7] },
       { "ageRange": [0.038, 1], "range": [1.6, 6.3] },
       { "ageRange": [1, 11], "range": [1.8, 4.9] },
       { "ageRange": [12, 18], "range": [2.6, 5.9] },
       { "ageRange": [19, 150], "range": [2.5, 8.0] }
-      ]
+    ]
   },
   "Globulin": {
     "Definition": "",
@@ -1112,18 +1149,17 @@
     ]
   },
   "WBC;White Blood Cell Count;Leukocyte Count;WBC Count;LBC": {
-      "Definition": "White Blood Cell Count (WBC) measures the number of white blood cells in a sample of blood. These cells help fight infections and play a crucial role in the body's immune system. Changes in the WBC count can indicate various health conditions, such as infections, inflammation, or immune system disorders.",
-      "Unit": "10^9/L",
-      "Male": [
-      { "ageRange": [0, 2], "range": [6.00, 17.50] },
-      { "ageRange": [2, 15], "range": [6.00, 14.50] },
-      { "ageRange": [16, 150], "range": [4.00, 11.00] }
-      ],
-      "Female": [
-      { "ageRange": [0, 2], "range": [6.00, 17.50] },
-      { "ageRange": [2, 15], "range": [6.00, 14.50] },
-      { "ageRange": [16, 150], "range": [4.00, 11.00] }
-      ]
+    "Definition": "White Blood Cell Count (WBC) measures the number of white blood cells in a sample of blood. These cells help fight infections and play a crucial role in the body's immune system. Changes in the WBC count can indicate various health conditions, such as infections, inflammation, or immune system disorders.",
+    "Unit": "10^9/L",
+    "Male": [
+      { "ageRange": [0, 2], "range": [6.0, 17.5] },
+      { "ageRange": [2, 15], "range": [6.0, 14.5] },
+      { "ageRange": [16, 150], "range": [4.0, 11.0] }
+    ],
+    "Female": [
+      { "ageRange": [0, 2], "range": [6.0, 17.5] },
+      { "ageRange": [2, 15], "range": [6.0, 14.5] },
+      { "ageRange": [16, 150], "range": [4.0, 11.0] }
+    ]
   }
 }
-  

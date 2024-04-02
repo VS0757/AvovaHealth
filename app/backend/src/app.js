@@ -11,6 +11,7 @@ const {
   storeManualDataInDynamo,
   retrieveFhirDataFromDynamo,
   retrieveUserDataFromDynamo,
+  retrieveTrendDataFromDynamo,
   deleteUserDataFromDynamo,
 } = require("./upload/dynamoService");
 
@@ -78,7 +79,8 @@ app.post("/upload-epic-fhir", async (req, res) => {
 
 app.post("/upload-user-data", async (req, res) => {
   try {
-    const { uniqueUserId, birthday, sex, preconditions, medications } = req.body;
+    const { uniqueUserId, birthday, sex, preconditions, medications } =
+      req.body;
     await storeUserDataInDynamo(
       uniqueUserId,
       birthday,
@@ -158,6 +160,31 @@ app.get("/retrieve-fhir-data", async (req, res) => {
     res
       .status(500)
       .send({ message: "Failed to retrieve FHIR data from dynamo: ", error });
+  }
+});
+
+app.get("/retrieve-trend-data", async (req, res) => {
+  try {
+    const { id } = req.query;
+
+    if (!id) {
+      return res
+        .status(400)
+        .send({ message: "id query parameter is required." });
+    }
+
+    const data = await retrieveTrendDataFromDynamo(id);
+    if (data.length === 0) {
+      return res
+        .status(404)
+        .send({ message: "No data found provided userId and test. " });
+    }
+    res.send({ message: "Data retrieved.", data: data });
+  } catch (error) {
+    console.error("Failed to retrieve Trend data from dynamo: ", error);
+    res
+      .status(500)
+      .send({ message: "Failed to retrieve Trend data from dynamo: ", error });
   }
 });
 

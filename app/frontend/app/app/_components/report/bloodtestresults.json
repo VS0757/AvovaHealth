@@ -2,6 +2,7 @@
   "Albumin;ALB;Serum Albumin;Plasma Albumin": {
     "Definition": "Albumin is a type of protein made by your liver. It's found in your blood and helps carry hormones, vitamins, and enzymes throughout your body. It also plays a key role in keeping the liquid part of your blood, the plasma, from leaking out of your blood vessels. Additionally, albumin helps maintain proper pressure in your blood vessels and is important for transporting various substances in your blood.",
     "MedPreGeneral": { "Penicillin": "Decrease", "Insulin": "Decrease" },
+    "Category": "Hepatic Function ",
     "Unit": "gm/dL",
     "Male": [
       { "ageRange": [0, 0.04], "range": [3.3, 4.5] },
@@ -37,6 +38,7 @@
     "Definition": "Alkaline Phosphatase (ALP) is an enzyme found in your body, particularly in your liver, bones, kidneys, and digestive system. Think of it as a worker that helps break down proteins in the body, making it easier for the body to use them. High or low levels of ALP in your blood can indicate various health conditions, which is why doctors sometimes check its levels through a blood test.",
     "MedPreGeneral": { "Amitriptyline": "Increase" },
     "Unit": "U/L",
+    "Category": "Hepatic Function ",
     "Male": [
       { "ageRange": [0, 0.04], "range": [90, 273] },
       { "ageRange": [0.04, 1], "range": [134, 518] },
@@ -61,6 +63,7 @@
   "ALT (SGPT);Alanine Transaminase;Alanine Aminotransferase;Serum Glutamate Pyruvate Transaminase;SGPT;ALT;SGPT": {
     "Definition": "ALT, also known as SGPT, is an enzyme found mainly in the liver. It plays a role in changing proteins into energy the body can use. When the liver is damaged or not working properly, ALT levels in the blood can rise. This makes ALT a useful indicator for liver health. Think of it as a sign that tells doctors how well your liver is doing.",
     "Unit": "U/L",
+    "Category": "Hepatic Function ",
     "Male": [
       { "ageRange": [0, 1], "range": [0, 33] },
       { "ageRange": [1, 12], "range": [0, 25] },
@@ -171,6 +174,7 @@
   "AST;Aspartate aminotransferase;Serum glutamate oxaloacetate transaminase;SGOT": {
     "Definition": "AST, also known as aspartate aminotransferase or SGOT, is an enzyme found in cells throughout the body, particularly in the heart and liver. It plays a role in the metabolism of amino acids. High levels of AST in the blood may indicate damage to the heart, liver, or other organs.",
     "Unit": "U/L",
+    "Category": "Hepatic Function ",
     "Male": [
       { "ageRange": [0, 0.04], "range": [0, 162] },
       { "ageRange": [0.04, 1], "range": [0, 67] },
@@ -190,6 +194,7 @@
   },
   "Bilirubin, Direct": {
     "Unit": "mg/dL",
+    "Category": "Hepatic Function ",
     "MedPreGeneral": { "Baclofen": "Decrease" },
     "Male": [
       { "ageRange": [0, 0.04], "range": [0.0, 0.7] },
@@ -210,6 +215,7 @@
   },
   "Bilirubin, Total": {
     "Unit": "mg/dL",
+    "Category": "Hepatic Function ",
     "Male": [
       { "ageRange": [0, 0.04], "range": [0.0, 17.0] },
       { "ageRange": [0.04, 1], "range": [0.0, 0.7] },
@@ -255,6 +261,7 @@
     "Definition": "Blood Urea Nitrogen (BUN) measures the amount of urea nitrogen in the blood. Urea nitrogen is a waste product formed in the liver when the body breaks down proteins. High BUN levels may indicate kidney dysfunction or dehydration.",
     "MedPreGeneral": { "Hypertension": "Increase" },
     "Unit": "mg/dL",
+    "Category": "Basic Metabolic ",
     "Male": [
       { "ageRange": [0, 0.04], "range": [3.0, 23.0] },
       { "ageRange": [0.04, 1], "range": [3.0, 17.0] },
@@ -287,6 +294,7 @@
   "Calcium;Serum Calcium;Ca;Ca2+": {
     "Definition": "Calcium, often referred to as Ca or Ca2+, is a mineral found in the blood that plays a crucial role in bone strength and muscle function. It is measured in blood tests to assess the level of calcium present in the bloodstream.",
     "Unit": "mg/dL",
+    "Category": "Basic Metabolic ",
     "Male": [
       { "ageRange": [0, 1], "range": [8.5, 11.0] },
       { "ageRange": [1, 18], "range": [9.2, 10.5] },
@@ -346,7 +354,7 @@
       { "ageRange": [19, 150], "range": [14, 33] }
     ]
   },
-  "Cholesterol, Total;Cholesterol;Lipid panel;lipid profile;lipid blood test;cholesterol panel": {
+  "Cholesterol, Total;Cholesterol;Lipids;Lipidsprofile;Lipidsblood test;cholesterol ": {
     "Definition": "Cholesterol is a waxy, fat-like substance found in your blood. It's essential for building cells and certain hormones. However, having too much cholesterol can lead to blockages in blood vessels, increasing the risk of heart disease and stroke.",
     "MedPreGeneral": {
       "Corticosteroids": "Increase",
@@ -357,6 +365,7 @@
       "Prednisone": "Increase",
       "Prednisolone": "Increase"
     },
+    "Category": "Lipids",
     "Unit": "mg/dL",
     "Male": [
       { "ageRange": [0, 0.04], "range": [42, 109] },
@@ -375,6 +384,7 @@
     "Definition": "Creatinine is a waste product formed by the muscles during the breakdown of a compound called creatine phosphate. It is filtered out of the blood by the kidneys and excreted in urine. Blood tests measure the level of creatinine to assess kidney function and overall health.",
     "MedPreGeneral": { "Hypertension": "Increase" },
     "Unit": "mg/dL",
+    "Category": "Basic Metabolic ",
     "Male": [
       { "ageRange": [0, 0.038], "range": [0.32, 0.92] },
       { "ageRange": [0.038, 1], "range": [0.1, 0.36] },
@@ -475,6 +485,7 @@
       }
     },
     "Unit": "mg/dL",
+    "Category": "Basic Metabolic ",
     "Male": [
       { "ageRange": [0, 0.016], "range": [40.0, 60.0] },
       { "ageRange": [0.019, 150], "range": [70.0, 100.0] }
@@ -487,6 +498,7 @@
   "Hemoglobin;Hb;Hgb;Haemoglobin;Hemoglobin": {
     "Definition": "Hemoglobin is a protein in red blood cells that carries oxygen from the lungs to the rest of the body. It also helps carry carbon dioxide from the body's tissues back to the lungs to be exhaled.",
     "Unit": "gm/dL",
+    "Category": "Complete Blood Count",
     "Male": [
       { "ageRange": [0, 0.035], "range": [14.0, 23.0] },
       { "ageRange": [0.035, 1], "range": [11.0, 18.0] },
@@ -522,9 +534,10 @@
       { "ageRange": [61, 150], "range": [11.6, 15.9] }
     ]
   },
-  "HDL;HDL Cholesterol;High-density lipoprotein cholesterol;Good cholesterol;HDL-C": {
+  "HDL;HDL Cholesterol;High-density lipoprotein cholesterol;Good cholesterol;HDL-C;HDL EX": {
     "Definition": "HDL Cholesterol, also known as 'Good cholesterol' or 'High-density lipoprotein cholesterol', refers to a type of cholesterol that helps remove other forms of cholesterol from your bloodstream, which can lower the risk of heart disease. Higher levels of HDL cholesterol are generally considered beneficial for heart health.",
     "Unit": "mg/dL",
+    "Category": "Lipids",
     "Male": [
       { "ageRange": [0, 0.038], "range": [15, 42] },
       { "ageRange": [0.038, 1], "range": [12, 71] },
@@ -627,6 +640,7 @@
   "MCH;Mean Corpuscular Hemoglobin;Mean Cell Hemoglobin;MCH": {
     "Definition": "Mean Corpuscular Hemoglobin (MCH) is a measure of the average amount of hemoglobin present in each red blood cell. It indicates how much hemoglobin is available in each red blood cell, which is important for carrying oxygen throughout the body.",
     "Unit": "pg",
+    "Category": "Complete Blood Count",
     "Male": [
       { "ageRange": [0, 0.035], "range": [30.0, 39.5] },
       { "ageRange": [0.035, 1], "range": [28.0, 35.0] },
@@ -725,6 +739,7 @@
       "Prednisone": "Decrease",
       "Prednisolone": "Decrease"
     },
+    "Category": "Basic Metabolic ",
     "Unit": "",
     "Male": [
       { "ageRange": [0, 1], "range": [3.5, 6.0] },
@@ -795,6 +810,7 @@
       "Prednisolone": "Increase"
     },
     "Unit": "gm/dL",
+    "Category": "Hepatic Function",
     "Male": [
       { "ageRange": [0, 0.038], "range": [5.3, 8.3] },
       { "ageRange": [0.038, 1], "range": [4.4, 7.1] },
@@ -824,9 +840,10 @@
       { "ageRange": [71, 150], "range": [6.2, 8.1] }
     ]
   },
-  "RBC;Red Blood Cell;Erythrocyte;Hematocrit;Hct;Red Blood Cell Count;RBC;ERY;HCT": {
+  "RBC;Red Blood Cell;Erythrocyte;Red Blood Cell Count;RBC;ERY": {
     "Definition": "Red Blood Cells (RBCs), also known as erythrocytes, are the most common type of blood cell in the human body. They carry oxygen from the lungs to the rest of the body and transport carbon dioxide back to the lungs for exhalation. RBC count measures the number of these cells in a specific volume of blood, providing insight into oxygen-carrying capacity and overall health.",
     "Unit": "X 10^12/L",
+    "Category": "Complete Blood Count",
     "Male": [
       { "ageRange": [0, 0.035], "range": [4.0, 6.0] },
       { "ageRange": [0.035, 1], "range": [3.85, 5.3] },
@@ -875,6 +892,7 @@
       "Prednisone": "Increase",
       "Prednisolone": "Increase"
     },
+    "Category": "Minerals",
     "Unit": "mmol/L",
     "Male": [
       { "ageRange": [0, 0.25], "range": [135, 145] },
@@ -903,9 +921,10 @@
       { "ageRange": [19, 150], "range": [197, 359] }
     ]
   },
-  "Triglycerides;Blood fats;Lipids;Serum triglycerides;TG;Triacylglycerols": {
+  "Triglycerides;Blood fats;Lipids;Serum triglycerides;TG;Triacylglycerols;TRIGLYCERIDES EX": {
     "Definition": "Triglycerides, also known as blood fats or lipids, are a type of fat found in your blood. They store excess energy from your diet and are used for energy between meals. High levels of triglycerides can increase the risk of heart disease and other health problems.",
     "Unit": "mg/dL",
+    "Category": "Lipid",
     "Male": [
       { "ageRange": [0, 0.038], "range": [82, 259] },
       { "ageRange": [0.038, 1], "range": [53, 258] },
@@ -969,8 +988,9 @@
     ]
   },
   "Globulin": {
-    "Definition": "",
-    "Unit": "g/DL",
+    "Definition": "Proteins that support your immune system and help in blood clotting, measured to evaluate overall health.",
+    "Category": "Hepatic Function ",
+    "Unit": "g/dL",
     "Male": [
       {"ageRange": [0, 150], "range": [1.9, 3.7]}
     ],
@@ -979,8 +999,9 @@
     ]
   },
   "Albumin/Globulin Ratio": {
-    "Definition": "",
+    "Definition": "A comparison of two major blood proteins, used to assess liver function and overall health status.",
     "Unit": "",
+    "Category": "Hepatic Function",
     "Male": [
       {"ageRange": [0, 150], "range": [1.0, 2.5]}
     ],
@@ -989,8 +1010,9 @@
     ]
   },
   "Bilirubin Indirect;BILIRUBIN, INDIRECT": {
-    "Definition": "",
+    "Definition": "A substance produced by the normal breakdown of red blood cells, checked to identify liver issues or blood disorders.",
     "Unit": "mg/dL",
+    "Category": "Hepatic Function",
     "Male": [
       {"ageRange": [0, 150], "range": [0, 0.2]}
     ],
@@ -999,8 +1021,9 @@
     ]
   },
   "EGFR": {
-    "Definition": "",
+    "Definition": "An indicator of kidney function, estimating how well your kidneys filter waste.",
     "Unit": "mL/min/1.73m^2",
+    "Category": "Kidney Function",
     "Male": [
       {"ageRange": [0, 150], "range": [60, 180]}
     ],
@@ -1009,8 +1032,9 @@
     ]
   },
   "Carbon Dioxide": {
-    "Definition": "",
+    "Definition": "Reflects the balance of acid and base in your blood, important for your body's overall chemical balance.",
     "Unit": "mmol/L",
+    "Category": "Serum Levels",
     "Male": [
       {"ageRange": [0, 150], "range": [20, 32]}
     ],
@@ -1019,7 +1043,7 @@
     ]
   },
   "Iron Binding Capacity": {
-    "Definition": "",
+    "Definition": "Measures how well your blood can transport iron, crucial for producing red blood cells.",
     "Unit": "mcg/dL",
     "Male": [
       {"ageRange": [0, 150], "range": [250, 425]}
@@ -1029,7 +1053,7 @@
     ]
   },
   "% Saturation": {
-    "Definition": "",
+    "Definition": "Indicates the percentage of iron-binding sites in the blood that are occupied by iron, helping assess iron status.",
     "Unit": "%",
     "Male": [
       {"ageRange": [0, 150], "range": [20, 48]}
@@ -1038,9 +1062,10 @@
       {"ageRange": [0, 150], "range": [20, 48]}
     ]
   },
-  "LDL-Cholesterol": {
-    "Definition": "",
+  "LDL-Cholesterol;LDL, Calculated": {
+    "Definition": "Known as 'bad' cholesterol, high levels can lead to plaque buildup in arteries, increasing heart disease risk.",
     "Unit": "mg/dL",
+    "Category": "Lipids",
     "Male": [
       {"ageRange": [0, 150], "range": [0, 100]}
     ],
@@ -1049,8 +1074,9 @@
     ]
   },
   "CHOL/HDLC Ratio;Chol/HDL Ratio": {
-    "Definition": "",
+    "Definition": "Compares total cholesterol to 'good' cholesterol (HDL), providing insight into your heart disease risk.",
     "Unit": "",
+    "Category": "Lipids",
     "Male": [
       {"ageRange": [0, 150], "range": [0, 5.0]}
     ],
@@ -1059,8 +1085,9 @@
     ]
   },
   "Non HDL Cholesterol": {
-    "Definition": "",
+    "Definition": "The total of all bad cholesterol types, including LDL and VLDL, used to assess cardiovascular risk.",
     "Unit": "mg/dL",
+    "Category": "Lipids",
     "Male": [
       {"ageRange": [0, 150], "range": [0, 130]}
     ],
@@ -1069,8 +1096,9 @@
     ]
   },
   "MCV": {
-    "Definition": "",
+    "Definition": "Mean Corpuscular Volume: Measures the average size of your red blood cells, helping diagnose types of anemia.",
     "Unit": "fL",
+    "Category": "Complete Blood Count",
     "Male": [
       {"ageRange": [0, 150], "range": [80, 100]}
     ],
@@ -1079,8 +1107,9 @@
     ]
   },
   "RDW": {
-    "Definition": "",
+    "Definition": "Red Cell Distribution Width: Indicates the variation in the size of your red blood cells, helping to pinpoint specific types of anemia.",
     "Unit": "%",
+    "Category": "Complete Blood Count",
     "Male": [
       {"ageRange": [0, 150], "range": [11, 15]}
     ],
@@ -1091,6 +1120,7 @@
   "MPV": {
     "Definition": "Mean Platelet Volume measures the average size of platelets in the blood, important for diagnosing bleeding disorders and thrombocytopenia.",
     "Unit": "fL",
+    "Category": "Complete Blood Count",
     "Male": [
       {"ageRange": [0, 150], "range": [7.5, 12.5]}
     ],
@@ -1101,6 +1131,7 @@
   "Absolute Neutrophils": {
     "Definition": "A count of the neutrophil white blood cells per unit of blood, indicating the body's ability to fight infections.",
     "Unit": "cells/uL",
+    "Category": "Complete Blood Count",
     "Male": [
       {"ageRange": [0, 150], "range": [1500, 7800]}
     ],
@@ -1111,6 +1142,7 @@
   "Absolute Lymphocytes": {
     "Definition": "A measure of the lymphocyte white blood cells in the blood, essential for the immune response to infections.",
     "Unit": "cells/uL",
+    "Category": "Complete Blood Count",
     "Male": [
       {"ageRange": [0, 150], "range": [850, 3900]}
     ],
@@ -1121,6 +1153,7 @@
   "Absolute Monocytes": {
     "Definition": "A count of monocyte white blood cells, which play a role in immune defense and tissue repair.",
     "Unit": "cells/uL",
+    "Category": "Complete Blood Count",
     "Male": [
       {"ageRange": [0, 150], "range": [200, 950]}
     ],
@@ -1131,6 +1164,7 @@
   "Absolute Eosinophils": {
     "Definition": "A count of eosinophil white blood cells, important for combating parasites and allergic reactions.",
     "Unit": "cells/uL",
+    "Category": "Complete Blood Count",
     "Male": [
       {"ageRange": [0, 150], "range": [15, 500]}
     ],
@@ -1141,6 +1175,7 @@
   "Absolute Basophils": {
     "Definition": "A measure of basophil white blood cells, involved in inflammatory reactions and allergies.",
     "Unit": "cells/uL",
+    "Category": "Complete Blood Count",
     "Male": [
       {"ageRange": [0, 150], "range": [0, 200]}
     ],
@@ -1151,6 +1186,7 @@
   "WBC;White Blood Cell Count;Leukocyte Count;WBC Count;LBC": {
     "Definition": "White Blood Cell Count (WBC) measures the number of white blood cells in a sample of blood. These cells help fight infections and play a crucial role in the body's immune system. Changes in the WBC count can indicate various health conditions, such as infections, inflammation, or immune system disorders.",
     "Unit": "10^9/L",
+    "Category": "Complete Blood Count",
     "Male": [
       { "ageRange": [0, 2], "range": [6.0, 17.5] },
       { "ageRange": [2, 15], "range": [6.0, 14.5] },
@@ -1161,5 +1197,44 @@
       { "ageRange": [2, 15], "range": [6.0, 14.5] },
       { "ageRange": [16, 150], "range": [4.0, 11.0] }
     ]
-  }
+  },
+  "Hematocrit;HCT": { 
+    "Definition": "Shows what portion of your blood is made up of red blood cells, important for diagnosing anemia or dehydration.",
+    "Unit": "%",
+    "Category": "Complete Blood Count", 
+    "Male": [ 
+      { "ageRange": [0, 0.035], "range": [40.00, 72.00] }, 
+      { "ageRange": [0.035, 1], "range": [32.00, 55.00] }, 
+      { "ageRange": [1, 3], "range": [30.00, 54.00] }, 
+      { "ageRange": [3, 6], "range": [28.00, 40.50] }, 
+      { "ageRange": [6, 12], "range": [30.00, 42.00] }, 
+      { "ageRange": [1, 3], "range": [30.00, 44.00] }, 
+      { "ageRange": [4, 7], "range": [30.00, 46.00] }, 
+      { "ageRange": [8, 11], "range": [32.00, 48.00] }, 
+      { "ageRange": [12, 13], "range": [34.50, 52.00] }, 
+      { "ageRange": [14, 15], "range": [37.00, 52.00] }, 
+      { "ageRange": [16, 20], "range": [40.00, 50.30] }, 
+      { "ageRange": [21, 30], "range": [40.90, 50.80] }, 
+      { "ageRange": [31, 40], "range": [40.70, 50.80] }, 
+      { "ageRange": [41, 50], "range": [40.20, 50.80] }, 
+      { "ageRange": [51, 60], "range": [39.50, 51.10] }, 
+      { "ageRange": [61, 150], "range": [38.30, 51.20] } ], 
+      "Female": [ 
+      { "ageRange": [0, 0.035], "range": [40.00, 72.00] }, 
+      { "ageRange": [0.035, 1], "range": [32.00, 55.00] }, 
+      { "ageRange": [1, 3], "range": [30.00, 54.00] }, 
+      { "ageRange": [3, 6], "range": [28.00, 40.50] }, 
+      { "ageRange": [6, 12], "range": [30.00, 42.00] },
+      { "ageRange": [1, 3], "range": [30.00, 44.00] }, 
+      { "ageRange": [4, 7], "range": [30.00, 46.00] },
+      { "ageRange": [8, 11], "range": [32.00, 48.00] },
+      { "ageRange": [12, 15], "range": [34.50, 47.00] },
+      { "ageRange": [16, 20], "range": [33.90, 45.10] },
+      { "ageRange": [21, 30], "range": [33.90, 45.50] },
+      { "ageRange": [31, 40], "range": [35.00, 46.10] },
+      { "ageRange": [41, 50], "range": [35.80, 46.90] },
+      { "ageRange": [51, 60], "range": [36.40, 47.70] },
+      { "ageRange": [61, 150], "range": [35.70, 47.80] } 
+      ] 
+    }
 }

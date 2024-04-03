@@ -3,7 +3,7 @@ import { getUserId } from "../../_components/settings/userDataActions";
 
 async function getReport(uniqueUserId: any, date: any) {
   const res = await fetch(
-    "http://localhost:3001/retrieve-fhir-data?id=" +
+    "http://localhost:3001/retrieve-blood-data?id=" +
       uniqueUserId +
       "&date=" +
       date,

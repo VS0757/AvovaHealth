@@ -4,7 +4,7 @@ import Report from "./Report";
 import { getUserId } from "../settings/userDataActions";
 
 async function getItems(uniqueUserId: String) {
-  const res = await fetch(`http://localhost:3001/retrieve-fhir-data?id=${uniqueUserId}`);
+  const res = await fetch(`http://localhost:3001/retrieve-blood-data?id=${uniqueUserId}`);
   const data = await res.json();
   return data?.data as any[];
 }

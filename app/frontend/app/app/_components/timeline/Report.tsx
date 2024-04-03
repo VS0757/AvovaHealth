@@ -3,11 +3,14 @@ import Link from "next/link";
 import { getUserId } from "../settings/userDataActions";
 import FeatherIcon from 'feather-icons-react';
 import { toast } from "sonner";
+import { healthcareProviders } from '../integrations/IntegrateEpic';
 
 export default function Report({ report, onReportDeleted }: { report: any; onReportDeleted: (dateTimeType: string) => void }) {
   const date = report.dateTimeType.split("$")[0];
   const type = report.dateTimeType.split("$")[1];
   const name = report.dateTimeType.split("$")[2];
+
+  const testFacility = (type === "MANUAL") ? report.data.facility : healthcareProviders[report.data.url ? report.data.url.split('Observation')[0] : ''];
 
   const year = date.split("-")[0];
   const month = date.split("-")[1];
@@ -53,8 +56,8 @@ export default function Report({ report, onReportDeleted }: { report: any; onRep
         <p>{year}</p>
       </div>
       <div className={`mb-2 mt-4 flex flex-col flex-nowrap`}>
-        <p className={`opacity-50`}>Filename</p>
-        <p className="max-w-fill">{name}</p>
+        <p className={`opacity-50`}>Test Facility</p>
+        <p className="max-w-fill">{testFacility}</p>
       </div>
       <Link
         href={`/app/report/${report.dateTimeType}`}

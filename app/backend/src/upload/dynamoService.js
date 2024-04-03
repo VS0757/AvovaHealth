@@ -45,6 +45,7 @@ const storeFhirDataInDynamo = async (uniqueUserId, fhirData) => {
 const storeFHIRBasedOnEntry = async (TableName, uniqueUserId, entry) => {
   const effectiveDateTime = entry.resource.effectiveDateTime.split("T")[0];
   const entryResourceId = entry.resource.id.replace(/\s+/g, "_");
+  entry.resource.url = entry.fullUrl;
   const Item = {
     uniqueUserId: uniqueUserId,
     dateTimeType: `${effectiveDateTime}$FHIR$${entryResourceId}`,
@@ -230,7 +231,7 @@ const deleteUserDataFromDynamo = async (uniqueUserId, dateTimeType) => {
   }
 };
 
-const retrieveFhirDataFromDynamo = async (
+const retrieveBloodDataFromDynamo = async (
   uniqueUserId,
   specificDate = null,
 ) => {
@@ -261,7 +262,7 @@ const retrieveFhirDataFromDynamo = async (
     const { Items } = await docClient.send(command);
     return Items;
   } catch (error) {
-    console.error("Error retrieving FHIR Data from DynamoDB:", error);
+    console.error("Error retrieving Blood Data from DynamoDB:", error);
     throw error;
   }
 };
@@ -294,7 +295,7 @@ module.exports = {
   storeFhirDataInDynamo,
   storeManualDataInDynamo,
   storeUserDataInDynamo,
-  retrieveFhirDataFromDynamo,
+  retrieveBloodDataFromDynamo,
   retrieveUserDataFromDynamo,
   retrieveTrendDataFromDynamo,
   deleteUserDataFromDynamo,

@@ -36,8 +36,7 @@ const RetrieveEpic = ({ uniqueUserId }: { uniqueUserId: string }) => {
       uniqueUserId: uniqueUserId,
       fhirData: jsonResponse,
     };
-
-    await axios.post(
+    const done = await axios.post(
       "http://localhost:3001/upload-epic-fhir",
       postData,
       {

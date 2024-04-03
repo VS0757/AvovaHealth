@@ -36,6 +36,7 @@ export default function DemographicsSettings({
         <p>Sex</p>
         <select
           className="w-32 rounded-md border bg-inherit px-4 py-2 dark:border-stone-900"
+          value={sex}
           onChange={updateSex}
         >
           <option>Male</option>
@@ -48,7 +49,7 @@ export default function DemographicsSettings({
         <input
           type="date"
           className="rounded-md border bg-inherit px-4 py-2 dark:border-stone-900"
-          placeholder="YYYY-MM-DD"
+          value={birthday}
           onChange={updateBirthday}
         />
       </div>

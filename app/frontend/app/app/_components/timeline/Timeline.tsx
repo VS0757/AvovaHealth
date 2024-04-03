@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useEffect } from 'react';
 import Report from "./Report";
-import { getUserId } from "../settings/userDataActions";
+import { getUserId, getUserData } from "../settings/userDataActions";
 
 async function getItems(uniqueUserId: String) {
   const res = await fetch(`http://localhost:3001/retrieve-blood-data?id=${uniqueUserId}`);
@@ -11,10 +11,13 @@ async function getItems(uniqueUserId: String) {
 
 function Timeline() {
   const [reports, setReports] = useState<any[]>([]);
+  const [userData, setUserData] = useState<any>({});
 
   useEffect(() => {
     const fetchReports = async () => {
       const uniqueUserId = await getUserId();
+      const userData = await getUserData(uniqueUserId);
+      setUserData(userData);
       const data = await getItems(uniqueUserId);
       if (!data) return;
       setReports(data.reverse());
@@ -30,7 +33,7 @@ function Timeline() {
   return (
     <div className="mt-16 border-l pl-[0.925rem] dark:border-l-stone-900">
       {reports.map((report) => (
-        <Report key={report.dateTimeType} report={report} onReportDeleted={removeReportFromState} />
+        <Report key={report.dateTimeType} report={report} onReportDeleted={removeReportFromState} userData={userData} />
       ))}
     </div>
   );

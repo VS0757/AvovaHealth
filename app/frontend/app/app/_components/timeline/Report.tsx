@@ -4,11 +4,31 @@ import { getUserId } from "../settings/userDataActions";
 import FeatherIcon from 'feather-icons-react';
 import { toast } from "sonner";
 import { healthcareProviders } from '../integrations/IntegrateEpic';
+import { getTestRange } from "../report/testHelper";
+import { getAge } from "../report/testHelper";
 
-export default function Report({ report, onReportDeleted }: { report: any; onReportDeleted: (dateTimeType: string) => void }) {
+export default function Report({ report, onReportDeleted, userData }: { report: any; onReportDeleted: (dateTimeType: string) => void, userData: any }) {
   const date = report.dateTimeType.split("$")[0];
   const type = report.dateTimeType.split("$")[1];
   const name = report.dateTimeType.split("$")[2];
+  const { sex, birthday, preconditions } = userData;
+  let percentInRange = 0;
+  if (type === "FHIR") {
+    const testRange = getTestRange(report.data.code.text, sex, getAge(birthday, date), preconditions);
+    percentInRange = testRange.low <= report.data.valueQuantity.value && report.data.valueQuantity.value <= testRange.high ? 100 : 0;
+  } else {
+    let totalCount = 0
+    let count = report.data.test.reduce((acc: any, test: any) => {
+      const testRange = getTestRange(test.bloodtestname, sex, getAge(birthday, date), preconditions);
+      if (testRange.low !== 0 || testRange.high !== 0) {
+        totalCount++;
+        return acc + (testRange.low <= test.value && test.value <= testRange.high ? 1 : 0);
+      }
+      return acc;
+    }, 0);
+  
+    percentInRange = Math.round(100 * (count / totalCount));
+  }
 
   const testFacility = (type === "MANUAL") ? report.data.facility : healthcareProviders[report.data.url ? report.data.url.split('Observation')[0] : ''];
 
@@ -55,9 +75,15 @@ export default function Report({ report, onReportDeleted }: { report: any; onRep
         </p>
         <p>{year}</p>
       </div>
-      <div className={`mb-2 mt-4 flex flex-col flex-nowrap`}>
-        <p className={`opacity-50`}>Test Facility</p>
-        <p className="max-w-fill">{testFacility}</p>
+      <div className={`mb-2 mt-4 flex flex-row justify-between`}>
+        <div className={`flex flex-col`}>
+          <p className={`opacity-50`}>Test Facility</p>
+          <p className="max-w-fill">{testFacility}</p>
+        </div>
+        <div className={`flex flex-col items-end`}>
+          <p className={`opacity-50`}>Tests in Range</p>
+          <p className="max-w-fill">{percentInRange}%</p>
+        </div>
       </div>
       <Link
         href={`/app/report/${report.dateTimeType}`}

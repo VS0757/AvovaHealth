@@ -48,10 +48,23 @@ export function getTestRange(testName: string, gender: string, age: number, prec
   }
 
   let specificTestRange = specificRanges ? ((gender.toLowerCase() === "male") ? specificRanges.Male : specificRanges.Female) : ((gender.toLowerCase() === "male") ? test.Male : test.Female);
-
   const entry = specificTestRange.find(({ ageRange }: any) => age < ageRange[1]);
   range.low = entry?.range[0] || 0;
   range.high = entry?.range[1] || 0;
 
   return range;
+}
+
+export function getAge(birthday: string, testDate: string) {
+  const birthDate = new Date(birthday).getTime();
+  const onDate = new Date(testDate).getTime();
+
+  const differenceInMilliseconds = onDate - birthDate;
+  const years = differenceInMilliseconds / (1000 * 60 * 60 * 24 * 365.25);
+
+  return years;
+}
+
+export function percentInRange() {
+  return 0;
 }

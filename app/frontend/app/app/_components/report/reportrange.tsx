@@ -1,5 +1,5 @@
-import { externalGetUserData, getAge, getGender, getPreconditions, getMedications } from "../settings/userDataActions";
-import { getTestRange } from "./testHelper";
+import { externalGetUserData, getGender, getPreconditions, getMedications } from "../settings/userDataActions";
+import { getTestRange, getAge } from "./testHelper";
 
 function BloodTestToolTip({ rangeKey, testName }: { rangeKey: any; testName: string }) {
   const definition = rangeKey?.Definition || "No definition available";
@@ -66,7 +66,7 @@ async function MedPreNotes({ rangeKey }: { rangeKey: any }) {
 
 async function ReportRange( { value, bloodtestname, date }: { value: number, bloodtestname: string, date: string }) {
   const userData = await externalGetUserData();
-  const age = await getAge(date);
+  const age = getAge(userData.birthday, date);
   const range = getTestRange(bloodtestname, await getGender(), age, await getPreconditions());
 
   if (range.high === 0 && range.low === 0) {

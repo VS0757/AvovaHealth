@@ -6,6 +6,13 @@ import {
 
 export default async function Trends() {
   const trendsData = await getTrendsData();
+  if (!trendsData.data) {
+    return (
+      <main>
+        <h1>Trends</h1>
+      </main>
+    );
+  }
   let bloodTests = Object.entries(trendsData.data).map((t: any) => {
     const test: string = t[1].bloodTest;
     return test.substring(0, test.indexOf("$"));

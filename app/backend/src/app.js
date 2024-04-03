@@ -101,9 +101,14 @@ app.get("/retrieve-user-data", async (req, res) => {
     const { id } = req.query;
     let data = await retrieveUserDataFromDynamo(id);
     if (!data) {
-      return res
-        .status(404)
-        .send({ message: "No data found for the provided userID." });
+      await storeUserDataInDynamo(
+        id,
+        "2000-01-01",
+        "Male",
+        [],
+        [],
+      );
+      data = await retrieveUserDataFromDynamo(id);
     }
     data = {
       ...data,

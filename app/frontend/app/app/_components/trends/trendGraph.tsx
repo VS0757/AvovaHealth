@@ -16,10 +16,10 @@ import {
 import { LinearGradient } from "@vx/gradient";
 import { GridRows, GridColumns } from "@vx/grid";
 import { getTestRange, getTestUnit } from "../report/testHelper";
-import { getUserData, getUserId } from "../settings/userDataActions";
+import { externalGetUserData } from "../settings/userDataActions";
 
 export default function TrendGraph({ trendData }: any) {
-  // const userData = await getUserData(await getUserId());
+  // const userData = await externalGetUserData();
   const data = formatTrendData(trendData);
 
   const unit: string = getTestUnit(data[0].name);

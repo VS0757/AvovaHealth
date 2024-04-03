@@ -90,7 +90,20 @@ export async function getGender() {
   return cachedUserData.sex;
 }
 
-export async function getAge() {
-  const birthday = new Date(cachedUserData.birthday);
-  return 15;
+export async function getPreconditions() {
+  return cachedUserData.preconditions;
+}
+
+export async function getMedications() {
+  return cachedUserData.medications;
+}
+
+export async function getAge(testDate: string) {
+  const birthDate = new Date(cachedUserData.birthday).getTime();
+  const onDate = new Date(testDate).getTime();
+
+  const differenceInMilliseconds = onDate - birthDate;
+  const years = differenceInMilliseconds / (1000 * 60 * 60 * 24 * 365.25);
+
+  return years;
 }

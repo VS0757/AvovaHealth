@@ -1,15 +1,5 @@
-import { getUserId, getUserData } from "../settings/userDataActions";
+import { externalGetUserData, getAge, getGender, getPreconditions, getMedications } from "../settings/userDataActions";
 import { getTestRange } from "./testHelper";
-
-function calculateAgeInYears(birthDateString: string, onDateString: string) {
-  const birthDate = new Date(birthDateString).getTime();
-  const onDate = new Date(onDateString).getTime();
-
-  const differenceInMilliseconds = onDate - birthDate;
-  const years = differenceInMilliseconds / (1000 * 60 * 60 * 24 * 365.25);
-
-  return years;
-}
 
 function BloodTestToolTip({ rangeKey, testName }: { rangeKey: any; testName: string }) {
   const definition = rangeKey?.Definition || "No definition available";
@@ -25,7 +15,7 @@ function BloodTestToolTip({ rangeKey, testName }: { rangeKey: any; testName: str
 }
 
 async function MedPreNotes({ rangeKey }: { rangeKey: any }) {
-  const userData = await getUserData(await getUserId());
+  const userData = await externalGetUserData();
   const increasesMedications: string[] = [];
   const decreasesMedications: string[] = [];
   const increasesPreconditions: string[] = [];
@@ -75,9 +65,9 @@ async function MedPreNotes({ rangeKey }: { rangeKey: any }) {
 }
 
 async function ReportRange( { value, bloodtestname, date }: { value: number, bloodtestname: string, date: string }) {
-  const userData = await getUserData(await getUserId());
-  const birthday = calculateAgeInYears(userData.birthday, date);
-  const range = getTestRange(bloodtestname, userData.sex, birthday, userData.preconditions);
+  const userData = await externalGetUserData();
+  const age = await getAge(date);
+  const range = getTestRange(bloodtestname, await getGender(), age, await getPreconditions());
 
   if (range.high === 0 && range.low === 0) {
     return <p>No ranges</p>;

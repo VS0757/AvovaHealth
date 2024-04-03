@@ -3,12 +3,15 @@ import React, { useState } from "react";
 import FHIR from "fhirclient";
 import providersData from "./R4URLs.json";
 
-const healthcareProviders = providersData.entry
-  .map((entry) => ({
-    name: entry.resource.name,
-    iss: entry.resource.address,
-  }))
-  .sort((a, b) => a.name.localeCompare(b.name));
+export const healthcareProviders = Object.fromEntries(
+  providersData.entry
+    .map(entry => ({
+      name: entry.resource.name,
+      iss: entry.resource.address
+    }))
+    .sort((a, b) => a.name.localeCompare(b.name))
+    .map(provider => [provider.iss, provider.name])
+);
 
 const IntegrateEpic: React.FC = () => {
   const [selectedIss, setSelectedIss] = useState<string>("");
@@ -44,9 +47,9 @@ const IntegrateEpic: React.FC = () => {
           className="max-w-sm rounded-md border bg-inherit p-2 dark:border-stone-900"
         >
           <option value="">--Please choose your provider--</option>
-          {healthcareProviders.map((provider, index) => (
-            <option key={index} value={provider.iss}>
-              {provider.name}
+          {Object.entries(healthcareProviders).map(([iss, name], index) => (
+            <option key={index} value={iss}>
+              {name as string}
             </option>
           ))}
         </select>

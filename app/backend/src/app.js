@@ -9,7 +9,7 @@ const {
   storeFhirDataInDynamo,
   storeUserDataInDynamo,
   storeManualDataInDynamo,
-  retrieveFhirDataFromDynamo,
+  retrieveBloodDataFromDynamo,
   retrieveUserDataFromDynamo,
   retrieveTrendDataFromDynamo,
   deleteUserDataFromDynamo,
@@ -28,7 +28,7 @@ app.post("/upload-pdf", upload.single("pdf"), async (req, res) => {
   try {
     const extractedText = await analyzeDocument(req.file.buffer);
     const prompt =
-      "Listed below is a patient's blood work. The JSON format will include an array of entries, called 'testsbydate' (could have only one), where entries each include and are split up by a unique 'effectiveDateTime' key associated with a value of the date that the blood test was conducted of the form YYYY-MM-DD. Each entry should contain an array of sub-entries, called 'test' (may only have one) for each and that contains 'bloodtestname' and 'value' (required), that also contains 'range' and 'unit' if it's there, otherwise just set the value to string, 'None'. Your output should be a JSON string only and nothing else" +
+      "Listed below is a patient's blood work. It will include an array of entries, called 'testsbydate' (could have only one), where entries each include and are split up by a unique 'effectiveDateTime' key associated with a value of the date that the blood test was conducted of the form YYYY-MM-DD. It will also include a 'facility' with the facility that the test was conducted (if can't find, just put string 'None', but it should be the same for each entry). Each entry should contain an array of sub-entries, called 'test' (may only have one) for each and that contains 'bloodtestname' and 'value' (required), that also contains 'range' and 'unit' if it's there, otherwise just set the value to string, 'None'. Your output should be a JSON string only and nothing else" +
       extractedText;
     let response = await callChatGPTAPI(prompt, "gpt-4-turbo-preview");
 
@@ -47,6 +47,7 @@ app.post("/upload-pdf", upload.single("pdf"), async (req, res) => {
       chatGPTResponse,
       req.file.originalname,
     );
+    res.send({ message: "Data uploaded successfully." })
   } catch (err) {
     console.error("Error during upload, analysis, or ChatGPT query:", err);
     res.status(500).send("Error processing file.");
@@ -64,8 +65,8 @@ app.get("/summarize", async (req, res) => {
 app.post("/upload-epic-fhir", async (req, res) => {
   try {
     const { fhirData, uniqueUserId } = req.body;
-    await uploadDataToS3(fhirData, "FHIR", uniqueUserId, "EpicSystems");
     await storeFhirDataInDynamo(uniqueUserId, fhirData);
+    res.send({ message: "Data uploaded successfully." })
   } catch (error) {
     console.error("Failed to upload epic data to Dynamo:", error);
     res.status(500).send({
@@ -139,7 +140,7 @@ app.get("/delete-user-data", async (req, res) => {
   }
 });
 
-app.get("/retrieve-fhir-data", async (req, res) => {
+app.get("/retrieve-blood-data", async (req, res) => {
   try {
     const { id, date } = req.query;
 
@@ -149,7 +150,7 @@ app.get("/retrieve-fhir-data", async (req, res) => {
         .send({ message: "id query parameter is required." });
     }
 
-    const data = await retrieveFhirDataFromDynamo(id, date);
+    const data = await retrieveBloodDataFromDynamo(id, date);
 
     if (data.length === 0) {
       return res

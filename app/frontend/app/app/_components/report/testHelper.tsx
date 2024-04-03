@@ -1,23 +1,33 @@
 import formats from "./bloodtestresults.json";
 
-function getFilteredUnit(test: string) {
-  const entries = Object.entries(formats);
+interface RangeItem {
+  Unit: string;
+  Male: any;
+  Female: any;
+  Definition: string;
+  MedPreGeneral?: any;
+  MedPreSpecific?: any;
+}
 
-  const filtered = entries.filter((e: any) => {
-    const names: string = e[0];
-    return names.includes(test);
+export function getFilteredUnit(test: string) {
+  const keys = Object.keys(formats);
+  const lowercaseItem = test.toLowerCase();
+
+  const foundKey = keys.find((key) => {
+    const options = key.split(";").map(option => option.toLowerCase());
+    return options.includes(lowercaseItem);
   });
 
-  return filtered[0];
-}
+  return foundKey ? formats[foundKey as keyof typeof formats] as RangeItem : null;
+};
 
 export function getTestUnit(testName: string) {
   const test = getFilteredUnit(testName);
 
-  return test ? test[1].Unit : "";
+  return test ? test.Unit : "";
 }
 
-export function getTestRange(testName: string, gender: string, age: number) {
+export function getTestRange(testName: string, gender: string, age: number, preconditions: string[]) {
   const test = getFilteredUnit(testName);
 
   const range = {
@@ -29,23 +39,19 @@ export function getTestRange(testName: string, gender: string, age: number) {
     return range;
   }
 
-  if (gender.toLowerCase() === "male") {
-    const entry = test[1].Male.filter((e: any) => {
-      return age >= e.ageRange[0] && age <= e.ageRange[1];
-    });
-    if (entry.length != 0) {
-      range.low = entry[0].range[0];
-      range.high = entry[0].range[1];
-    }
-  } else {
-    const entry = test[1].Female.filter((e: any) => {
-      return age >= e.ageRange[0] && age <= e.ageRange[1];
-    });
-    if (entry.length != 0) {
-      range.low = entry[0].range[0];
-      range.high = entry[0].range[1];
+  let specificRanges;
+  if (preconditions.length > 0 && test.MedPreSpecific) {
+    const preconditionMatch = preconditions.find(precondition => test.MedPreSpecific[precondition]);
+    if (preconditionMatch) {
+      specificRanges = test.MedPreSpecific[preconditionMatch];
     }
   }
+
+  let specificTestRange = specificRanges ? ((gender.toLowerCase() === "male") ? specificRanges.Male : specificRanges.Female) : ((gender.toLowerCase() === "male") ? test.Male : test.Female);
+
+  const entry = specificTestRange.find(({ ageRange }: any) => age < ageRange[1]);
+  range.low = entry?.range[0] || 0;
+  range.high = entry?.range[1] || 0;
 
   return range;
 }

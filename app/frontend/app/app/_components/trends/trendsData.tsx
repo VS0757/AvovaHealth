@@ -7,8 +7,7 @@ export interface TrendDataPoint {
 }
 
 export async function getTrendsData() {
-  // const userId = getUserId();
-  const userId = "kp_f85ba560eb6346ccb744778f7c8d769e";
+  const userId = await getUserId();
   const res = await fetch(
     "http://localhost:3001/retrieve-trend-data?id=" + userId,
   );

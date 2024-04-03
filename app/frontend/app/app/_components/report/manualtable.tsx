@@ -1,5 +1,6 @@
 import { GeistMono } from "geist/font/mono";
-import { ReportRange, findRangeAndUnit, MedPreNotes, BloodTestToolTip } from "./reportrange";
+import { ReportRange, MedPreNotes, BloodTestToolTip } from "./reportrange";
+import { getFilteredUnit } from "./testHelper";
 
 export default function ManualReportTable({ reportData }: any) {
   return (
@@ -18,7 +19,7 @@ export default function ManualReportTable({ reportData }: any) {
           if (isNaN(value)) {
             return null;
           }
-          const rangeKey = findRangeAndUnit({ item: bloodtestname });
+          const rangeKey = getFilteredUnit(bloodtestname);
           return (
           <tr key={index} className="rounded-md border dark:border-stone-900">
             <td className="rounded-md border p-1 dark:border-stone-900">
@@ -28,7 +29,7 @@ export default function ManualReportTable({ reportData }: any) {
               {value} {rangeKey && rangeKey.Unit ? rangeKey.Unit : ''}
             </td>
             <td className="h-[48px] rounded-md border p-1 opacity-50 dark:border-stone-900">
-              <ReportRange value={value} rangeKey={rangeKey} date={reportData.effectiveDateTime} />
+              <ReportRange value={value} bloodtestname={bloodtestname} date={reportData.effectiveDateTime} />
             </td>
             <td className="h-[48px] rounded-md border p-1 opacity-50 dark:border-stone-900">
               <MedPreNotes rangeKey={rangeKey} />

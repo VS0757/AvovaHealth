@@ -16,15 +16,18 @@ import {
 import { LinearGradient } from "@vx/gradient";
 import { GridRows, GridColumns } from "@vx/grid";
 import { getTestRange, getTestUnit } from "../report/testHelper";
+import { externalGetUserData } from "../settings/userDataActions";
 
 export default function TrendGraph({ trendData }: any) {
+  // const userData = await externalGetUserData();
   const data = formatTrendData(trendData);
 
   const unit: string = getTestUnit(data[0].name);
   const range: { low: number; high: number } = getTestRange(
     data[0].name,
-    "male",
-    15,
+    "male", // TODO: replace with actual user data
+    15, // TODO: not sure if we can make assumptions of range since the age of the person is constantly changing across the data points,
+    []
   );
 
   const width = 300;

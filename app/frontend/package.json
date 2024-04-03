@@ -11,15 +11,15 @@
   },
   "dependencies": {
     "@kinde-oss/kinde-auth-nextjs": "^2.1.15",
+    "@nextui-org/react": "^2.2.10",
     "@visx/group": "^3.3.0",
-    "@vx/axis": "^0.0.199",
+    "@vx/axis": "^0.0.198",
     "@vx/event": "^0.0.199",
     "@vx/gradient": "^0.0.199",
-    "@vx/grid": "^0.0.199",
-    "@vx/scale": "^0.0.199",
-    "@vx/shape": "^0.0.199",
+    "@vx/grid": "^0.0.198",
+    "@vx/scale": "^0.0.198",
+    "@vx/shape": "^0.0.198",
     "@vx/tooltip": "^0.0.199",
-    "@nextui-org/react": "^2.2.10",
     "axios": "^1.6.7",
     "d3": "^7.9.0",
     "d3-array": "^3.2.4",
@@ -31,8 +31,7 @@
     "next": "^14.1.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "sonner": "^1.4.41",
-    "vx": "^0.0.1"
+    "sonner": "^1.4.41"
   },
   "devDependencies": {
     "@types/d3-array": "^3.2.1",

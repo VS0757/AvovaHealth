@@ -16,6 +16,7 @@ function Timeline() {
     const fetchReports = async () => {
       const uniqueUserId = await getUserId();
       const data = await getItems(uniqueUserId);
+      if (!data) return;
       setReports(data.reverse());
     };
 

@@ -8,7 +8,6 @@ import {
 
 export default async function Settings() {
   const userData: UserData = await externalGetUserData();
-
   return (
     <main>
       <h1>Profile</h1>

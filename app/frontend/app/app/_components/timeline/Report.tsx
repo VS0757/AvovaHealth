@@ -80,9 +80,13 @@ export default function Report({ report, onReportDeleted, userData }: { report: 
           <p className={`opacity-50`}>Test Facility</p>
           <p className="max-w-fill">{testFacility}</p>
         </div>
-        <div className={`flex flex-col items-end`}>
-          <p className={`opacity-50`}>Tests in Range</p>
-          <p className="max-w-fill">{percentInRange}%</p>
+        <div className="flex flex-col items-end">
+          <p className="opacity-50">Tests in Range</p>
+          <p className={`max-w-fill ${
+            percentInRange > 90 ? 'text-green-500' :
+            percentInRange >= 5 && percentInRange <= 90 ? 'text-yellow-500' :
+            'text-red-500'
+          }`}>{percentInRange}%</p>
         </div>
       </div>
       <Link

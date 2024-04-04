@@ -37,7 +37,7 @@ function summarizeTestResults(tests: any) {
 
   let withinCnt = 0
 
-  const getStatusPhrase = (status: string) => {
+  const getStatusPhrase = (status: 'below' | 'within' | 'above') => {
       const phrases = {
           below: [
               "is a bit lower than what we normally expect.",
@@ -71,7 +71,7 @@ function summarizeTestResults(tests: any) {
       return phrases[status][randomIndex];
   };
 
-  let summary = tests.test.map(test => {
+  let summary = tests.test.map((test: { range: { split: (arg0: string) => { (): any; new(): any; map: { (arg0: NumberConstructor): [any, any]; new(): any; }; }; }; value: string; bloodtestname: any; }) => {
       const [min, max] = test.range.split("-").map(Number);
       const value = parseFloat(test.value);
       let status;

@@ -71,26 +71,35 @@ function summarizeTestResults(tests: any) {
       return phrases[status][randomIndex];
   };
 
-  let summary = tests.test.map((test: { range: { split: (arg0: string) => { (): any; new(): any; map: { (arg0: NumberConstructor): [any, any]; new(): any; }; }; }; value: string; bloodtestname: any; }) => {
-      const [min, max] = test.range.split("-").map(Number);
-      const value = parseFloat(test.value);
-      let status;
-
-      if (value < min) {
-          status = 'below';
-      } else if (value > max) {
-          status = 'above';
-      } else {
-          status = 'within';
-          withinCnt = withinCnt + 1
-
-          if (withinCnt > 2) {
-            return ""
-          }
+  let summary = tests.test.map((test: any) => {
+    // Check if range and value exist to avoid breaking; provide a default if not.
+    if (!test.range || !test.value) return ""; // Skip this test if necessary values are missing.
+    
+    const rangeParts = test.range.split("-");
+    if (rangeParts.length !== 2) return ""; // Skip if the range format is incorrect.
+    
+    const [min, max] = rangeParts.map(Number);
+    const value = parseFloat(test.value);
+    
+    if (isNaN(min) || isNaN(max) || isNaN(value)) return ""; // Skip if conversion fails.
+    
+    let status: 'below' | 'above' | 'within';
+    
+    if (value < min) {
+      status = 'below';
+    } else if (value > max) {
+      status = 'above';
+    } else {
+      status = 'within';
+      withinCnt += 1;
+      
+      if (withinCnt > 2) {
+        return ""; // Consider adjusting logic based on needs.
       }
-
-      return `${test.bloodtestname} ${getStatusPhrase(status)}`;
-  }).join(" ");
+    }
+    
+    return `${test.bloodtestname} ${getStatusPhrase(status)}`;
+  }).filter(Boolean).join(" ");
 
   const introIndex = Math.floor(Math.random() * introductions.length);
   const conclusionIndex = Math.floor(Math.random() * conclusions.length);
@@ -100,32 +109,6 @@ function summarizeTestResults(tests: any) {
 
   return output;
 }
-
-const generatePrompt = (contextText: string) => {
-  const prompt = `${`
-  You are a medical practitioner extremely proficient in bloodwork.
-  Assume your patient is a high school student.
-  You wil be given a blood report in similar format to a json string.
-  Act as if you are speaking to a patient explaining their bloodwork to them.
-  Answer in an objective manner and err on the side of caution.
-  Do not suggest any treatment options, simply summarize their blood report."`}
-
-  Bloodwork Context:
-  ${contextText}
-
-  Question: Summarize the following blood report and answer as a nurse would
-  explain the following results to a high school student. Emphasize the most important tests.
-`;
-
-  return prompt;
-};
-
-const generateAnswer = async (prompt: string) => {
-	const res = await fetch(`http://localhost:3001/summarize?prompt=${prompt}`);
-
-  const data = await res.json();
-  return data.choices[0].message.content
-};
 
 interface Data {
   dateTimeType: string;
@@ -151,11 +134,6 @@ export default async function ReportPage({ params }: any) {
   const day = date.split("-")[2];
 
   const reportData = report.data;
-
-	// const prompt = generatePrompt(String(JSON.stringify(reportData)));
-  // console.log(String(JSON.stringify(reportData)))
-  // const gpt_out = await generateAnswer(prompt);
-
   const summaryParagraph = summarizeTestResults(reportData);
 
   return (

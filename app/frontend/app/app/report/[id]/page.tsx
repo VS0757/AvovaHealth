@@ -1,5 +1,6 @@
 import ReportTable from "../../_components/report/reporttable";
 import { getUserId } from "../../_components/settings/userDataActions";
+import { getTestRange} from "../../_components/report/testHelper";
 
 async function getReport(uniqueUserId: any, date: any) {
   const res = await fetch(
@@ -12,7 +13,30 @@ async function getReport(uniqueUserId: any, date: any) {
   return data?.data as any[];
 }
 
-function summarizeTestResults(tests: any) {
+function determineTestFormat(test) {
+  if (test.code && test.valueQuantity && test.valueQuantity.value !== undefined) {
+    const testName = test.code.text;
+    const testValue = test.valueQuantity.value; 
+    return { testName, testValue, range: undefined }; 
+  } else if (test.range && test.value && test.bloodtestname) {
+    const testName = test.bloodtestname;
+    const testValue = parseFloat(test.value);
+    return { testName, testValue, range: test.range.split("-").map(Number) };
+  }
+
+  return null;
+}
+
+function summarizeTestResults(input: any) {
+  let tests;
+  if (Array.isArray(input)) {
+    tests = input;
+  } else if (input.test && Array.isArray(input.test)) {
+    tests = input.test;
+  } else {
+    tests = [input];
+  }
+
   const introductions = [
       "Let's go over your test results together.",
       "I've taken a look at your test results, and here's what we've found.",
@@ -25,14 +49,7 @@ function summarizeTestResults(tests: any) {
   ];
 
   const conclusions = [
-      "If you have any questions or concerns, feel free to ask.",
-      "Remember, I'm here to help you understand your health better.",
-      "It's important to us that you feel informed about your health, so don't hesitate to reach out with questions.",
-      "Do you have any questions about these results? I'm here to answer them.",
-      "These results give us a lot to consider, but I'm here to guide you through it.",
-      "Your understanding of your health is crucial, so please ask any questions you might have.",
-      "Feel free to discuss any concerns or queries. We're here to support you.",
-      "Let me know if there's anything you'd like to discuss further about these results."
+      "Please consult a healthcare professional with more information."
   ];
 
   let withinCnt = 0
@@ -71,61 +88,49 @@ function summarizeTestResults(tests: any) {
       return phrases[status][randomIndex];
   };
 
-  let summary = tests.test.map((test: { range: { split: (arg0: string) => { (): any; new(): any; map: { (arg0: NumberConstructor): [any, any]; new(): any; }; }; }; value: string; bloodtestname: any; }) => {
-      const [min, max] = test.range.split("-").map(Number);
-      const value = parseFloat(test.value);
-      let status;
+  let summary = tests.map(test => {
+    const testInfo = determineTestFormat(test);
+    
+    if (!testInfo) {
+      return ""
+    }
+    
+    let min;
+    let max;
+    if (!testInfo || testInfo.range === undefined) {
+        testInfo.range = getTestRange(testInfo.testName, "Male", 22, [])
 
-      if (value < min) {
-          status = 'below';
-      } else if (value > max) {
-          status = 'above';
-      } else {
-          status = 'within';
-          withinCnt = withinCnt + 1
+        min = testInfo.range.low
+        max = testInfo.range.high
+    } else{
+      [min, max] = testInfo.range;
+    }
+    const value = testInfo.testValue;
 
-          if (withinCnt > 2) {
-            return ""
-          }
-      }
+    let status;
+    if (value < min) {
+        status = 'below';
+    } else if (value > max) {
+        status = 'above';
+    } else {
+        status = 'within';
+        if (withinCnt > 2) {
+          return "";
+        }
+        withinCnt += 1;
+    }
 
-      return `${test.bloodtestname} ${getStatusPhrase(status)}`;
-  }).join(" ");
+    return `${testInfo.testName} ${getStatusPhrase(status)}`;
+  }).filter(Boolean).join(" ");
 
   const introIndex = Math.floor(Math.random() * introductions.length);
   const conclusionIndex = Math.floor(Math.random() * conclusions.length);
 
-  let output = `${introductions[introIndex]} ${summary} ${conclusions[conclusionIndex]}`
-  output = output.replace(/\s+/g, " ");
+  let output = `${introductions[introIndex]} ${summary} ${conclusions[conclusionIndex]}`;
+  output = output.trim().replace(/\s+/g, " ");
 
   return output;
 }
-
-const generatePrompt = (contextText: string) => {
-  const prompt = `${`
-  You are a medical practitioner extremely proficient in bloodwork.
-  Assume your patient is a high school student.
-  You wil be given a blood report in similar format to a json string.
-  Act as if you are speaking to a patient explaining their bloodwork to them.
-  Answer in an objective manner and err on the side of caution.
-  Do not suggest any treatment options, simply summarize their blood report."`}
-
-  Bloodwork Context:
-  ${contextText}
-
-  Question: Summarize the following blood report and answer as a nurse would
-  explain the following results to a high school student. Emphasize the most important tests.
-`;
-
-  return prompt;
-};
-
-const generateAnswer = async (prompt: string) => {
-	const res = await fetch(`http://localhost:3001/summarize?prompt=${prompt}`);
-
-  const data = await res.json();
-  return data.choices[0].message.content
-};
 
 interface Data {
   dateTimeType: string;
@@ -152,10 +157,7 @@ export default async function ReportPage({ params }: any) {
 
   const reportData = report.data;
 
-	// const prompt = generatePrompt(String(JSON.stringify(reportData)));
-  // console.log(String(JSON.stringify(reportData)))
-  // const gpt_out = await generateAnswer(prompt);
-
+  console.log(reportData)
   const summaryParagraph = summarizeTestResults(reportData);
 
   return (

@@ -161,7 +161,6 @@ export default async function ReportPage({ params }: any) {
   const day = date.split("-")[2];
 
   const reportData = report.data;
-
   const summaryParagraph = summarizeTestResults(reportData, userData);
 
   return (

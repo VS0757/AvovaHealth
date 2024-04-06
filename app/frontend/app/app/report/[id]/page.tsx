@@ -1,6 +1,6 @@
 import ReportTable from "../../_components/report/reporttable";
-import { getUserId } from "../../_components/settings/userDataActions";
-import { getTestRange} from "../../_components/report/testHelper";
+import { externalGetUserData, getUserId } from "../../_components/settings/userDataActions";
+import { getAge, getTestRange} from "../../_components/report/testHelper";
 
 async function getReport(uniqueUserId: any, date: any) {
   const res = await fetch(
@@ -13,7 +13,7 @@ async function getReport(uniqueUserId: any, date: any) {
   return data?.data as any[];
 }
 
-function determineTestFormat(test) {
+function determineTestFormat(test: any) {
   if (test.code && test.valueQuantity && test.valueQuantity.value !== undefined) {
     const testName = test.code.text;
     const testValue = test.valueQuantity.value; 
@@ -27,7 +27,9 @@ function determineTestFormat(test) {
   return null;
 }
 
-function summarizeTestResults(input: any) {
+function summarizeTestResults(input: any, userData: any) {
+  const effectiveDate = input.effectiveDateTime
+
   let tests;
   if (Array.isArray(input)) {
     tests = input;
@@ -51,8 +53,6 @@ function summarizeTestResults(input: any) {
   const conclusions = [
       "Please consult a healthcare professional with more information."
   ];
-
-  let withinCnt = 0
 
   const getStatusPhrase = (status: 'below' | 'within' | 'above') => {
       const phrases = {
@@ -79,7 +79,7 @@ function summarizeTestResults(input: any) {
               "is slightly above what we typically see.",
               "exceeds the usual range a bit.",
               "is higher than we normally expect, which warrants attention.",
-              "is a tad above the normal limits.",
+              "is slightly above the normal limits.",
               "goes beyond the normal range, which is something to keep in mind.",
               "is above the standard range, suggesting we should monitor it closely."
           ]
@@ -88,27 +88,31 @@ function summarizeTestResults(input: any) {
       return phrases[status][randomIndex];
   };
 
-  let summary = tests.map(test => {
+  let age = 25;
+  if (effectiveDate != null) {
+    age = getAge(userData.birthday, effectiveDate)
+  }
+
+  let summary = tests.map((test: any) => {
     const testInfo = determineTestFormat(test);
     
     if (!testInfo) {
       return ""
     }
-    
-    let min;
-    let max;
-    if (!testInfo || testInfo.range === undefined) {
-        testInfo.range = getTestRange(testInfo.testName, "Male", 22, [])
+    testInfo.range = getTestRange(testInfo.testName, userData.sex, age, userData.preconditions);
 
-        min = testInfo.range.low
-        max = testInfo.range.high
-    } else{
-      [min, max] = testInfo.range;
-    }
+    const min = testInfo.range.low
+    const max = testInfo.range.high
+
     const value = testInfo.testValue;
 
-    let status;
-    if (value < min) {
+    let status: 'below' | 'above' | 'within';
+    let withinCnt = 0
+
+    if (min === 0 && max === 0) {
+      return "";
+    }
+    else if (value < min) {
         status = 'below';
     } else if (value > max) {
         status = 'above';
@@ -140,6 +144,7 @@ interface Data {
 
 export default async function ReportPage({ params }: any) {
   const uniqueUserId = await getUserId();
+  const userData = await externalGetUserData();
 
   const data = await getReport(
     uniqueUserId,
@@ -157,8 +162,7 @@ export default async function ReportPage({ params }: any) {
 
   const reportData = report.data;
 
-  console.log(reportData)
-  const summaryParagraph = summarizeTestResults(reportData);
+  const summaryParagraph = summarizeTestResults(reportData, userData);
 
   return (
     <main>

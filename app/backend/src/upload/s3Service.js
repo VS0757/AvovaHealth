@@ -4,14 +4,14 @@ const { awsConfig } = require('../config/awsConfig');
 
 const s3Client = new S3Client(awsConfig);
 
-const uploadDataToS3 = async (jsonData, typeOfUpload, uniqueUserId, fileName) => {
+const uploadDataToS3 = async (file, typeOfUpload, uniqueUserId, fileName) => {
   const key = `${Date.now().toString()}-${typeOfUpload}-${uniqueUserId}-${fileName}`;
 
   const command = new PutObjectCommand({
     Bucket: process.env.AWS_BUCKET_NAME,
     Key: key,
-    Body: JSON.stringify(jsonData), // Convert JSON object to a string
-    ContentType: 'application/json', // Set the content type to application/json
+    Body: file,
+    ContentType: 'application/pdf',
   });
 
   await s3Client.send(command);

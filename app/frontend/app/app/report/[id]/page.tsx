@@ -1,5 +1,6 @@
 import ReportTable from "../../_components/report/reporttable";
-import { getUserId } from "../../_components/settings/userDataActions";
+import { externalGetUserData, getUserId } from "../../_components/settings/userDataActions";
+import { getAge, getTestRange} from "../../_components/report/testHelper";
 
 async function getReport(uniqueUserId: any, date: any) {
   const res = await fetch(
@@ -12,7 +13,32 @@ async function getReport(uniqueUserId: any, date: any) {
   return data?.data as any[];
 }
 
-function summarizeTestResults(tests: any) {
+function determineTestFormat(test: any) {
+  if (test.code && test.valueQuantity && test.valueQuantity.value !== undefined) {
+    const testName = test.code.text;
+    const testValue = test.valueQuantity.value; 
+    return { testName, testValue, range: undefined }; 
+  } else if (test.range && test.value && test.bloodtestname) {
+    const testName = test.bloodtestname;
+    const testValue = parseFloat(test.value);
+    return { testName, testValue, range: test.range.split("-").map(Number) };
+  }
+
+  return null;
+}
+
+function summarizeTestResults(input: any, userData: any) {
+  const effectiveDate = input.effectiveDateTime
+
+  let tests;
+  if (Array.isArray(input)) {
+    tests = input;
+  } else if (input.test && Array.isArray(input.test)) {
+    tests = input.test;
+  } else {
+    tests = [input];
+  }
+
   const introductions = [
       "Let's go over your test results together.",
       "I've taken a look at your test results, and here's what we've found.",
@@ -25,17 +51,8 @@ function summarizeTestResults(tests: any) {
   ];
 
   const conclusions = [
-      "If you have any questions or concerns, feel free to ask.",
-      "Remember, I'm here to help you understand your health better.",
-      "It's important to us that you feel informed about your health, so don't hesitate to reach out with questions.",
-      "Do you have any questions about these results? I'm here to answer them.",
-      "These results give us a lot to consider, but I'm here to guide you through it.",
-      "Your understanding of your health is crucial, so please ask any questions you might have.",
-      "Feel free to discuss any concerns or queries. We're here to support you.",
-      "Let me know if there's anything you'd like to discuss further about these results."
+      "Please consult a healthcare professional with more information."
   ];
-
-  let withinCnt = 0
 
   const getStatusPhrase = (status: 'below' | 'within' | 'above') => {
       const phrases = {
@@ -62,7 +79,7 @@ function summarizeTestResults(tests: any) {
               "is slightly above what we typically see.",
               "exceeds the usual range a bit.",
               "is higher than we normally expect, which warrants attention.",
-              "is a tad above the normal limits.",
+              "is slightly above the normal limits.",
               "goes beyond the normal range, which is something to keep in mind.",
               "is above the standard range, suggesting we should monitor it closely."
           ]
@@ -71,41 +88,50 @@ function summarizeTestResults(tests: any) {
       return phrases[status][randomIndex];
   };
 
-  let summary = tests.test.map((test: any) => {
-    // Check if range and value exist to avoid breaking; provide a default if not.
-    if (!test.range || !test.value) return ""; // Skip this test if necessary values are missing.
+  let age = 25;
+  if (effectiveDate != null) {
+    age = getAge(userData.birthday, effectiveDate)
+  }
+
+  let summary = tests.map((test: any) => {
+    const testInfo = determineTestFormat(test);
     
-    const rangeParts = test.range.split("-");
-    if (rangeParts.length !== 2) return ""; // Skip if the range format is incorrect.
-    
-    const [min, max] = rangeParts.map(Number);
-    const value = parseFloat(test.value);
-    
-    if (isNaN(min) || isNaN(max) || isNaN(value)) return ""; // Skip if conversion fails.
-    
-    let status: 'below' | 'above' | 'within';
-    
-    if (value < min) {
-      status = 'below';
-    } else if (value > max) {
-      status = 'above';
-    } else {
-      status = 'within';
-      withinCnt += 1;
-      
-      if (withinCnt > 2) {
-        return ""; // Consider adjusting logic based on needs.
-      }
+    if (!testInfo) {
+      return ""
     }
-    
-    return `${test.bloodtestname} ${getStatusPhrase(status)}`;
+    testInfo.range = getTestRange(testInfo.testName, userData.sex, age, userData.preconditions);
+
+    const min = testInfo.range.low
+    const max = testInfo.range.high
+
+    const value = testInfo.testValue;
+
+    let status: 'below' | 'above' | 'within';
+    let withinCnt = 0
+
+    if (min === 0 && max === 0) {
+      return "";
+    }
+    else if (value < min) {
+        status = 'below';
+    } else if (value > max) {
+        status = 'above';
+    } else {
+        status = 'within';
+        if (withinCnt > 2) {
+          return "";
+        }
+        withinCnt += 1;
+    }
+
+    return `${testInfo.testName} ${getStatusPhrase(status)}`;
   }).filter(Boolean).join(" ");
 
   const introIndex = Math.floor(Math.random() * introductions.length);
   const conclusionIndex = Math.floor(Math.random() * conclusions.length);
 
-  let output = `${introductions[introIndex]} ${summary} ${conclusions[conclusionIndex]}`
-  output = output.replace(/\s+/g, " ");
+  let output = `${introductions[introIndex]} ${summary} ${conclusions[conclusionIndex]}`;
+  output = output.trim().replace(/\s+/g, " ");
 
   return output;
 }
@@ -118,6 +144,7 @@ interface Data {
 
 export default async function ReportPage({ params }: any) {
   const uniqueUserId = await getUserId();
+  const userData = await externalGetUserData();
 
   const data = await getReport(
     uniqueUserId,
@@ -134,7 +161,7 @@ export default async function ReportPage({ params }: any) {
   const day = date.split("-")[2];
 
   const reportData = report.data;
-  const summaryParagraph = summarizeTestResults(reportData);
+  const summaryParagraph = summarizeTestResults(reportData, userData);
 
   return (
     <main>

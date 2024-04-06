@@ -54,14 +54,6 @@ app.post("/upload-pdf", upload.single("pdf"), async (req, res) => {
   }
 });
 
-app.get("/summarize", async (req, res) => {
-  const { prompt } = req.query;
-
-  const response = await callChatGPTAPI(prompt, "gpt-3.5-turbo-0125");
-
-  res.send({ choices: response.choices });
-});
-
 app.post("/upload-epic-fhir", async (req, res) => {
   try {
     const { fhirData, uniqueUserId } = req.body;

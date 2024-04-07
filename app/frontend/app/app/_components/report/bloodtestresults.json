@@ -361,6 +361,17 @@
       { "ageRange": [19, 150], "range": [14, 33] }
     ]
   },
+  "Chloride, Sweat;Chloride": {
+    "Unit": "mmol/L",
+    "Male": [
+      { "ageRange": [0, 0.5], "range": [96, 106] },
+      { "ageRange": [0.5, 150], "range": [96, 106] }
+    ],
+    "Female": [
+      { "ageRange": [0, 0.5], "range": [96, 106] },
+      { "ageRange": [0.5, 150], "range": [96, 106] }
+    ]
+  },
   "Cholesterol, Total;Cholesterol;Lipids;Lipidsprofile;Lipidsblood test;cholesterol ": {
     "Definition": "Cholesterol is a waxy, fat-like substance found in your blood. It's essential for building cells and certain hormones. However, having too much cholesterol can lead to blockages in blood vessels, increasing the risk of heart disease and stroke.",
     "MedPreGeneral": {
@@ -1008,7 +1019,7 @@
       { "ageRange": [19, 150], "range": [2.5, 8.0] }
     ]
   },
-  "Globulin": {
+  "Globulin;Globulin, Total": {
     "Definition": "Proteins that support your immune system and help in blood clotting, measured to evaluate overall health.",
     "Category": "Hepatic Function",
     "Unit": "g/dL",
@@ -1019,7 +1030,7 @@
       {"ageRange": [0, 150], "range": [1.9, 3.7]}
     ]
   },
-  "Albumin/Globulin Ratio": {
+  "Albumin/Globulin Ratio;A/G Ratio": {
     "Definition": "A comparison of two major blood proteins, used to assess liver function and overall health status.",
     "Unit": "",
     "Category": "Hepatic Function",
@@ -1052,7 +1063,7 @@
       {"ageRange": [0, 150], "range": [60, 180]}
     ]
   },
-  "Carbon Dioxide": {
+  "Carbon Dioxide;Carbon Dioxide, Total": {
     "Definition": "Reflects the balance of acid and base in your blood, important for your body's overall chemical balance.",
     "Unit": "mmol/L",
     "Category": "Serum Levels",

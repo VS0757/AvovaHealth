@@ -13,6 +13,7 @@ export interface UserData {
   preconditions: string[];
   uniqueUserId: string;
   medications: string[];
+  watchlist: string[];
   sex: string;
   birthday: string;
 }
@@ -64,6 +65,25 @@ export async function submitConditions(conditions: string[]) {
     },
     body: JSON.stringify(userData),
   });
+
+  return res.json();
+}
+
+export async function submitWatchlist(watchlist: string[]) {
+  const userData: UserData = await getUserData(await getUserId());
+
+  userData.watchlist = watchlist;
+
+  const res = await fetch("http://localhost:3001/upload-user-data", {
+    method: "POST",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(userData),
+  });
+
+  console.log(JSON.stringify(userData));
 
   return res.json();
 }

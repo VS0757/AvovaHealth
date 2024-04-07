@@ -1,46 +1,27 @@
-import BentoCard from "./_components/bento/BentoCard";
-import UploadComponent from "./_components/upload/UploadComponent";
-import IntegrateEpic from "./_components/integrations/IntegrateEpic";
-import RetrieveEpic from "./_components/integrations/RetrieveEpic";
-import {
-  UserData,
-  externalGetUserData,
-} from "./_components/settings/userDataActions";
+import Card from "@/_components/card";
+import BiomarkerTable from "@/_components/dashboard/biomarker_table";
+import RangeGraphCard from "@/_components/dashboard/range_graph";
+import SummaryCard from "@/_components/dashboard/summary";
+import { Suspense } from "react";
 
-export default async function App() {
-  const userData: UserData = await externalGetUserData();
-
+export default function App() {
   return (
     <main>
-      <h1>Dashboard</h1>
-      <div className="mt-16 flex flex-col gap-2">
-        <BentoCard>
-          Upload PDF
-          <UploadComponent />
-        </BentoCard>
-        <BentoCard>
-          <p>Manage Epic Integration</p>
-          <IntegrateEpic />
-          <RetrieveEpic uniqueUserId={userData.uniqueUserId} />
-        </BentoCard>
-        <div className={`mt-4 grid grid-cols-2 gap-2`}>
-          <BentoCard>
-            Timeline Preview Card
-            <div className="mt-2 min-h-24 min-w-full rounded-md bg-stone-200 dark:bg-stone-900"></div>
-          </BentoCard>
-          <BentoCard>
-            Trends Preview Card
-            <div className="mt-2 min-h-24 min-w-full rounded-md bg-stone-200 dark:bg-stone-900"></div>
-          </BentoCard>
-          <BentoCard>
-            Inbox Preview Card
-            <div className="mt-2 min-h-24 min-w-full rounded-md bg-stone-200 dark:bg-stone-900"></div>
-          </BentoCard>
-          <BentoCard>
-            Summary Preview Card
-            <div className="mt-2 min-h-24 min-w-full rounded-md bg-stone-200 dark:bg-stone-900"></div>
-          </BentoCard>
-        </div>
+      <div className="mb-16 grid grid-cols-[1fr_500px] gap-6">
+        <Card>
+          <SummaryCard />
+        </Card>
+        <Card>
+          <Suspense fallback={null}>
+            <RangeGraphCard />
+          </Suspense>
+        </Card>
+      </div>
+      <div className="mb-16">
+        <h1 className="mb-6">Biomarkers</h1>
+        <Card>
+          <BiomarkerTable />
+        </Card>
       </div>
     </main>
   );

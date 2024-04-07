@@ -7,11 +7,7 @@ import {
 export default async function Trends() {
   const trendsData = await getTrendsData();
   if (!trendsData.data) {
-    return (
-      <main>
-        <h1>Trends</h1>
-      </main>
-    );
+    return <main></main>;
   }
   let bloodTests = Object.entries(trendsData.data).map((t: any) => {
     const test: string = t[1].bloodTest;
@@ -21,19 +17,15 @@ export default async function Trends() {
 
   return (
     <main>
-      <h1>Trends</h1>
-      <div className="mt-16 flex flex-col">
+      <div className="grid xl:grid-cols-2 grid-cols-1 gap-2 mx-auto">
         {bloodTests.map((test: string) => {
           const data = getTrendFromTrendData(trendsData, test);
-
           return data.length > 1 ? (
             <TrendGraph
               trendData={getTrendFromTrendData(trendsData, test)}
               key={test}
             />
-          ) : (
-            <div></div>
-          );
+          ) : null;
         })}
       </div>
     </main>

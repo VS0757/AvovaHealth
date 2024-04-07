@@ -171,6 +171,7 @@ const storeUserDataInDynamo = async (
   sex,
   preconditions,
   medications,
+  watchlist,
 ) => {
   const TableName = "avovahealthuserdata";
 
@@ -180,6 +181,7 @@ const storeUserDataInDynamo = async (
     sex: sex,
     preconditions: preconditions,
     medications: medications,
+    watchlist,
   };
 
   try {

@@ -1,10 +1,12 @@
 "use client";
-import React, { useState, useEffect } from 'react';
-import Report from "./Report";
+import React, { useState, useEffect } from "react";
+import Report, { ReportProps } from "./Report";
 import { getUserId, getUserData } from "../settings/userDataActions";
 
 async function getItems(uniqueUserId: String) {
-  const res = await fetch(`http://localhost:3001/retrieve-blood-data?id=${uniqueUserId}`);
+  const res = await fetch(
+    `http://localhost:3001/retrieve-blood-data?id=${uniqueUserId}`,
+  );
   const data = await res.json();
   return data?.data as any[];
 }
@@ -27,14 +29,21 @@ function Timeline() {
   }, []);
 
   const removeReportFromState = (dateTimeType: string) => {
-    setReports(currentReports => currentReports.filter(report => report.dateTimeType !== dateTimeType));
+    setReports((currentReports) =>
+      currentReports.filter((report) => report.dateTimeType !== dateTimeType),
+    );
   };
 
   return (
-    <div className="mt-16 border-l pl-[0.925rem] dark:border-l-stone-900">
-      {reports.map((report) => (
-        <Report key={report.dateTimeType} report={report} onReportDeleted={removeReportFromState} userData={userData} />
-      ))}
+    <div className="border-l pl-[0.925rem] dark:border-l-stone-900">
+      {reports.map((report) => {
+        const reportProps: ReportProps = {
+          report: report,
+          userData: userData,
+          onReportDeleted: removeReportFromState,
+        };
+        return <Report key={report.dateTimeType} props={reportProps} />;
+      })}
     </div>
   );
 }

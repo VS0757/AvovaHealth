@@ -1,0 +1,55 @@
+{
+    "WBC": {
+      "low": "White blood cell count is low, suggesting potential for reduced immunity. Avoid crowded places and ensure proper hygiene.",
+      "high": "Elevated white blood cell count may indicate an infection or stress. Consult with a healthcare provider."
+    },
+    "RBC": {
+      "low": "Low red blood cell count may suggest anemia. Increase intake of iron-rich foods or discuss iron supplements with your doctor.",
+      "high": "High red blood cell count could indicate dehydration or other conditions. Ensure adequate hydration and consult a healthcare professional."
+    },
+    "Glucose": {
+      "low": "Low glucose levels could suggest hypoglycemia. Consider consuming a quick source of sugar and consult a healthcare provider.",
+      "high": "Elevated glucose levels may indicate hyperglycemia, requiring lifestyle adjustments or medical intervention. Discuss with your healthcare provider."
+    },
+    "Cholesterol": {
+      "low": "Low cholesterol is rare but might indicate hyperthyroidism, malnutrition, or liver disease. Consulting a healthcare professional is advised.",
+      "high": "High cholesterol increases the risk of heart disease. Consider dietary changes, regular exercise, and discussing medication with your doctor."
+    },
+    "BloodPressure": {
+      "low": "Low blood pressure can cause dizziness and fainting. Increase water and salt intake, and consult a doctor if symptoms persist.",
+      "high": "High blood pressure is a risk factor for heart disease. Reduce salt intake, exercise regularly, and consider medication as prescribed by a healthcare provider."
+    },
+    "Sodium": {
+      "low": "Low sodium levels might indicate hyponatremia, which can cause neurological issues. Consider checking your fluid and salt intake.",
+      "high": "High sodium levels may suggest dehydration or an underlying health condition. Limiting salt intake and consulting a healthcare professional are recommended."
+    },
+    "Potassium": {
+      "low": "Low potassium levels can lead to muscle weakness and heart rhythm disturbances. Increase your intake of potassium-rich foods like bananas and spinach.",
+      "high": "High potassium levels can affect heart function. It's important to manage potassium intake and consult a healthcare provider."
+    },
+    "Chloride": {
+      "low": "Low chloride levels can occur with conditions like dehydration or congestive heart failure. Ensure proper hydration and consult a healthcare provider.",
+      "high": "Elevated chloride levels might indicate dehydration or kidney issues. Drinking plenty of fluids and seeking medical advice are recommended."
+    },
+    "Calcium": {
+      "low": "Low calcium levels may lead to bone weakness and cardiovascular issues. Consider calcium-rich foods or supplements upon consulting with a healthcare provider.",
+      "high": "High calcium levels could indicate parathyroid or other health issues. It's crucial to consult a healthcare professional for proper evaluation."
+    },
+    "ALT": {
+      "low": "Low ALT levels are generally considered normal but can occasionally suggest specific issues. Regular monitoring and a balanced diet are recommended.",
+      "high": "Elevated ALT levels indicate possible liver inflammation or damage. Limit alcohol intake and consult a healthcare provider for further evaluation."
+    },
+    "AST": {
+      "low": "Low AST levels are generally normal. Maintaining a healthy lifestyle is recommended.",
+      "high": "High AST levels can suggest liver damage or disease. Consider reducing alcohol consumption and consulting with a healthcare professional."
+    },
+    "Creatinine": {
+      "low": "Low creatinine levels can be normal, but in some cases, might indicate muscle disorders. Discuss with a healthcare provider if concerned.",
+      "high": "Elevated creatinine levels suggest possible kidney function impairment. Stay hydrated and consult a healthcare professional for kidney function evaluation."
+    },
+    "TSH": {
+      "low": "Low TSH levels may indicate hyperthyroidism, leading to metabolism acceleration. Consult a healthcare provider for thyroid function tests.",
+      "high": "High TSH levels suggest hypothyroidism, slowing metabolism. Thyroid hormone replacement therapy may be discussed with your healthcare provider."
+    }
+  }
+  

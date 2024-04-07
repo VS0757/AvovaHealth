@@ -12,6 +12,14 @@ export default async function SummaryCard() {
   const reportData = await getPercentInRange();
   const userData = await externalGetUserData();
 
+  if (!reports || reports.length === 0) {
+    return (
+      <div className="flex min-h-fit flex-col justify-between px-9 py-4">
+        <p>No blood data found</p>
+      </div>
+    )
+  }
+
   const lastReport = reports[reports.length - 1];
 
   const isIncreasing = reportData.reduce((o: any, v: any, i: any, a: any) => {

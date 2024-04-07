@@ -7,33 +7,37 @@ import { healthcareProviders } from "../integrations/IntegrateEpic";
 import { getAge, getTestRange } from "../report/testHelper";
 import Button from "@/_components/button";
 
-export type ReportProps = {
+type ReportProps = {
   report: any;
   userData: any;
   onReportDeleted?: (dateTimeType: string) => void;
 };
 
-export default function Report({ props }: { props: ReportProps }) {
-  const date = props.report.dateTimeType.split("$")[0];
-  const type = props.report.dateTimeType.split("$")[1];
-  const name = props.report.dateTimeType.split("$")[2];
-  const { sex, birthday, preconditions } = props.userData;
+const Report: React.FC<ReportProps> = ({
+  report,
+  userData,
+  onReportDeleted,
+}) => {
+  const date = report.dateTimeType.split("$")[0];
+  const type = report.dateTimeType.split("$")[1];
+  const name = report.dateTimeType.split("$")[2];
+  const { sex, birthday, preconditions } = userData;
   let percentInRange = 0;
   if (type === "FHIR") {
     const testRange = getTestRange(
-      props.report.data.code.text,
+      report.data.code.text,
       sex,
       getAge(birthday, date),
       preconditions,
     );
     percentInRange =
-      testRange.low <= props.report.data.valueQuantity.value &&
-      props.report.data.valueQuantity.value <= testRange.high
+      testRange.low <= report.data.valueQuantity.value &&
+      report.data.valueQuantity.value <= testRange.high
         ? 100
         : 0;
   } else {
     let totalCount = 0;
-    let count = props.report.data.test.reduce((acc: any, test: any) => {
+    let count = report.data.test.reduce((acc: any, test: any) => {
       const testRange = getTestRange(
         test.bloodtestname,
         sex,
@@ -55,24 +59,21 @@ export default function Report({ props }: { props: ReportProps }) {
 
   const testFacility =
     type === "MANUAL"
-      ? props.report.data.facility
+      ? report.data.facility
       : healthcareProviders[
-          props.report.data.url
-            ? props.report.data.url.split("Observation")[0]
-            : ""
+          report.data.url ? report.data.url.split("Observation")[0] : ""
         ];
 
   const year = date.split("-")[0];
   const month = date.split("-")[1];
   const day = date.split("-")[2];
 
-  const deleteEntry = async (e: React.MouseEvent<HTMLButtonElement>) => {
-    e.stopPropagation(); // Prevents the click from bubbling up to parent elements
+  const deleteEntry = async (e?: React.MouseEvent<HTMLButtonElement>) => {
+    if (e) e.stopPropagation(); // Prevents the click from bubbling up to parent elements
     toast.promise(deleteReport(), {
       loading: "Deleting...",
       success: () => {
-        props.onReportDeleted &&
-          props.onReportDeleted(props.report.dateTimeType);
+        onReportDeleted && onReportDeleted(report.dateTimeType);
         return "Successfully deleted blood data entry.";
       },
       error: "Error deleting blood data entry.",
@@ -81,7 +82,7 @@ export default function Report({ props }: { props: ReportProps }) {
 
   const deleteReport = async () => {
     const uniqueUserId = await getUserId();
-    const dateTimeType = props.report.dateTimeType;
+    const dateTimeType = report.dateTimeType;
     await fetch(
       `http://localhost:3001/delete-user-data?id=${uniqueUserId}&dateTimeType=${dateTimeType}`,
     );
@@ -100,7 +101,7 @@ export default function Report({ props }: { props: ReportProps }) {
           </p>
         </div>
         <Link
-          href={`/app/report/${props.report.dateTimeType}`}
+          href={`/app/report/${report.dateTimeType}`}
           className="underline opacity-50 text-xs"
         >
           View More
@@ -112,7 +113,9 @@ export default function Report({ props }: { props: ReportProps }) {
             label="Delete"
             icon="x"
             hoverColor="from-avova/25"
-            onClick={() => deleteEntry}
+            onClick={() => {
+              deleteEntry();
+            }}
           />
         </div>
         <div className="flex flex-col items-end">
@@ -132,4 +135,6 @@ export default function Report({ props }: { props: ReportProps }) {
       </div>
     </div>
   );
-}
+};
+
+export default Report;

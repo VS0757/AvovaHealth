@@ -41,7 +41,9 @@ export default function NavigationBar() {
           label="Timeline"
           icon="git-commit"
           href="/app/timeline"
-          active={pathname === "/app/timeline"}
+          active={
+            pathname === "/app/timeline" || pathname.startsWith("/app/report")
+          }
         />
         <NavigationLink
           label="Watchlist"

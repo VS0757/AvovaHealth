@@ -35,14 +35,16 @@ function Timeline() {
   };
 
   return (
-    <div className="pl-[0.925rem] gap-4 grid lg:grid-cols-2 grid-cols-1 mx-auto">
+    <div className="gap-4 grid lg:grid-cols-2 grid-cols-1 mx-auto">
       {reports.map((report) => {
-        const reportProps: ReportProps = {
-          report: report,
-          userData: userData,
-          onReportDeleted: removeReportFromState,
-        };
-        return <Report key={report.dateTimeType} props={reportProps} />;
+        return (
+          <Report
+            key={report.dateTimeType}
+            report={report}
+            userData={userData}
+            onReportDeleted={removeReportFromState}
+          />
+        );
       })}
     </div>
   );

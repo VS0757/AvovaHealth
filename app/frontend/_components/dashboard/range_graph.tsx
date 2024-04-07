@@ -44,16 +44,27 @@ export async function getPercentInRange() {
           totalCount++;
           return (
             acc +
-            (testRange.low <= test.value && test.value <= testRange.high ? 1 : 0)
+            (testRange.low <= test.value && test.value <= testRange.high
+              ? 1
+              : 0)
           );
         }
         return acc;
       }, 0);
     } else {
-      const testRange = getTestRange(r.data.code.text, sex, getAge(birthday, date), preconditions);
+      const testRange = getTestRange(
+        r.data.code.text,
+        sex,
+        getAge(birthday, date),
+        preconditions,
+      );
       if (testRange.low !== 0 || testRange.high !== 0) {
         totalCount++;
-        count = testRange.low <= r.data.valueQuantity.value && r.data.valueQuantity.value <= testRange.high ? 1 : 0;
+        count =
+          testRange.low <= r.data.valueQuantity.value &&
+          r.data.valueQuantity.value <= testRange.high
+            ? 1
+            : 0;
       }
     }
 
@@ -100,7 +111,7 @@ function RangeGraph({ data }: { data: rangeDataPoint[] }) {
 
   // console.log(data);
 
-  const width = 360;
+  const width = 320;
   const height = 180;
 
   const margin = {

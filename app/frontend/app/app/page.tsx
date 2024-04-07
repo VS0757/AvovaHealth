@@ -7,7 +7,7 @@ import { Suspense } from "react";
 export default function App() {
   return (
     <main>
-      <div className="mb-16 grid grid-cols-[1fr_580px] gap-6">
+      <div className="mb-16 grid grid-cols-[1fr_500px] gap-6">
         <Card>
           <SummaryCard />
         </Card>

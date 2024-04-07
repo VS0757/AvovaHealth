@@ -10,6 +10,9 @@ import { Bar, Circle, Line, LinePath, Polygon } from "@vx/shape";
 import { useMemo } from "react";
 import { bisector, extent, max } from "d3-array";
 import { scaleTime, scaleLinear } from "@vx/scale";
+import { AxisBottom } from "@vx/axis";
+import { Text, TextProps } from "@visx/text";
+import { GeistMono } from "geist/font/mono";
 
 function BloodTestToolTip({
   rangeKey,
@@ -119,7 +122,7 @@ async function ReportRange({
   );
 
   if (range.high === 0 && range.low === 0) {
-    return <p>No ranges</p>;
+    return <p>-</p>;
   }
   const lowRange = range.low;
   const highRange = range.high;
@@ -127,10 +130,6 @@ async function ReportRange({
   return (
     <div className={`px-2`}>
       <RangeViz min={lowRange} max={highRange} value={value} />
-      <div className="flex justify-between w-full">
-        <p>{lowRange}</p>
-        <p>{highRange}</p>
-      </div>
     </div>
   );
 }
@@ -145,7 +144,7 @@ function RangeViz({
   value: number;
 }) {
   const width = 200;
-  const height = 20;
+  const height = 40;
 
   const margin = {
     top: 0,
@@ -159,24 +158,39 @@ function RangeViz({
 
   const getValue = (p: number) => p;
 
-  const totalRange = (max - min) * 2;
+  let scaleMin: number = min - (max - min) / 2;
+  let scaleMax: number = max + (max - min) / 2;
+
+  if (value <= min) {
+    scaleMin = value - (max - value) / 2;
+  }
+  if (value >= max) {
+    scaleMax = value + (value - min) / 2;
+  }
+
+  const scaleMinLabel: string = scaleMin.toFixed(2);
+  const scaleMaxLabel: string = (+scaleMax).toFixed(2);
+  const minLabel: string = (+min).toFixed(2);
+  const maxLabel: string = (+max).toFixed(2);
 
   const valueScale = useMemo(
     () =>
       scaleLinear({
         range: [0, xMax],
-        domain: [min, max],
+        domain: [scaleMin, scaleMax],
         nice: true,
       }),
     [yMax],
   );
 
+  const rangeLength = (valueScale(max) ?? 0) - (valueScale(min) ?? 0);
+
   return (
-    <svg width={width} height={height}>
+    <svg width={width} height={height} className={`${GeistMono.className}`}>
       <Group>
         <Bar
           x={0}
-          y={height / 2}
+          y={height / 2 - 2}
           width={width}
           height={4}
           fill="black"
@@ -184,12 +198,42 @@ function RangeViz({
         />
         <Bar
           x={valueScale(min)}
-          y={height / 2}
-          width={valueScale(max - min)}
+          y={height / 2 - 2}
+          width={rangeLength}
           height={4}
           fill="green"
         />
-        <Bar x={valueScale(value)} y={height / 2 - 4} width={4} height={12} />
+        <Bar x={valueScale(value)} y={height / 2 - 6} width={4} height={12} />
+        <Text y={height - 2} opacity={0.5} fontSize={10}>
+          {scaleMinLabel}
+        </Text>
+        <Text
+          x={width}
+          y={height - 2}
+          opacity={0.5}
+          fontSize={10}
+          textAnchor="end"
+        >
+          {scaleMaxLabel}
+        </Text>
+        <Text
+          x={valueScale(min)}
+          y={12}
+          opacity={0.5}
+          fontSize={10}
+          textAnchor="middle"
+        >
+          {minLabel}
+        </Text>
+        <Text
+          x={valueScale(max)}
+          y={12}
+          opacity={0.5}
+          fontSize={10}
+          textAnchor="middle"
+        >
+          {maxLabel}
+        </Text>
       </Group>
     </svg>
   );

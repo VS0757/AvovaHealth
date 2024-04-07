@@ -32,7 +32,10 @@ app.post("/upload-pdf", upload.single("pdf"), async (req, res) => {
       req.body.uniqueUserId,
       req.file.originalname,
     );
-    const extractedText = await analyzeDocument(process.env.AWS_BUCKET_NAME, key);
+    const extractedText = await analyzeDocument(
+      process.env.AWS_BUCKET_NAME,
+      key,
+    );
     const prompt =
       "Listed below is a patient's blood work. It will include an array of entries, called 'testsbydate' (could have only one), where entries each include and are split up by a unique 'effectiveDateTime' key associated with a value of the date that the blood test was conducted of the form YYYY-MM-DD. It will also include a 'facility' with the facility that the test was conducted (if can't find, just put string 'None', but it should be the same for each entry). Each entry should contain an array of sub-entries, called 'test' (may only have one) for each and that contains 'bloodtestname' and 'value' (required), that also contains 'range' and 'unit' if it's there, otherwise just set the value to string, 'None'. Your output should be a JSON string only and nothing else" +
       extractedText;
@@ -47,7 +50,7 @@ app.post("/upload-pdf", upload.single("pdf"), async (req, res) => {
       chatGPTResponse,
       req.file.originalname,
     );
-    res.send({ message: "Data uploaded successfully." })
+    res.send({ message: "Data uploaded successfully." });
   } catch (err) {
     console.error("Error during upload, analysis, or ChatGPT query:", err);
     res.status(500).send("Error processing file.");
@@ -58,7 +61,7 @@ app.post("/upload-epic-fhir", async (req, res) => {
   try {
     const { fhirData, uniqueUserId } = req.body;
     await storeFhirDataInDynamo(uniqueUserId, fhirData);
-    res.send({ message: "Data uploaded successfully." })
+    res.send({ message: "Data uploaded successfully." });
   } catch (error) {
     console.error("Failed to upload epic data to Dynamo:", error);
     res.status(500).send({
@@ -70,14 +73,21 @@ app.post("/upload-epic-fhir", async (req, res) => {
 
 app.post("/upload-user-data", async (req, res) => {
   try {
-    const { uniqueUserId, birthday, sex, preconditions, medications } =
-      req.body;
+    const {
+      uniqueUserId,
+      birthday,
+      sex,
+      preconditions,
+      medications,
+      watchlist,
+    } = req.body;
     await storeUserDataInDynamo(
       uniqueUserId,
       birthday,
       sex,
       preconditions,
       medications,
+      watchlist,
     );
     res.status(200).send({ message: "Data uploaded successfully." });
   } catch (error) {
@@ -94,13 +104,7 @@ app.get("/retrieve-user-data", async (req, res) => {
     const { id } = req.query;
     let data = await retrieveUserDataFromDynamo(id);
     if (!data) {
-      await storeUserDataInDynamo(
-        id,
-        "2000-01-01",
-        "Male",
-        [],
-        [],
-      );
+      await storeUserDataInDynamo(id, "2000-01-01", "Male", [], []);
       data = await retrieveUserDataFromDynamo(id);
     }
     data = {

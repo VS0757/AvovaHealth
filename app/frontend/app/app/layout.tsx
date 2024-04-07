@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 import NavigationLink from "@/_components/nav/navigation_link";
 import Link from "next/link";
 import Image from "next/image";
@@ -11,9 +11,9 @@ import FeatherIcon from "feather-icons-react";
 import NavigationBar from "@/_components/nav/navigation_bar";
 import Modal from "@/_components/uploadModal/modal";
 
-export default function AppLayout({children}: {children: any}) {
-  const [name, setName] = useState('');
-  const [id, setId] = useState('');
+export default function AppLayout({ children }: { children: any }) {
+  const [name, setName] = useState("");
+  const [id, setId] = useState("");
   const [isModalOpen, setModalOpen] = useState(false);
   const date = dayjs();
 
@@ -40,13 +40,21 @@ export default function AppLayout({children}: {children: any}) {
               <p className="opacity-70">{date.format("MMMM D, YYYY")}</p>
             </div>
             <div className="flex flex-row gap-2">
-              <Button icon="upload-cloud" label="Upload" onClick={() => setModalOpen(true)} />
+              <Button
+                icon="upload-cloud"
+                label="Upload"
+                onClick={() => setModalOpen(true)}
+              />
               <Link href="/app/watchlist">
                 <Button icon="bookmark" label="Watchlist" />
               </Link>
             </div>
           </header>
-          <Modal isOpen={isModalOpen} close={() => setModalOpen(false)} userId={id} />
+          <Modal
+            isOpen={isModalOpen}
+            close={() => setModalOpen(false)}
+            userId={id}
+          />
           <section>{children}</section>
           <footer className="mt-16 flex h-16 flex-row items-end justify-end gap-4 border-t py-4 text-xs opacity-40 dark:border-stone-800">
             <p>Copyright © Avova Health 2024</p>

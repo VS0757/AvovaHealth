@@ -1,7 +1,11 @@
 import FeatherIcon from "feather-icons-react";
 import ReportTable from "../../_components/report/reporttable";
-import { externalGetUserData, getUserId } from "../../_components/settings/userDataActions";
-import { getAge, getTestRange} from "../../_components/report/testHelper";
+import {
+  externalGetUserData,
+  getUserId,
+} from "../../_components/settings/userDataActions";
+import { getAge, getTestRange } from "../../_components/report/testHelper";
+import Card from "@/_components/card";
 
 async function getReport(uniqueUserId: any, date: any) {
   const res = await fetch(
@@ -15,10 +19,14 @@ async function getReport(uniqueUserId: any, date: any) {
 }
 
 function determineTestFormat(test: any) {
-  if (test.code && test.valueQuantity && test.valueQuantity.value !== undefined) {
+  if (
+    test.code &&
+    test.valueQuantity &&
+    test.valueQuantity.value !== undefined
+  ) {
     const testName = test.code.text;
-    const testValue = test.valueQuantity.value; 
-    return { testName, testValue, range: undefined }; 
+    const testValue = test.valueQuantity.value;
+    return { testName, testValue, range: undefined };
   } else if (test.range && test.value && test.bloodtestname) {
     const testName = test.bloodtestname;
     const testValue = parseFloat(test.value);
@@ -29,7 +37,7 @@ function determineTestFormat(test: any) {
 }
 
 function summarizeTestResults(input: any, userData: any) {
-  const effectiveDate = input.effectiveDateTime
+  const effectiveDate = input.effectiveDateTime;
 
   let tests;
   if (Array.isArray(input)) {
@@ -52,80 +60,87 @@ function summarizeTestResults(input: any, userData: any) {
   ];
 
   const conclusions = [
-      "Please consult a healthcare professional with more information."
+    "Please consult a healthcare professional with more information.",
   ];
 
-  const getStatusPhrase = (status: 'below' | 'within' | 'above') => {
-      const phrases = {
-          below: [
-              "is a bit lower than what we normally expect.",
-              "is slightly below the normal range.",
-              "falls a little under the standard range.",
-              "is lower than usual, which we should keep an eye on.",
-              "is a little lower than we'd like to see.",
-              "doesn't quite reach the normal range, which is something to note.",
-              "is under the normal range, indicating we should look into it."
-          ],
-          within: [
-              "is exactly where we want it to be, right within the normal range.",
-              "looks good and falls within the normal range.",
-              "is within the healthy range, which is great news.",
-              "is right on target, within the normal range.",
-              "falls perfectly within the range we're looking for.",
-              "is in the ideal range, which is fantastic.",
-              "is well within the normal range, just as we hoped."
-          ],
-          above: [
-              "is a bit higher than the normal range.",
-              "is slightly above what we typically see.",
-              "exceeds the usual range a bit.",
-              "is higher than we normally expect, which warrants attention.",
-              "is slightly above the normal limits.",
-              "goes beyond the normal range, which is something to keep in mind.",
-              "is above the standard range, suggesting we should monitor it closely."
-          ]
-      };
-      const randomIndex = Math.floor(Math.random() * phrases[status].length);
-      return phrases[status][randomIndex];
+  const getStatusPhrase = (status: "below" | "within" | "above") => {
+    const phrases = {
+      below: [
+        "is a bit lower than what we normally expect.",
+        "is slightly below the normal range.",
+        "falls a little under the standard range.",
+        "is lower than usual, which we should keep an eye on.",
+        "is a little lower than we'd like to see.",
+        "doesn't quite reach the normal range, which is something to note.",
+        "is under the normal range, indicating we should look into it.",
+      ],
+      within: [
+        "is exactly where we want it to be, right within the normal range.",
+        "looks good and falls within the normal range.",
+        "is within the healthy range, which is great news.",
+        "is right on target, within the normal range.",
+        "falls perfectly within the range we're looking for.",
+        "is in the ideal range, which is fantastic.",
+        "is well within the normal range, just as we hoped.",
+      ],
+      above: [
+        "is a bit higher than the normal range.",
+        "is slightly above what we typically see.",
+        "exceeds the usual range a bit.",
+        "is higher than we normally expect, which warrants attention.",
+        "is slightly above the normal limits.",
+        "goes beyond the normal range, which is something to keep in mind.",
+        "is above the standard range, suggesting we should monitor it closely.",
+      ],
+    };
+    const randomIndex = Math.floor(Math.random() * phrases[status].length);
+    return phrases[status][randomIndex];
   };
 
   let age = 25;
   if (effectiveDate != null) {
-    age = getAge(userData.birthday, effectiveDate)
+    age = getAge(userData.birthday, effectiveDate);
   }
-  let withinCnt = 0
-  let summary = tests.map((test: any) => {
-    const testInfo = determineTestFormat(test);
-    
-    if (!testInfo) {
-      return ""
-    }
-    testInfo.range = getTestRange(testInfo.testName, userData.sex, age, userData.preconditions);
+  let withinCnt = 0;
+  let summary = tests
+    .map((test: any) => {
+      const testInfo = determineTestFormat(test);
 
-    const min = testInfo.range.low
-    const max = testInfo.range.high
+      if (!testInfo) {
+        return "";
+      }
+      testInfo.range = getTestRange(
+        testInfo.testName,
+        userData.sex,
+        age,
+        userData.preconditions,
+      );
 
-    const value = testInfo.testValue;
+      const min = testInfo.range.low;
+      const max = testInfo.range.high;
 
-    let status: 'below' | 'above' | 'within';
+      const value = testInfo.testValue;
 
-    if (min === 0 && max === 0) {
-      return "";
-    }
-    else if (value < min) {
-        status = 'below';
-    } else if (value > max) {
-        status = 'above';
-    } else {
-        status = 'within';
+      let status: "below" | "above" | "within";
+
+      if (min === 0 && max === 0) {
+        return "";
+      } else if (value < min) {
+        status = "below";
+      } else if (value > max) {
+        status = "above";
+      } else {
+        status = "within";
         if (withinCnt > 2) {
           return "";
         }
         withinCnt += 1;
-    }
+      }
 
-    return `${testInfo.testName} ${getStatusPhrase(status)}`;
-  }).filter(Boolean).join(" ");
+      return `${testInfo.testName} ${getStatusPhrase(status)}`;
+    })
+    .filter(Boolean)
+    .join(" ");
 
   const introIndex = Math.floor(Math.random() * introductions.length);
   const conclusionIndex = Math.floor(Math.random() * conclusions.length);
@@ -162,30 +177,31 @@ export default async function ReportPage({ params }: any) {
 
   return (
     <main>
-      <h1>Report View</h1>
+      <div className="flex flex-col gap-2">
+        <div className="flex flex-row justify-between mb-4">
+          <div className="flex flex-col justify-between">
+            <h1>Report View</h1>
+            <div className="flex flex-col gap-2">
+              <div className="">
+                <p className="opacity-50">Filename</p>
+                <p>{name}</p>
+              </div>
 
-      <div className="mt-16 flex flex-col gap-2">
-        <div className="flex flex-row justify-between">
-          <div className="flex flex-col gap-2">
-            <div className="">
-              <p className="opacity-50">Filename</p>
-              <p>{name}</p>
-            </div>
+              <div className="">
+                <p className="opacity-50">Date Uploaded</p>
+                <p>
+                  {month}/{day}, {year}
+                </p>
+              </div>
 
-            <div className="">
-              <p className="opacity-50">Date Uploaded</p>
-              <p>
-                {month}/{day}, {year}
-              </p>
-            </div>
-
-            <div className="">
-              <p className="opacity-50">Upload Type</p>
-              <p className="uppercase">{type}</p>
+              <div className="">
+                <p className="opacity-50">Upload Type</p>
+                <p className="uppercase">{type}</p>
+              </div>
             </div>
           </div>
 
-          <div className="mt-8 p-6 border border-gray-200 rounded-lg shadow-sm bg-white max-w-xl">
+          <div className="p-6 border border-gray-200 rounded-lg bg-stone-50 max-w-xl">
             <div className="flex items-center space-x-2">
               <FeatherIcon icon="heart" fill="#E05767" strokeWidth={0} />
               <h3 className="text-lg">Blood Report Summary</h3>
@@ -196,10 +212,11 @@ export default async function ReportPage({ params }: any) {
           </div>
         </div>
 
-        <div className="mt-8">
-          <p className="opacity-50">Data</p>
-          <ReportTable isFhir={type === "fhir"} reportData={reportData} />
-        </div>
+        <Card>
+          <div className="px-9 py-8 w-full">
+            <ReportTable isFhir={type === "fhir"} reportData={reportData} />
+          </div>
+        </Card>
       </div>
     </main>
   );

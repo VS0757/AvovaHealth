@@ -1,4 +1,3 @@
-// components/Modal.js
 import React from 'react';
 import UploadComponent from '@/app/app/_components/upload/UploadComponent';
 import IntegrateEpic from '@/app/app/_components/integrations/IntegrateEpic';

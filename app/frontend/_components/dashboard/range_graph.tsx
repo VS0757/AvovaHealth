@@ -29,6 +29,10 @@ export async function getPercentInRange() {
   const reports = await getReports(uniqueUserId);
   const { sex, birthday, preconditions } = await externalGetUserData();
 
+  if (!reports || reports.length === 0) {
+    return [];
+  }
+
   const reportData = reports.map((r: any) => {
     const date = r["data"]["effectiveDateTime"];
     let totalCount = 0;
@@ -84,6 +88,14 @@ export async function getPercentInRange() {
 export default async function RangeGraphCard() {
   const reportData = await getPercentInRange();
 
+  if (!reportData || reportData.length === 0) {
+    return (
+      <div className="flex min-h-fit flex-col justify-between px-9 py-4">
+        <p>No blood data found</p>
+      </div>
+    )
+  }
+
   return (
     <div className="h-72 max-w-xl px-9 py-8 flex flex-row justify-between">
       <div className="flex flex-col justify-between">
@@ -109,8 +121,6 @@ export default async function RangeGraphCard() {
 
 function RangeGraph({ data }: { data: rangeDataPoint[] }) {
   "use client";
-
-  // console.log(data);
 
   const width = 320;
   const height = 220;

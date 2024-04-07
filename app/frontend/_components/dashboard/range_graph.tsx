@@ -9,6 +9,7 @@ import { Group } from "@visx/group";
 import { AreaClosed, LinePath } from "@vx/shape";
 import { LinearGradient } from "@vx/gradient";
 import { GridRows, GridColumns } from "@vx/grid";
+import { AxisBottom } from "@visx/axis";
 
 type rangeDataPoint = {
   date: string;
@@ -112,11 +113,11 @@ function RangeGraph({ data }: { data: rangeDataPoint[] }) {
   // console.log(data);
 
   const width = 320;
-  const height = 180;
+  const height = 220;
 
   const margin = {
     top: 10,
-    bottom: 10,
+    bottom: 24,
     left: 10,
     right: 10,
   };
@@ -188,6 +189,15 @@ function RangeGraph({ data }: { data: rangeDataPoint[] }) {
           x={(d) => dateScale(getDate(d)) ?? 0}
           y={(d) => valueScale(getValue(d)) ?? 0}
           stroke="#057833"
+        />
+        <AxisBottom
+          scale={dateScale}
+          top={yMax}
+          hideTicks={true}
+          hideAxisLine={true}
+          tickLabelProps={{
+            fillOpacity: 0.4,
+          }}
         />
       </Group>
     </svg>

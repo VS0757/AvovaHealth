@@ -5,12 +5,14 @@ type ButtonProps = {
   icon?: string;
   onClick?: () => void;
   inverse?: boolean;
+  hoverColor?: string;
 } & React.ButtonHTMLAttributes<HTMLButtonElement>;
 
 const Button: React.FC<ButtonProps> = ({
   icon,
   label,
   inverse,
+  hoverColor,
   ...buttonProps
 }) => {
   const normalColors =
@@ -21,6 +23,11 @@ const Button: React.FC<ButtonProps> = ({
   let colors = normalColors;
   if (inverse) {
     colors = inverseColors;
+  }
+
+  const hoverColorSet = "hover:bg-gradient-to-br via-transparent " + hoverColor;
+  if (hoverColor) {
+    colors += " " + hoverColorSet;
   }
 
   return (

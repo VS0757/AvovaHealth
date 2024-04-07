@@ -143,7 +143,7 @@ function RangeViz({
   max: number;
   value: number;
 }) {
-  const width = 200;
+  const width = 240;
   const height = 40;
 
   const margin = {

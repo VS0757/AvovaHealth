@@ -213,7 +213,7 @@ export default async function ReportPage({ params }: any) {
         </div>
 
         <Card>
-          <div className="px-9 py-8 w-full">
+          <div className="w-full">
             <ReportTable isFhir={type === "fhir"} reportData={reportData} />
           </div>
         </Card>

@@ -35,7 +35,7 @@ function Timeline() {
   };
 
   return (
-    <div className="border-l pl-[0.925rem] dark:border-l-stone-900">
+    <div className="pl-[0.925rem] gap-4 grid lg:grid-cols-2 grid-cols-1 mx-auto">
       {reports.map((report) => {
         const reportProps: ReportProps = {
           report: report,

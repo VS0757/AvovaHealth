@@ -2,8 +2,8 @@
 
 import { TrendDataPoint, formatTrendData } from "./trendsData";
 import { scaleTime, scaleLinear } from "@vx/scale";
-import { bisector, extent, max } from "d3-array";
-import { AreaClosed, Bar, Line } from "@vx/shape";
+import { bisector, extent, max, min } from "d3-array";
+import { AreaClosed, Bar, Line, LinePath } from "@vx/shape";
 import { Group } from "@visx/group";
 import { useCallback, useMemo, useRef } from "react";
 import { localPoint } from "@vx/event";
@@ -63,11 +63,23 @@ export default function TrendGraph({ trendData }: any) {
     [xMax],
   );
 
+  let scaleMin = range.low - (range.high - range.low) / 4;
+  let scaleMax = range.high + (range.high - range.low) / 4;
+  let maxValue = max(data, getValue) || data[data.length].value;
+  let minValue = min(data, getValue) || data[data.length].value;
+
+  if (minValue <= range.low) {
+    scaleMin = minValue - (range.high - minValue) / 4;
+  }
+  if (maxValue >= range.high) {
+    scaleMax = maxValue + (maxValue - range.low) / 4;
+  }
+
   const valueScale = useMemo(
     () =>
       scaleLinear<number>({
         range: [yMax, 0],
-        domain: [0, max(data, getValue) || 0],
+        domain: [scaleMin, scaleMax],
         nice: true,
       }),
     [yMax],
@@ -135,7 +147,7 @@ export default function TrendGraph({ trendData }: any) {
       <div className="flex flex-col justify-between">
         <h1>{data[0].name}</h1>
         <div>
-          <p className="mb-1 mt-4 opacity-40">Latest Test</p>
+          <p className="mb-1 mt-4 opacity-40 text-xs">Latest Test</p>
           <p>{formatDate(data[data.length - 1].date)}</p>
           <div className="flex flex-row items-end gap-1">
             <h2 className="mt-1 text-xl">{data[data.length - 1].value}</h2>
@@ -145,7 +157,7 @@ export default function TrendGraph({ trendData }: any) {
         <div className="min-h-[56px]">
           {tooltipData && (
             <div className="flex flex-col opacity-40">
-              <p>{formatDate(tooltipData?.date)}</p>
+              <p className="text-xs">{formatDate(tooltipData?.date)}</p>
               <div className="flex flex-row items-end gap-1">
                 <h2 className=" text-xl">{tooltipData?.value}</h2>
                 <p className="-translate-y-[2px]">{unit}</p>
@@ -175,10 +187,10 @@ export default function TrendGraph({ trendData }: any) {
             />
             <LinearGradient
               id="area-gradient"
-              from="green"
-              to="green"
+              from="#E05767"
+              to="#E05767"
               toOpacity={0}
-              fromOpacity={0.4}
+              fromOpacity={0.2}
             />
             <AreaClosed<TrendDataPoint>
               data={data}
@@ -186,6 +198,15 @@ export default function TrendGraph({ trendData }: any) {
               x={(d) => dateScale(getDate(d)) ?? 0}
               y={(d) => valueScale(getValue(d)) ?? 0}
               fill={"url(#area-gradient)"}
+            />
+            <LinePath
+              data={data}
+              // @ts-ignore
+              scale={valueScale}
+              x={(d) => dateScale(getDate(d)) ?? 0}
+              y={(d) => valueScale(getValue(d)) ?? 0}
+              stroke="#E05767"
+              strokeWidth={2}
             />
             <Bar
               x={0}
@@ -202,12 +223,30 @@ export default function TrendGraph({ trendData }: any) {
             <Bar
               x={0}
               y={valueScale(range.high)}
-              width={width}
+              width={xMax}
               height={rangeHeight}
-              fill="transparent"
-              fillOpacity={0.06}
+              fill="#057833"
+              fillOpacity={0.1}
               strokeOpacity={0.2}
               pointerEvents="none"
+            />
+            <Line
+              x1={0}
+              y1={valueScale(range.high)}
+              x2={xMax}
+              y2={valueScale(range.high)}
+              stroke="#057833"
+              strokeWidth={2}
+              strokeOpacity={0.2}
+            />
+            <Line
+              x1={0}
+              y1={valueScale(range.low)}
+              x2={xMax}
+              y2={valueScale(range.low)}
+              stroke="#057833"
+              strokeWidth={2}
+              strokeOpacity={0.2}
             />
             <Axis
               orientation="bottom"
@@ -215,8 +254,10 @@ export default function TrendGraph({ trendData }: any) {
               scale={dateScale}
               hideTicks={true}
               top={yMax}
-              hideAxisLine={false}
-              stroke="rgba(0,0,0,0.2)"
+              hideAxisLine={true}
+              tickLabelProps={{
+                fillOpacity: 0.5,
+              }}
             />
             <Axis
               orientation="left"
@@ -227,7 +268,6 @@ export default function TrendGraph({ trendData }: any) {
               left={-4}
               numTicks={4}
               tickLabelProps={{
-                fill: "black",
                 fillOpacity: 0.5,
               }}
               hideAxisLine={true}

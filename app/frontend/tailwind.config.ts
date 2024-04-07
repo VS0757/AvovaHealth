@@ -10,7 +10,12 @@ module.exports = {
     // add more paths here
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        mint: "#057833",
+        avova: "#E05767",
+      },
+    },
   },
   plugins: [],
   darkMode: "class",

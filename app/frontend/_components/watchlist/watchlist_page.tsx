@@ -9,6 +9,7 @@ import {
 } from "@/app/app/_components/settings/userDataActions";
 import { toast } from "sonner";
 import Link from "next/link";
+import FeatherIcon from "feather-icons-react";
 
 export default function WatchlistPage({
   userWatchlist,
@@ -141,8 +142,32 @@ function TrendRange({ reports, test }: { reports: any; test: string }) {
   const oldVal = filteredLast.value;
   const recentVal = filteredRecent.value;
   const isIncreasing = recentVal - oldVal > 0;
+  let changePercent = recentVal / oldVal;
+  let color = "from-mint/25";
+  if (isIncreasing) {
+    changePercent = (changePercent - 1) * 100;
+  } else {
+    changePercent = (oldVal / recentVal - 1) * 100;
+    color = "from-rose-600/25";
+  }
 
-  return <p>{isIncreasing ? "Up" : "Down"}</p>;
+  return (
+    <div
+      className={`border rounded-full px-2 py-1 flex flex-row max-w-fit gap-2 bg-gradient-to-br ${color}`}
+    >
+      {isIncreasing ? (
+        <>
+          {changePercent.toFixed(2)}%
+          <FeatherIcon icon="trending-up" className="h-4" />
+        </>
+      ) : (
+        <>
+          {changePercent.toFixed(2)}%
+          <FeatherIcon icon="trending-down" className="h-4" />
+        </>
+      )}
+    </div>
+  );
 }
 
 function getFilteredTest(reports: any, test: string): [any, any] {

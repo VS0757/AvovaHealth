@@ -5,6 +5,7 @@ import FeatherIcon from "feather-icons-react";
 import { toast } from "sonner";
 import { healthcareProviders } from "../integrations/IntegrateEpic";
 import { getAge, getTestRange } from "../report/testHelper";
+import Button from "@/_components/button";
 
 export type ReportProps = {
   report: any;
@@ -87,37 +88,37 @@ export default function Report({ props }: { props: ReportProps }) {
   };
 
   return (
-    <div
-      className={`relative my-1 min-w-48 rounded-md border bg-stone-50 p-4 dark:border-stone-800 dark:bg-stone-900`}
-    >
-      <button
-        className="absolute bottom-2 right-2 cursor-pointer"
-        onClick={deleteEntry}
-        style={{ border: "none", background: "transparent" }}
-        aria-label="Delete entry"
-      >
-        <FeatherIcon icon="x" className="h-4" />
-      </button>
-      {props.onReportDeleted && (
-        <div
-          className={`absolute h-2 w-2 -translate-x-9 translate-y-1.5 transform rounded-lg border bg-stone-50 dark:border-stone-900 dark:bg-stone-950`}
-        ></div>
-      )}
-      <div className={`flex flex-row justify-between`}>
+    <div className="relative min-w-48 rounded-lg border bg-stone-50 p-4 dark:border-stone-800 dark:bg-stone-900 flex flex-row justify-between h-40">
+      <div className="flex flex-col justify-between">
         <p>
-          {month}/{day}
+          {month}/{day} {year}
         </p>
-        <p>{year}</p>
+        <div className="flex flex-col">
+          <p className="opacity-50 text-xs">Test Facility</p>
+          <p className="max-w-fill">
+            {testFacility !== "None" ? testFacility : "-"}
+          </p>
+        </div>
+        <Link
+          href={`/app/report/${props.report.dateTimeType}`}
+          className="underline opacity-50 text-xs"
+        >
+          View More
+        </Link>
       </div>
-      <div className={`mb-2 mt-4 flex flex-row justify-between`}>
-        <div className={`flex flex-col`}>
-          <p className={`opacity-50`}>Test Facility</p>
-          <p className="max-w-fill">{testFacility}</p>
+      <div className="flex flex-col justify-between items-end">
+        <div className="rounded-full">
+          <Button
+            label="Delete"
+            icon="x"
+            hoverColor="from-avova/25"
+            onClick={() => deleteEntry}
+          />
         </div>
         <div className="flex flex-col items-end">
-          <p className="opacity-50">Tests in Range</p>
+          <p className="opacity-50 text-xs">Tests in Range</p>
           <p
-            className={`max-w-fill ${
+            className={`max-w-fill text-xl ${
               percentInRange > 90
                 ? "text-green-500"
                 : percentInRange >= 5 && percentInRange <= 90
@@ -129,12 +130,6 @@ export default function Report({ props }: { props: ReportProps }) {
           </p>
         </div>
       </div>
-      <Link
-        href={`/app/report/${props.report.dateTimeType}`}
-        className={`underline opacity-50`}
-      >
-        View More
-      </Link>
     </div>
   );
 }

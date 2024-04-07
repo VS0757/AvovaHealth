@@ -59,8 +59,10 @@ async function provideRecommendations(input: any, userData: any) {
     const testInfo = determineTestFormat(test);
     if (!testInfo) return;
 
-    let min, max;
-    [min, max] = testInfo.range;
+    let min = 0, max = 0;
+    if (testInfo.range != null){
+      [min, max] = testInfo.range;
+    }
 
     if (userData != null && min === 0 && max === 0) {
       const range = getTestRange(testInfo.testName, userData.sex, userData.age, userData.preconditions);

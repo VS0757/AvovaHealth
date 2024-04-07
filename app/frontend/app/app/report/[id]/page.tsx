@@ -93,7 +93,7 @@ function summarizeTestResults(input: any, userData: any) {
   if (effectiveDate != null) {
     age = getAge(userData.birthday, effectiveDate)
   }
-
+  let withinCnt = 0
   let summary = tests.map((test: any) => {
     const testInfo = determineTestFormat(test);
     
@@ -108,7 +108,6 @@ function summarizeTestResults(input: any, userData: any) {
     const value = testInfo.testValue;
 
     let status: 'below' | 'above' | 'within';
-    let withinCnt = 0
 
     if (min === 0 && max === 0) {
       return "";
@@ -119,7 +118,9 @@ function summarizeTestResults(input: any, userData: any) {
         status = 'above';
     } else {
         status = 'within';
+        console.log("HELLOOO", withinCnt)
         if (withinCnt > 2) {
+          console.log("HUH")
           return "";
         }
         withinCnt += 1;

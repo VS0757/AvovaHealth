@@ -30,24 +30,32 @@ export async function getPercentInRange() {
 
   const reportData = reports.map((r: any) => {
     const date = r["data"]["effectiveDateTime"];
-
     let totalCount = 0;
-    let count = r.data.test.reduce((acc: any, test: any) => {
-      const testRange = getTestRange(
-        test.bloodtestname,
-        sex,
-        getAge(birthday, date),
-        preconditions,
-      );
+    let count = 0;
+    if (r.data.test !== undefined) {
+      count = r.data.test.reduce((acc: any, test: any) => {
+        const testRange = getTestRange(
+          test.bloodtestname,
+          sex,
+          getAge(birthday, date),
+          preconditions,
+        );
+        if (testRange.low !== 0 || testRange.high !== 0) {
+          totalCount++;
+          return (
+            acc +
+            (testRange.low <= test.value && test.value <= testRange.high ? 1 : 0)
+          );
+        }
+        return acc;
+      }, 0);
+    } else {
+      const testRange = getTestRange(r.data.code.text, sex, getAge(birthday, date), preconditions);
       if (testRange.low !== 0 || testRange.high !== 0) {
         totalCount++;
-        return (
-          acc +
-          (testRange.low <= test.value && test.value <= testRange.high ? 1 : 0)
-        );
+        count = testRange.low <= r.data.valueQuantity.value && r.data.valueQuantity.value <= testRange.high ? 1 : 0;
       }
-      return acc;
-    }, 0);
+    }
 
     let percentInRange = Math.round(100 * (count / totalCount));
 

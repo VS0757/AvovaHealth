@@ -17,6 +17,7 @@ import { LinearGradient } from "@vx/gradient";
 import { GridRows, GridColumns } from "@vx/grid";
 import { getTestRange, getTestUnit } from "../report/testHelper";
 import { externalGetUserData } from "../settings/userDataActions";
+import { AxisLeft, Axis, AxisBottom, TickLabelProps } from "@visx/axis";
 
 export default function TrendGraph({ trendData }: any) {
   // const userData = await externalGetUserData();
@@ -27,17 +28,17 @@ export default function TrendGraph({ trendData }: any) {
     data[0].name,
     "male", // TODO: replace with actual user data
     15, // TODO: not sure if we can make assumptions of range since the age of the person is constantly changing across the data points,
-    []
+    [],
   );
 
   const width = 300;
   const height = 200;
 
   const margin = {
-    top: 0,
-    bottom: 0,
-    left: -1,
-    right: 0,
+    top: 10,
+    bottom: 20,
+    left: 20,
+    right: 10,
   };
 
   const formatDate = (d: Date) =>
@@ -55,7 +56,7 @@ export default function TrendGraph({ trendData }: any) {
 
   const dateScale = useMemo(
     () =>
-      scaleTime({
+      scaleTime<number>({
         range: [0, xMax],
         domain: extent(data, getDate) as [Date, Date],
       }),
@@ -64,7 +65,7 @@ export default function TrendGraph({ trendData }: any) {
 
   const valueScale = useMemo(
     () =>
-      scaleLinear({
+      scaleLinear<number>({
         range: [yMax, 0],
         domain: [0, max(data, getValue) || 0],
         nice: true,
@@ -130,8 +131,8 @@ export default function TrendGraph({ trendData }: any) {
   };
 
   return (
-    <div className="bgb-normal mt-2 flex flex-row justify-between rounded-md p-4">
-      <div className="flex flex-col justify-start">
+    <div className="border dark:border-stone-800 mt-2 flex flex-row max-w-xl justify-between rounded-md p-4 bg-stone-50 dark:bg-stone-950">
+      <div className="flex flex-col justify-between">
         <h1>{data[0].name}</h1>
         <div>
           <p className="mb-1 mt-4 opacity-40">Latest Test</p>
@@ -141,45 +142,43 @@ export default function TrendGraph({ trendData }: any) {
             <p className="-translate-y-[2px]">{unit}</p>
           </div>
         </div>
-        {tooltipData && (
-          <div className="mt-8 flex flex-col opacity-40">
-            <p>{formatDate(tooltipData?.date)}</p>
-            <div className="flex flex-row items-end gap-1">
-              <h2 className="mt-1 text-xl">{tooltipData?.value}</h2>
-              <p className="-translate-y-[2px]">{unit}</p>
+        <div className="min-h-[56px]">
+          {tooltipData && (
+            <div className="flex flex-col opacity-40">
+              <p>{formatDate(tooltipData?.date)}</p>
+              <div className="flex flex-row items-end gap-1">
+                <h2 className=" text-xl">{tooltipData?.value}</h2>
+                <p className="-translate-y-[2px]">{unit}</p>
+              </div>
             </div>
-          </div>
-        )}
+          )}
+        </div>
       </div>
       <div className="max-h-fit max-w-fit">
-        <svg
-          width={width}
-          height={height}
-          className="rounded-md border border-stone-800 bg-stone-900"
-        >
+        <svg width={width} height={height} className="">
           <Group top={margin.top} left={margin.left}>
             <GridRows
               scale={valueScale}
               width={xMax}
               strokeDasharray="2,2"
-              stroke="white"
-              strokeOpacity={0.05}
+              stroke="black"
+              strokeOpacity={0.1}
               pointerEvents="none"
             />
             <GridColumns
               scale={dateScale}
               height={yMax}
               strokeDasharray="2,2"
-              stroke="white"
+              stroke="black"
               strokeOpacity={0.05}
               pointerEvents="none"
             />
             <LinearGradient
               id="area-gradient"
-              from="white"
-              to="transparent"
+              from="green"
+              to="green"
               toOpacity={0}
-              fromOpacity={0.5}
+              fromOpacity={0.4}
             />
             <AreaClosed<TrendDataPoint>
               data={data}
@@ -187,7 +186,6 @@ export default function TrendGraph({ trendData }: any) {
               x={(d) => dateScale(getDate(d)) ?? 0}
               y={(d) => valueScale(getValue(d)) ?? 0}
               fill={"url(#area-gradient)"}
-              stroke="white"
             />
             <Bar
               x={0}
@@ -206,11 +204,33 @@ export default function TrendGraph({ trendData }: any) {
               y={valueScale(range.high)}
               width={width}
               height={rangeHeight}
-              fill="green"
+              fill="transparent"
               fillOpacity={0.06}
-              stroke="green"
               strokeOpacity={0.2}
               pointerEvents="none"
+            />
+            <Axis
+              orientation="bottom"
+              // @ts-ignore
+              scale={dateScale}
+              hideTicks={true}
+              top={yMax}
+              hideAxisLine={false}
+              stroke="rgba(0,0,0,0.2)"
+            />
+            <Axis
+              orientation="left"
+              // @ts-ignore
+              scale={valueScale}
+              hideTicks={true}
+              stroke="rgba(0,0,0,0.2"
+              left={-4}
+              numTicks={4}
+              tickLabelProps={{
+                fill: "black",
+                fillOpacity: 0.5,
+              }}
+              hideAxisLine={true}
             />
           </Group>
         </svg>

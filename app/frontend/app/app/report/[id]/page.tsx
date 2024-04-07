@@ -7,6 +7,11 @@ import {
 import { getAge, getTestRange } from "../../_components/report/testHelper";
 import Card from "@/_components/card";
 
+async function fetchRecommendations() {
+  const response = require('./recs.json');
+  return response;
+}
+
 async function getReport(uniqueUserId: any, date: any) {
   const res = await fetch(
     "http://localhost:3001/retrieve-blood-data?id=" +
@@ -34,6 +39,64 @@ function determineTestFormat(test: any) {
   }
 
   return null;
+}
+
+async function provideRecommendations(input: any, userData: any) {
+  let tests;
+  if (Array.isArray(input)) {
+    tests = input;
+  } else if (input.test && Array.isArray(input.test)) {
+    tests = input.test;
+  } else {
+    tests = [input];
+  }
+
+  const recommendations = await fetchRecommendations();
+
+  let recommendationsArray: string[] = [];
+
+  tests.forEach((test: any) => {
+    const testInfo = determineTestFormat(test);
+    if (!testInfo) return;
+
+    let min, max;
+    if (testInfo.range) {
+      [min, max] = testInfo.range;
+    } else {
+      const range = getTestRange(testInfo.testName, userData.sex, userData.age, userData.preconditions);
+
+      const min = range.low;
+      const max = range.high;
+    }
+
+    const value = testInfo.testValue;
+    const testName = testInfo.testName.toUpperCase();
+
+    let action = null;
+    if (recommendations[testName]) {
+      if (min === 0 && max === 0) {
+        // not a valid range :)
+      }
+      else if (value < min) {
+        action = recommendations[testName].low;
+      } else if (value > max) {
+        action = recommendations[testName].high;
+      }
+    }
+
+    if (action) {
+      recommendationsArray.push(`${testInfo.testName}: ${action}`);
+    }
+  });
+
+  let output;
+  if (recommendationsArray.length > 0) {
+    output = "Based on your test results, here are some recommendations:\n" + recommendationsArray.join("\n") + " Again, make sure to consult a medical professional.";
+  } else {
+    output = "Your test results are within normal ranges. No specific recommendations are needed at this time.";
+  }
+
+  return output;
 }
 
 function summarizeTestResults(input: any, userData: any) {
@@ -174,6 +237,7 @@ export default async function ReportPage({ params }: any) {
 
   const reportData = report.data;
   const summaryParagraph = summarizeTestResults(reportData, userData);
+  const recs = provideRecommendations(reportData, userData)
 
   return (
     <main>
@@ -208,6 +272,15 @@ export default async function ReportPage({ params }: any) {
             </div>
             <div className="mt-4 text-sm">
               <p>{summaryParagraph}</p>
+            </div>
+          </div>
+          <div className="p-6 border border-gray-200 rounded-lg bg-stone-50 max-w-xl">
+            <div className="flex items-center space-x-2">
+              <FeatherIcon icon="heart" fill="#E05767" strokeWidth={0} />
+              <h3 className="text-lg">Quick Recommedations</h3>
+            </div>
+            <div className="mt-4 text-sm">
+              <p>{recs}</p>
             </div>
           </div>
         </div>

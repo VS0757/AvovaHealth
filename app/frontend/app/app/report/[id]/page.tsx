@@ -180,22 +180,20 @@ export default async function ReportPage({ params }: any) {
       <div className="flex flex-col gap-2">
         <div className="flex flex-row justify-between mb-4">
           <div className="flex flex-col justify-between">
-            <h1>Report View</h1>
+            <div className="">
+              <p className="opacity-50 text-xs">Filename</p>
+              <p>{name}</p>
+            </div>
             <div className="flex flex-col gap-2">
               <div className="">
-                <p className="opacity-50">Filename</p>
-                <p>{name}</p>
-              </div>
-
-              <div className="">
-                <p className="opacity-50">Date Uploaded</p>
+                <p className="opacity-50 text-xs">Date Uploaded</p>
                 <p>
                   {month}/{day}, {year}
                 </p>
               </div>
 
               <div className="">
-                <p className="opacity-50">Upload Type</p>
+                <p className="opacity-50 text-xs">Upload Type</p>
                 <p className="uppercase">{type}</p>
               </div>
             </div>

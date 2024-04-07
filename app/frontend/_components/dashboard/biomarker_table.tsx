@@ -10,12 +10,12 @@ export default async function BiomarkerTable() {
       <div className="flex min-h-fit flex-col justify-between px-9 py-4">
         <p>No blood data found</p>
       </div>
-    )
+    );
   }
   const lastReport = reports[reports.length - 1];
 
   return (
-    <div className="flex min-h-fit flex-col justify-between px-9 py-4">
+    <div className="flex min-h-fit flex-col justify-between">
       {lastReport.data.test ? (
         <ManualReportTable reportData={lastReport.data} />
       ) : (

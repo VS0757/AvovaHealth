@@ -13,6 +13,7 @@ import { scaleTime, scaleLinear } from "@vx/scale";
 import { AxisBottom } from "@vx/axis";
 import { Text, TextProps } from "@visx/text";
 import { GeistMono } from "geist/font/mono";
+import FeatherIcon from "feather-icons-react";
 
 function BloodTestToolTip({
   rangeKey,
@@ -24,12 +25,12 @@ function BloodTestToolTip({
   const definition = rangeKey?.Definition || "No definition available";
   return (
     <div className="relative flex flex-col items-start group">
-      <span>{testName}</span>
-      <div className="absolute bottom-0 flex-col items-center hidden mb-6 group-hover:flex">
-        <span className="relative z-10 p-2 text-xs leading-none text-white whitespace-no-wrap bg-black shadow-lg rounded-md">
+      <span className="underline">{testName}</span>
+      <div className="absolute bottom-0 flex-col items-start hidden mb-6 group-hover:flex w-96">
+        <span className="relative z-10 p-2 text-xs leading-relaxed text-white whitespace-no-wrap bg-black shadow-lg rounded-md">
           {definition}
         </span>
-        <div className="w-3 h-3 -mt-2 rotate-45 bg-black"></div>
+        <div className="ml-4 w-3 h-3 -mt-2 rotate-45 bg-black"></div>
       </div>
     </div>
   );
@@ -67,38 +68,50 @@ async function MedPreNotes({ rangeKey }: { rangeKey: any }) {
     return conditions[0];
   };
 
+  if (
+    increasesMedications.length === 0 &&
+    decreasesMedications.length === 0 &&
+    increasesPreconditions.length === 0 &&
+    decreasesPreconditions.length === 0
+  ) {
+    return null;
+  }
+
   return (
-    <div className="p-2">
-      {increasesMedications.length > 0 && (
-        <p>
-          Since you are taking{" "}
-          {formatList({ conditions: increasesMedications })}, your test results
-          may be higher than normal. Please consult with your healthcare
-          provider for more information.
-        </p>
-      )}
-      {decreasesMedications.length > 0 && (
-        <p>
-          Since you are taking{" "}
-          {formatList({ conditions: decreasesMedications })}, your test results
-          may be lower than normal. Please consult with your healthcare provider
-          for more information.
-        </p>
-      )}
-      {increasesPreconditions.length > 0 && (
-        <p>
-          Since you have {formatList({ conditions: increasesPreconditions })},
-          your test results may be higher than normal. Please consult with your
-          healthcare provider for more information.
-        </p>
-      )}
-      {decreasesPreconditions.length > 0 && (
-        <p>
-          Since you have {formatList({ conditions: decreasesPreconditions })},
-          your test results may be lower than normal. Please consult with your
-          healthcare provider for more information.
-        </p>
-      )}
+    <div className="opacity-50 py-2 flex flex-row gap-1 w-96">
+      <FeatherIcon icon="alert-circle" className="h-4" />
+      <div>
+        {increasesMedications.length > 0 && (
+          <p>
+            Since you are taking{" "}
+            {formatList({ conditions: increasesMedications })}, your test
+            results may be higher than normal. Please consult with your
+            healthcare provider for more information.
+          </p>
+        )}
+        {decreasesMedications.length > 0 && (
+          <p>
+            Since you are taking{" "}
+            {formatList({ conditions: decreasesMedications })}, your test
+            results may be lower than normal. Please consult with your
+            healthcare provider for more information.
+          </p>
+        )}
+        {increasesPreconditions.length > 0 && (
+          <p>
+            Since you have {formatList({ conditions: increasesPreconditions })},
+            your test results may be higher than normal. Please consult with
+            your healthcare provider for more information.
+          </p>
+        )}
+        {decreasesPreconditions.length > 0 && (
+          <p>
+            Since you have {formatList({ conditions: decreasesPreconditions })},
+            your test results may be lower than normal. Please consult with your
+            healthcare provider for more information.
+          </p>
+        )}
+      </div>
     </div>
   );
 }

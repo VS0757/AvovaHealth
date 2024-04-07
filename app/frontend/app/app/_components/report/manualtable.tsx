@@ -25,24 +25,22 @@ export default function ManualReportTable({ reportData }: any) {
               const rangeKey = getFilteredUnit(bloodtestname);
               return (
                 <tr key={index} className="even:bg-stone-100">
-                  <td className="h-10 px-4">
+                  <td className="min-h-10 px-4 flex flex-col justify-center py-2">
                     <BloodTestToolTip
                       rangeKey={rangeKey}
                       testName={bloodtestname}
                     />
+                    <MedPreNotes rangeKey={rangeKey} />
                   </td>
                   <td className="">
                     {value} {rangeKey && rangeKey.Unit ? rangeKey.Unit : ""}
                   </td>
-                  <td className="w-[200px]">
+                  <td className="w-[240px]">
                     <ReportRange
                       value={value}
                       bloodtestname={bloodtestname}
                       date={reportData.effectiveDateTime}
                     />
-                  </td>
-                  <td className="">
-                    <MedPreNotes rangeKey={rangeKey} />
                   </td>
                 </tr>
               );

@@ -118,9 +118,7 @@ function summarizeTestResults(input: any, userData: any) {
         status = 'above';
     } else {
         status = 'within';
-        console.log("HELLOOO", withinCnt)
         if (withinCnt > 2) {
-          console.log("HUH")
           return "";
         }
         withinCnt += 1;

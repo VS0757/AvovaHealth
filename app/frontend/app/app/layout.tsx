@@ -1,20 +1,32 @@
+"use client";
+import React, { useState, useEffect } from 'react';
 import NavigationLink from "@/_components/nav/navigation_link";
 import Link from "next/link";
 import Image from "next/image";
 import { Toaster } from "sonner";
-import { getUserName } from "@/_lib/actions";
+import { getUserName, getUserId } from "@/_lib/actions";
 import dayjs from "dayjs";
 import Button from "@/_components/button";
 import FeatherIcon from "feather-icons-react";
 import NavigationBar from "@/_components/nav/navigation_bar";
+import Modal from "@/_components/uploadModal/modal";
 
-export default async function AppLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
-  const name = await getUserName();
+export default function AppLayout({children}: {children: any}) {
+  const [name, setName] = useState('');
+  const [id, setId] = useState('');
+  const [isModalOpen, setModalOpen] = useState(false);
   const date = dayjs();
+
+  useEffect(() => {
+    const fetchUserName = async () => {
+      const userName = await getUserName();
+      const id = await getUserId();
+      setName(userName);
+      setId(id);
+    };
+
+    fetchUserName();
+  }, []);
 
   return (
     <div className="flex min-h-screen flex-row bg-stone-100 text-stone-700 dark:bg-stone-900 dark:text-stone-100">
@@ -28,12 +40,13 @@ export default async function AppLayout({
               <p className="opacity-70">{date.format("MMMM D, YYYY")}</p>
             </div>
             <div className="flex flex-row gap-2">
-              <Button icon="upload-cloud" label="Upload" />
+              <Button icon="upload-cloud" label="Upload" onClick={() => setModalOpen(true)} />
               <Link href="/app/watchlist">
                 <Button icon="bookmark" label="Watchlist" />
               </Link>
             </div>
           </header>
+          <Modal isOpen={isModalOpen} close={() => setModalOpen(false)} userId={id} />
           <section>{children}</section>
           <footer className="mt-16 flex h-16 flex-row items-end justify-end gap-4 border-t py-4 text-xs opacity-40 dark:border-stone-800">
             <p>Copyright © Avova Health 2024</p>

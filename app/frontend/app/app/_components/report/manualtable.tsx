@@ -13,7 +13,7 @@ export default function ManualReportTable({ reportData }: any) {
         </tr>
       </thead>
       <tbody className="divide-y">
-        {reportData.test.map(
+        {reportData.test && reportData.test.length > 0 && reportData.test.map(
           ({ unit, value, bloodtestname }: any, index: any) => {
             if (isNaN(value)) {
               return null;

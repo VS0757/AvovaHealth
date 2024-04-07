@@ -201,7 +201,7 @@ function RangeGraph({ data }: { data: rangeDataPoint[] }) {
           stroke="#057833"
         />
         <AxisBottom
-          scale={dateScale}
+          scale={dateScale as any}
           top={yMax}
           hideTicks={true}
           hideAxisLine={true}

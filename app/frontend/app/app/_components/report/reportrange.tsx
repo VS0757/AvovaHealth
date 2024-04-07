@@ -165,7 +165,7 @@ function RangeViz({
     scaleMin = value - (max - value) / 2;
   }
   if (value >= max) {
-    scaleMax = value + (value - min) / 2;
+    scaleMax = +value + (value - min) / 2;
   }
 
   const scaleMinLabel: string = scaleMin.toFixed(2);

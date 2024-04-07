@@ -201,8 +201,6 @@ export default function TrendGraph({ trendData }: any) {
             />
             <LinePath
               data={data}
-              // @ts-ignore
-              scale={valueScale}
               x={(d) => dateScale(getDate(d)) ?? 0}
               y={(d) => valueScale(getValue(d)) ?? 0}
               stroke="#E05767"

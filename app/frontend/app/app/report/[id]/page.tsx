@@ -88,7 +88,7 @@ async function provideRecommendations(input: any, userData: any) {
       " Again, make sure to consult a medical professional.";
   } else {
     output =
-      "Your test results are within normal ranges. No specific recommendations are needed at this time.";
+      "No specific recommendations are needed at this time.";
   }
 
   return output;

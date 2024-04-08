@@ -7,6 +7,7 @@ import {
 import { getAge, getTestRange } from "../../_components/report/testHelper";
 import Card from "@/_components/card";
 import { getPercentInRange } from "@/_components/dashboard/range_graph";
+import { Suspense } from "react";
 
 async function fetchRecommendations() {
   const response = require("./recs.json");
@@ -246,7 +247,10 @@ export default async function ReportPage({ params }: any) {
   const percentInRange = range.range;
 
   return (
-    <main className="flex flex-col gap-8 max-w-screen-md mx-auto">
+    <main
+      className="flex flex-col gap-8 max-w-screen-md mx-auto"
+      suppressHydrationWarning={true}
+    >
       <div className="flex flex-row justify-between">
         <div className="flex flex-col">
           <h1 className="text-xl">Report</h1>
@@ -263,7 +267,7 @@ export default async function ReportPage({ params }: any) {
           Reccomendations
         </div>
         <div className="text-xl text-black opacity-70 mix-blend-color-burn">
-          {recs}
+          <Suspense>{recs}</Suspense>
         </div>
       </div>
       <Card>
@@ -306,12 +310,12 @@ export default async function ReportPage({ params }: any) {
             </p>
           </div>
         </div>
-        <Card>
-          <div className="w-full">
-            <ReportTable isFhir={type === "fhir"} reportData={reportData} />
-          </div>
-        </Card>
-      </div>
+      </Card>
+      <Card>
+        <div className="w-full">
+          <ReportTable isFhir={type === "fhir"} reportData={reportData} />
+        </div>
+      </Card>
     </main>
   );
 }

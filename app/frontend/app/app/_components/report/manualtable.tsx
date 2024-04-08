@@ -1,4 +1,3 @@
-import { GeistMono } from "geist/font/mono";
 import { ReportRange, MedPreNotes, BloodTestToolTip } from "./reportrange";
 import { getFilteredUnit } from "./testHelper";
 
@@ -24,7 +23,11 @@ export default function ManualReportTable({ reportData }: any) {
               }
               const rangeKey = getFilteredUnit(bloodtestname);
               return (
-                <tr key={index} className="even:bg-stone-100">
+                <tr
+                  key={value}
+                  className="even:bg-stone-100"
+                  suppressHydrationWarning
+                >
                   <td className="min-h-12 px-4 flex flex-col justify-center py-2">
                     <BloodTestToolTip
                       rangeKey={rangeKey}

@@ -28,10 +28,17 @@ async function getReport(uniqueUserId: any, date: any) {
 function determineTestFormat(test: any) {
   const testName = test.bloodtestname;
   const testValue = parseFloat(test.value);
-  return { testName, testValue };
+  const range = test.range;
+  return { testName, testValue, range };
 }
 
 async function provideRecommendations(input: any, userData: any) {
+  const effectiveDate = input.effectiveDateTime;
+  let age = 25;
+  if (effectiveDate != null) {
+    age = getAge(userData.birthday, effectiveDate);
+  }
+
   let tests;
   if (Array.isArray(input)) {
     tests = input;
@@ -47,22 +54,30 @@ async function provideRecommendations(input: any, userData: any) {
 
   tests.forEach((test: any) => {
     const testInfo = determineTestFormat(test);
+    console.log(testInfo)
     if (!testInfo) return;
-    let min = 0,
-      max = 0;
+    let min = 0, max = 0;
+
+    if (testInfo.range != null){
+      [min, max] = testInfo.range;
+    }
 
     const range = getTestRange(
       testInfo.testName,
       userData.sex,
-      userData.age,
+      age,
       userData.preconditions,
     );
+
+    console.log(testInfo.testName)
 
     min = range.low;
     max = range.high;
 
     const value = testInfo.testValue;
     const testName = testInfo.testName.toUpperCase();
+
+    console.log(range)
 
     let action = null;
     if (recommendations[testName]) {
@@ -76,6 +91,8 @@ async function provideRecommendations(input: any, userData: any) {
     }
 
     if (action) {
+      console.log('hello')
+      console.log(`${testInfo.testName}: ${action}`)
       recommendationsArray.push(`${testInfo.testName}: ${action}`);
     }
   });
@@ -255,7 +272,7 @@ export default async function ReportPage({ params }: any) {
           <p>{date}</p>
         </div>
       </div>
-      <div className="border rounded-lg px-48 h-64 text-center flex flex-col justify-center items-center bg-avova-gradient">
+      <div className="border rounded-lg px-36 h-72 text-center flex flex-col justify-center items-center bg-avova-gradient">
         <div className="flex flex-row gap-2 text-xs opacity-50 items-center py-4">
           <FeatherIcon icon="zap" className="h-4" />
           Recommendations

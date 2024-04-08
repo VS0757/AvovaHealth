@@ -83,8 +83,6 @@ export async function submitWatchlist(watchlist: string[]) {
     body: JSON.stringify(userData),
   });
 
-  console.log(JSON.stringify(userData));
-
   return res.json();
 }
 

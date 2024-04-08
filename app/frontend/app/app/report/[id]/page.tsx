@@ -24,21 +24,9 @@ async function getReport(uniqueUserId: any, date: any) {
 }
 
 function determineTestFormat(test: any) {
-  if (
-    test.code &&
-    test.valueQuantity &&
-    test.valueQuantity.value !== undefined
-  ) {
-    const testName = test.code.text;
-    const testValue = test.valueQuantity.value;
-    return { testName, testValue, range: undefined };
-  } else if (test.range && test.value && test.bloodtestname) {
-    const testName = test.bloodtestname;
-    const testValue = parseFloat(test.value);
-    return { testName, testValue, range: test.range.split("-").map(Number) };
-  }
-
-  return null;
+  const testName = test.bloodtestname;
+  const testValue = parseFloat(test.value);
+  return { testName, testValue };
 }
 
 async function provideRecommendations(input: any, userData: any) {
@@ -174,15 +162,15 @@ function summarizeTestResults(input: any, userData: any) {
       if (!testInfo) {
         return "";
       }
-      testInfo.range = getTestRange(
+      const testInfoRange = getTestRange(
         testInfo.testName,
         userData.sex,
         age,
         userData.preconditions,
       );
 
-      const min = testInfo.range.low;
-      const max = testInfo.range.high;
+      const min = testInfoRange.low;
+      const max = testInfoRange.high;
 
       const value = testInfo.testValue;
 
@@ -287,7 +275,7 @@ export default async function ReportPage({ params }: any) {
 
         <Card>
           <div className="w-full">
-            <ReportTable isFhir={type === "fhir"} reportData={reportData} />
+            <ReportTable reportData={reportData} />
           </div>
         </Card>
       </div>

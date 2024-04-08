@@ -27,7 +27,6 @@ const RetrieveEpic = ({ uniqueUserId }: { uniqueUserId: string }) => {
       },
     });
     const jsonResponse = await response.json();
-    console.log("FHIR DATA: ", jsonResponse);
     if (!jsonResponse.entry || jsonResponse.entry.length === 0) {
       return;
     }
@@ -46,6 +45,7 @@ const RetrieveEpic = ({ uniqueUserId }: { uniqueUserId: string }) => {
       },
     );
     setIsLoading(false);
+    return;
   };
 
   return (

@@ -187,8 +187,8 @@ export default function TrendGraph({ trendData }: any) {
             />
             <LinearGradient
               id="area-gradient"
-              from="#E05767"
-              to="#E05767"
+              from="#222222"
+              to="#222222"
               toOpacity={0}
               fromOpacity={0.2}
             />
@@ -203,7 +203,7 @@ export default function TrendGraph({ trendData }: any) {
               data={data}
               x={(d) => dateScale(getDate(d)) ?? 0}
               y={(d) => valueScale(getValue(d)) ?? 0}
-              stroke="#E05767"
+              stroke="#222222"
               strokeWidth={2}
             />
             <Bar

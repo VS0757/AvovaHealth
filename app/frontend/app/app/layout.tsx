@@ -45,9 +45,9 @@ export default function AppLayout({ children }: { children: any }) {
                 label="Upload"
                 onClick={() => setModalOpen(true)}
               />
-              <Link href="/app/watchlist">
+              <a href="/app/watchlist">
                 <Button icon="bookmark" label="Watchlist" />
-              </Link>
+              </a>
             </div>
           </header>
           <Modal
@@ -58,7 +58,7 @@ export default function AppLayout({ children }: { children: any }) {
           <section>{children}</section>
           <footer className="mt-16 flex h-16 flex-row items-end justify-end gap-4 border-t py-4 text-xs opacity-40 dark:border-stone-800">
             <p>Copyright © Avova Health 2024</p>
-            <Link href="/terms">Terms and Conditions</Link>
+            <a href="/terms">Terms and Conditions</a>
           </footer>
         </div>
       </div>

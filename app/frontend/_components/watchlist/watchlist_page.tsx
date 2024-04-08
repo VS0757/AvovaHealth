@@ -105,11 +105,11 @@ function ReportValue({ reports, test }: { reports: any; test: string }) {
   const date = recent.dateTimeType.split("$")[0];
 
   return (
-    <Link href={`/app/report/${reportId}`}>
+    <a href={`/app/report/${reportId}`}>
       <p className="underline opacity-50">
         {val} {unit}
       </p>
-    </Link>
+    </a>
   );
 }
 
@@ -123,9 +123,9 @@ function ReportDate({ reports, test }: { reports: any; test: string }) {
   const date = recent.dateTimeType.split("$")[0];
 
   return (
-    <Link href={`/app/report/${reportId}`}>
+    <a href={`/app/report/${reportId}`}>
       <p className="underline opacity-50">{date}</p>
-    </Link>
+    </a>
   );
 }
 

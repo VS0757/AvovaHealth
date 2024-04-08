@@ -17,9 +17,9 @@ export default function NavigationLink(props: NavigationLinkProps) {
   }
 
   return (
-    <Link href={props.href} className={`${classname}`}>
+    <a href={props.href} className={`${classname}`}>
       <FeatherIcon icon={props.icon} className="h-4" />
       {props.label}
-    </Link>
+    </a>
   );
 }

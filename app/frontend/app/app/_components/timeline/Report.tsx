@@ -4,6 +4,7 @@ import { getUserId } from "../settings/userDataActions";
 import { toast } from "sonner";
 import { getAge, getTestRange } from "../report/testHelper";
 import Button from "@/_components/button";
+import { redirect, useRouter } from "next/navigation";
 
 type ReportProps = {
   report: any;
@@ -16,6 +17,8 @@ const Report: React.FC<ReportProps> = ({
   userData,
   onReportDeleted,
 }) => {
+  const router = useRouter();
+
   const date = report.dateTimeType.split("$")[0];
   const type = report.dateTimeType.split("$")[1];
   const name = report.dateTimeType.split("$")[2];
@@ -41,7 +44,7 @@ const Report: React.FC<ReportProps> = ({
 
   percentInRange = Math.round(100 * (count / totalCount));
 
-  const testFacility = report.data.facility
+  const testFacility = report.data.facility;
 
   const year = date.split("-")[0];
   const month = date.split("-")[1];
@@ -79,12 +82,12 @@ const Report: React.FC<ReportProps> = ({
             {testFacility !== "None" ? testFacility : "-"}
           </p>
         </div>
-        <Link
+        <a
           href={`/app/report/${report.dateTimeType}`}
-          className="underline opacity-50 text-xs"
+          className="underline text-xs opacity-50"
         >
           View More
-        </Link>
+        </a>
       </div>
       <div className="flex flex-col justify-between items-end">
         <div className="rounded-full">

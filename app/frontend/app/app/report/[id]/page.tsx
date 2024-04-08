@@ -6,9 +6,10 @@ import {
 } from "../../_components/settings/userDataActions";
 import { getAge, getTestRange } from "../../_components/report/testHelper";
 import Card from "@/_components/card";
+import { getPercentInRange } from "@/_components/dashboard/range_graph";
 
 async function fetchRecommendations() {
-  const response = require('./recs.json');
+  const response = require("./recs.json");
   return response;
 }
 
@@ -59,13 +60,19 @@ async function provideRecommendations(input: any, userData: any) {
     const testInfo = determineTestFormat(test);
     if (!testInfo) return;
 
-    let min = 0, max = 0;
-    if (testInfo.range != null){
+    let min = 0,
+      max = 0;
+    if (testInfo.range != null) {
       [min, max] = testInfo.range;
     }
 
     if (userData != null && min === 0 && max === 0) {
-      const range = getTestRange(testInfo.testName, userData.sex, userData.age, userData.preconditions);
+      const range = getTestRange(
+        testInfo.testName,
+        userData.sex,
+        userData.age,
+        userData.preconditions,
+      );
 
       min = range.low;
       max = range.high;
@@ -78,8 +85,7 @@ async function provideRecommendations(input: any, userData: any) {
     if (recommendations[testName]) {
       if (min === 0 && max === 0) {
         // not a valid range :)
-      }
-      else if (value < min) {
+      } else if (value < min) {
         action = recommendations[testName].low;
       } else if (value > max) {
         action = recommendations[testName].high;
@@ -93,9 +99,13 @@ async function provideRecommendations(input: any, userData: any) {
 
   let output;
   if (recommendationsArray.length > 0) {
-    output = "Based on your test results, here are some recommendations:\n" + recommendationsArray.join("\n") + " Again, make sure to consult a medical professional.";
+    output =
+      "Based on your test results, here are some recommendations:\n" +
+      recommendationsArray.join("\n") +
+      " Again, make sure to consult a medical professional.";
   } else {
-    output = "Your test results are within normal ranges. No specific recommendations are needed at this time.";
+    output =
+      "Your test results are within normal ranges. No specific recommendations are needed at this time.";
   }
 
   return output;
@@ -239,58 +249,81 @@ export default async function ReportPage({ params }: any) {
 
   const reportData = report.data;
   const summaryParagraph = summarizeTestResults(reportData, userData);
-  const recs = provideRecommendations(reportData, userData)
+  const recs = provideRecommendations(reportData, userData);
+
+  const ranges = await getPercentInRange();
+  const range = ranges.filter((r: any) => {
+    return r.date === date;
+  })[0];
+  const percentInRange = range.range;
 
   return (
-    <main>
-      <div className="flex flex-col gap-2">
-        <div className="flex flex-row justify-between mb-4">
-          <div className="flex flex-col justify-between">
-            <div className="">
-              <p className="opacity-50 text-xs">Filename</p>
-              <p>{name}</p>
+    <main className="flex flex-col gap-8 max-w-screen-md mx-auto">
+      <div className="flex flex-row justify-between">
+        <div className="flex flex-col">
+          <h1 className="text-xl">Report</h1>
+          <h1 className="text-lg opacity-50">[{name}]</h1>
+        </div>
+        <div className="flex flex-col items-end">
+          <p className="text-xs opacity-50">Date</p>
+          <p>{date}</p>
+        </div>
+      </div>
+      <div className="border rounded-lg px-48 h-64 text-center flex flex-col justify-center items-center bg-avova-gradient">
+        <div className="flex flex-row gap-2 text-xs opacity-50 items-center py-4">
+          <FeatherIcon icon="zap" className="h-4" />
+          Reccomendations
+        </div>
+        <div className="text-xl text-black opacity-70 mix-blend-color-burn">
+          {recs}
+        </div>
+      </div>
+      <Card>
+        <div className="px-9 py-8 text-xs flex flex-row justify-between">
+          <div className="flex flex-col gap-2">
+            <div className="flex flex-row items-center text-lg gap-2">
+              <FeatherIcon
+                icon="heart"
+                fill="#E05767"
+                strokeWidth={0}
+                className="h-5"
+              />
+              Blood Report Summary
             </div>
-            <div className="flex flex-col gap-2">
-              <div className="">
-                <p className="opacity-50 text-xs">Date Uploaded</p>
-                <p>
-                  {month}/{day}, {year}
-                </p>
-              </div>
-
-              <div className="">
-                <p className="opacity-50 text-xs">Upload Type</p>
-                <p className="uppercase">{type}</p>
-              </div>
+            <div className="max-w-lg leading-relaxed opacity-70">
+              {summaryParagraph}
             </div>
           </div>
-
-          <div className="p-6 border border-gray-200 rounded-lg bg-stone-50 max-w-xl">
-            <div className="flex items-center space-x-2">
-              <FeatherIcon icon="heart" fill="#E05767" strokeWidth={0} />
-              <h3 className="text-lg">Blood Report Summary</h3>
-            </div>
-            <div className="mt-4 text-sm">
-              <p>{summaryParagraph}</p>
-            </div>
-          </div>
-          <div className="p-6 border border-gray-200 rounded-lg bg-stone-50 max-w-xl">
-            <div className="flex items-center space-x-2">
-              <FeatherIcon icon="heart" fill="#E05767" strokeWidth={0} />
-              <h3 className="text-lg">Quick Recommedations</h3>
-            </div>
-            <div className="mt-4 text-sm">
-              <p>{recs}</p>
-            </div>
+          <div className="h-48 w-[1px] bg-gradient-to-b from-transparent via-stone-300"></div>
+          <div className="flex flex-col justify-center items-end">
+            <p className="text-xs opacity-50">Filename</p>
+            <p className="mb-2">{name}</p>
+            <p className="text-xs opacity-50">Date</p>
+            <p className="mb-2">
+              {month}/{day} {year}
+            </p>
+            <p className="text-xs opacity-50">Type</p>
+            <p className="mb-2">{type.toUpperCase()}</p>
+            <p className="text-xs opacity-50">Tests in Range</p>
+            <p
+              className={`max-w-fill text-2xl font-medium ${
+                percentInRange > 90
+                  ? "text-green-500"
+                  : percentInRange >= 5 && percentInRange <= 90
+                    ? "text-yellow-500"
+                    : "text-red-500"
+              }`}
+            >
+              {percentInRange}%
+            </p>
           </div>
         </div>
-
-        <Card>
-          <div className="w-full">
-            <ReportTable isFhir={type === "fhir"} reportData={reportData} />
-          </div>
-        </Card>
-      </div>
+      </Card>
+      <Card>
+        <div className="w-full">
+          <ReportTable isFhir={type === "fhir"} reportData={reportData} />
+        </div>
+      </Card>
     </main>
   );
 }

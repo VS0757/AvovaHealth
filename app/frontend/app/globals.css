@@ -31,6 +31,14 @@ body {
     .bgb-normal {
         @apply border bg-inherit text-inherit dark:border-stone-900 dark:bg-stone-950 dark:text-stone-50;
     }
+
+    .bg-avova-gradient {
+        background: radial-gradient(
+            ellipse at bottom,
+            rgba(224, 87, 103, 0.4) 0%,
+            #fafaf9 70%
+        );
+    }
 }
 
 input::-webkit-slider-thumb {

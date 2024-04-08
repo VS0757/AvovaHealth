@@ -236,7 +236,7 @@ export default async function ReportPage({ params }: any) {
 
   const ranges = await getPercentInRange();
   const range = ranges.filter((r: any) => {
-    return r.date === date;
+    return r.dateTimeType === report.dateTimeType;
   })[0];
   const percentInRange = range.range;
 

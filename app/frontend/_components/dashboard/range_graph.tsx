@@ -14,6 +14,7 @@ import { AxisBottom } from "@visx/axis";
 type rangeDataPoint = {
   date: string;
   range: number;
+  dateTimeType: string;
 };
 
 export async function getReports(uniqueUserId: string) {
@@ -60,6 +61,7 @@ export async function getPercentInRange() {
 
     const point: rangeDataPoint = {
       date: date,
+      dateTimeType: r.dateTimeType,
       range: percentInRange,
     };
     return point;

@@ -1,13 +1,11 @@
 import FeatherIcon from "feather-icons-react";
 import ReportTable from "../../_components/report/reporttable";
-import {
-  externalGetUserData,
-  getUserId,
-} from "../../_components/settings/userDataActions";
+import { externalGetUserData } from "../../_components/settings/userDataActions";
 import { getAge, getTestRange } from "../../_components/report/testHelper";
 import Card from "@/_components/card";
 import { getPercentInRange } from "@/_components/dashboard/range_graph";
 import { Suspense } from "react";
+import { getUserId } from "@/_lib/actions";
 
 async function fetchRecommendations() {
   const response = require("./recs.json");
@@ -54,7 +52,6 @@ async function provideRecommendations(input: any, userData: any) {
 
   tests.forEach((test: any) => {
     const testInfo = determineTestFormat(test);
-    console.log(testInfo)
     if (!testInfo) return;
     let min = 0, max = 0;
 
@@ -69,15 +66,12 @@ async function provideRecommendations(input: any, userData: any) {
       userData.preconditions,
     );
 
-    console.log(testInfo.testName)
 
     min = range.low;
     max = range.high;
 
     const value = testInfo.testValue;
     const testName = testInfo.testName.toUpperCase();
-
-    console.log(range)
 
     let action = null;
     if (recommendations[testName]) {
@@ -91,8 +85,6 @@ async function provideRecommendations(input: any, userData: any) {
     }
 
     if (action) {
-      console.log('hello')
-      console.log(`${testInfo.testName}: ${action}`)
       recommendationsArray.push(`${testInfo.testName}: ${action}`);
     }
   });

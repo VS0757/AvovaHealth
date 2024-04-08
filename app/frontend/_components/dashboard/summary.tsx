@@ -1,9 +1,7 @@
 import FeatherIcon from "feather-icons-react";
 import { getPercentInRange, getReports } from "./range_graph";
-import {
-  externalGetUserData,
-  getUserId,
-} from "@/app/app/_components/settings/userDataActions";
+import { externalGetUserData } from "@/app/app/_components/settings/userDataActions";
+import { getUserId } from "@/_lib/actions";
 import Report from "@/app/app/_components/timeline/Report";
 
 export default async function SummaryCard() {

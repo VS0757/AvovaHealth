@@ -1,4 +1,4 @@
-import { getUserId } from "../settings/userDataActions";
+import { getUserId } from "@/_lib/actions";
 
 export interface TrendDataPoint {
   value: number;

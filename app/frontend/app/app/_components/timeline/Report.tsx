@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import { getUserId } from "../settings/userDataActions";
+import { getUserId } from "@/_lib/actions";
 import { toast } from "sonner";
 import { getAge, getTestRange } from "../report/testHelper";
 import Button from "@/_components/button";

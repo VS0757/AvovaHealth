@@ -1,13 +1,5 @@
 "use server";
-
-import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
-
-export async function getUserId() {
-  const { getIdToken } = getKindeServerSession();
-  let uniqueUserId = (await getIdToken()).sub;
-
-  return uniqueUserId;
-}
+import { getUserId } from "@/_lib/actions";
 
 export interface UserData {
   preconditions: string[];

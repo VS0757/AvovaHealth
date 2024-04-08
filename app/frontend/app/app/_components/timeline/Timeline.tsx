@@ -1,7 +1,8 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import Report from "./Report";
-import { getUserId, getUserData } from "../settings/userDataActions";
+import { getUserData } from "../settings/userDataActions";
+import { getUserId } from "@/_lib/actions";
 
 async function getItems(uniqueUserId: String) {
   const res = await fetch(

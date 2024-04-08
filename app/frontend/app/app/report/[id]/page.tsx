@@ -258,7 +258,7 @@ export default async function ReportPage({ params }: any) {
       <div className="border rounded-lg px-48 h-64 text-center flex flex-col justify-center items-center bg-avova-gradient">
         <div className="flex flex-row gap-2 text-xs opacity-50 items-center py-4">
           <FeatherIcon icon="zap" className="h-4" />
-          Reccomendations
+          Recommendations
         </div>
         <div className="text-xl text-black opacity-70 mix-blend-color-burn">
           <Suspense>{recs}</Suspense>

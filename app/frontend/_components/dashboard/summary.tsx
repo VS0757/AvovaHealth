@@ -4,7 +4,7 @@ import {
   externalGetUserData,
   getUserId,
 } from "@/app/app/_components/settings/userDataActions";
-import Report, { ReportProps } from "@/app/app/_components/timeline/Report";
+import Report from "@/app/app/_components/timeline/Report";
 
 export default async function SummaryCard() {
   const uniqueUserId = await getUserId();

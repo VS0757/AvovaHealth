@@ -2,6 +2,7 @@
 import React, { ChangeEvent, useState } from "react";
 import axios from "axios";
 import { toast } from "sonner";
+import Button from "@/_components/button";
 
 const FileUpload = ({ uniqueUserId }: { uniqueUserId: string }) => {
   const [file, setFile] = useState<File | null>(null);
@@ -13,7 +14,7 @@ const FileUpload = ({ uniqueUserId }: { uniqueUserId: string }) => {
     }
   };
 
-  const submit = (e: React.MouseEvent<HTMLButtonElement>) => {
+  const submit = () => {
     toast.promise(handleUpload(), {
       loading: "Uploading...",
       success: "Uploaded blood test data.",
@@ -45,23 +46,23 @@ const FileUpload = ({ uniqueUserId }: { uniqueUserId: string }) => {
   };
 
   return (
-    <div className="mt-2 flex min-w-full flex-row">
+    <div className="mt-2 flex min-w-full flex-col justify-center items-center gap-4">
       <input
         type="file"
         accept="application/pdf"
         onChange={handleFileChange}
-        className="flex-grow-0 cursor-pointer rounded-md border bg-inherit file:border-none file:bg-stone-200 file:px-2 file:py-1 file:text-inherit dark:border-stone-900 dark:file:bg-stone-900"
+        className="rounded-full text-xs border file:bg-stone-200 file:border-none file:py-2 file:px-4"
         id="file_input"
         disabled={isUploading}
       />
-      <button
-        onClick={submit}
+      <Button
+        label={isUploading ? "Wait..." : "Upload"}
+        onClick={() => {
+          submit();
+        }}
         disabled={isUploading}
-        className={`mx-2 rounded-md border border-stone-900 bg-stone-950 px-2 py-1 text-stone-50 dark:border-stone-200 dark:bg-stone-100 dark:text-stone-900`}
-      >
-        {isUploading ? "Uploading..." : "Upload"}{" "}
-        {/* Change button text based on upload status */}
-      </button>
+        inverse={!isUploading}
+      />
     </div>
   );
 };

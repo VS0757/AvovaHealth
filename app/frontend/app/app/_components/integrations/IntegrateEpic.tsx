@@ -2,15 +2,16 @@
 import React, { useState } from "react";
 import FHIR from "fhirclient";
 import providersData from "./R4URLs.json";
+import Button from "@/_components/button";
 
 export const healthcareProviders = Object.fromEntries(
   providersData.entry
-    .map(entry => ({
+    .map((entry) => ({
       name: entry.resource.name,
-      iss: entry.resource.address
+      iss: entry.resource.address,
     }))
     .sort((a, b) => a.name.localeCompare(b.name))
-    .map(provider => [provider.iss, provider.name])
+    .map((provider) => [provider.iss, provider.name]),
 );
 
 const IntegrateEpic: React.FC = () => {
@@ -38,13 +39,15 @@ const IntegrateEpic: React.FC = () => {
   };
 
   return (
-    <div className="mt-2 max-w-fit">
-      <label className="opacity-50">Select Your Healthcare Provider</label>
-      <div className="flex flex-row">
+    <div className="w-fill">
+      <label className="opacity-50 text-xs">
+        Select Your Healthcare Provider
+      </label>
+      <div className="flex flex-row justify-center items-center gap-1">
         <select
           onChange={handleProviderChange}
           value={selectedIss}
-          className="max-w-sm rounded-md border bg-inherit p-2 dark:border-stone-900"
+          className="border text-xs px-4 py-2 rounded-full w-72"
         >
           <option value="">--Please choose your provider--</option>
           {Object.entries(healthcareProviders).map(([iss, name], index) => (
@@ -53,12 +56,13 @@ const IntegrateEpic: React.FC = () => {
             </option>
           ))}
         </select>
-        <button
-          onClick={authorizeEpicAccess}
-          className={`mx-2 rounded-md border border-stone-900 bg-stone-950 px-4 py-2 text-stone-50 dark:border-stone-200 dark:bg-stone-100 dark:text-stone-900`}
-        >
-          Authorize
-        </button>
+        <Button
+          label="Authorize"
+          onClick={() => {
+            authorizeEpicAccess();
+          }}
+          inverse
+        />
       </div>
     </div>
   );

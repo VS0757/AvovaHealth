@@ -3,11 +3,12 @@ import React, { useState } from "react";
 import FHIR from "fhirclient";
 import axios from "axios";
 import { toast } from "sonner";
+import Button from "@/_components/button";
 
 const RetrieveEpic = ({ uniqueUserId }: { uniqueUserId: string }) => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
-  const submit = (e: React.MouseEvent<HTMLButtonElement>) => {
+  const submit = () => {
     toast.promise(retrieveEpicData(), {
       loading: "Retrieving...",
       success: "Retrieved Epic Systems data.",
@@ -50,15 +51,14 @@ const RetrieveEpic = ({ uniqueUserId }: { uniqueUserId: string }) => {
 
   return (
     <div>
-      <div className="pt-8">
-        <button
-          onClick={submit}
-          disabled={isLoading}
-          className="rounded-md border px-4 py-2"
-        >
-          {isLoading ? "Loading..." : "Retrieve Your Laboratory Test Results"}{" "}
-        </button>
-      </div>
+      <Button
+        label={isLoading ? "Loading..." : "Retrieve Your Laboratory Results"}
+        onClick={() => {
+          submit();
+        }}
+        disabled={isLoading}
+        inverse={!isLoading}
+      />
     </div>
   );
 };

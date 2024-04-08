@@ -32,7 +32,7 @@ const Button: React.FC<ButtonProps> = ({
 
   return (
     <button
-      className={`flex flex-row items-center rounded-full px-4 py-2 text-xs ${colors}`}
+      className={`max-w-fit flex flex-row items-center rounded-full px-4 py-2 text-xs ${colors}`}
       {...buttonProps}
     >
       {icon && <FeatherIcon icon={icon} className="h-4 w-4 mr-2" />}{" "}

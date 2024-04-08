@@ -1,9 +1,7 @@
 "use client";
 import Link from "next/link";
 import { getUserId } from "../settings/userDataActions";
-import FeatherIcon from "feather-icons-react";
 import { toast } from "sonner";
-import { healthcareProviders } from "../integrations/IntegrateEpic";
 import { getAge, getTestRange } from "../report/testHelper";
 import Button from "@/_components/button";
 
@@ -23,46 +21,27 @@ const Report: React.FC<ReportProps> = ({
   const name = report.dateTimeType.split("$")[2];
   const { sex, birthday, preconditions } = userData;
   let percentInRange = 0;
-  if (type === "FHIR") {
+  let totalCount = 0;
+  let count = report.data.test.reduce((acc: any, test: any) => {
     const testRange = getTestRange(
-      report.data.code.text,
+      test.bloodtestname,
       sex,
       getAge(birthday, date),
       preconditions,
     );
-    percentInRange =
-      testRange.low <= report.data.valueQuantity.value &&
-      report.data.valueQuantity.value <= testRange.high
-        ? 100
-        : 0;
-  } else {
-    let totalCount = 0;
-    let count = report.data.test.reduce((acc: any, test: any) => {
-      const testRange = getTestRange(
-        test.bloodtestname,
-        sex,
-        getAge(birthday, date),
-        preconditions,
+    if (testRange.low !== 0 || testRange.high !== 0) {
+      totalCount++;
+      return (
+        acc +
+        (testRange.low <= test.value && test.value <= testRange.high ? 1 : 0)
       );
-      if (testRange.low !== 0 || testRange.high !== 0) {
-        totalCount++;
-        return (
-          acc +
-          (testRange.low <= test.value && test.value <= testRange.high ? 1 : 0)
-        );
-      }
-      return acc;
-    }, 0);
+    }
+    return acc;
+  }, 0);
 
-    percentInRange = Math.round(100 * (count / totalCount));
-  }
+  percentInRange = Math.round(100 * (count / totalCount));
 
-  const testFacility =
-    type === "MANUAL"
-      ? report.data.facility
-      : healthcareProviders[
-          report.data.url ? report.data.url.split("Observation")[0] : ""
-        ];
+  const testFacility = report.data.facility
 
   const year = date.split("-")[0];
   const month = date.split("-")[1];

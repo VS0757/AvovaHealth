@@ -1,6 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import Report, { ReportProps } from "./Report";
+import Report from "./Report";
 import { getUserId, getUserData } from "../settings/userDataActions";
 
 async function getItems(uniqueUserId: String) {

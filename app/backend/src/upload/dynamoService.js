@@ -8,6 +8,8 @@ const {
 } = require("@aws-sdk/lib-dynamodb");
 const { awsConfig } = require("../config/awsConfig");
 const { executeWithExponentialBackoff } = require("./dynamoUtils");
+const fs = require('fs');
+const path = require('path');
 
 // Initialize the DynamoDB Client
 const dynamoDBClient = new DynamoDBClient(awsConfig);
@@ -19,6 +21,11 @@ const storeFhirDataInDynamo = async (uniqueUserId, fhirData) => {
   const TableNameSingleEntry = "avovahealthdatabase";
   const TableNameBloodEntry = "avovahealthbloodtests";
   var counter = 0;
+  const address = fhirData.link[0].url.split("Observation")[0];
+  const data = JSON.parse(fs.readFileSync(path.join(__dirname, 'R4URLs.json')));
+  const facilityEntry = data.entry.find(entry => entry.resource.address === address);
+  const facility = facilityEntry ? facilityEntry.resource.name : "None";
+
   for (const entry of fhirData.entry) {
     const resource = entry.resource;
     const bloodTestName =
@@ -36,20 +43,33 @@ const storeFhirDataInDynamo = async (uniqueUserId, fhirData) => {
 
     if (bloodTestName === "Glucose") {
       counter++;
-      await storeFHIRBasedOnEntry(TableNameSingleEntry, uniqueUserId, entry);
+      await storeFHIRBasedOnEntry(TableNameSingleEntry, uniqueUserId, entry, facility);
       await storeFHIRBasedOnTest(TableNameBloodEntry, uniqueUserId, entry);
     }
   }
 };
 
-const storeFHIRBasedOnEntry = async (TableName, uniqueUserId, entry) => {
+const storeFHIRBasedOnEntry = async (TableName, uniqueUserId, entry, facility) => {
   const effectiveDateTime = entry.resource.effectiveDateTime.split("T")[0];
   const entryResourceId = entry.resource.id.replace(/\s+/g, "_");
-  entry.resource.url = entry.fullUrl;
   const Item = {
+    data: {
+      effectiveDateTime: effectiveDateTime,
+      test: [
+        {
+          bloodtestname: entry.resource.code.text,
+          value: entry.resource.valueQuantity.value,
+          range: [
+            entry?.resource?.referenceRange?.[0]?.low?.value || 0,
+            entry?.resource?.referenceRange?.[0]?.high?.value || 0,
+          ],
+          unit: entry.resource.valueQuantity.unit || "",
+        },
+      ],
+      facility: facility,
+    },
     uniqueUserId: uniqueUserId,
     dateTimeType: `${effectiveDateTime}$FHIR$${entryResourceId}`,
-    data: entry.resource,
   };
 
   try {

@@ -89,18 +89,30 @@ async function provideRecommendations(input: any, userData: any) {
     }
   });
 
-  let output;
+  // css elements for bullet point @om feel free to adjust
+  const bulletPointStyle = {
+    listStyleType: "disc",
+    marginLeft: "20px",
+  };
+
+  let outputJSX;
   if (recommendationsArray.length > 0) {
-    output =
-      "Based on your test results, here are some recommendations:\n" +
-      recommendationsArray.join("\n") +
-      " Again, make sure to consult a medical professional.";
+    outputJSX = (
+      <div>
+        <ul style={bulletPointStyle}>
+          {recommendationsArray.map((recommendation, index) => (
+            <li key={index}>{recommendation}</li>
+          ))}
+        </ul>
+      </div>
+    );
   } else {
-    output =
-      "No specific recommendations are needed at this time.";
+    outputJSX = (
+      <p>No specific recommendations are needed at this time.</p>
+    );
   }
 
-  return output;
+  return outputJSX;
 }
 
 function summarizeTestResults(input: any, userData: any) {

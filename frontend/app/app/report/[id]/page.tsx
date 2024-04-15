@@ -6,21 +6,8 @@ import Card from "@/_components/card";
 import { getPercentInRange } from "@/_components/dashboard/range_graph";
 import { Suspense } from "react";
 import { getUserId } from "@/_lib/actions";
-const stringSimilarity = require('string-similarity');
-
-const fullNameToAcronym = {
-  "white blood cell count": "wbc",
-  "red blood cell count": "rbc",
-  "alanine aminotransferase": "alt",
-  "aspartate aminotransferase": "ast",
-  "thyroid stimulating hormone": "tsh",
-  "low density lipoprotein": "ldl",
-  "high density lipoprotein": "hdl",
-  "gamma-glutamyl transferase": "ggt",
-  "erythrocyte sedimentation rate": "esr",
-  "c-reactive protein": "crp",
-  "complete blood count": "cbc",
-};
+import bloodtestresults from "../../_components/report/bloodtestresults.json";
+import recommendations from "./recs.json";
 
 async function fetchRecommendations() {
   const response = require("./recs.json");
@@ -36,18 +23,6 @@ async function getReport(uniqueUserId: any, date: any) {
   );
   const data = await res.json();
   return data?.data as any[];
-}
-
-function findBestMatch(testName, recommendations) {
-  const recommendationKeys = Object.keys(recommendations).map(key => key.toLowerCase());
-  const matches = stringSimilarity.findBestMatch(testName, recommendationKeys);
-  const bestMatch = matches.bestMatch;
-
-  if (bestMatch.rating >= 0.5) {
-    return recommendations[Object.keys(recommendations)[bestMatch.index]];
-  }
-
-  return null;
 }
 
 function determineTestFormat(test: any) {
@@ -98,25 +73,31 @@ async function provideRecommendations(input: any, userData: any) {
     max = range.high;
 
     const value = testInfo.testValue;
-    const testName = testInfo.testName.toLowerCase();
+    let testName = testInfo.testName.toLowerCase();
 
-    let info = findBestMatch(testName, recommendations);
-    let action = null;
-
-    if (!info && recommendations[testName]) {
-        info = recommendations[testName];
-    } else if (!action && fullNameToAcronym[testName]) {
-      info = recommendations[fullNameToAcronym[testName]];
+    for (const key in bloodtestresults) {
+      const keyParts = key.toLowerCase().split(';');
+      if (keyParts.includes(testName)) {
+        testName = keyParts[0];
+        break
+      }
     }
 
-    if (info && value < min) {
-      action = info.low;
-    } else if (info && value > max) {
-      action = info.high;
+    testName = testName.toLowerCase()
+
+    let action = null;
+    if (recommendations[testName]) {
+      if (min === 0 && max === 0) {
+        // not a valid range :)
+      } else if (value < min) {
+        action = recommendations[testName].low;
+      } else if (value > max) {
+        action = recommendations[testName].high;
+      }
     }
 
     if (action) {
-      recommendationsArray.push(`${testInfo.testName}: ${action}`);
+      recommendationsArray.push(`${action}`);
     }
   });
 
@@ -127,6 +108,7 @@ async function provideRecommendations(input: any, userData: any) {
   };
 
   let outputJSX;
+  console.log('the output', recommendationsArray)
   if (recommendationsArray.length > 0) {
     outputJSX = (
       <div>

@@ -2,6 +2,12 @@ import { ReportRange, MedPreNotes, BloodTestToolTip } from "./reportrange";
 import { getFilteredUnit } from "./testHelper";
 
 export default function ManualReportTable({ reportData }: any) {
+  const sortValue = () => {
+    reportData.test.sort((n1: any, n2: any) => {
+      return n1.value > n2.value;
+    });
+  };
+
   return (
     <table
       className={`text-xs justify-start items-start place-items-start w-full`}

@@ -9,11 +9,6 @@ import { getUserId } from "@/_lib/actions";
 import bloodtestresults from "../../_components/report/bloodtestresults.json";
 import recommendations from "./recs.json";
 
-async function fetchRecommendations() {
-  const response = require("./recs.json");
-  return response;
-}
-
 async function getReport(uniqueUserId: any, date: any) {
   const res = await fetch(
     "http://localhost:3001/retrieve-blood-data?id=" +
@@ -48,8 +43,6 @@ async function provideRecommendations(input: any, userData: any) {
     tests = [input];
   }
 
-  const recommendations = await fetchRecommendations();
-
   let recommendationsArray: string[] = [];
 
   tests.forEach((test: any) => {
@@ -68,7 +61,6 @@ async function provideRecommendations(input: any, userData: any) {
       userData.preconditions,
     );
 
-
     min = range.low;
     max = range.high;
 
@@ -86,13 +78,13 @@ async function provideRecommendations(input: any, userData: any) {
     testName = testName.toLowerCase()
 
     let action = null;
-    if (recommendations[testName]) {
+    if ((recommendations as any)[testName]) {
       if (min === 0 && max === 0) {
         // not a valid range :)
       } else if (value < min) {
-        action = recommendations[testName].low;
+        action = (recommendations as any)[testName].low;
       } else if (value > max) {
-        action = recommendations[testName].high;
+        action = (recommendations as any)[testName].high;
       }
     }
 
@@ -108,7 +100,6 @@ async function provideRecommendations(input: any, userData: any) {
   };
 
   let outputJSX;
-  console.log('the output', recommendationsArray)
   if (recommendationsArray.length > 0) {
     outputJSX = (
       <div>

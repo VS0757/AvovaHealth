@@ -70,8 +70,17 @@ const Report: React.FC<ReportProps> = ({
     );
   };
 
+  const highlightColor =
+    percentInRange > 90
+      ? "from-green-500/25"
+      : percentInRange >= 5 && percentInRange <= 90
+        ? "from-yellow-500/25"
+        : "from-red-500/25";
+
   return (
-    <div className="relative min-w-48 rounded-lg border bg-stone-50 p-4 dark:border-stone-800 dark:bg-stone-900 flex flex-row justify-between h-40">
+    <div
+      className={`relative min-w-48 rounded-lg border bg-stone-50 p-4 bg-gradient-to-bl ${highlightColor} flex flex-row justify-between h-40`}
+    >
       <div className="flex flex-col justify-between">
         <p>
           {month}/{day} {year}

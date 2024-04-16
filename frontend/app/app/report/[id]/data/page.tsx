@@ -1,16 +1,14 @@
 import FeatherIcon from "feather-icons-react";
-import { externalGetUserData } from "../../_components/settings/userDataActions";
-import { getAge, getTestRange } from "../../_components/report/testHelper";
+import ReportTable from "../../../_components/report/reporttable";
+import { externalGetUserData } from "../../../_components/settings/userDataActions";
+import { getAge, getTestRange } from "../../../_components/report/testHelper";
 import Card from "@/_components/card";
 import { getPercentInRange } from "@/_components/dashboard/range_graph";
 import { Suspense } from "react";
 import { getUserId } from "@/_lib/actions";
 
-import bloodtestresults from "../../_components/report/bloodtestresults.json";
-import recommendations from "./recs.json";
-
 async function fetchRecommendations() {
-  const response = require("./recs.json");
+  const response = require("../recs.json");
   return response;
 }
 
@@ -48,6 +46,8 @@ async function provideRecommendations(input: any, userData: any) {
     tests = [input];
   }
 
+  const recommendations = await fetchRecommendations();
+
   let recommendationsArray: string[] = [];
 
   tests.forEach((test: any) => {
@@ -71,31 +71,21 @@ async function provideRecommendations(input: any, userData: any) {
     max = range.high;
 
     const value = testInfo.testValue;
-    let testName = testInfo.testName.toLowerCase();
-
-    for (const key in bloodtestresults) {
-      const keyParts = key.toLowerCase().split(";");
-      if (keyParts.includes(testName)) {
-        testName = keyParts[0];
-        break;
-      }
-    }
-
-    testName = testName.toLowerCase();
+    const testName = testInfo.testName.toUpperCase();
 
     let action = null;
-    if ((recommendations as any)[testName]) {
+    if (recommendations[testName]) {
       if (min === 0 && max === 0) {
         // not a valid range :)
       } else if (value < min) {
-        action = (recommendations as any)[testName].low;
+        action = recommendations[testName].low;
       } else if (value > max) {
-        action = (recommendations as any)[testName].high;
+        action = recommendations[testName].high;
       }
     }
 
     if (action) {
-      recommendationsArray.push(`${action}`);
+      recommendationsArray.push(`${testInfo.testName}: ${action}`);
     }
   });
 
@@ -274,6 +264,9 @@ export default async function ReportPage({ params }: any) {
       className="flex flex-col gap-8 max-w-screen-md mx-auto"
       suppressHydrationWarning={true}
     >
+      <div className="opacity-50">
+        <a href={"/app/report/" + params.id}>Back</a>
+      </div>
       <div className="flex flex-row justify-between">
         <div className="flex flex-col">
           <h1 className="text-xl">Report</h1>
@@ -284,57 +277,11 @@ export default async function ReportPage({ params }: any) {
           <p>{date}</p>
         </div>
       </div>
-      <div className="border rounded-lg px-36 h-72 text-center flex flex-col justify-center items-center bg-avova-gradient">
-        <div className="flex flex-row gap-2 text-xs opacity-50 items-center py-4">
-          <FeatherIcon icon="zap" className="h-4" />
-          Recommendations
-        </div>
-        <div className="text-xl text-black opacity-70 mix-blend-color-burn">
-          <Suspense>{recs}</Suspense>
-        </div>
-      </div>
       <Card>
-        <div className="px-9 py-8 text-xs flex flex-row justify-between">
-          <div className="flex flex-col gap-2">
-            <div className="flex flex-row items-center text-lg gap-2">
-              <FeatherIcon
-                icon="heart"
-                fill="#E05767"
-                strokeWidth={0}
-                className="h-5"
-              />
-              Blood Report Summary
-            </div>
-            <div className="max-w-lg leading-relaxed opacity-70">
-              {summaryParagraph}
-            </div>
-          </div>
-          <div className="h-48 w-[1px] bg-gradient-to-b from-transparent via-stone-300"></div>
-          <div className="flex flex-col justify-center items-end">
-            <p className="text-xs opacity-50">Filename</p>
-            <p className="mb-2">{name}</p>
-            <p className="text-xs opacity-50">Date</p>
-            <p className="mb-2">
-              {month}/{day} {year}
-            </p>
-            <p className="text-xs opacity-50">Type</p>
-            <p className="mb-2">{type.toUpperCase()}</p>
-            <p className="text-xs opacity-50">Tests in Range</p>
-            <p
-              className={`max-w-fill text-2xl font-medium ${
-                percentInRange > 90
-                  ? "text-green-500"
-                  : percentInRange >= 5 && percentInRange <= 90
-                    ? "text-yellow-500"
-                    : "text-red-500"
-              }`}
-            >
-              {percentInRange}%
-            </p>
-          </div>
+        <div className="w-full">
+          <ReportTable isFhir={type === "fhir"} reportData={reportData} />
         </div>
       </Card>
-      <a href={"/app/report/" + params.id + "/data"}>View All Data</a>
     </main>
   );
 }

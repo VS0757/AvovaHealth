@@ -26,8 +26,14 @@ export default async function SummaryCard() {
     return v > a[i - 1];
   }, true);
 
+  const gradientColor = isIncreasing
+    ? "from-[rgba(5,160,51,0.2)]"
+    : "from-[rgba(160,6,51,0.2)]";
+
   return (
-    <div className="flex h-72 flex-col justify-between px-9 py-8 bg-gradient-to-br rounded-md from-[rgba(5,160,51,0.2)] via-transparent">
+    <div
+      className={`flex h-72 flex-col justify-between px-9 py-8 bg-gradient-to-br rounded-md ${gradientColor} via-transparent`}
+    >
       <div className="border bg-stone-50 dark:border-stone-800 dark:bg-stone-950 rounded-full text-xs px-2 py-1 max-w-fit bg-opacity-70">
         {isIncreasing ? (
           <div className="flex fex-row">

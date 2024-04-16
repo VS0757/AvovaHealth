@@ -2,6 +2,12 @@ import { ReportRange, MedPreNotes, BloodTestToolTip } from "./reportrange";
 import { getFilteredUnit } from "./testHelper";
 
 export default function ManualReportTable({ reportData }: any) {
+  const sortValue = () => {
+    reportData.test.sort((n1: any, n2: any) => {
+      return n1.value > n2.value;
+    });
+  };
+
   return (
     <table
       className={`text-xs justify-start items-start place-items-start w-full`}
@@ -29,11 +35,8 @@ export default function ManualReportTable({ reportData }: any) {
                   suppressHydrationWarning
                 >
                   <td className="min-h-12 px-4 flex flex-col justify-center py-2">
-                    <BloodTestToolTip
-                      rangeKey={rangeKey}
-                      testName={bloodtestname}
-                    />
-                    <MedPreNotes rangeKey={rangeKey} />
+                    <BloodTestToolTip testName={bloodtestname} />
+                    <MedPreNotes testName={bloodtestname} />
                   </td>
                   <td className="">
                     {value} {rangeKey && rangeKey.Unit ? rangeKey.Unit : ""}

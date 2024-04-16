@@ -49,9 +49,7 @@ export async function getPercentInRange() {
         totalCount++;
         return (
           acc +
-          (testRange.low <= test.value && test.value <= testRange.high
-            ? 1
-            : 0)
+          (testRange.low <= test.value && test.value <= testRange.high ? 1 : 0)
         );
       }
       return acc;
@@ -78,7 +76,7 @@ export default async function RangeGraphCard() {
       <div className="flex min-h-fit flex-col justify-between px-9 py-4">
         <p>No blood data found</p>
       </div>
-    )
+    );
   }
 
   return (
@@ -168,8 +166,7 @@ function RangeGraph({ data }: { data: rangeDataPoint[] }) {
         <LinearGradient
           id="area-gradient"
           from="green"
-          to="rgba(255,255,255,0)"
-          toOpacity={0}
+          to="rgba(255,0,0,0.1)"
           fromOpacity={0.4}
         />
         <AreaClosed<rangeDataPoint>

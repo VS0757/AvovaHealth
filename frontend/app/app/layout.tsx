@@ -29,9 +29,9 @@ export default function AppLayout({ children }: { children: any }) {
   }, []);
 
   return (
-    <div className="flex min-h-screen flex-row bg-stone-100 text-stone-700 dark:bg-stone-900 dark:text-stone-100">
+    <div className="flex max-h-screen flex-row bg-stone-100 text-stone-700 dark:bg-stone-900 dark:text-stone-100">
       <NavigationBar />
-      <div className="ml-48 w-full">
+      <div className="max-h-screen overflow-auto w-full">
         <div className="mx-auto flex min-h-screen max-w-screen-xl flex-1 flex-col px-16">
           <Toaster />
           <header className="mb-16 flex h-36 flex-row items-center justify-between border-b dark:border-stone-800">

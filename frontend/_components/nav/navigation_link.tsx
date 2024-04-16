@@ -6,10 +6,11 @@ type NavigationLinkProps = {
   href: string;
   icon: string;
   active: boolean;
+  small: boolean;
 };
 
 export default function NavigationLink(props: NavigationLinkProps) {
-  let classname = "flex flex-row items-center gap-2 py-2 text-sm";
+  let classname = "flex flex-row items-center gap-2 py-2 text-sm min-h-9";
   let active = "text-[#E05767]";
 
   if (props.active) {
@@ -19,7 +20,7 @@ export default function NavigationLink(props: NavigationLinkProps) {
   return (
     <a href={props.href} className={`${classname}`}>
       <FeatherIcon icon={props.icon} className="h-4" />
-      {props.label}
+      {props.small ? "" : props.label}
     </a>
   );
 }

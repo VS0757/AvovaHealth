@@ -5,6 +5,7 @@ type ButtonProps = {
   icon?: string;
   onClick?: () => void;
   inverse?: boolean;
+  hoverColor?: string;
 } & React.ButtonHTMLAttributes<HTMLButtonElement>;
 
 const Button: React.FC<ButtonProps> = ({

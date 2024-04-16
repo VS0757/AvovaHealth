@@ -6,7 +6,8 @@ import { getPercentInRange } from "@/_components/dashboard/range_graph";
 import { Suspense } from "react";
 import { getUserId } from "@/_lib/actions";
 
-import Link from "next/link";
+import bloodtestresults from "../../_components/report/bloodtestresults.json";
+import recommendations from "./recs.json";
 
 async function fetchRecommendations() {
   const response = require("./recs.json");
@@ -73,14 +74,14 @@ async function provideRecommendations(input: any, userData: any) {
     let testName = testInfo.testName.toLowerCase();
 
     for (const key in bloodtestresults) {
-      const keyParts = key.toLowerCase().split(';');
+      const keyParts = key.toLowerCase().split(";");
       if (keyParts.includes(testName)) {
         testName = keyParts[0];
-        break
+        break;
       }
     }
 
-    testName = testName.toLowerCase()
+    testName = testName.toLowerCase();
 
     let action = null;
     if ((recommendations as any)[testName]) {

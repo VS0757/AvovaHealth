@@ -1,55 +1,156 @@
 {
-    "WBC": {
+    "wbc": {
       "low": "White blood cell count is low, suggesting potential for reduced immunity. Avoid crowded places and ensure proper hygiene.",
       "high": "Elevated white blood cell count may indicate an infection or stress. Consult with a healthcare provider."
     },
-    "RBC": {
+    "rbc": {
       "low": "Low red blood cell count may suggest anemia. Increase intake of iron-rich foods or discuss iron supplements with your doctor.",
       "high": "High red blood cell count could indicate dehydration or other conditions. Ensure adequate hydration and consult a healthcare professional."
     },
-    "Glucose": {
+    "glucose": {
       "low": "Low glucose levels could suggest hypoglycemia. Consider consuming a quick source of sugar and consult a healthcare provider.",
       "high": "Elevated glucose levels may indicate hyperglycemia, requiring lifestyle adjustments or medical intervention. Discuss with your healthcare provider."
     },
-    "Cholesterol": {
+    "cholesterol": {
       "low": "Low cholesterol is rare but might indicate hyperthyroidism, malnutrition, or liver disease. Consulting a healthcare professional is advised.",
       "high": "High cholesterol increases the risk of heart disease. Consider dietary changes, regular exercise, and discussing medication with your doctor."
     },
-    "BloodPressure": {
+    "bloodpressure": {
       "low": "Low blood pressure can cause dizziness and fainting. Increase water and salt intake, and consult a doctor if symptoms persist.",
       "high": "High blood pressure is a risk factor for heart disease. Reduce salt intake, exercise regularly, and consider medication as prescribed by a healthcare provider."
     },
-    "Sodium": {
+    "sodium": {
       "low": "Low sodium levels might indicate hyponatremia, which can cause neurological issues. Consider checking your fluid and salt intake.",
       "high": "High sodium levels may suggest dehydration or an underlying health condition. Limiting salt intake and consulting a healthcare professional are recommended."
     },
-    "Potassium": {
+    "potassium": {
       "low": "Low potassium levels can lead to muscle weakness and heart rhythm disturbances. Increase your intake of potassium-rich foods like bananas and spinach.",
       "high": "High potassium levels can affect heart function. It's important to manage potassium intake and consult a healthcare provider."
     },
-    "Chloride": {
+    "chloride": {
       "low": "Low chloride levels can occur with conditions like dehydration or congestive heart failure. Ensure proper hydration and consult a healthcare provider.",
       "high": "Elevated chloride levels might indicate dehydration or kidney issues. Drinking plenty of fluids and seeking medical advice are recommended."
     },
-    "Calcium": {
+    "calcium": {
       "low": "Low calcium levels may lead to bone weakness and cardiovascular issues. Consider calcium-rich foods or supplements upon consulting with a healthcare provider.",
       "high": "High calcium levels could indicate parathyroid or other health issues. It's crucial to consult a healthcare professional for proper evaluation."
     },
-    "ALT": {
+    "alt": {
       "low": "Low ALT levels are generally considered normal but can occasionally suggest specific issues. Regular monitoring and a balanced diet are recommended.",
       "high": "Elevated ALT levels indicate possible liver inflammation or damage. Limit alcohol intake and consult a healthcare provider for further evaluation."
     },
-    "AST": {
+    "ast": {
       "low": "Low AST levels are generally normal. Maintaining a healthy lifestyle is recommended.",
       "high": "High AST levels can suggest liver damage or disease. Consider reducing alcohol consumption and consulting with a healthcare professional."
     },
-    "Creatinine": {
+    "creatinine": {
       "low": "Low creatinine levels can be normal, but in some cases, might indicate muscle disorders. Discuss with a healthcare provider if concerned.",
       "high": "Elevated creatinine levels suggest possible kidney function impairment. Stay hydrated and consult a healthcare professional for kidney function evaluation."
     },
-    "TSH": {
+    "tsh": {
       "low": "Low TSH levels may indicate hyperthyroidism, leading to metabolism acceleration. Consult a healthcare provider for thyroid function tests.",
       "high": "High TSH levels suggest hypothyroidism, slowing metabolism. Thyroid hormone replacement therapy may be discussed with your healthcare provider."
+    },
+    "hemoglobin": {
+      "low": "Low hemoglobin levels can indicate anemia, leading to fatigue and weakness. Consider increasing iron and vitamin B12 intake and consult a healthcare provider.",
+      "high": "High hemoglobin levels could be a sign of dehydration or polycythemia vera. Drink plenty of fluids and seek medical advice."
+    },
+    "platelet count": {
+      "low": "Low platelet count can increase bleeding risk and may indicate bone marrow problems. Avoid injury and consult a healthcare professional.",
+      "high": "High platelet count can lead to clotting problems and may suggest an inflammatory condition or bone marrow disease. Medical evaluation is necessary."
+    },
+    "iron": {
+      "low": "Low iron levels can cause anemia, leading to fatigue and shortness of breath. Increase iron-rich food intake and consider supplements after consulting a doctor.",
+      "high": "High iron levels may indicate hemochromatosis or liver disease. Dietary adjustments and medical intervention may be necessary."
+    },
+    "vitamin d": {
+      "low": "Low vitamin D levels can lead to bone disorders and muscle weakness. Consider vitamin D supplements and sun exposure after consulting with a healthcare provider.",
+      "high": "High vitamin D levels, though rare, can cause hypercalcemia and kidney issues. Adjust supplementation and diet as recommended by a healthcare professional."
+    },
+    "vitamin b12": {
+      "low": "Low vitamin B12 levels can lead to anemia and neurological issues. Increase intake of B12-rich foods and consider supplements upon medical advice.",
+      "high": "High vitamin B12 levels may suggest liver disease or diabetes. Consult a healthcare professional for further evaluation."
+    },
+    "folic acid": {
+      "low": "Low folic acid levels can lead to anemia and can affect pregnancy. Increase intake of leafy greens and consider supplements as advised by a doctor.",
+      "high": "High levels of folic acid are uncommon but may mask vitamin B12 deficiency, leading to nerve damage. Consult a healthcare provider."
+    },
+    "ferritin": {
+      "low": "Low ferritin levels often indicate iron deficiency anemia. Enhance dietary iron intake and consult a healthcare provider for advice.",
+      "high": "High ferritin levels may signal inflammation, liver disease, or hemochromatosis. It's important to seek medical evaluation."
+    },
+    "uric acid": {
+      "low": "Low uric acid levels are usually not a concern but can occur with liver or kidney diseases. Consult a healthcare provider if you have concerns.",
+      "high": "High uric acid levels can lead to gout and kidney stones. Limit intake of high-purine foods and discuss treatment options with a healthcare professional."
+    },
+    "albumin": {
+      "low": "Low albumin levels can suggest liver disease or malnutrition. Ensure a protein-rich diet and seek medical advice.",
+      "high": "High albumin levels are rare but can occur with dehydration. Increase fluid intake and consult a healthcare provider if persistent."
+    },
+    "bilirubin": {
+      "low": "Low bilirubin levels are typically not a concern and don't usually require action.",
+      "high": "High bilirubin levels may indicate liver dysfunction or bile duct obstruction. Seek immediate medical consultation."
+    },
+    "ldl": {
+      "low": "Low LDL cholesterol is generally positive but could indicate malnutrition in some cases. Consult a healthcare provider if concerns arise.",
+      "high": "High LDL cholesterol increases the risk for heart disease. Consider dietary adjustments, exercise, and possibly medication."
+    },
+    "hdl": {
+      "low": "Low HDL cholesterol can increase heart disease risk. Incorporate healthy fats into your diet and consult a healthcare provider.",
+      "high": "High HDL levels are generally beneficial, reducing the risk of heart disease. Maintain a healthy lifestyle to keep levels optimal."
+    },
+    "triglycerides": {
+      "low": "Low triglyceride levels are generally not a concern unless extremely low due to malnutrition or other health issues.",
+      "high": "High triglyceride levels increase the risk of heart disease. Limit sugar and fat intake, and consult a healthcare provider for management strategies."
+    },
+    "crp": {
+      "low": "Low CRP levels indicate a low risk of cardiovascular diseases. Maintain a healthy lifestyle to keep CRP levels low.",
+      "high": "High CRP levels suggest inflammation and could indicate infection or chronic diseases. Consult a healthcare provider for further evaluation."
+    },
+    "esr": {
+      "low": "Low ESR levels are generally not a concern and don't usually indicate specific health issues.",
+      "high": "High ESR levels indicate inflammation or infection. Further investigation by a healthcare provider is recommended to determine the cause."
+    },
+    "ggt": {
+      "low": "Low GGT levels are typically not a concern and are considered normal.",
+      "high": "High GGT levels can indicate liver disease or bile duct issues. Reduce alcohol intake and consult a healthcare professional."
+    },
+    "alkaline phosphatase": {
+      "low": "Low levels of alkaline phosphatase can occur with malnutrition. Ensure a balanced diet and consult a healthcare provider if necessary.",
+      "high": "High levels of alkaline phosphatase may indicate bone disorders or liver disease. Medical evaluation is advised."
+    },
+    "amylase": {
+      "low": "Low amylase levels are generally not a concern but can occur in some conditions affecting the pancreas.",
+      "high": "High amylase levels can indicate pancreatitis or a blocked duct. Seek immediate medical attention."
+    },
+    "lipase": {
+      "low": "Low lipase levels are typically not a concern and don't usually require action.",
+      "high": "High lipase levels suggest pancreatitis or other pancreatic disorders. Consult a healthcare provider promptly."
+    },
+    "magnesium": {
+      "low": "Low magnesium levels can lead to muscle weakness and irregular heartbeats. Increase intake of magnesium-rich foods and consult a healthcare professional.",
+      "high": "High magnesium levels can occur with kidney dysfunction. It's important to manage intake and consult a healthcare provider."
+    },
+    "lipid panel": {
+      "recommendation": "The lipid panel includes measurements of cholesterol and triglyceride levels to assess cardiovascular risk. High levels may require dietary changes, exercise, and medication. Low levels of certain components, like LDL, are generally positive but should be discussed with a healthcare provider to ensure overall health."
+    },
+    "cbc": {
+      "recommendation": "A CBC measures various components of blood, including red and white blood cells, and platelets. This panel can help diagnose conditions like anemia, infection, and many other disorders. Abnormal results may necessitate further testing to pinpoint the exact cause."
+    },
+    "bmp": {
+      "recommendation": "The BMP includes tests for several chemical compounds in the blood, such as glucose, calcium, and electrolytes. This panel can assess your metabolism, kidney function, and blood sugar levels. Abnormalities might require changes in diet or medication."
+    },
+    "Thyroid Function Tests": {
+      "recommendation": "These tests measure how well your thyroid is working and can help diagnose thyroid diseases. The panel typically includes TSH, T3, and T4 tests. Depending on the results, you might need medication to regulate thyroid function, and lifestyle adjustments could be recommended."
+    },
+    "Liver Function Tests": {
+      "recommendation": "This panel tests for various enzymes and proteins in your blood that can indicate the health of your liver. Conditions like hepatitis, liver cirrhosis, and fatty liver disease can be detected. Depending on the results, you may need to adjust your alcohol consumption, diet, or pursue further diagnostic testing."
+    },
+    "Renal (Kidney) Function Panel": {
+      "recommendation": "This panel assesses how well your kidneys are filtering waste from your blood. It includes tests for BUN, creatinine, and GFR. Abnormal results can indicate kidney disease or dysfunction, requiring possible dietary modifications, medication, or further evaluation."
+    },
+    "Hemoglobin A1C": {
+      "recommendation": "The Hemoglobin A1C test measures your average blood sugar levels over the past 3 months. It's crucial for diagnosing and monitoring diabetes. Depending on the results, lifestyle changes, monitoring of blood sugar levels, or medication might be necessary."
     }
   }
   

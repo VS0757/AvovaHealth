@@ -5,6 +5,7 @@ import Card from "@/_components/card";
 import { getPercentInRange } from "@/_components/dashboard/range_graph";
 import { Suspense } from "react";
 import { getUserId } from "@/_lib/actions";
+
 import Link from "next/link";
 
 async function fetchRecommendations() {
@@ -46,8 +47,6 @@ async function provideRecommendations(input: any, userData: any) {
     tests = [input];
   }
 
-  const recommendations = await fetchRecommendations();
-
   let recommendationsArray: string[] = [];
 
   tests.forEach((test: any) => {
@@ -71,21 +70,31 @@ async function provideRecommendations(input: any, userData: any) {
     max = range.high;
 
     const value = testInfo.testValue;
-    const testName = testInfo.testName.toUpperCase();
+    let testName = testInfo.testName.toLowerCase();
+
+    for (const key in bloodtestresults) {
+      const keyParts = key.toLowerCase().split(';');
+      if (keyParts.includes(testName)) {
+        testName = keyParts[0];
+        break
+      }
+    }
+
+    testName = testName.toLowerCase()
 
     let action = null;
-    if (recommendations[testName]) {
+    if ((recommendations as any)[testName]) {
       if (min === 0 && max === 0) {
         // not a valid range :)
       } else if (value < min) {
-        action = recommendations[testName].low;
+        action = (recommendations as any)[testName].low;
       } else if (value > max) {
-        action = recommendations[testName].high;
+        action = (recommendations as any)[testName].high;
       }
     }
 
     if (action) {
-      recommendationsArray.push(`${testInfo.testName}: ${action}`);
+      recommendationsArray.push(`${action}`);
     }
   });
 

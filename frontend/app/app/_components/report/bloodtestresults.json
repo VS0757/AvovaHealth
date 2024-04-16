@@ -518,6 +518,12 @@
   "Hemoglobin;Hb;Hgb;Haemoglobin;Hemoglobin": {
     "Definition": "Hemoglobin is a protein in red blood cells that carries oxygen from the lungs to the rest of the body. It also helps carry carbon dioxide from the body's tissues back to the lungs to be exhaled.",
     "Unit": "gm/dL",
+    "MedPreSpecific": {
+      "Sickle Cell Disease": {
+        "Male": [{ "ageRange": [0, 150], "range": [6, 11] }],
+        "Female": [{ "ageRange": [0, 150], "range": [6, 11] }]
+      }
+    },
     "Category": "Complete Blood Count",
     "Male": [
       { "ageRange": [0, 0.035], "range": [14.0, 23.0] },

@@ -35,11 +35,8 @@ export default function ManualReportTable({ reportData }: any) {
                   suppressHydrationWarning
                 >
                   <td className="min-h-12 px-4 flex flex-col justify-center py-2">
-                    <BloodTestToolTip
-                      rangeKey={rangeKey}
-                      testName={bloodtestname}
-                    />
-                    <MedPreNotes rangeKey={rangeKey} />
+                    <BloodTestToolTip testName={bloodtestname} />
+                    <MedPreNotes testName={bloodtestname} />
                   </td>
                   <td className="">
                     {value} {rangeKey && rangeKey.Unit ? rangeKey.Unit : ""}

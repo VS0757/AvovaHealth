@@ -203,7 +203,7 @@ export default function TrendGraph({ trendData }: any) {
               data={data}
               x={(d) => dateScale(getDate(d)) ?? 0}
               y={(d) => valueScale(getValue(d)) ?? 0}
-              stroke="#222222"
+              stroke="green"
               strokeWidth={2}
             />
             <Bar
@@ -224,6 +224,27 @@ export default function TrendGraph({ trendData }: any) {
               width={xMax}
               height={rangeHeight}
               fill="#057833"
+              fillOpacity={0.1}
+              strokeOpacity={0.2}
+              pointerEvents="none"
+            />{" "}
+            <Bar
+              x={0}
+              y={0}
+              width={xMax}
+              height={valueScale(range.high)}
+              fill="red"
+              fillOpacity={0.1}
+              strokeOpacity={0.2}
+              pointerEvents="none"
+            />{" "}
+            <Bar
+              x={0}
+              y={valueScale(range.low)}
+              width={xMax}
+              // @ts-ignore
+              height={yMax - valueScale(range.low) ?? 0}
+              fill="red"
               fillOpacity={0.1}
               strokeOpacity={0.2}
               pointerEvents="none"

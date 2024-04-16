@@ -4,7 +4,7 @@ import {
   getPreconditions,
   getMedications,
 } from "../settings/userDataActions";
-import { getTestRange, getAge } from "./testHelper";
+import { getTestRange, getAge, getFilteredUnit } from "./testHelper";
 import { Group } from "@visx/group";
 import { Bar, Circle, Line, LinePath, Polygon } from "@vx/shape";
 import { useMemo } from "react";
@@ -15,13 +15,8 @@ import { Text, TextProps } from "@visx/text";
 import { GeistMono } from "geist/font/mono";
 import FeatherIcon from "feather-icons-react";
 
-function BloodTestToolTip({
-  rangeKey,
-  testName,
-}: {
-  rangeKey: any;
-  testName: string;
-}) {
+function BloodTestToolTip({ testName }: { testName: string }) {
+  const rangeKey = getFilteredUnit(testName);
   const definition = rangeKey?.Definition || "No definition available";
   return (
     <div className="relative flex flex-col items-start group">
@@ -36,8 +31,9 @@ function BloodTestToolTip({
   );
 }
 
-async function MedPreNotes({ rangeKey }: { rangeKey: any }) {
+async function MedPreNotes({ testName }: { testName: string }) {
   const userData = await externalGetUserData();
+  const rangeKey = getFilteredUnit(testName)!;
   const increasesMedications: string[] = [];
   const decreasesMedications: string[] = [];
   const increasesPreconditions: string[] = [];
@@ -114,6 +110,34 @@ async function MedPreNotes({ rangeKey }: { rangeKey: any }) {
       </div>
     </div>
   );
+}
+
+export async function getRangeSort({
+  value,
+  bloodtestname,
+  date,
+}: {
+  value: number;
+  bloodtestname: string;
+  date: string;
+}) {
+  const userData = await externalGetUserData();
+  const age = getAge(userData.birthday, date);
+  const range = getTestRange(
+    bloodtestname,
+    await getGender(),
+    age,
+    await getPreconditions(),
+  );
+
+  if (range.high === 0 && range.low === 0) {
+    return <p>-</p>;
+  }
+  const lowRange = range.low;
+  const highRange = range.high;
+  const middle = (highRange - lowRange) / 2;
+
+  return value - middle;
 }
 
 async function ReportRange({
@@ -206,8 +230,7 @@ function RangeViz({
           y={height / 2 - 2}
           width={width}
           height={4}
-          fill="black"
-          fillOpacity={0.1}
+          fill="rgba(255,0,0,0.2)"
         />
         <Bar
           x={valueScale(min)}

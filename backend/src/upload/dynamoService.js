@@ -114,6 +114,7 @@ const storeFHIRBasedOnTest = async (TableName, uniqueUserId, entry) => {
 const storeManualDataInDynamo = async (uniqueUserId, manualData, fileName) => {
   const TableNameSingleEntry = "avovahealthdatabase";
   const TableNameBloodEntry = "avovahealthbloodtests";
+  const facility = manualData.facility || "None";
   const fileNameSanitized = fileName.replace(/\s+/g, "");
   for (const entry of manualData.testsbydate) {
     const effectiveDateTime = entry.effectiveDateTime;
@@ -123,6 +124,7 @@ const storeManualDataInDynamo = async (uniqueUserId, manualData, fileName) => {
       entry,
       fileNameSanitized,
       effectiveDateTime,
+      facility,
     );
     for (const testEntry of entry.test) {
       if (isNaN(testEntry.value)) {
@@ -144,11 +146,15 @@ const storeManualBasedOnEntry = async (
   entry,
   fileName,
   effectiveDateTime,
+  facility,
 ) => {
   const Item = {
     uniqueUserId,
     dateTimeType: `${effectiveDateTime}$MANUAL$${fileName}`,
-    data: entry,
+    data: {
+      ...entry,
+      facility: facility,
+    },
   };
 
   try {

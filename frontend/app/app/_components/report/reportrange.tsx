@@ -19,7 +19,7 @@ function BloodTestToolTip({ testName }: { testName: string }) {
   const rangeKey = getFilteredUnit(testName);
   const definition = rangeKey?.Definition || "No definition available";
   return (
-    <div className="relative flex flex-col items-start group">
+    <div className="relative flex flex-col items-start group pt-2">
       <span className="underline">{testName}</span>
       <div className="absolute bottom-0 flex-col items-start hidden mb-6 group-hover:flex w-96">
         <span className="relative z-10 p-2 text-xs leading-relaxed text-white whitespace-no-wrap bg-black shadow-lg rounded-md">
@@ -74,7 +74,7 @@ async function MedPreNotes({ testName }: { testName: string }) {
   }
 
   return (
-    <div className="opacity-50 py-2 flex flex-row gap-1 w-96">
+    <div className="opacity-50 py-2 flex flex-row gap-1 w-64">
       <FeatherIcon icon="alert-circle" className="h-4" />
       <div>
         {increasesMedications.length > 0 && (

@@ -32,7 +32,7 @@ export default async function BiomarkerTable() {
         {
           key: "Item",
           node: (
-            <div>
+            <div className="">
               {" "}
               <BloodTestToolTip testName={d.bloodtestname} />
               <MedPreNotes testName={d.bloodtestname} />

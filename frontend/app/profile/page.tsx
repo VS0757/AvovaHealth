@@ -10,6 +10,8 @@ import {
 } from "@/app/app/_components/report/reportrange";
 import util from "util";
 import Card from "@/_components/card";
+import { Suspense } from "react";
+import FeatherIcon from "feather-icons-react";
 
 export default async function Profile() {
   const date = dayjs();
@@ -79,7 +81,30 @@ export default async function Profile() {
               <p className="opacity-70">{date.format("MMMM D, YYYY")}</p>
             </div>
           </header>
-          <section>
+          <section className="flex flex-col gap-4 max-w-screen-md mx-auto">
+            <div className="flex flex-row justify-between">
+              <div className="flex flex-col">
+                <h1 className="text-xl">Report</h1>
+                <h1 className="text-lg opacity-50">[Om Jha]</h1>
+              </div>
+              <div className="flex flex-col items-end">
+                <p className="text-xs opacity-50">Date</p>
+                <p>{date.format("MMMM D, YYYY")}</p>
+              </div>
+            </div>
+            <div className="border rounded-lg px-36 h-72 text-center flex flex-col justify-center items-center bg-avova-gradient">
+              <div className="flex flex-row gap-2 text-xs opacity-50 items-center py-4">
+                <FeatherIcon icon="zap" className="h-4" />
+                Recommendations
+              </div>
+              <div className="text-xl text-black opacity-70 mix-blend-color-burn">
+                <Suspense>
+                  High red blood cell count could indicate dehydration or other
+                  conditions. Ensure adequate hydration or consult a healthcare
+                  professional.
+                </Suspense>
+              </div>
+            </div>
             <Card>
               <Table columns={["Item", "Value", "Range"]} rows={rows} />
             </Card>

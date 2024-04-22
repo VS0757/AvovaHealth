@@ -8,6 +8,7 @@ import {
   ReportRange,
   getRangeSort,
 } from "@/app/app/_components/report/reportrange";
+import util from "util";
 
 export default async function BiomarkerTable() {
   const reports = await getReports(await getUserId());
@@ -31,7 +32,7 @@ export default async function BiomarkerTable() {
         {
           key: "Item",
           node: (
-            <div>
+            <div className="">
               {" "}
               <BloodTestToolTip testName={d.bloodtestname} />
               <MedPreNotes testName={d.bloodtestname} />
@@ -65,6 +66,9 @@ export default async function BiomarkerTable() {
     };
     rows.push(val);
   });
+
+  JSON.stringify(rows);
+  console.log(util.inspect(rows, false, null, true));
 
   return (
     <div className="flex min-h-fit flex-col justify-between">

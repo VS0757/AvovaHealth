@@ -1,6 +1,6 @@
 {
   "Albumin;ALB;Serum Albumin;Plasma Albumin": {
-    "Definition": "Albumin is a type of protein made by your liver. It's found in your blood and helps carry hormones, vitamins, and enzymes throughout your body. It also plays a key role in keeping the liquid part of your blood, the plasma, from leaking out of your blood vessels. Additionally, albumin helps maintain proper pressure in your blood vessels and is important for transporting various substances in your blood.",
+    "Definition": " An albumin blood test checks your liver and kidney function. Albumin is protein in your blood plasma.",
     "MedPreGeneral": { "Penicillin": "Decrease", "Insulin": "Decrease" },
     "Category": "Hepatic Function",
     "Unit": "gm/dL",
@@ -35,7 +35,7 @@
     ]
   },
   "Alkaline Phosphatase;ALP;Alk Phos": {
-    "Definition": "Alkaline Phosphatase (ALP) is an enzyme found in your body, particularly in your liver, bones, kidneys, and digestive system. Think of it as a worker that helps break down proteins in the body, making it easier for the body to use them. High or low levels of ALP in your blood can indicate various health conditions, which is why doctors sometimes check its levels through a blood test.",
+    "Definition": "An alkaline phosphatase (ALP) test measures the amount of ALP in your blood.",
     "MedPreGeneral": { "Amitriptyline": "Increase" },
     "Unit": "U/L",
     "Category": "Hepatic Function",
@@ -61,7 +61,7 @@
     ]
   },
   "ALT (SGPT);Alanine Transaminase;Alanine Aminotransferase;Serum Glutamate Pyruvate Transaminase;SGPT;ALT;SGPT": {
-    "Definition": "ALT, also known as SGPT, is an enzyme found mainly in the liver. It plays a role in changing proteins into energy the body can use. When the liver is damaged or not working properly, ALT levels in the blood can rise. This makes ALT a useful indicator for liver health. Think of it as a sign that tells doctors how well your liver is doing.",
+    "Definition": "An ALT blood test is often included in a liver panel and comprehensive metabolic panel, and healthcare providers use it to help assess your liver health.",
     "Unit": "U/L",
     "Category": "Hepatic Function",
     "Male": [
@@ -78,7 +78,7 @@
     ]
   },
   "Ammonia;NH3;Plasma Ammonia;Blood Ammonia": {
-    "Definition": "Ammonia in blood tests refers to the measurement of the ammonia level in your blood. Ammonia is a waste product formed when your body breaks down proteins. Normally, the liver converts ammonia into urea, which is then eliminated from the body through urine. High levels of ammonia in the blood can indicate a problem with the liver or kidneys, as these organs are responsible for filtering and eliminating waste products.",
+    "Definition": "Ammonia is highly toxic. Blood ammonia levels are usually less than 50 micromoles per liter (micromol /L), but this can vary depending on age.",
     "MedPreGeneral": { "Baclofen": "Increase" },
     "Unit": "mmol/L",
     "Category":"Hepatic Function",
@@ -94,7 +94,7 @@
     ]
   },
   "Amylase;Amy;Alpha-amylase;Diastase;AMS;AMY": {
-    "Definition": "Amylase is a type of enzyme found in your body, primarily made by your pancreas and salivary glands. Its main job is to help your body break down starches into sugars, making it easier for your body to digest carbohydrates. In a blood test, high levels of amylase can indicate a problem with your pancreas or salivary glands, such as inflammation or blockage.",
+    "Definition": "An amylase test measures the amount of amylase in blood or urine (pee). Amylase is an enzyme made by your pancreas and salivary glands that helps your body break down carbohydrates.",
     "MedPreGeneral": {
       "Corticosteroids": "Increase",
       "Dexamethasone": "Increase",
@@ -124,7 +124,7 @@
     ]
   },
   "Apolipoprotein A1;Apo A-I;ApoA-I;Apolipoprotein AI": {
-    "Definition": "Apolipoprotein A1 (Apo A-I) is a protein found in your blood that plays a crucial role in removing cholesterol from your cells and transporting it to the liver for removal. Think of it like a cleanup crew that helps keep your blood vessels clear by picking up excess cholesterol. High levels of Apo A-I are generally associated with a lower risk of heart disease.",
+    "Definition": "A blood test that can tell you about your risk for cardiovascular (heart and blood vessel) disease",
     "Unit": "mg/dL",
     "Category": "Lipids",
     "Male": [
@@ -143,7 +143,7 @@
     ]
   },
   "Apolipoprotein B;Apo B;Apolipoprotein B-100;ApoB-100;Apolipoprotein B-48;ApoB-48": {
-    "Definition": "Apolipoprotein B (Apo B) is a protein that plays a key role in moving cholesterol around your body. It's like a taxi for cholesterol, helping it get to where it needs to go in your blood. There are two main types, one that's mainly found in your liver (ApoB-100) and another in your intestines (ApoB-48). Blood tests for Apo B can show if you have too much of this protein, which might indicate a higher risk of heart disease because it means there could be too much cholesterol traveling in your blood.",
+    "Definition": "A blood test that can tell you about your risk for cardiovascular (heart and blood vessel) disease.",
     "Unit": "mg/dL",
     "Category": "Lipids",
     "Male": [
@@ -162,7 +162,7 @@
     ]
   },
   "ASO;Antistreptolysin O titer;ASLO;ASO titer": {
-    "Definition": "An ASO test measures substances in your blood produced by your immune system in response to a bacteria called Streptococcus, which causes strep throat and other infections. A high ASO level suggests a recent strep infection.",
+    "Definition": "Antistreptolysin O Titer is a blood test used to determine if you have an infection caused by a group A streptococcus bacteria.",
     "Unit": "IU/mL",
     "Category": "Immune Function",
     "Male": [
@@ -177,7 +177,7 @@
     ]
   },
   "AST;Aspartate aminotransferase;Serum glutamate oxaloacetate transaminase;SGOT": {
-    "Definition": "AST, also known as aspartate aminotransferase or SGOT, is an enzyme found in cells throughout the body, particularly in the heart and liver. It plays a role in the metabolism of amino acids. High levels of AST in the blood may indicate damage to the heart, liver, or other organs.",
+    "Definition": "An AST blood test is often included in a liver panel and comprehensive metabolic panel, and healthcare providers most often use it to help assess your liver health.",
     "Unit": "U/L",
     "Category": "Hepatic Function",
     "Male": [
@@ -241,7 +241,7 @@
     ]
   },
   "Bicarbonate;Bicarbonate ion;Hydrogen carbonate ion;HCO3-;Total CO2": {
-    "Definition": "Bicarbonate, also known as hydrogen carbonate, is an ion (charged particle) present in the blood that helps maintain the pH balance of the body. It acts as a buffer, neutralizing excess acids to keep the blood neither too acidic nor too basic.",
+    "Definition": "A carbon dioxide (CO2) blood test helps healthcare providers determine if the body is balancing electrolytes properly.",
     "Unit": "mmol/L",
     "Male": [
       { "ageRange": [0, 0.04], "range": [5, 20] },
@@ -263,7 +263,7 @@
     ]
   },
   "UREA NITROGEN (BUN);BUN (Blood Urea Nitrogen);Urea Nitrogen;Serum Urea Nitrogen;Serum Urea;Serum BUN;Blood Urea;Urea Nitrogen in Blood;BUN;UN;SBU;SUN": {
-    "Definition": "Blood Urea Nitrogen (BUN) measures the amount of urea nitrogen in the blood. Urea nitrogen is a waste product formed in the liver when the body breaks down proteins. High BUN levels may indicate kidney dysfunction or dehydration.",
+    "Definition": "The blood urea nitrogen (BUN) test measures how much urea nitrogen is in your blood.",
     "MedPreGeneral": { "Hypertension": "Increase" },
     "Unit": "mg/dL",
     "Category": "Basic Metabolic",
@@ -297,7 +297,7 @@
     ]
   },
   "Calcium;Serum Calcium;Ca;Ca2+": {
-    "Definition": "Calcium, often referred to as Ca or Ca2+, is a mineral found in the blood that plays a crucial role in bone strength and muscle function. It is measured in blood tests to assess the level of calcium present in the bloodstream.",
+    "Definition": "Calcium blood tests check to make sure you have appropriate levels of calcium in your blood to be healthy.",
     "Unit": "mg/dL",
     "Category": "Basic Metabolic",
     "Male": [
@@ -312,7 +312,6 @@
     ]
   },
   "Carotene": {
-    "Definition": "Carotene, also known as Provitamin A, is a pigment found in plants that can be converted into vitamin A by the body. It plays a crucial role in maintaining healthy vision, skin, and immune function.",
     "Unit": "ug/dL",
     "Category": "Nutritional",
     "Male": [
@@ -329,7 +328,7 @@
     ]
   },
   "Ceruloplasmin;Ferroxidase;Siderase;Copper-oxidase;CP": {
-    "Definition": "Ceruloplasmin, also known as ferroxidase or siderase, is a protein found in blood that helps carry copper throughout the body. It plays a role in iron metabolism and antioxidant function, and abnormal levels may indicate certain health conditions.",
+    "Definition": "Ceruloplasmin is a protein your liver makes. It binds to copper and carries it throughout your body. If you have low ceruloplasmin, it can point to a genetic condition called Wilson disease, a copper deficiency or other medical conditions.",
     "MedPreSpecific": {
       "Wilson's Disease": {
         "Male": [{ "ageRange": [0, 150], "range": [0, 14] }],
@@ -373,7 +372,7 @@
     ]
   },
   "Cholesterol, Total;Cholesterol;Lipids;Lipidsprofile;Lipidsblood test;cholesterol ": {
-    "Definition": "Cholesterol is a waxy, fat-like substance found in your blood. It's essential for building cells and certain hormones. However, having too much cholesterol can lead to blockages in blood vessels, increasing the risk of heart disease and stroke.",
+    "Definition": "Your cholesterol numbers show how much cholesterol is circulating in your blood.",
     "MedPreGeneral": {
       "Corticosteroids": "Increase",
       "Dexamethasone": "Increase",
@@ -399,7 +398,7 @@
     ]
   },
   "Creatinine;Blood Creatinine;Serum Creatinine;Cr": {
-    "Definition": "Creatinine is a waste product formed by the muscles during the breakdown of a compound called creatine phosphate. It is filtered out of the blood by the kidneys and excreted in urine. Blood tests measure the level of creatinine to assess kidney function and overall health.",
+    "Definition": "The creatinine clearance test checks your kidney function by looking at the amount of creatinine in your urine and blood. Creatinine is a waste product that’s typically filtered out of your blood by your kidneys.",
     "MedPreGeneral": { "Hypertension": "Increase" },
     "Unit": "mg/dL",
     "Category": "Basic Metabolic",
@@ -433,7 +432,6 @@
     ]
   },
   "Digoxin;Digoxin;Digitalis;Lanoxin;DIG;DGOX;DGL": {
-    "Definition": "Digoxin, also known as Digitalis or Lanoxin, is a medication commonly used to treat heart conditions such as heart failure and certain types of irregular heartbeats. It works by affecting certain minerals (sodium and potassium) inside heart cells, which helps the heart to beat stronger and at a more regular rhythm.",
     "Unit": "ng/mL",
     "Category":"Hepatic Function",
     "Male": [
@@ -448,7 +446,7 @@
     ]
   },
   "Ferritin;Serum Ferritin;SF;Iron Storage Protein": {
-    "Definition": "Ferritin is a protein found in cells that stores iron and releases it in a controlled manner. In blood tests, it serves as an indicator of the body's iron levels.",
+    "Definition": "A ferritin test measures the amount of ferritin in your blood — a protein that stores iron inside your cells. This test helps healthcare providers determine if you have a healthy amount of iron in your body.",
     "Unit": "ng/mL",
     "Male": [
       { "ageRange": [0.011, 0.5], "range": [100, 717] },
@@ -464,7 +462,7 @@
     ]
   },
   "GGT;Gamma-Glutamyl Transferase;Gamma-Glutamyl Transpeptidase;GGTP;Gamma-GT": {
-    "Definition": "Gamma-Glutamyl Transferase (GGT) is an enzyme found in the liver and other tissues. It plays a role in breaking down chemicals in the body, particularly in processing certain drugs and toxins. High levels of GGT in the blood may indicate liver damage or disease.",
+    "Definition": "Gamma-glutamyl transferase (GGT) is an enzyme that's mainly found in your liver. Healthcare providers use GGT blood tests to help diagnose liver conditions or to rule out certain medical conditions based on abnormal results from other liver enzyme tests.",
     "Unit": "U/L",
     "Category": "Hepatic Function",
     "Male": [
@@ -483,7 +481,7 @@
     ]
   },
   "Fasting Glucose;Glucose Fasting;Glucose;Blood sugar;Blood glucose;Serum glucose;Blood sugar level;Blood glucose level;BS;BG;SG;BSL;BGL": {
-    "Definition": "Glucose, also known as blood sugar, is a type of sugar that circulates in your blood and provides energy to your body's cells. It's the primary source of energy for most cells in the body, particularly those in the brain. Blood glucose levels are often measured to assess a person's overall health, especially in relation to diabetes.",
+    "Definition": "A blood glucose test measures the level of glucose (sugar) in your blood. The test can involve a finger prick or a blood draw from your vein. Healthcare providers most commonly use blood glucose tests to screen for Type 2 diabetes, which is a common condition.",
     "MedPreGeneral": {
       "Baclofen": "Increase",
       "Corticosteroids": "Increase",
@@ -516,7 +514,7 @@
     ]
   },
   "Hemoglobin;Hb;Hgb;Haemoglobin;Hemoglobin": {
-    "Definition": "Hemoglobin is a protein in red blood cells that carries oxygen from the lungs to the rest of the body. It also helps carry carbon dioxide from the body's tissues back to the lungs to be exhaled.",
+    "Definition": "A routine physical examination might include having a hemoglobin test to measure your hemoglobin levels. Hemoglobin is the main component of red blood cells. The test is most commonly used to detect anemia (lower than normal hemoglobin levels), which might make you feel fatigued, dizzy or weak.",
     "Unit": "gm/dL",
     "MedPreSpecific": {
       "Sickle Cell Disease": {
@@ -561,7 +559,7 @@
     ]
   },
   "HDL;HDL Cholesterol;High-density lipoprotein cholesterol;Good cholesterol;HDL-C;HDL EX": {
-    "Definition": "HDL Cholesterol, also known as 'Good cholesterol' or 'High-density lipoprotein cholesterol', refers to a type of cholesterol that helps remove other forms of cholesterol from your bloodstream, which can lower the risk of heart disease. Higher levels of HDL cholesterol are generally considered beneficial for heart health.",
+    "Definition": "HDL (high-density lipoprotein) cholesterol earned the title of “good cholesterol” because it helps you get rid of extra cholesterol. It brings it to your liver, and it ends up in your poop. A healthy amount of HDL cholesterol works against plaque buildup in arteries. This improves your risk of heart disease and stroke.",
     "Unit": "mg/dL",
     "Category": "Lipids",
     "Male": [
@@ -582,7 +580,7 @@
     ]
   },
   "Iron, Total;Iron;Fe;Serum Iron;Ferrum": {
-    "Definition": "Iron, often measured in blood tests as Serum Iron or Fe, is a mineral essential for various bodily functions, including carrying oxygen in the blood. It plays a crucial role in energy production and metabolism. Abnormal levels of iron in the blood can indicate various health conditions.",
+    "Definition": "An iron test can show if you have too much or too little of this mineral in your system. It can check for conditions like anemia, or iron overload (excess iron).",
     "Unit": "ug/dL",
     "Male": [
       { "ageRange": [0, 13], "range": [16, 128] },
@@ -595,19 +593,8 @@
       { "ageRange": [19, 150], "range": [33, 167] }
     ]
   },
-  "INR": {
-    "Definition": "Screening test for abnormalities of coagulation factors that are involved in the extrinsic pathway. Also used to monitor effects of Warfarin therapy and to study patients with hereditary and acquired clotting disorders.",
-    "Unit": "",
-    "Category": "Clotting",
-    "Male": [
-      {"ageRange": [0, 150], "range": [0.9, 1.1]}
-    ],
-    "Female": [
-      {"ageRange": [0, 150], "range": [0.9, 1.1]}
-    ]
-  },
   "PT": {
-    "Definition": "Screening test for abnormalities of coagulation factors that are involved in the extrinsic pathway. Also used to monitor effects of Warfarin therapy and to study patients with hereditary and acquired clotting disorders.",
+    "Definition": "A prothrombin time (PT) test uses blood samples to measure how quickly your blood forms a clot. Healthcare providers often do this test to monitor your prothrombin levels if you’re taking the blood thinner warfarin.",
     "Unit": "sec",
     "Category": "Clotting",
     "Male": [
@@ -618,7 +605,7 @@
     ]
   },
   "LDH;Lactate dehydrogenase;Lactic acid dehydrogenase;Lactic acid oxidoreductase;LDH;LAO;LD": {
-    "Definition": "LDH (Lactate dehydrogenase) is an enzyme found in many body tissues and organs, including the blood. It plays a crucial role in converting lactate to pyruvate, a key step in energy production. High levels of LDH in the blood may indicate tissue damage, inflammation, or certain diseases.",
+    "Definition": "An LDH (lactate dehydrogenase) test measures the level of LDH in your blood or other body fluid to check for tissue damage.",
     "Unit": "U/L",
     "Category": "Hepatic Function",
     "Male": [
@@ -639,7 +626,7 @@
     ]
   },
   "Lipase;Pancreatic lipase;Serum lipase;LPS;LIP": {
-    "Definition": "Lipase, also known as pancreatic lipase or serum lipase, is an enzyme produced by the pancreas that helps digest fats in the food we eat. In blood tests, lipase levels are measured to assess the health of the pancreas and diagnose conditions such as pancreatitis.",
+    "Definition": "Your healthcare provider may order a pancreas blood test if you have symptoms of pancreatitis or another pancreatic disorder. This blood test can determine if you have elevated levels of the digestive enzymes amylase and lipase in your bloodstream.",
     "Unit": "U/L",
     "Category":"Basic Metabolic",
     "Male": [
@@ -652,7 +639,7 @@
     ]
   },
   "Magnesium;Serum Magnesium;Mg;Mg2+": {
-    "Definition": "Magnesium, also known as serum magnesium or Mg, is a mineral essential for various bodily functions, including muscle and nerve function, maintaining steady heartbeat, and supporting the immune system. It is measured in blood tests to assess its levels in the body.",
+    "Definition": "A test called a serum magnesium test measures the amount of magnesium you have in your bloodstream.",
     "Unit": "mg/dL",
     "Category":"Basic Metabolic",
     "Male": [
@@ -669,7 +656,7 @@
     ]
   },
   "MCH;Mean Corpuscular Hemoglobin;Mean Cell Hemoglobin;MCH": {
-    "Definition": "Mean Corpuscular Hemoglobin (MCH) is a measure of the average amount of hemoglobin present in each red blood cell. It indicates how much hemoglobin is available in each red blood cell, which is important for carrying oxygen throughout the body.",
+    "Definition": "Mean corpuscular hemoglobin (MCH). This test tells how much hemoglobin is in your typical red blood cell.",
     "Unit": "pg",
     "Category": "Complete Blood Count",
     "Male": [
@@ -695,7 +682,7 @@
     ]
   },
   "MCHC;Mean Corpuscular Hemoglobin Concentration;Mean Cell Hemoglobin Concentration;Hemoglobin Concentration (Mean Corpuscular);MCHC": {
-    "Definition": "Mean Corpuscular Hemoglobin Concentration (MCHC) measures the average concentration of hemoglobin in a given volume of packed red blood cells. It indicates the amount of hemoglobin relative to the volume of red blood cells, helping to assess the oxygen-carrying capacity of the blood.",
+    "Definition": "Mean corpuscular hemoglobin concentration (MCHC). This measures the concentration of hemoglobin in a certain amount of blood.",
     "Unit": "gm/dL",
     "Category":"Complete Blood Count",
     "Male": [
@@ -716,7 +703,7 @@
     ]
   },
   "Phosphor;Phosphorus;Blood phosphorus;Serum phosphorus;Inorganic phosphorus;Phosphate;BPhos;SPhos;Pi;P": {
-    "Definition": "Phosphorus, also known as blood phosphorus or serum phosphorus, is a mineral found in the body that plays a crucial role in bone health, energy production, and cell function. It is measured in blood tests to assess levels of this essential nutrient. Elevated levels of phosphorus in the blood may indicate kidney dysfunction or other health issues.",
+    "Definition": "Testing for low levels of phosphorus include a phosphorus blood test. You would provide a blood sample, and the test can determine how much phosphorus is in your blood. Abnormal levels could be caused by bone, kidney, or liver disease.",
     "MedPreGeneral": {
       "Corticosteroids": "Decrease",
       "Dexamethasone": "Decrease",
@@ -748,7 +735,7 @@
     ]
   },
   "Platelet Count;Thrombocyte Count;PLT Count;Platelet Blood Test": {
-    "Definition": "Platelet count, also known as thrombocyte count, is a measure of the number of platelets in a person's blood. Platelets are small blood cells that help in blood clotting. This test helps in assessing the body's ability to form blood clots and can indicate various health conditions such as bleeding disorders or bone marrow problems.",
+    "Definition": "A platelet count is a quick, common test that counts the number of platelets in your blood. Platelets are cells that help your blood clot. A low platelet count might be a sign of certain cancers or infections. A high platelet count can put you at risk for harmful blood clots or stroke.",
     "Unit": "109/L",
     "Category":"Complete Blood Count",
     "Male": [
@@ -762,7 +749,7 @@
     ]
   },
   "Potassium;Potassium Serum;Serum Potassium;K Serum;K+ Serum": {
-    "Definition": "Potassium Serum, also known as Serum Potassium or K Serum, refers to the concentration of potassium ions present in the liquid portion of the blood. Potassium is an essential electrolyte that plays a crucial role in various bodily functions, including muscle contraction, nerve transmission, and maintaining proper fluid balance. Abnormal levels of serum potassium can indicate various medical conditions and may require further evaluation and treatment.",
+    "Definition": "In the right amounts, the mineral potassium helps your nerves and muscles “talk” to each other, moves nutrients into and waste out of your cells, and helps your heart function.",
     "MedPreGeneral": {
       "Insulin": "Decrease",
       "Corticosteroids": "Decrease",
@@ -785,7 +772,7 @@
     ]
   },
   "Prealbumin;Pre-albumin;Transthyretin;TTR": {
-    "Definition": "Prealbumin, also known as transthyretin (TTR) or simply pre-albumin, is a protein synthesized primarily by the liver and is involved in transporting hormones and thyroid hormones in the bloodstream. It serves as an indicator of nutritional status, particularly in assessing protein malnutrition.",
+    "Definition": "An albumin blood test checks your liver and kidney function. Albumin is protein in your blood plasma. Low albumin levels might be the result of kidney disease, liver disease, inflammation or infections. High albumin levels are usually the result of dehydration or severe diarrhea.",
     "Unit": "mg/dL",
     "Category": "Kidney Function",
     "Male": [
@@ -808,7 +795,7 @@
     ]
   },
   "Prolactin;Luteotropic hormone;Lactotropin;Mammatropin;Lactogenic hormone;LTH;PRL": {
-    "Definition": "Prolactin is a hormone produced by the pituitary gland in the brain. It plays a role in various functions such as milk production in females, regulation of the menstrual cycle, and reproductive behaviors. High levels of prolactin in the blood may indicate conditions such as pituitary tumors, hypothyroidism, or certain medications.",
+    "Definition": "Prolactin is a hormone that’s responsible for lactation, certain breast tissue development and milk production. Higher-than-normal levels of prolactin in your blood can cause certain symptoms, such as irregular periods, infertility and erectile dysfunction.",
     "Unit": "ng/ml",
     "Category": "Nutritional",
     "Male": [{ "ageRange": [0, 150], "range": [2.1, 17.7] }],
@@ -819,7 +806,7 @@
     ]
   },
   "Protein CSF;Cerebrospinal fluid protein;CSF protein;CSFP": {
-    "Definition": "Protein CSF, or cerebrospinal fluid protein, refers to the amount of protein found in the clear, colorless fluid that surrounds the brain and spinal cord. This measurement is often part of a diagnostic blood test to assess the protein levels in the cerebrospinal fluid, which can indicate various neurological conditions or infections.",
+    "Definition": "A cerebrospinal fluid leak (CSF) is when you're leaking the fluid that surrounds your brain and spinal cord. CSF is vital to how your brain and spinal cord work, protecting and cushioning them from outside forces.",
     "Unit": "mg/dL",
     "Category": "Hepatic Function",
     "Male": [
@@ -836,7 +823,7 @@
     ]
   },
   "Protein, Total;Protein Total Serum;Total Serum Protein;TSP;Serum Protein;Blood Protein;Total Protein": {
-    "Definition": "Total Serum Protein, often abbreviated as TSP or Serum Protein, refers to the total amount of proteins present in the liquid part of the blood. These proteins play crucial roles in various bodily functions such as maintaining fluid balance, transporting nutrients, and supporting immune system function.",
+    "Definition": "The total serum protein test measures all the proteins in your blood. It can also check the amount of albumin you have compared to globulin, or what's called your A/G ratio.",
     "MedPreGeneral": {
       "Corticosteroids": "Increase",
       "Dexamethasone": "Increase",
@@ -878,7 +865,7 @@
     ]
   },
   "RBC;Red Blood Cell;Erythrocyte;Red Blood Cell Count;RBC;ERY": {
-    "Definition": "Red Blood Cells (RBCs), also known as erythrocytes, are the most common type of blood cell in the human body. They carry oxygen from the lungs to the rest of the body and transport carbon dioxide back to the lungs for exhalation. RBC count measures the number of these cells in a specific volume of blood, providing insight into oxygen-carrying capacity and overall health.",
+    "Definition": "Red blood cells bring oxygen to the tissues in your body and release carbon dioxide to your lungs for you to exhale. Oxygen turns into energy, which is an essential function to keep your body healthy.",
     "Unit": "X 10^12/L",
     "Category": "Complete Blood Count",
     "Male": [
@@ -918,7 +905,7 @@
     ]
   },
   "Sodium;Sodium Serum;Serum sodium;Na+;Sodium level;Blood Na+;Na;Na+": {
-    "Definition": "Sodium serum, also known as serum sodium or Na+, is a measurement of the concentration of sodium ions in the liquid part of the blood. It helps doctors assess the body's water balance and nerve function. Abnormal levels of serum sodium can indicate various health conditions.",
+    "Definition": "A sodium blood test (also called a serum sodium test) is a way for your health care provider to measure the amount of sodium in your blood. This test is often part of a group of tests that measure different substances in your blood.",
     "MedPreGeneral": {
       "Hypertension": "Increase",
       "Corticosteroids": "Increase",
@@ -943,7 +930,7 @@
     ]
   },
   "Transferrin;Siderophilin;Beta-1 metal-binding globulin;TF": {
-    "Definition": "Transferrin, also known as Siderophilin or Beta-1 metal-binding globulin, is a protein in the blood that binds to iron and transports it throughout the body. It helps regulate the amount of iron available for use by cells.",
+    "Definition": "This test tells how much transferrin (a protein) is free to carry iron through your blood. If your TIBC level is high, it means more transferrin is free because you have low iron.",
     "Unit": "mg/dL",
     "Category": "Lipids",
     "Male": [
@@ -960,7 +947,7 @@
     ]
   },
   "Triglycerides;Blood fats;Lipids;Serum triglycerides;TG;Triacylglycerols;TRIGLYCERIDES EX": {
-    "Definition": "Triglycerides, also known as blood fats or lipids, are a type of fat found in your blood. They store excess energy from your diet and are used for energy between meals. High levels of triglycerides can increase the risk of heart disease and other health problems.",
+    "Definition": "Triglycerides are a very common kind of fat in your body. They’re in butter and other fats in food. You also make triglycerides from extra calories to use later. But high triglyceride levels can raise your risk of issues like heart attacks and strokes.",
     "Unit": "mg/dL",
     "Category": "Lipids",
     "Male": [
@@ -977,7 +964,7 @@
     ]
   },
   "Troponin;TnT;TnI;cTnT;cTnI;cardiac troponin": {
-    "Definition": "Troponin is a protein found in muscle tissue, especially in the heart muscle. In blood tests, elevated levels of troponin indicate damage to the heart, which can occur during a heart attack or other cardiac conditions.",
+    "Definition": "A troponin test looks for certain types of the protein troponin, in your bloodstream. Those types of troponin only occur in heart muscle cells and only enter your blood because of heart muscle damage. That makes troponin invaluable in diagnosing heart attacks and other heart-related problems.",
     "Unit": "ng/mL",
     "Male": [
       { "ageRange": [0.013, 0.29], "range": [0.003, 0.936] },
@@ -992,7 +979,7 @@
     ]
   },
   "TSH;Thyroid-Stimulating Hormone;Thyrotropin;Thyroid Stimulating Hormone;Thyrotropic Hormone;TSH": {
-    "Definition": "Thyroid-Stimulating Hormone (TSH), also known as thyrotropin, is a hormone produced by the pituitary gland in the brain. It regulates the production and release of thyroid hormones from the thyroid gland, which play a crucial role in metabolism, growth, and energy levels.",
+    "Definition": "Thyroid-stimulating hormone (TSH) triggers your thyroid to release its hormones, which mainly impact your body’s metabolism. High TSH levels usually indicate hypothyroidism, and low TSH levels usually indicate hyperthyroidism.",
     "Unit": "uIU/mL",
     "Male": [
       { "ageRange": [0.011, 0.5], "range": [0.73, 4.77] },
@@ -1008,7 +995,7 @@
     ]
   },
   "Uric Acid;UA;Serum Uric Acid;Blood Urate;Urate": {
-    "Definition": "Uric acid, also known as UA or serum uric acid, is a waste product formed during the breakdown of purines, which are substances found in various foods and body tissues. It is normally excreted through the kidneys and eliminated from the body via urine. Elevated levels of uric acid in the blood may indicate conditions such as gout or kidney disease.",
+    "Definition": "High levels of uric acid can cause gout and you'll need to try and lower it. If you have symptoms of gout, you need to test a uric acid blood test, which measures how much uric acid you have in your blood. You may also hear this test called a serum uric acid test, serum urate, or UA.",
     "Unit": "mg/dL",
     "Male": [
       { "ageRange": [0, 0.038], "range": [2.8, 12.7] },
@@ -1026,7 +1013,7 @@
     ]
   },
   "Globulin;Globulin, Total": {
-    "Definition": "Proteins that support your immune system and help in blood clotting, measured to evaluate overall health.",
+    "Definition": "Healthcare providers use globulin blood tests to measure protein levels in your blood. Your liver makes globulin, a protein. High levels may indicate autoimmune disease, infections or cancer. A low globulin reading may be a sign of liver or kidney disease. A globulin test may be part of liver function tests or a metabolic panel.",
     "Category": "Hepatic Function",
     "Unit": "g/dL",
     "Male": [
@@ -1037,7 +1024,7 @@
     ]
   },
   "Albumin/Globulin Ratio;A/G Ratio": {
-    "Definition": "A comparison of two major blood proteins, used to assess liver function and overall health status.",
+    "Definition": "The total serum protein test measures all the proteins in your blood. It can also check the amount of albumin you have compared to globulin, or what’s called your A/G ratio.",
     "Unit": "",
     "Category": "Hepatic Function",
     "Male": [
@@ -1048,7 +1035,7 @@
     ]
   },
   "Bilirubin Indirect;BILIRUBIN, INDIRECT": {
-    "Definition": "A substance produced by the normal breakdown of red blood cells, checked to identify liver issues or blood disorders.",
+    "Definition": "A bilirubin test measures bilirubin levels in your blood. Bilirubin is the yellow pigment in bile. You might have high bilirubin levels if your liver is having trouble processing bilirubin into bile, or if your bile ducts are blocked.",
     "Unit": "mg/dL",
     "Category": "Hepatic Function",
     "Male": [
@@ -1059,7 +1046,7 @@
     ]
   },
   "EGFR": {
-    "Definition": "An indicator of kidney function, estimating how well your kidneys filter waste.",
+    "Definition": "Healthcare providers use estimated glomerular filtration rate (eGFR) to determine if you have kidney disease, and if so, what stage. eGFR measures your kidneys’ ability to filter toxins or waste from your blood.",
     "Unit": "mL/min/1.73m^2",
     "Category": "Kidney Function",
     "Male": [
@@ -1070,7 +1057,7 @@
     ]
   },
   "Carbon Dioxide;Carbon Dioxide, Total": {
-    "Definition": "Reflects the balance of acid and base in your blood, important for your body's overall chemical balance.",
+    "Definition": "A carbon dioxide (CO2) blood test helps healthcare providers determine if the body is balancing electrolytes properly.",
     "Unit": "mmol/L",
     "Category": "Serum Levels",
     "Male": [
@@ -1081,7 +1068,7 @@
     ]
   },
   "Iron Binding Capacity": {
-    "Definition": "Measures how well your blood can transport iron, crucial for producing red blood cells.",
+    "Definition": "A TIBC (total iron-binding capacity) test is one of a few tests healthcare providers use to diagnose iron-related conditions, like anemia and hemochromatosis. They often compare the results to iron and ferritin blood test results.",
     "Unit": "mcg/dL",
     "Male": [
       {"ageRange": [0, 150], "range": [250, 425]}
@@ -1091,7 +1078,6 @@
     ]
   },
   "% Saturation": {
-    "Definition": "Indicates the percentage of iron-binding sites in the blood that are occupied by iron, helping assess iron status.",
     "Unit": "%",
     "Male": [
       {"ageRange": [0, 150], "range": [20, 48]}
@@ -1101,7 +1087,7 @@
     ]
   },
   "LDL-Cholesterol;LDL, Calculated": {
-    "Definition": "Known as 'bad' cholesterol, high levels can lead to plaque buildup in arteries, increasing heart disease risk.",
+    "Definition": "Your cholesterol numbers show how much cholesterol is circulating in your blood. Your LDL (“bad” cholesterol) should be below 100.",
     "Unit": "mg/dL",
     "Category": "Lipids",
     "Male": [
@@ -1112,7 +1098,7 @@
     ]
   },
   "CHOL/HDLC Ratio;Chol/HDL Ratio": {
-    "Definition": "Compares total cholesterol to 'good' cholesterol (HDL), providing insight into your heart disease risk.",
+    "Definition": "This is your total cholesterol divided by your HDL.",
     "Unit": "",
     "Category": "Lipids",
     "Male": [
@@ -1123,7 +1109,6 @@
     ]
   },
   "Non HDL Cholesterol": {
-    "Definition": "The total of all bad cholesterol types, including LDL and VLDL, used to assess cardiovascular risk.",
     "Unit": "mg/dL",
     "Category": "Lipids",
     "Male": [
@@ -1134,7 +1119,7 @@
     ]
   },
   "MCV": {
-    "Definition": "Mean Corpuscular Volume: Measures the average size of your red blood cells, helping diagnose types of anemia.",
+    "Definition": "MCV (mean corpuscular volume) measures the average size of your red blood cells. It’s included in a common blood test called a complete blood count (CBC). Considered alongside the results of other tests, an MCV blood test can help your healthcare provider determine if you have anemia, liver disease or other conditions.",
     "Unit": "fL",
     "Category": "Complete Blood Count",
     "Male": [
@@ -1145,7 +1130,7 @@
     ]
   },
   "RDW": {
-    "Definition": "Red Cell Distribution Width: Indicates the variation in the size of your red blood cells, helping to pinpoint specific types of anemia.",
+    "Definition": "An RDW blood test measures your red blood cells’ variation in size and volume. It’s just one test that’s part of a more extensive blood workup called a complete blood count (CBC). An RDW blood test can help your healthcare provider diagnose anemia and other related conditions, along with other tests that provide information about your red blood cells.",
     "Unit": "%",
     "Category": "Complete Blood Count",
     "Male": [
@@ -1156,7 +1141,7 @@
     ]
   }, 
   "MPV": {
-    "Definition": "Mean Platelet Volume measures the average size of platelets in the blood, important for diagnosing bleeding disorders and thrombocytopenia.",
+    "Definition": "An MPV blood test measures the average size of your platelets, the blood cells that help your blood clot. When considered alongside other test results on a complete blood count (CBC), an MPV test can help your healthcare provider diagnose blood disorders and other conditions.",
     "Unit": "fL",
     "Category": "Complete Blood Count",
     "Male": [
@@ -1167,7 +1152,7 @@
     ]
   },
   "Absolute Neutrophils": {
-    "Definition": "A count of the neutrophil white blood cells per unit of blood, indicating the body's ability to fight infections.",
+    "Definition": "Neutrophils help your immune system fight infections and heal injuries. Neutrophils are the most common type of white blood cell in your body. An absolute neutrophil count identifies whether your body has enough neutrophils or if your count is above or below a healthy range.",
     "Unit": "cells/uL",
     "Category": "Complete Blood Count",
     "Male": [
@@ -1178,7 +1163,7 @@
     ]
   },
   "Absolute Lymphocytes": {
-    "Definition": "A measure of the lymphocyte white blood cells in the blood, essential for the immune response to infections.",
+    "Definition": "The absolute lymphocytes count is part of a complete blood count (CBC). An absolute lymphocytes count tells you the number of cells as an absolute number instead of as a percentage.",
     "Unit": "cells/uL",
     "Category": "Complete Blood Count",
     "Male": [
@@ -1189,7 +1174,7 @@
     ]
   },
   "Absolute Monocytes": {
-    "Definition": "A count of monocyte white blood cells, which play a role in immune defense and tissue repair.",
+    "Definition": "An absolute monocyte count identifies how many monocytes are present in a sample of your blood. The results from this test identify whether or not your monocyte count is normal, too high or too low.",
     "Unit": "cells/uL",
     "Category": "Complete Blood Count",
     "Male": [
@@ -1200,7 +1185,7 @@
     ]
   },
   "Absolute Eosinophils": {
-    "Definition": "A count of eosinophil white blood cells, important for combating parasites and allergic reactions.",
+    "Definition": "A blood test, similar to the complete blood count, specifically identifies how many eosinophils are in a sample of your blood. After your healthcare provider removes a sample of your blood from your vein, they will examine that sample under a microscope. They will add dye to the sample to make your cells more visible, then count how many eosinophils are present in the sample out of 100 cells. That percentage is multiplied by your white blood cell count to give an absolute eosinophil count.",
     "Unit": "cells/uL",
     "Category": "Complete Blood Count",
     "Male": [
@@ -1211,7 +1196,7 @@
     ]
   },
   "Absolute Basophils": {
-    "Definition": "A measure of basophil white blood cells, involved in inflammatory reactions and allergies.",
+    "Definition": "An absolute basophil count identifies how many basophils are present in a sample of your blood.",
     "Unit": "cells/uL",
     "Category": "Complete Blood Count",
     "Male": [
@@ -1222,7 +1207,7 @@
     ]
   },
   "WBC;White Blood Cell Count;Leukocyte Count;WBC Count;LBC": {
-    "Definition": "White Blood Cell Count (WBC) measures the number of white blood cells in a sample of blood. These cells help fight infections and play a crucial role in the body's immune system. Changes in the WBC count can indicate various health conditions, such as infections, inflammation, or immune system disorders.",
+    "Definition": "White blood cells are a part of your immune system that protects your body from infection. These cells circulate through your bloodstream and tissues to respond to injury or illness by attacking any unknown organisms that enter your body.",
     "Unit": "10^9/L",
     "Category": "Complete Blood Count",
     "Male": [
@@ -1237,7 +1222,7 @@
     ]
   },
   "Hematocrit;HCT": { 
-    "Definition": "Shows what portion of your blood is made up of red blood cells, important for diagnosing anemia or dehydration.",
+    "Definition": "A hematocrit test is a simple blood test that measures the percentage of red blood cells in your blood. Red blood cells are important because they carry oxygen throughout your body. Test results showing low or high hematocrit levels may be signs of blood disorders or other medical conditions.",
     "Unit": "%",
     "Category": "Complete Blood Count", 
     "Male": [ 

@@ -12,6 +12,7 @@ import util from "util";
 import Card from "@/_components/card";
 import { Suspense } from "react";
 import FeatherIcon from "feather-icons-react";
+import reportData from "./data.json";
 
 export default async function Profile() {
   const dynamic = "force-dynamic";
@@ -19,7 +20,8 @@ export default async function Profile() {
   const date = dayjs();
 
   try {
-    const reports = await getReports("kp_6f5daf32cbcb4a08a0e691144fefbbe9");
+    const reports = reportData;
+    console.log(util.inspect(reports, false, null, true));
     if (!reports || reports.length === 0) {
       return (
         <div className="flex min-h-fit flex-col justify-between px-9 py-4">

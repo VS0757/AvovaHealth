@@ -232,7 +232,7 @@
           "bloodtestname": "ALT"
         },
         {
-          "range": "<200",
+          "range": "0.0-200",
           "unit": "mg/dL",
           "value": "176",
           "bloodtestname": "CHOLESTEROL, TOTAL"
@@ -244,25 +244,25 @@
           "bloodtestname": "HDL CHOLESTEROL"
         },
         {
-          "range": "<150",
+          "range": "0.0-150",
           "unit": "mg/dL",
           "value": "120",
           "bloodtestname": "TRIGLYCERIDES"
         },
         {
-          "range": "<100",
+          "range": "0.0-100",
           "unit": "mg/dL (calc)",
           "value": "96",
           "bloodtestname": "LDL-CHOLESTEROL"
         },
         {
-          "range": "<5.0",
+          "range": "0.0-5.0",
           "unit": "(calc)",
           "value": "3.0",
           "bloodtestname": "CHOL/HDLC RATIO"
         },
         {
-          "range": "<130",
+          "range": "0.0-130",
           "unit": "mg/dL (calc)",
           "value": "118",
           "bloodtestname": "NON HDL CHOLESTEROL"

@@ -1,27 +1,22 @@
 import dayjs from "dayjs";
 import Table, { TableValue } from "@/_components/table/table";
-import { getReports } from "@/_components/dashboard/range_graph";
-import ManualReportTable from "@/app/app/_components/report/manualtable";
-import {
-  BloodTestToolTip,
-  MedPreNotes,
-  ReportRange,
-  getRangeSort,
-} from "@/app/app/_components/report/reportrange";
 import util from "util";
 import Card from "@/_components/card";
-import { Suspense } from "react";
 import FeatherIcon from "feather-icons-react";
 import reportData from "./data.json";
+import { getTestRange } from "../app/_components/report/testHelper";
+import { useMemo } from "react";
+import { GeistMono } from "geist/font/mono";
+import { Group } from "@visx/group";
+import { Bar, Circle, Line, LinePath, Polygon } from "@vx/shape";
+import { Text, TextProps } from "@visx/text";
+import { scaleLinear } from "@vx/scale";
 
 export default async function Profile() {
-  const dynamic = "force-dynamic";
-
   const date = dayjs();
 
   try {
     const reports = reportData;
-    console.log(util.inspect(reports, false, null, true));
     if (!reports || reports.length === 0) {
       return (
         <div className="flex min-h-fit flex-col justify-between px-9 py-4">
@@ -41,13 +36,7 @@ export default async function Profile() {
         components: [
           {
             key: "Item",
-            node: (
-              <div>
-                {" "}
-                <BloodTestToolTip testName={d.bloodtestname} />
-                <MedPreNotes testName={d.bloodtestname} />
-              </div>
-            ),
+            node: <div> {d.bloodtestname}</div>,
             sortValue: d.bloodtestname,
           },
           {
@@ -62,10 +51,10 @@ export default async function Profile() {
           {
             key: "Range",
             node: (
-              <ReportRange
-                bloodtestname={d.bloodtestname}
+              <RangeViz
+                min={Number(d.range.split("-")[0])}
+                max={Number(d.range.split("-")[1])}
                 value={d.value}
-                date={lastReport.data.effectiveDateTime}
               />
             ),
             sortValue: Math.abs(
@@ -104,11 +93,9 @@ export default async function Profile() {
                   Recommendations
                 </div>
                 <div className="text-xl text-black opacity-70 mix-blend-color-burn">
-                  <Suspense>
-                    High red blood cell count could indicate dehydration or
-                    other conditions. Ensure adequate hydration or consult a
-                    healthcare professional.
-                  </Suspense>
+                  High red blood cell count could indicate dehydration or other
+                  conditions. Ensure adequate hydration or consult a healthcare
+                  professional.
                 </div>
               </div>
               <Card>
@@ -126,4 +113,115 @@ export default async function Profile() {
   } catch (error) {
     return <h1>Error getting data</h1>;
   }
+}
+
+async function ReportRange({
+  value,
+  bloodtestname,
+  date,
+}: {
+  value: number;
+  bloodtestname: string;
+  date: string;
+}) {
+  const age = 15;
+  const range = getTestRange(bloodtestname, "Male", age, [""]);
+
+  if (range.high === 0 && range.low === 0) {
+    return <p>-</p>;
+  }
+  const lowRange = range.low;
+  const highRange = range.high;
+
+  return (
+    <div className={`px-2`}>
+      <RangeViz min={lowRange} max={highRange} value={value} />
+    </div>
+  );
+}
+
+function RangeViz({
+  min,
+  max,
+  value,
+}: {
+  min: number;
+  max: number;
+  value: number;
+}) {
+  const width = 220;
+  const height = 40;
+
+  const margin = {
+    top: 0,
+    bottom: 0,
+    left: 0,
+    right: 0,
+  };
+
+  const xMax = width - margin.left - margin.right;
+  const yMax = height - margin.top - margin.bottom;
+
+  const getValue = (p: number) => p;
+
+  let scaleMin: number = min - (max - min) / 2;
+  let scaleMax: number = max + (max - min) / 2;
+
+  if (value <= min) {
+    scaleMin = value - (max - value) / 2;
+  }
+  if (value >= max) {
+    scaleMax = +value + (value - min) / 2;
+  }
+
+  const scaleMinLabel: string = scaleMin.toFixed(2);
+  const scaleMaxLabel: string = (+scaleMax).toFixed(2);
+  const minLabel: string = (+min).toFixed(2);
+  const maxLabel: string = (+max).toFixed(2);
+
+  const valueScale = useMemo(
+    () =>
+      scaleLinear({
+        range: [0, xMax],
+        domain: [scaleMin, scaleMax],
+        nice: true,
+      }),
+    [yMax],
+  );
+
+  const rangeLength = (valueScale(max) ?? 0) - (valueScale(min) ?? 0);
+
+  return (
+    <svg width={width} height={height} className={`${GeistMono.className}`}>
+      <Group>
+        <Bar
+          x={0}
+          y={height / 2 - 2}
+          width={width}
+          height={4}
+          fill="rgba(255,0,0,0.2)"
+        />
+        <Bar
+          x={valueScale(min)}
+          y={height / 2 - 2}
+          width={rangeLength}
+          height={4}
+          fill="green"
+        />
+        <Bar x={valueScale(value)} y={height / 2 - 6} width={4} height={12} />
+        <Text y={height - 2} opacity={0.5} fontSize={10}>
+          {scaleMinLabel}
+        </Text>
+        <Text
+          x={width}
+          y={height - 2}
+          opacity={0.5}
+          fontSize={10}
+          textAnchor="end"
+        >
+          {scaleMaxLabel}
+        </Text>
+      </Group>
+    </svg>
+  );
 }

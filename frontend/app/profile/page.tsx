@@ -13,9 +13,9 @@ import Card from "@/_components/card";
 import { Suspense } from "react";
 import FeatherIcon from "feather-icons-react";
 
-const dynamic = "force-dynamic";
-
 export default async function Profile() {
+  const dynamic = "force-dynamic";
+
   const date = dayjs();
   const reports = await getReports("kp_6f5daf32cbcb4a08a0e691144fefbbe9");
   if (!reports || reports.length === 0) {

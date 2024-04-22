@@ -9,7 +9,12 @@ export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between bg-[#E05767] p-24">
       <div className="m-auto text-center text-white">
-        <Image src="/avova.svg" alt="Avova Health" width={300} height={300} />
+        <Image
+          src="/avova_logomark.svg"
+          alt="Avova Health"
+          width={400}
+          height={300}
+        />
         <h1 className={`pt-4 text-2xl font-medium ${poppins.className}`}>
           Your Health, Explained.
         </h1>

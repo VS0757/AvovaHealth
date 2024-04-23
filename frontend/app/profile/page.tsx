@@ -48,8 +48,18 @@ export default function Profile() {
           ),
           sortValue: d.value,
         },
+      ],
+    };
+    const rangeVal: TableValue = {
+      key: d.bloodtestname,
+      components: [
         {
-          key: "Range",
+          key: "Item",
+          node: <div className="ml-4 opacity-50">Range</div>,
+          sortValue: d.bloodtestname,
+        },
+        {
+          key: "Value",
           node: (
             <RangeViz
               min={Number(d.range.split("-")[0])}
@@ -64,45 +74,36 @@ export default function Profile() {
       ],
     };
     rows.push(val);
+    rows.push(rangeVal);
   });
 
   return (
     <div className="flex max-h-screen flex-row bg-stone-100 text-stone-700 dark:bg-stone-900 dark:text-stone-100">
-      <div className="max-h-screen overflow-auto w-full">
-        <div className="mx-auto flex min-h-screen max-w-screen-xl flex-1 flex-col px-16">
-          <header className="mb-16 flex h-36 flex-row items-center justify-between border-b dark:border-stone-800">
+      <div className="max-h-screen overflow-auto w-svw">
+        <div className="mx-auto flex min-h-screen flex-1 flex-col px-4">
+          <header className="mb-4 flex h-36 flex-row items-center justify-between border-b dark:border-stone-800">
             <div className="flex flex-col">
               <h1 className="text-xl">Om Jha</h1>
               <p className="opacity-70">{date.format("MMMM D, YYYY")}</p>
             </div>
           </header>
-          <section className="flex flex-col gap-4 max-w-screen-md mx-auto">
-            <div className="flex flex-row justify-between">
-              <div className="flex flex-col">
-                <h1 className="text-xl">Last Report</h1>
-                <h1 className="text-lg opacity-50">[Om Jha]</h1>
-              </div>
-              <div className="flex flex-col items-end">
-                <p className="text-xs opacity-50">Date</p>
-                <p>{date.format("MMMM D, YYYY")}</p>
-              </div>
-            </div>
-            <div className="border rounded-lg px-36 h-72 text-center flex flex-col justify-center items-center bg-avova-gradient">
+          <section className="flex flex-col gap-4 mx-auto w-full">
+            <div className="border rounded-lg py-8 px-4 text-center flex flex-col justify-center items-center bg-avova-gradient">
               <div className="flex flex-row gap-2 text-xs opacity-50 items-center py-4">
                 <FeatherIcon icon="zap" className="h-4" />
                 Recommendations
               </div>
-              <div className="text-xl text-black opacity-70 mix-blend-color-burn">
+              <div className="text-lg text-black opacity-70 mix-blend-color-burn">
                 High red blood cell count could indicate dehydration or other
                 conditions. Ensure adequate hydration or consult a healthcare
                 professional.
               </div>
             </div>
             <Card>
-              <Table columns={["Item", "Value", "Range"]} rows={rows} />
+              <Table columns={["Item", "Value"]} rows={rows} />
             </Card>
           </section>
-          <footer className="mt-16 flex h-16 flex-col items-end justify-end gap-2 border-t py-4 text-xs opacity-40 dark:border-stone-800">
+          <footer className="mt-16 flex h-16 flex-row items-end justify-end gap-2 border-t py-4 text-xs opacity-40 dark:border-stone-800">
             <p>Copyright © Avova Health 2024</p>
             <a href="/terms">Terms and Conditions</a>
           </footer>
@@ -121,7 +122,7 @@ function RangeViz({
   max: number;
   value: number;
 }) {
-  const width = 220;
+  const width = 140;
   const height = 40;
 
   const margin = {

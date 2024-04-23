@@ -26,7 +26,6 @@ const Modal = ({
           <Button
             label="Close"
             icon="x"
-            hoverColor="from-avova"
             onClick={() => {
               close();
             }}

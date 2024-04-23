@@ -67,9 +67,6 @@ export default async function BiomarkerTable() {
     rows.push(val);
   });
 
-  JSON.stringify(rows);
-  console.log(util.inspect(rows, false, null, true));
-
   return (
     <div className="flex min-h-fit flex-col justify-between">
       <Table columns={["Item", "Value", "Range"]} rows={rows} />

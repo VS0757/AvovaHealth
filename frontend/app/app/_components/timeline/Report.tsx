@@ -103,7 +103,6 @@ const Report: React.FC<ReportProps> = ({
           <Button
             label="Delete"
             icon="x"
-            hoverColor="from-avova/25"
             onClick={() => {
               deleteEntry();
             }}

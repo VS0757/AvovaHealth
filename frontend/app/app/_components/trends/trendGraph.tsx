@@ -131,7 +131,6 @@ export default function TrendGraph({ trendData }: any) {
         tooltipLeft: x,
         tooltipTop: valueScale(getValue(d)),
       });
-      console.log(x);
     },
     [showTooltip, valueScale, dateScale],
   );

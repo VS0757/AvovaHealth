@@ -8,6 +8,9 @@ import { getUserId } from "@/_lib/actions";
 
 import bloodtestresults from "../../_components/report/bloodtestresults.json";
 import recommendations from "./recs.json";
+import ReportPageComponent, {
+  ReportPageProps,
+} from "../../_components/report/reportpage";
 
 async function fetchRecommendations() {
   const response = require("./recs.json");
@@ -101,8 +104,7 @@ async function provideRecommendations(input: any, userData: any) {
 
   // css elements for bullet point @om feel free to adjust
   const bulletPointStyle = {
-    listStyleType: "disc",
-    marginLeft: "20px",
+    listStyleType: "none",
   };
 
   let outputJSX;
@@ -261,7 +263,7 @@ export default async function ReportPage({ params }: any) {
 
   const reportData = report.data;
   const summaryParagraph = summarizeTestResults(reportData, userData);
-  const recs = provideRecommendations(reportData, userData);
+  const recs = await provideRecommendations(reportData, userData);
 
   const ranges = await getPercentInRange();
   const range = ranges.filter((r: any) => {
@@ -269,72 +271,14 @@ export default async function ReportPage({ params }: any) {
   })[0];
   const percentInRange = range.range;
 
-  return (
-    <main
-      className="flex flex-col gap-8 max-w-screen-md mx-auto"
-      suppressHydrationWarning={true}
-    >
-      <div className="flex flex-row justify-between">
-        <div className="flex flex-col">
-          <h1 className="text-xl">Report</h1>
-          <h1 className="text-lg opacity-50">[{name}]</h1>
-        </div>
-        <div className="flex flex-col items-end">
-          <p className="text-xs opacity-50">Date</p>
-          <p>{date}</p>
-        </div>
-      </div>
-      <div className="border rounded-lg px-36 h-72 text-center flex flex-col justify-center items-center bg-avova-gradient">
-        <div className="flex flex-row gap-2 text-xs opacity-50 items-center py-4">
-          <FeatherIcon icon="zap" className="h-4" />
-          Recommendations
-        </div>
-        <div className="text-xl text-black opacity-70 mix-blend-color-burn">
-          <Suspense>{recs}</Suspense>
-        </div>
-      </div>
-      <Card>
-        <div className="px-9 py-8 text-xs flex flex-row justify-between">
-          <div className="flex flex-col gap-2">
-            <div className="flex flex-row items-center text-lg gap-2">
-              <FeatherIcon
-                icon="heart"
-                fill="#E05767"
-                strokeWidth={0}
-                className="h-5"
-              />
-              Blood Report Summary
-            </div>
-            <div className="max-w-lg leading-relaxed opacity-70">
-              {summaryParagraph}
-            </div>
-          </div>
-          <div className="h-48 w-[1px] bg-gradient-to-b from-transparent via-stone-300"></div>
-          <div className="flex flex-col justify-center items-end">
-            <p className="text-xs opacity-50">Filename</p>
-            <p className="mb-2">{name}</p>
-            <p className="text-xs opacity-50">Date</p>
-            <p className="mb-2">
-              {month}/{day} {year}
-            </p>
-            <p className="text-xs opacity-50">Type</p>
-            <p className="mb-2">{type.toUpperCase()}</p>
-            <p className="text-xs opacity-50">Tests in Range</p>
-            <p
-              className={`max-w-fill text-2xl font-medium ${
-                percentInRange > 90
-                  ? "text-green-500"
-                  : percentInRange >= 5 && percentInRange <= 90
-                    ? "text-yellow-500"
-                    : "text-red-500"
-              }`}
-            >
-              {percentInRange}%
-            </p>
-          </div>
-        </div>
-      </Card>
-      <a href={"/app/report/" + params.id + "/data"}>View All Data</a>
-    </main>
-  );
+  const props: ReportPageProps = {
+    name: name,
+    date: date,
+    recs: recs,
+    summary: summaryParagraph,
+    type: type,
+    percentInRange: percentInRange,
+  };
+
+  return <ReportPageComponent props={props} params={params} />;
 }
